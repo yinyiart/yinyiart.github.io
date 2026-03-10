@@ -12,59 +12,57 @@
         }
 
         body {
-            background-color: #1a242b;  /* 更深沉的灰蓝 */
+            background-color: #25323c;  /* 更浅的灰蓝 */
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
             color: #eef2f5;
             line-height: 1.6;
             padding: 40px 20px;
         }
 
+        /* 外层容器，仅提供内边距，无背景无边框 */
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: #1f2c35;  /* 略浅于背景，区分层次 */
-            padding: 40px 30px;
-            border-radius: 4px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            border: 1px solid #2e3b48;
+            padding: 0;
         }
 
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            text-align: center;
-            margin-bottom: 8px;
-            color: #d0e0f0;
-            border-bottom: 1px solid #2e3b48;
-            padding-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .subhead {
-            text-align: center;
-            font-style: italic;
-            color: #8a9bb0;
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
             margin-bottom: 40px;
             font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #8a9bb0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .top-nav a {
+            color: #8a9bb0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-nav a:hover,
+        .top-nav a.active {
+            color: white;
         }
 
         /* 作品卡片 */
         .work-item {
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #2e3b48;
-        }
-
-        .work-item:last-child {
-            border-bottom: none;
+            margin-bottom: 50px;        /* 卡片之间保留间距，无分隔线 */
+            background-color: #1f2c35;   /* 卡片背景略深，形成层次 */
+            padding: 20px;
+            border: none;                /* 无边框 */
         }
 
         /* 图片区域 */
         .work-image {
             width: 100%;
-            aspect-ratio: 16 / 9;  /* 统一比例，可按需调整 */
-            background-color: #2e3f4d;  /* 占位色 */
+            aspect-ratio: 16 / 9;
+            background-color: #2e3f4d;
             border-radius: 2px;
             margin-bottom: 20px;
             display: flex;
@@ -72,7 +70,6 @@
             justify-content: center;
             color: #8a9bb0;
             font-size: 0.9rem;
-            border: 1px solid #3a4c5c;
             overflow: hidden;
         }
         .work-image img {
@@ -113,21 +110,25 @@
             border-left: 2px solid #3f5a6b;
         }
 
-        /* 音频播放器 */
+        /* 音频播放器 - 直角无边框 */
         audio {
             width: 100%;
             height: 40px;
             margin: 8px 0 0;
-            border-radius: 2px;
-            outline: none;
+            border-radius: 0;            /* 直角 */
+            outline: none;                /* 去除外轮廓 */
+            border: none;                 /* 无边框 */
+            background: transparent;
         }
 
+        /* 播放器内部控件背景（部分浏览器支持） */
         audio::-webkit-media-controls-panel {
             background-color: #26323f;
+            border-radius: 0;              /* 内部也直角 */
         }
         audio::-webkit-media-controls-play-button {
             background-color: #5f7a91;
-            border-radius: 50%;
+            border-radius: 0;
         }
 
         .audio-extra {
@@ -143,31 +144,7 @@
             border-bottom: 1px dotted;
         }
 
-        /* 顶部导航 */
-        .top-nav {
-            display: flex;
-            justify-content: flex-end;
-            gap: 30px;
-            margin-bottom: 40px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #8a9bb0;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .top-nav a {
-            color: #8a9bb0;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .top-nav a:hover,
-        .top-nav a.active {
-            color: white;
-        }
-
-        /* 页脚导航（可选） */
+        /* 页脚导航 */
         .footer-nav {
             margin-top: 60px;
             text-align: center;
@@ -185,14 +162,14 @@
         }
 
         @media (max-width: 600px) {
-            .container { padding: 30px 20px; }
-            h1 { font-size: 1.5rem; }
+            body { padding: 20px 15px; }
+            .work-item { padding: 15px; }
             .work-title { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- 顶部导航（与其他板块一致） -->
+    <!-- 顶部导航 -->
     <div class="top-nav">
         <a href="index.html">殷漪</a>
         <a href="musician.html" class="active">音乐家</a>
@@ -203,10 +180,7 @@
     </div>
 
     <div class="container">
-        <h1>殷漪 · 音乐</h1>
-        <div class="subhead">严谨 · 深沉 · 感性</div>
-
-        <!-- 作品列表（按您给的顺序） -->
+        <!-- 作品列表（无标题，直接展示） -->
         <div class="work-item">
             <div class="work-image" id="img-lian">
                 <span>图片待上传</span>
@@ -359,8 +333,8 @@
     </div>
 
     <script>
-        // 后续可添加图片替换逻辑，目前只留占位
-        // 当您上传图片后，可用以下方式替换（以《脸》为例）：
+        // 图片替换预留
+        // 当您上传图片后，可在此处用 JavaScript 替换占位内容，例如：
         // document.getElementById('img-lian').innerHTML = '<img src="images/lian.jpg" alt="脸">';
     </script>
 </body>
