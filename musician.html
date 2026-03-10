@@ -12,66 +12,49 @@
         }
 
         body {
-            background-color: #faf7f2;  /* 暖米白基底 */
-            font-family: 'Georgia', 'Times New Roman', '宋体', serif;
-            color: #2c2c2c;
-            line-height: 1.6;
+            background-color: #eef2f5;  /* 柔和蓝灰基底 */
+            font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+            color: #2e3b4e;             /* 深灰蓝字体 */
+            line-height: 1.5;
             padding: 40px 20px;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(2px);
+            background: #ffffff;
             padding: 40px 30px;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid #e8e0d5;
-            position: relative;
-        }
-
-        /* 手绘风格装饰线 */
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
-            border: 1px dashed #d9c7b1;
-            pointer-events: none;
             border-radius: 2px;
-            opacity: 0.4;
+            box-shadow: 0 4px 20px rgba(0, 20, 30, 0.05);
+            border: 1px solid #d0d9e0;
         }
 
         h1 {
-            font-size: 2.2rem;
-            font-weight: 300;
-            letter-spacing: 4px;
+            font-size: 1.8rem;          /* 缩小 */
+            font-weight: 400;
+            letter-spacing: 2px;
             text-align: center;
-            margin-bottom: 10px;
-            color: #8b5a2b;  /* 暖棕 */
-            border-bottom: 1px solid #d9c7b1;
-            padding-bottom: 20px;
-            font-family: 'Helvetica Neue', sans-serif;
+            margin-bottom: 8px;
+            color: #2c3e4f;             /* 深灰蓝 */
+            border-bottom: 1px solid #cbd5e0;
+            padding-bottom: 16px;
+            font-family: 'Inter', sans-serif;
             text-transform: uppercase;
         }
 
         .subhead {
             text-align: center;
             font-style: italic;
-            color: #b28b5e;
+            color: #5f6f80;              /* 中灰蓝 */
             margin-bottom: 40px;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
 
         /* 作品条目 */
         .work-item {
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 1px dashed #e0d3c4;
-            position: relative;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #dde3e9;
         }
 
         .work-item:last-child {
@@ -82,116 +65,111 @@
             display: flex;
             align-items: baseline;
             flex-wrap: wrap;
-            gap: 10px 20px;
-            margin-bottom: 12px;
+            gap: 8px 16px;
+            margin-bottom: 8px;
         }
 
         .work-title {
-            font-size: 1.6rem;
+            font-size: 1.3rem;            /* 缩小 */
             font-weight: 400;
-            color: #4a3a2a;
-            font-family: 'Helvetica Neue', sans-serif;
-            letter-spacing: 1px;
+            color: #1f2b36;                /* 更深的灰蓝 */
+            letter-spacing: 0.5px;
         }
 
         .work-year {
-            font-size: 1rem;
-            color: #b28b5e;
-            background: #f0e7dc;
+            font-size: 0.85rem;
+            color: #5f6f80;
+            background: #e6ecf2;
             padding: 2px 10px;
             border-radius: 30px;
-            font-style: italic;
         }
 
         .work-description {
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            color: #5a4a3a;
-            padding-left: 10px;
-            border-left: 2px solid #d9c7b1;
-            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            color: #3f4f60;
+            padding-left: 8px;
+            border-left: 2px solid #a0b3c5;
         }
 
         /* 音频播放器 */
         audio {
             width: 100%;
-            height: 40px;
-            margin: 10px 0 5px;
-            border-radius: 30px;
+            height: 36px;
+            margin: 8px 0 0;
+            border-radius: 2px;
             outline: none;
         }
 
-        /* 自定义播放器颜色（部分浏览器支持） */
+        /* 播放器颜色（部分浏览器支持） */
         audio::-webkit-media-controls-panel {
-            background-color: #efe4d7;
+            background-color: #e6ecf2;
         }
         audio::-webkit-media-controls-play-button {
-            background-color: #b28b5e;
+            background-color: #5f6f80;
             border-radius: 50%;
         }
 
         .audio-extra {
-            font-size: 0.85rem;
-            color: #b28b5e;
+            font-size: 0.8rem;
+            color: #5f6f80;
             margin-top: 4px;
             text-align: right;
         }
 
         .audio-extra a {
-            color: #8b5a2b;
+            color: #2c3e4f;
             text-decoration: none;
             border-bottom: 1px dotted;
         }
 
-        /* 手稿缩略图区域（预留） */
+        /* 手稿缩略图（预留） */
         .manuscript {
-            margin-top: 15px;
+            margin-top: 12px;
             display: flex;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
         }
         .manuscript img {
-            max-width: 120px;
-            max-height: 120px;
-            border-radius: 2px;
-            border: 1px solid #d9c7b1;
-            opacity: 0.9;
+            max-width: 100px;
+            max-height: 100px;
+            border: 1px solid #cbd5e0;
+            opacity: 0.85;
             transition: 0.2s;
             cursor: pointer;
         }
         .manuscript img:hover {
             opacity: 1;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         /* 页脚导航 */
         .footer-nav {
-            margin-top: 60px;
+            margin-top: 48px;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            color: #5f6f80;
         }
         .footer-nav a {
-            color: #8b5a2b;
+            color: #2c3e4f;
             text-decoration: none;
-            margin: 0 12px;
+            margin: 0 10px;
             border-bottom: 1px solid transparent;
-            transition: border-color 0.2s;
         }
         .footer-nav a:hover {
-            border-bottom-color: #b28b5e;
+            border-bottom-color: #5f6f80;
         }
 
         @media (max-width: 600px) {
             .container { padding: 30px 20px; }
-            h1 { font-size: 1.8rem; }
-            .work-title { font-size: 1.3rem; }
+            h1 { font-size: 1.5rem; }
+            .work-title { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>殷漪 · 音乐</h1>
-        <div class="subhead">感性 · 想象 · 巧思 · 手稿</div>
+        <div class="subhead">严谨 · 深沉 · 手稿</div>
 
         <!-- 作品列表（按您给的顺序） -->
         <div class="work-item">
@@ -204,8 +182,8 @@
                 <source src="music/lian.mp3" type="audio/mpeg">
                 您的浏览器不支持 audio 元素。
             </audio>
-            <!-- 手稿预留区（如有图片可在此添加img） -->
-            <!-- <div class="manuscript"><img src="images/lian-sketch.jpg" alt="手稿"></div> -->
+            <!-- 手稿预留区，如有图片可取消注释 -->
+            <!-- <div class="manuscript"><img src="images/lian-sketch.jpg" alt="脸手稿"></div> -->
         </div>
 
         <div class="work-item">
@@ -213,7 +191,6 @@
                 <span class="work-title">聚落</span>
                 <span class="work-year">2007/2024</span>
             </div>
-            <!-- 无描述，只留空 -->
             <audio controls preload="metadata">
                 <source src="music/juluo.mp3" type="audio/mpeg">
             </audio>
@@ -237,7 +214,7 @@
             </div>
             <div class="work-description">
                 收录于 XY#001，XY Record，北京，2015<br>
-                <span style="font-size:0.9rem">🔗 <a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank">Bandcamp 链接</a></span>
+                <span style="font-size:0.8rem">🔗 <a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#2c3e4f;">Bandcamp 链接</a></span>
             </div>
             <audio controls preload="metadata">
                 <source src="music/ting-dao.mp3" type="audio/mpeg">
@@ -282,7 +259,6 @@
                 <span class="work-title">旋转</span>
                 <span class="work-year">2016</span>
             </div>
-            <!-- 无描述 -->
             <audio controls preload="metadata">
                 <source src="music/xuan-zhuan.mp3" type="audio/mpeg">
             </audio>
@@ -293,7 +269,6 @@
                 <span class="work-title">未见</span>
                 <span class="work-year">2014</span>
             </div>
-            <!-- 无描述 -->
             <audio controls preload="metadata">
                 <source src="music/wei-jian.mp3" type="audio/mpeg">
             </audio>
@@ -310,7 +285,6 @@
             </audio>
         </div>
 
-        <!-- 页脚导航（后续可替换为真实链接） -->
         <div class="footer-nav">
             <a href="index.html">首页</a> ·
             <a href="artist.html">艺术家</a> ·
