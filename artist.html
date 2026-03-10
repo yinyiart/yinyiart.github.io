@@ -30,30 +30,32 @@
             z-index: 1;
         }
 
-        /* 顶部导航 */
+        /* 顶部导航 - 简洁无背景 */
         .top-nav {
             position: absolute;
             top: 20px;
-            left: 20px;
+            right: 30px;           /* 移到右上角 */
             z-index: 10;
             color: #a0b3c5;
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            background: rgba(26, 31, 36, 0.6);
-            backdrop-filter: blur(4px);
-            padding: 8px 16px;
-            border-radius: 30px;
-            border: 1px solid #2e3b4e;
+            background: transparent;
+            padding: 0;
+            border: none;
         }
         .top-nav a {
-            color: #d0d9e0;
+            color: #a0b3c5;
             text-decoration: none;
-            margin: 0 8px;
+            margin-left: 24px;
             transition: color 0.2s;
         }
         .top-nav a:hover {
             color: #ffffff;
+        }
+        .top-nav a.active {
+            color: white;
+            border-bottom: 1px solid #a0b3c5;
         }
 
         /* 脉络标签面板 - 左侧竖排 */
@@ -72,7 +74,7 @@
         }
         .tag {
             padding: 4px 12px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;         /* 稍微增大 */
             cursor: pointer;
             transition: 0.2s;
             color: #a0b3c5;
@@ -100,7 +102,7 @@
             border: 1px solid #2e3b4e;
             border-radius: 4px;
             padding: 12px;
-            max-width: 200px;
+            max-width: 220px;
             color: #eef2f5;
             pointer-events: none;
             transition: opacity 0.2s;
@@ -114,19 +116,24 @@
             border: 1px solid #2e3b4e;
         }
         .work-tooltip .title {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 400;
             margin-bottom: 4px;
         }
         .work-tooltip .year {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #a0b3c5;
         }
     </style>
 </head>
 <body>
     <div class="top-nav">
-        <a href="index.html">殷漪</a> · <a href="musician.html">音乐家</a> · <a href="artist.html" style="color:white;">艺术家</a> · <a href="curator.html">策展人</a> · <a href="writing.html">写作</a> · <a href="about.html">关于</a>
+        <a href="index.html">殷漪</a>
+        <a href="musician.html">音乐家</a>
+        <a href="artist.html" class="active">艺术家</a>
+        <a href="curator.html">策展人</a>
+        <a href="writing.html">写作</a>
+        <a href="about.html">关于</a>
     </div>
 
     <div id="cy"></div>
@@ -237,12 +244,12 @@
                         selector: 'node',
                         style: {
                             'background-color': '#d0d9e0',
-                            'width': '20px',
-                            'height': '20px',
+                            'width': 30,                     // 图标调大
+                            'height': 30,
                             'label': 'data(title)',
-                            'font-size': '10px',
+                            'font-size': 12,                  // 文字调大
                             'color': '#eef2f5',
-                            'text-outline-width': 1,
+                            'text-outline-width': 2,
                             'text-outline-color': '#1a1f24',
                             'text-valign': 'bottom',
                             'text-halign': 'center',
@@ -270,18 +277,18 @@
                 ],
                 layout: {
                     name: 'cose',
-                    idealEdgeLength: 400,          // 加大理想边长，让节点分散
-                    nodeOverlap: 200,
+                    idealEdgeLength: 250,          // 再增大理想边长，让节点更分散
+                    nodeOverlap: 50,
                     refresh: 20,
                     fit: true,
-                    padding: 50,
-                    randomize: false,
-                    componentSpacing: 200,
-                    nodeRepulsion: 800000,         // 增大节点斥力
-                    edgeElasticity: 80,
+                    padding: 80,                    // 增加画布边距，避免与导航重叠
+                    randomize: false,                // 固定随机种子（但cose仍有微小差异）
+                    componentSpacing: 300,
+                    nodeRepulsion: 1200000,          // 斥力大幅增加
+                    edgeElasticity: 60,
                     nestingFactor: 5,
-                    gravity: 200,                    // 减小重力，避免向中心聚集
-                    numIter: 2000,
+                    gravity: 20,                      // 重力再减小
+                    numIter: 2500,                     // 更多迭代确保收敛
                     initialTemp: 400,
                     coolingFactor: 0.95,
                     minTemp: 1.0
