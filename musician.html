@@ -107,34 +107,49 @@
         }
 
         /* 音频播放器 - 彻底直角 */
-        audio {
-            width: 100%;
-            height: 40px;
-            margin: 5px 0 0;
-            border-radius: 0 !important;       /* 强制直角 */
-            outline: none;
-            border: none;
-            background: transparent;
-        }
+        /* 音频播放器 - 强制直角加强版 */
+audio {
+    width: 100%;
+    height: 40px;
+    margin: 5px 0 0;
+    border-radius: 0 !important;      /* 强制整体直角 */
+    outline: none;
+    border: none;
+    background: transparent;
+}
 
-        /* 针对WebKit内核的播放器内部控件 */
-        audio::-webkit-media-controls-panel {
-            background-color: #26323f;
-            border-radius: 0 !important;
-        }
-        audio::-webkit-media-controls-play-button {
-            background-color: #5f7a91;
-            border-radius: 0 !important;        /* 播放按钮直角 */
-        }
-        audio::-webkit-media-controls-current-time-display,
-        audio::-webkit-media-controls-time-remaining-display {
-            color: #eef2f5;
-        }
+/* 针对WebKit内核浏览器（Chrome, Safari）的内部控件 */
+audio::-webkit-media-controls-panel {
+    background-color: #26323f;
+    border-radius: 0 !important;       /* 强制面板直角 */
+    border: none !important;
+    outline: none !important;
+    -webkit-appearance: none;          /* 去除默认外观 */
+}
 
-        /* 针对Firefox等，使用通用样式尽量覆盖 */
-        audio::-moz-range-track {
-            border-radius: 0;
-        }
+audio::-webkit-media-controls-play-button {
+    background-color: #5f7a91;
+    border-radius: 0 !important;        /* 强制播放按钮直角 */
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-mute-button {
+    border-radius: 0 !important;
+    -webkit-appearance: none;
+}
+
+/* 针对Firefox */
+audio::-moz-range-track,
+audio::-moz-range-progress,
+audio::-moz-range-thumb {
+    border-radius: 0 !important;
+}
 
         .audio-extra {
             font-size: 0.8rem;
