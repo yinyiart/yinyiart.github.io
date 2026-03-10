@@ -12,21 +12,20 @@
         }
 
         body {
-            background-color: #2a333c;  /* 深蓝灰基底 */
+            background-color: #1a242b;  /* 深灰蓝 */
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
             color: #eef2f5;
             line-height: 1.5;
             padding: 0;
         }
 
-        /* 整体布局容器 */
         .site-container {
-            max-width: 1600px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 40px 30px;
         }
 
-        /* 顶部导航 - 简洁文字 */
+        /* 顶部导航 */
         .top-nav {
             display: flex;
             justify-content: flex-end;
@@ -35,10 +34,10 @@
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #a0b3c5;
+            color: #8a9bb0;
         }
         .top-nav a {
-            color: #a0b3c5;
+            color: #8a9bb0;
             text-decoration: none;
             transition: color 0.2s;
         }
@@ -47,15 +46,15 @@
             color: white;
         }
 
-        /* 主内容区：左侧脉络 + 右侧作品网格 */
+        /* 主内容：左侧标签 + 右侧网格 */
         .main-content {
             display: flex;
             gap: 40px;
         }
 
-        /* 左侧脉络面板 */
+        /* 左侧标签面板 */
         .tag-panel {
-            flex: 0 0 160px;
+            flex: 0 0 140px;
             position: sticky;
             top: 40px;
             align-self: flex-start;
@@ -65,54 +64,43 @@
             font-weight: 400;
             letter-spacing: 2px;
             margin-bottom: 20px;
-            color: #a0b3c5;
+            color: #8a9bb0;
             text-transform: uppercase;
         }
         .tag-list {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
         .tag {
-            padding: 6px 0 6px 12px;
+            padding: 6px 0;
             font-size: 0.9rem;
             cursor: pointer;
             transition: 0.2s;
-            color: #a0b3c5;
-            border-left: 3px solid transparent;
+            color: #8a9bb0;          /* 统一灰色 */
             background: transparent;
+            border: none;
         }
         .tag:hover {
-            color: white;
-            background: rgba(255,255,255,0.05);
+            color: #d0e0f0;
         }
         .tag.active {
-            color: white;
-            border-left-width: 5px;
-            background: rgba(255,255,255,0.1);
+            color: white;             /* 激活时白色 */
+            font-weight: 500;
         }
-        .tag[data-tag="all"] { border-left-color: #a0b3c5; }
-        .tag[data-tag="zhesi"] { border-left-color: #5f6f80; }
-        .tag[data-tag="public-space"] { border-left-color: #2c3e4f; }
-        .tag[data-tag="public-memory"] { border-left-color: #8b5a2b; }
-        .tag[data-tag="body"] { border-left-color: #b85e3a; }
-        .tag[data-tag="media"] { border-left-color: #6a4e7a; }
-        .tag[data-tag="sound-image"] { border-left-color: #2f6f5e; }
-        .tag[data-tag="performance"] { border-left-color: #3a7ca5; }
-        .tag[data-tag="field-recording"] { border-left-color: #a0b3c5; }
 
-        /* 右侧作品网格 */
+        /* 右侧作品网格：固定两列 */
         .works-grid {
             flex: 1;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
         }
 
         /* 作品卡片 */
         .work-card {
-            background: #1f2a33;
-            border: 1px solid #3a4752;
+            background: #1f2c35;
+            border: 1px solid #2e3b48;
             transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
             display: flex;
@@ -121,18 +109,21 @@
         .work-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            border-color: #5f6f80;
+            border-color: #5f7a91;
         }
 
+        /* 图片区域加大，比例3:2 */
         .work-image {
             width: 100%;
-            aspect-ratio: 4 / 3;  /* 统一比例，可根据需要调整 */
-            background-color: #2e3b4e;  /* 占位色 */
+            aspect-ratio: 3 / 2;
+            background-color: #2e3f4d;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #a0b3c5;
-            font-size: 0.8rem;
+            color: #8a9bb0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #2e3b48;
+            overflow: hidden;
         }
         .work-image img {
             width: 100%;
@@ -141,20 +132,21 @@
             display: block;
         }
 
+        /* 文字部分缩小 */
         .work-info {
-            padding: 16px 14px;
+            padding: 14px 12px;
         }
 
         .work-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 400;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             color: #eef2f5;
         }
         .work-year {
-            font-size: 0.85rem;
-            color: #a0b3c5;
-            margin-bottom: 10px;
+            font-size: 0.8rem;
+            color: #8a9bb0;
+            margin-bottom: 8px;
         }
         .work-tags {
             display: flex;
@@ -163,25 +155,10 @@
         }
         .work-tag {
             font-size: 0.7rem;
-            padding: 2px 8px;
-            border-radius: 20px;
-            background: #2a3a45;
-            color: #c0d0e0;
-            border-left: 2px solid transparent;
-        }
-        /* 每个脉络标签的左侧颜色条（在卡片内用小圆点或线条表示） */
-        .work-tag[data-tag="zhesi"] { border-left-color: #5f6f80; }
-        .work-tag[data-tag="public-space"] { border-left-color: #2c3e4f; }
-        .work-tag[data-tag="public-memory"] { border-left-color: #8b5a2b; }
-        .work-tag[data-tag="body"] { border-left-color: #b85e3a; }
-        .work-tag[data-tag="media"] { border-left-color: #6a4e7a; }
-        .work-tag[data-tag="sound-image"] { border-left-color: #2f6f5e; }
-        .work-tag[data-tag="performance"] { border-left-color: #3a7ca5; }
-        .work-tag[data-tag="field-recording"] { border-left-color: #a0b3c5; }
-
-        /* 暂无图片时的占位文字 */
-        .no-image {
-            color: #a0b3c5;
+            color: #b0c8e0;          /* 只有文字颜色，无背景无边框 */
+            background: transparent;
+            padding: 0;
+            border: none;
         }
 
         /* 筛选隐藏 */
@@ -189,18 +166,16 @@
             display: none;
         }
 
-        /* 页脚留白 */
         .footer {
             margin-top: 60px;
             text-align: center;
-            color: #5f6f80;
+            color: #5f7485;
             font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
     <div class="site-container">
-        <!-- 导航 -->
         <div class="top-nav">
             <a href="index.html">殷漪</a>
             <a href="musician.html">音乐家</a>
@@ -210,9 +185,8 @@
             <a href="about.html">关于</a>
         </div>
 
-        <!-- 主内容区 -->
         <div class="main-content">
-            <!-- 左侧脉络面板 -->
+            <!-- 左侧标签面板 -->
             <div class="tag-panel">
                 <h3>脉络</h3>
                 <div class="tag-list" id="tag-panel">
@@ -230,7 +204,7 @@
 
             <!-- 右侧作品网格 -->
             <div class="works-grid" id="works-grid">
-                <!-- 每个作品卡片由 JavaScript 动态生成，避免手动重复 -->
+                <!-- 由 JavaScript 动态生成 -->
             </div>
         </div>
 
@@ -292,15 +266,11 @@
         function renderWorks(filterTag = 'all') {
             let html = '';
             works.forEach(work => {
-                // 判断是否符合筛选
                 if (filterTag !== 'all' && !work.tags.includes(filterTag)) return;
 
-                // 图片部分（如果有图片则显示，否则显示占位）
-                const imgHtml = work.image ? `<img src="${work.image}" alt="${work.title}">` : '<span class="no-image">暂无图片</span>';
-
-                // 生成脉络标签小圆点（每个脉络一个）
+                const imgHtml = work.image ? `<img src="${work.image}" alt="${work.title}">` : '<span>图片待上传</span>';
                 const tagSpans = work.tags.map(tag => {
-                    return `<span class="work-tag" data-tag="${tag}">${tagNames[tag] || tag}</span>`;
+                    return `<span class="work-tag">${tagNames[tag] || tag}</span>`;
                 }).join('');
 
                 html += `
@@ -316,30 +286,25 @@
             });
             grid.innerHTML = html;
 
-            // 添加点击卡片跳转（可改为作品详情页）
+            // 点击卡片跳转（预留）
             document.querySelectorAll('.work-card').forEach(card => {
                 card.addEventListener('click', function() {
-                    // 这里可以跳转到作品详情页，例如 work.html?id=xxx
-                    // 暂时弹出提示
                     const title = this.querySelector('.work-title').innerText;
                     alert(`即将进入作品详情：${title}`);
                 });
             });
         }
 
-        // 初始渲染（全部）
+        // 初始渲染
         renderWorks();
 
         // 脉络筛选
         const tags = document.querySelectorAll('.tag');
         tags.forEach(tagEl => {
             tagEl.addEventListener('click', function() {
-                // 更新激活状态
                 tags.forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
-
-                const selectedTag = this.dataset.tag;
-                renderWorks(selectedTag);
+                renderWorks(this.dataset.tag);
             });
         });
     </script>
