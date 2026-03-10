@@ -12,53 +12,74 @@
         }
 
         body {
-            background-color: #eef2f5;  /* 柔和蓝灰基底 */
+            background-color: #1a242b;  /* 更深沉的灰蓝 */
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #2e3b4e;             /* 深灰蓝字体 */
-            line-height: 1.5;
+            color: #eef2f5;
+            line-height: 1.6;
             padding: 40px 20px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background: #ffffff;
+            background-color: #1f2c35;  /* 略浅于背景，区分层次 */
             padding: 40px 30px;
-            border-radius: 2px;
-            box-shadow: 0 4px 20px rgba(0, 20, 30, 0.05);
-            border: 1px solid #d0d9e0;
+            border-radius: 4px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            border: 1px solid #2e3b48;
         }
 
         h1 {
-            font-size: 1.8rem;          /* 缩小 */
+            font-size: 1.8rem;
             font-weight: 400;
             letter-spacing: 2px;
             text-align: center;
             margin-bottom: 8px;
-            color: #2c3e4f;             /* 深灰蓝 */
-            border-bottom: 1px solid #cbd5e0;
-            padding-bottom: 16px;
-            font-family: 'Inter', sans-serif;
+            color: #d0e0f0;
+            border-bottom: 1px solid #2e3b48;
+            padding-bottom: 20px;
             text-transform: uppercase;
         }
 
         .subhead {
             text-align: center;
             font-style: italic;
-            color: #5f6f80;              /* 中灰蓝 */
+            color: #8a9bb0;
             margin-bottom: 40px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
         }
 
-        /* 作品条目 */
+        /* 作品卡片 */
         .work-item {
-            margin-bottom: 32px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid #dde3e9;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #2e3b48;
         }
 
         .work-item:last-child {
             border-bottom: none;
+        }
+
+        /* 图片区域 */
+        .work-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;  /* 统一比例，可按需调整 */
+            background-color: #2e3f4d;  /* 占位色 */
+            border-radius: 2px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8a9bb0;
+            font-size: 0.9rem;
+            border: 1px solid #3a4c5c;
+            overflow: hidden;
+        }
+        .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .work-header {
@@ -66,113 +87,130 @@
             align-items: baseline;
             flex-wrap: wrap;
             gap: 8px 16px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .work-title {
-            font-size: 1.3rem;            /* 缩小 */
+            font-size: 1.4rem;
             font-weight: 400;
-            color: #1f2b36;                /* 更深的灰蓝 */
+            color: #eef2f5;
             letter-spacing: 0.5px;
         }
 
         .work-year {
-            font-size: 0.85rem;
-            color: #5f6f80;
-            background: #e6ecf2;
-            padding: 2px 10px;
+            font-size: 0.9rem;
+            color: #8a9bb0;
+            background: #26323f;
+            padding: 2px 12px;
             border-radius: 30px;
         }
 
         .work-description {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 16px;
-            color: #3f4f60;
-            padding-left: 8px;
-            border-left: 2px solid #a0b3c5;
+            color: #c0d0e0;
+            padding-left: 10px;
+            border-left: 2px solid #3f5a6b;
         }
 
         /* 音频播放器 */
         audio {
             width: 100%;
-            height: 36px;
+            height: 40px;
             margin: 8px 0 0;
             border-radius: 2px;
             outline: none;
         }
 
-        /* 播放器颜色（部分浏览器支持） */
         audio::-webkit-media-controls-panel {
-            background-color: #e6ecf2;
+            background-color: #26323f;
         }
         audio::-webkit-media-controls-play-button {
-            background-color: #5f6f80;
+            background-color: #5f7a91;
             border-radius: 50%;
         }
 
         .audio-extra {
             font-size: 0.8rem;
-            color: #5f6f80;
-            margin-top: 4px;
+            color: #8a9bb0;
+            margin-top: 6px;
             text-align: right;
         }
 
         .audio-extra a {
-            color: #2c3e4f;
+            color: #b0c8e0;
             text-decoration: none;
             border-bottom: 1px dotted;
         }
 
-        /* 手稿缩略图（预留） */
-        .manuscript {
-            margin-top: 12px;
+        /* 顶部导航 */
+        .top-nav {
             display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 30px;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #8a9bb0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .manuscript img {
-            max-width: 100px;
-            max-height: 100px;
-            border: 1px solid #cbd5e0;
-            opacity: 0.85;
-            transition: 0.2s;
-            cursor: pointer;
+        .top-nav a {
+            color: #8a9bb0;
+            text-decoration: none;
+            transition: color 0.2s;
         }
-        .manuscript img:hover {
-            opacity: 1;
+        .top-nav a:hover,
+        .top-nav a.active {
+            color: white;
         }
 
-        /* 页脚导航 */
+        /* 页脚导航（可选） */
         .footer-nav {
-            margin-top: 48px;
+            margin-top: 60px;
             text-align: center;
             font-size: 0.8rem;
-            color: #5f6f80;
+            color: #5f7485;
         }
         .footer-nav a {
-            color: #2c3e4f;
+            color: #8a9bb0;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 12px;
             border-bottom: 1px solid transparent;
         }
         .footer-nav a:hover {
-            border-bottom-color: #5f6f80;
+            border-bottom-color: #5f7a91;
         }
 
         @media (max-width: 600px) {
             .container { padding: 30px 20px; }
             h1 { font-size: 1.5rem; }
-            .work-title { font-size: 1.1rem; }
+            .work-title { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
+    <!-- 顶部导航（与其他板块一致） -->
+    <div class="top-nav">
+        <a href="index.html">殷漪</a>
+        <a href="musician.html" class="active">音乐家</a>
+        <a href="artist.html">艺术家</a>
+        <a href="curator.html">策展人</a>
+        <a href="writing.html">写作</a>
+        <a href="about.html">关于</a>
+    </div>
+
     <div class="container">
         <h1>殷漪 · 音乐</h1>
-        <div class="subhead">严谨 · 深沉 · 手稿</div>
+        <div class="subhead">严谨 · 深沉 · 感性</div>
 
         <!-- 作品列表（按您给的顺序） -->
         <div class="work-item">
+            <div class="work-image" id="img-lian">
+                <span>图片待上传</span>
+            </div>
             <div class="work-header">
                 <span class="work-title">脸</span>
                 <span class="work-year">2005</span>
@@ -182,11 +220,12 @@
                 <source src="music/lian.mp3" type="audio/mpeg">
                 您的浏览器不支持 audio 元素。
             </audio>
-            <!-- 手稿预留区，如有图片可取消注释 -->
-            <!-- <div class="manuscript"><img src="images/lian-sketch.jpg" alt="脸手稿"></div> -->
         </div>
 
         <div class="work-item">
+            <div class="work-image" id="img-juluo">
+                <span>图片待上传</span>
+            </div>
             <div class="work-header">
                 <span class="work-title">聚落</span>
                 <span class="work-year">2007/2024</span>
@@ -197,6 +236,9 @@
         </div>
 
         <div class="work-item">
+            <div class="work-image" id="img-xiangtiankong">
+                <span>图片待上传</span>
+            </div>
             <div class="work-header">
                 <span class="work-title">向天空扔一粒石子</span>
                 <span class="work-year">2005</span>
@@ -208,13 +250,16 @@
         </div>
 
         <div class="work-item">
+            <div class="work-image" id="img-tingdao">
+                <span>图片待上传</span>
+            </div>
             <div class="work-header">
                 <span class="work-title">听的到海声的泳池</span>
                 <span class="work-year">2007/2014</span>
             </div>
             <div class="work-description">
                 收录于 XY#001，XY Record，北京，2015<br>
-                <span style="font-size:0.8rem">🔗 <a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#2c3e4f;">Bandcamp 链接</a></span>
+                <span style="font-size:0.8rem">🔗 <a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#b0c8e0;">Bandcamp 链接</a></span>
             </div>
             <audio controls preload="metadata">
                 <source src="music/ting-dao.mp3" type="audio/mpeg">
@@ -222,6 +267,9 @@
         </div>
 
         <div class="work-item">
+            <div class="work-image" id="img-biandaonan">
+                <span>图片待上传</span>
+            </div>
             <div class="work-header">
                 <span class="work-title">编导囡囡</span>
                 <span class="work-year">2015</span>
@@ -233,6 +281,9 @@
         </div>
 
         <div class="work-item">
+            <div class="work-image" id="img-erlun">
+                <span>图片待上传</span>
+            </div>
             <div class="work-header">
                 <span class="work-title">耳轮</span>
                 <span class="work-year">2010</span>
@@ -244,6 +295,9 @@
         </div>
 
         <div class="work-item">
+            <div class="work-image" id="img-nannan">
+                <span>图片待上传</span>
+            </div>
             <div class="work-header">
                 <span class="work-title">囡囡可能会来跳舞</span>
                 <span class="work-year">2008</span>
@@ -255,6 +309,9 @@
         </div>
 
         <div class="work-item">
+            <div class="work-image" id="img-xuanzhuan">
+                <span>图片待上传</span>
+            </div>
             <div class="work-header">
                 <span class="work-title">旋转</span>
                 <span class="work-year">2016</span>
@@ -265,6 +322,9 @@
         </div>
 
         <div class="work-item">
+            <div class="work-image" id="img-weijian">
+                <span>图片待上传</span>
+            </div>
             <div class="work-header">
                 <span class="work-title">未见</span>
                 <span class="work-year">2014</span>
@@ -275,6 +335,9 @@
         </div>
 
         <div class="work-item">
+            <div class="work-image" id="img-yitiaoxiaolu">
+                <span>图片待上传</span>
+            </div>
             <div class="work-header">
                 <span class="work-title">一条小路</span>
                 <span class="work-year">2022</span>
@@ -285,6 +348,7 @@
             </audio>
         </div>
 
+        <!-- 页脚导航 -->
         <div class="footer-nav">
             <a href="index.html">首页</a> ·
             <a href="artist.html">艺术家</a> ·
@@ -293,5 +357,11 @@
             <a href="about.html">关于</a>
         </div>
     </div>
+
+    <script>
+        // 后续可添加图片替换逻辑，目前只留占位
+        // 当您上传图片后，可用以下方式替换（以《脸》为例）：
+        // document.getElementById('img-lian').innerHTML = '<img src="images/lian.jpg" alt="脸">';
+    </script>
 </body>
 </html>
