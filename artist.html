@@ -12,17 +12,17 @@
         }
 
         body {
-            background-color: #1a242b;  /* 深灰蓝 */
+            background-color: #59585f;        /* R89 G88 B95 */
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #eef2f5;
-            line-height: 1.5;
-            padding: 0;
+            color: #f0f4f8;                   /* 浅灰文字，保证可读 */
+            line-height: 1.6;
+            padding: 40px 20px;
         }
 
         .site-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 30px;
+            padding: 0 5%;
         }
 
         /* 顶部导航 */
@@ -30,42 +30,33 @@
             display: flex;
             justify-content: flex-end;
             gap: 30px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #8a9bb0;
+            color: #d0d8e0;                    /* 浅色导航文字 */
         }
         .top-nav a {
-            color: #8a9bb0;
+            color: #d0d8e0;
             text-decoration: none;
-            transition: color 0.2s;
         }
         .top-nav a:hover,
         .top-nav a.active {
-            color: white;
+            color: #ffffff;                      /* 激活/悬停时白色 */
         }
 
-        /* 主内容：左侧标签 + 右侧网格 */
+        /* 主内容区：左侧标签 + 右侧网格 */
         .main-content {
             display: flex;
             gap: 40px;
         }
 
-        /* 左侧标签面板 */
+        /* 左侧脉络面板 */
         .tag-panel {
-            flex: 0 0 140px;
+            flex: 0 0 160px;
             position: sticky;
             top: 40px;
             align-self: flex-start;
-        }
-        .tag-panel h3 {
-            font-size: 0.9rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: #8a9bb0;
-            text-transform: uppercase;
         }
         .tag-list {
             display: flex;
@@ -73,23 +64,24 @@
             gap: 8px;
         }
         .tag {
-            padding: 6px 0;
+            padding: 4px 0;
             font-size: 0.9rem;
             cursor: pointer;
             transition: 0.2s;
-            color: #8a9bb0;          /* 统一灰色 */
+            color: #d0d8e0;
             background: transparent;
             border: none;
+            text-align: left;
         }
         .tag:hover {
-            color: #d0e0f0;
+            color: #ffffff;
         }
         .tag.active {
-            color: white;             /* 激活时白色 */
+            color: #ffffff;
             font-weight: 500;
         }
 
-        /* 右侧作品网格：固定两列 */
+        /* 右侧作品网格 */
         .works-grid {
             flex: 1;
             display: grid;
@@ -99,30 +91,23 @@
 
         /* 作品卡片 */
         .work-card {
-            background: #1f2c35;
-            border: 1px solid #2e3b48;
-            transition: transform 0.2s, box-shadow 0.2s;
+            background: transparent;
+            border: none;
             cursor: pointer;
             display: flex;
             flex-direction: column;
         }
-        .work-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            border-color: #5f7a91;
-        }
 
-        /* 图片区域加大，比例3:2 */
         .work-image {
             width: 100%;
             aspect-ratio: 3 / 2;
-            background-color: #2e3f4d;
+            background-color: #7a8088;          /* 稍浅的占位色，与背景协调 */
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #8a9bb0;
+            color: #d0d8e0;
             font-size: 0.9rem;
-            border-bottom: 1px solid #2e3b48;
             overflow: hidden;
         }
         .work-image img {
@@ -132,22 +117,24 @@
             display: block;
         }
 
-        /* 文字部分缩小 */
         .work-info {
-            padding: 14px 12px;
+            padding: 0;
         }
 
         .work-title {
-            font-size: 1.1rem;
+            font-size: 1.0rem;
             font-weight: 400;
-            margin-bottom: 4px;
-            color: #eef2f5;
+            color: #f0f4f8;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
         }
+
         .work-year {
-            font-size: 0.8rem;
-            color: #8a9bb0;
-            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: #d0d8e0;
+            margin-bottom: 6px;
         }
+
         .work-tags {
             display: flex;
             flex-wrap: wrap;
@@ -155,7 +142,7 @@
         }
         .work-tag {
             font-size: 0.7rem;
-            color: #b0c8e0;          /* 只有文字颜色，无背景无边框 */
+            color: #d0d8e0;
             background: transparent;
             padding: 0;
             border: none;
@@ -166,11 +153,73 @@
             display: none;
         }
 
-        .footer {
-            margin-top: 60px;
-            text-align: center;
-            color: #5f7485;
-            font-size: 0.8rem;
+        /* 响应式 */
+        @media (max-width: 800px) {
+            .main-content {
+                gap: 30px;
+            }
+            .tag-panel {
+                flex: 0 0 140px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .site-container {
+                padding: 0 8%;
+            }
+            .top-nav {
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .main-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .tag-panel {
+                flex: auto;
+                position: static;
+                width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .tag-list {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 15px;
+            }
+            .tag {
+                padding: 4px 0;
+                font-size: 0.85rem;
+                white-space: nowrap;
+            }
+            .works-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .work-title {
+                font-size: 1.0rem;
+            }
+            .work-year {
+                font-size: 0.8rem;
+            }
+            .work-tag {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .site-container {
+                max-width: 1400px;
+            }
+            .work-title {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -183,12 +232,12 @@
             <a href="curator.html">策展人</a>
             <a href="writing.html">写作</a>
             <a href="about.html">关于</a>
+            <a href="artist_en.html">EN</a>
         </div>
 
         <div class="main-content">
-            <!-- 左侧标签面板 -->
+            <!-- 左侧脉络面板 -->
             <div class="tag-panel">
-    
                 <div class="tag-list" id="tag-panel">
                     <div class="tag active" data-tag="all">全部</div>
                     <div class="tag" data-tag="zhesi">哲思</div>
@@ -207,46 +256,45 @@
                 <!-- 由 JavaScript 动态生成 -->
             </div>
         </div>
-
-        <div class="footer">© 殷漪</div>
     </div>
 
     <script>
-        // 作品数据（与之前相同，请根据实际脉络修改）
+        // 作品数据（33件，已更新年份并按从新到旧排序）
         const works = [
-            { id: 'sanfenzhong', title: '三分钟', year: '2008|2020', image: '', tags: ['public-memory', 'performance'] },
-            { id: 'wuti', title: '无题（乐谱一）', year: '2011', image: '', tags: ['zhesi', 'media'] },
-            { id: 'heliu', title: '你可以无数次聆听同一条河流', year: '2012-2016', image: '', tags: ['zhesi', 'field-recording'] },
-            { id: 'weiliao', title: '为了告别的聚会', year: '2013-2019', image: '', tags: ['public-space', 'public-memory', 'field-recording'] },
-            { id: 'moshnegren', title: '陌生人', year: '', image: '', tags: ['body'] },
-            { id: 'dinghai', title: '20140901-20140930', year: '2014', image: '', tags: ['public-space', 'public-memory', 'field-recording'] },
-            { id: 'hailang', title: '海浪', year: '2016', image: '', tags: ['zhesi', 'performance'] },
-            { id: 'tingdao', title: '你听到过海', year: '2016', image: '', tags: ['public-space', 'media', 'field-recording'] },
-            { id: 'liwu', title: '礼物', year: '2016-2021', image: '', tags: ['public-space', 'media', 'performance'] },
-            { id: 'yici', title: '一次上海的旅程', year: '2017', image: '', tags: ['public-space', 'public-memory', 'sound-image'] },
-            { id: 'ditu', title: '地图', year: '2018', image: '', tags: ['body', 'sound-image', 'field-recording'] },
-            { id: 'erzhai', title: '耳宅声景', year: '2018', image: '', tags: ['public-space', 'field-recording'] },
-            { id: 'shige', title: '十个墙角', year: '2018', image: '', tags: ['zhesi'] },
-            { id: 'meishuguan', title: '美术馆', year: '2018', image: '', tags: ['body', 'sound-image'] },
-            { id: 'zhenshen', title: '真身', year: '2019', image: '', tags: ['zhesi', 'body', 'media', 'performance'] },
-            { id: 'xiangxi', title: '向西', year: '2019', image: '', tags: ['public-space', 'public-memory', 'sound-image', 'performance', 'field-recording'] },
-            { id: 'liuge', title: '聆听的六个姿态', year: '2019', image: '', tags: ['public-space', 'performance'] },
-            { id: 'shesheng', title: '摄生', year: '2020', image: '', tags: ['zhesi', 'body', 'performance'] },
-            { id: 'shanghai', title: '上海', year: '2021', image: '', tags: ['public-space', 'public-memory', 'body', 'performance', 'field-recording'] },
-            { id: 'nide', title: '你的声音里', year: '2021', image: '', tags: ['zhesi', 'body'] },
-            { id: 'ruch', title: '如初', year: '2021', image: '', tags: ['public-space', 'public-memory', 'performance'] },
+            { id: 'gan', title: '感官的流动', year: '2025', image: '', tags: ['public-space', 'public-memory', 'media', 'field-recording'] },
+            { id: 'ligeti', title: '里盖蒂的100节拍器', year: '2025', image: '', tags: ['body', 'performance'] },
+            { id: 'zhengduo', title: '争夺', year: '2025', image: '', tags: ['media'] },
+            { id: 'yexiang', title: '野响', year: '2024', image: '', tags: ['public-space', 'body'] },
+            { id: 'wo', title: '我听到了', year: '2023', image: '', tags: ['zhesi', 'public-space', 'body', 'public-memory', 'performance'] },
+            { id: 'guishi', title: '归时始无声', year: '2023', image: '', tags: ['zhesi', 'performance'] },
+            { id: 'bumian', title: '不眠电台', year: '2023', image: '', tags: ['public-memory', 'media'] },
             { id: 'women', title: '我们中的他们，他们中的我们', year: '2022', image: '', tags: ['public-space', 'media', 'performance'] },
             { id: 'cong', title: '从 到新天地', year: '2022', image: '', tags: ['public-space', 'public-memory', 'field-recording'] },
             { id: 'linju', title: '邻居', year: '2022', image: '', tags: ['public-memory'] },
             { id: 'yinyue', title: '音乐对我们来说到底意味着什么？', year: '2022', image: '', tags: ['zhesi', 'performance', 'field-recording'] },
-            { id: 'guishi', title: '归时始无声', year: '2023', image: '', tags: ['zhesi', 'performance'] },
-            { id: 'bumian', title: '不眠电台', year: '2023', image: '', tags: ['public-memory', 'media'] },
-            { id: 'wo', title: '我听到了', year: '2023', image: '', tags: ['zhesi', 'public-space', 'body', 'public-memory', 'performance'] },
-            { id: 'yexiang', title: '野响', year: '2024', image: '', tags: ['public-space', 'body'] },
-            { id: 'gan', title: '感官的流动', year: '', image: '', tags: ['public-space', 'public-memory', 'media', 'field-recording'] },
-            { id: 'ligeti', title: '里盖蒂的100节拍器', year: '', image: '', tags: ['body', 'performance'] },
-            { id: 'zhengduo', title: '争夺', year: '', image: '', tags: ['media'] },
-            { id: 'xinjing', title: '心经', year: '', image: '', tags: ['zhesi', 'media'] }
+            { id: 'shanghai', title: '上海', year: '2021', image: '', tags: ['public-space', 'public-memory', 'body', 'performance', 'field-recording'] },
+            { id: 'nide', title: '你的声音里', year: '2021', image: '', tags: ['zhesi', 'body'] },
+            { id: 'ruch', title: '如初', year: '2021', image: '', tags: ['public-space', 'public-memory', 'performance'] },
+            { id: 'shesheng', title: '摄生', year: '2020', image: '', tags: ['zhesi', 'body', 'performance'] },
+            { id: 'zhenshen', title: '真身', year: '2019', image: '', tags: ['zhesi', 'body', 'media', 'performance'] },
+            { id: 'xiangxi', title: '向西', year: '2019', image: '', tags: ['public-space', 'public-memory', 'sound-image', 'performance', 'field-recording'] },
+            { id: 'liuge', title: '聆听的六个姿态', year: '2019', image: '', tags: ['public-space', 'performance'] },
+            { id: 'shige', title: '十个墙角', year: '2018', image: '', tags: ['zhesi'] },
+            { id: 'meishuguan', title: '美术馆', year: '2018', image: '', tags: ['body', 'sound-image'] },
+            { id: 'erzhai', title: '耳宅声景', year: '2018', image: '', tags: ['public-space', 'field-recording'] },
+            { id: 'ditu', title: '地图', year: '2018', image: '', tags: ['body', 'sound-image', 'field-recording'] },
+            { id: 'yici', title: '一次上海的旅程', year: '2017', image: '', tags: ['public-space', 'public-memory', 'sound-image'] },
+            { id: 'hailang', title: '海浪', year: '2016', image: '', tags: ['zhesi', 'performance'] },
+            { id: 'tingdao', title: '你听到过海', year: '2016', image: '', tags: ['public-space', 'media', 'field-recording'] },
+            { id: 'liwu', title: '礼物', year: '2016-2021', image: '', tags: ['public-space', 'media', 'performance'] },
+            { id: 'xinjing', title: '心经', year: '2014', image: '', tags: ['zhesi', 'media'] },
+            { id: 'weijian', title: '未见', year: '2014', image: '', tags: [] },
+            { id: 'dinghai', title: '20140901-20140930', year: '2014', image: '', tags: ['public-space', 'public-memory', 'field-recording'] },
+            { id: 'weiliao', title: '为了告别的聚会', year: '2013-2019', image: '', tags: ['public-space', 'public-memory', 'field-recording'] },
+            { id: 'moshnegren', title: '陌生人', year: '2013', image: '', tags: ['body'] },
+            { id: 'heliu', title: '你可以无数次聆听同一条河流', year: '2012-2016', image: '', tags: ['zhesi', 'field-recording'] },
+            { id: 'wuti', title: '无题（乐谱一）', year: '2011', image: '', tags: ['zhesi', 'media'] },
+            { id: 'sanfenzhong', title: '三分钟', year: '2008|2020', image: '', tags: ['public-memory', 'performance'] }
         ];
 
         // 脉络中文名称映射
@@ -271,7 +319,7 @@
                 const imgHtml = work.image ? `<img src="${work.image}" alt="${work.title}">` : '<span>图片待上传</span>';
                 const tagSpans = work.tags.map(tag => {
                     return `<span class="work-tag">${tagNames[tag] || tag}</span>`;
-                }).join('');
+                }).join(' · ');
 
                 html += `
                     <div class="work-card" data-tags="${work.tags.join(',')}">
@@ -286,7 +334,7 @@
             });
             grid.innerHTML = html;
 
-            // 点击卡片跳转（预留）
+            // 点击卡片跳转预留
             document.querySelectorAll('.work-card').forEach(card => {
                 card.addEventListener('click', function() {
                     const title = this.querySelector('.work-title').innerText;
