@@ -22,7 +22,7 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 5%;                    /* 左右缩进，使图片与文字对齐 */
+            padding: 0 5%;
         }
 
         /* 顶部导航 */
@@ -45,16 +45,14 @@
             color: #1f2c35;
         }
 
-        /* 创作介绍文字 - 分段 */
+        /* 创作介绍文字 - 紧凑 */
         .intro {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             color: #53585f;
             font-size: 1rem;
+            line-height: 1.2;
         }
         .intro p {
-            margin-bottom: 1em;                /* 段落间距 */
-        }
-        .intro p:last-child {
             margin-bottom: 0;
         }
 
@@ -111,7 +109,7 @@
         }
 
         .work-description {
-            font-size: 0.9rem;                 /* 调小 */
+            font-size: 0.9rem;
             margin-bottom: 16px;
             color: #53585f;
             padding-left: 0;
@@ -131,10 +129,10 @@
             height: 28px;
             min-width: 28px;
             min-height: 28px;
-            background: transparent;             /* 背景透明 */
+            background: transparent;
             border: none;
             border-radius: 0;
-            color: #53585f;                      /* 三角形与文字同色 */
+            color: #53585f;
             font-size: 0.9rem;
             cursor: pointer;
             display: flex;
@@ -144,7 +142,7 @@
             transition: none;
         }
         .play-btn:hover {
-            background: transparent;              /* 悬停无变化 */
+            background: transparent;
             color: #53585f;
         }
 
@@ -222,17 +220,20 @@
         /* 响应式 */
         @media (max-width: 600px) {
             body {
-                padding: 20px 10px;              /* 左右内边距缩小，但container会处理缩进 */
+                padding: 20px 10px;
             }
             .container {
-                padding: 0 8%;                    /* 手机上更内缩 */
+                padding: 0 8%;
             }
             .top-nav {
                 justify-content: center;
                 gap: 20px;
                 flex-wrap: wrap;
             }
-            .intro { margin-bottom: 30px; }
+            .intro {
+                margin-bottom: 30px;
+                line-height: 1.2;
+            }
             .work-item { margin-bottom: 40px; }
             .work-header { flex-direction: column; align-items: flex-start; gap: 4px; }
             .work-title { font-size: 1.2rem; }
@@ -271,7 +272,7 @@
     </div>
 
     <div class="container">
-        <!-- 音乐创作介绍（分段） -->
+        <!-- 音乐创作介绍（分段，无段落间距） -->
         <div class="intro">
             <p>殷漪的音乐生涯开始于慢核乐队，兼任贝司手与主唱。</p>
             <p>2000年转向数字音乐创作与笔记本现场表演。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。</p>
@@ -279,23 +280,211 @@
             <p>近年来其音乐创作主要集中于基于实地录音和原声乐器的混合音乐。</p>
         </div>
 
-        <!-- 作品列表（全部保留，此处仅展示第一首，完整版包含所有10首，代码中已包含） -->
-        <!-- 以下为完整列表，已按顺序包含所有作品，此处略缩，实际使用请确保全部存在 -->
-        <!-- 由于篇幅，此处省略重复，但您需要保留之前的所有作品节点 -->
-        <!-- 为节省篇幅，在最终交付时我将包含全部作品，但这里为了简洁只显示第一首示例 -->
-        <!-- 您可以直接使用之前版本的完整列表，只需替换样式 -->
-    </div>
+        <!-- 作品列表（共10首） -->
+        <div class="work-item">
+            <div class="work-image" id="img-lian"><span>图片待上传</span></div>
+            <div class="work-header">
+                <span class="work-title">脸</span>
+                <span class="work-year">2005</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</div>
+                <div class="custom-player" data-src="music/lian.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/lian.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
 
-    <div class="footer-nav">
-        <a href="index.html">首页</a> ·
-        <a href="artist.html">艺术家</a> ·
-        <a href="curator.html">策展人</a> ·
-        <a href="writing.html">写作</a> ·
-        <a href="about.html">关于</a>
+        <div class="work-item">
+            <div class="work-image" id="img-juluo"><span>图片待上传</span></div>
+            <div class="work-header">
+                <span class="work-title">聚落</span>
+                <span class="work-year">2007/2024</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description"></div>
+                <div class="custom-player" data-src="music/juluo.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/juluo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-xiangtiankong"><span>图片待上传</span></div>
+            <div class="work-header">
+                <span class="work-title">向天空扔一粒石子</span>
+                <span class="work-year">2005</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</div>
+                <div class="custom-player" data-src="music/xiang-tian-kong.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/xiang-tian-kong.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-tingdao"><span>图片待上传</span></div>
+            <div class="work-header">
+                <span class="work-title">听的到海声的泳池</span>
+                <span class="work-year">2007/2014</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">
+                    收录于 XY#001，XY Record，北京，2015<br>
+                    <span style="font-size:0.8rem">🔗 <a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#53585f;">Bandcamp 链接</a></span>
+                </div>
+                <div class="custom-player" data-src="music/ting-dao.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/ting-dao.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-biandaonan"><span>图片待上传</span></div>
+            <div class="work-header">
+                <span class="work-title">编导囡囡</span>
+                <span class="work-year">2015</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">为舞蹈影像《八》而作</div>
+                <div class="custom-player" data-src="music/bian-dao-nan-nan.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/bian-dao-nan-nan.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-erlun"><span>图片待上传</span></div>
+            <div class="work-header">
+                <span class="work-title">耳轮</span>
+                <span class="work-year">2010</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">从现代舞者李翎溪的一段独舞发展而来</div>
+                <div class="custom-player" data-src="music/erlun.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/erlun.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-nannan"><span>图片待上传</span></div>
+            <div class="work-header">
+                <span class="work-title">囡囡可能会来跳舞</span>
+                <span class="work-year">2008</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">为囡囡而作</div>
+                <div class="custom-player" data-src="music/nan-nan-hui-lai.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/nan-nan-hui-lai.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-xuanzhuan"><span>图片待上传</span></div>
+            <div class="work-header">
+                <span class="work-title">旋转</span>
+                <span class="work-year">2016</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description"></div>
+                <div class="custom-player" data-src="music/xuan-zhuan.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/xuan-zhuan.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-weijian"><span>图片待上传</span></div>
+            <div class="work-header">
+                <span class="work-title">未见</span>
+                <span class="work-year">2014</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description"></div>
+                <div class="custom-player" data-src="music/wei-jian.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/wei-jian.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-yitiaoxiaolu"><span>图片待上传</span></div>
+            <div class="work-header">
+                <span class="work-title">一条小路</span>
+                <span class="work-year">2022</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">为南京大屠杀纪念馆的一条小路而作 · 展览《宁在：南京·和平城市记忆设计展》委约</div>
+                <div class="custom-player" data-src="music/yi-tiao-xiao-lu.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/yi-tiao-xiao-lu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-nav">
+            <a href="index.html">首页</a> ·
+            <a href="artist.html">艺术家</a> ·
+            <a href="curator.html">策展人</a> ·
+            <a href="writing.html">写作</a> ·
+            <a href="about.html">关于</a>
+        </div>
     </div>
 
     <script>
-        // 自定义播放器逻辑（与之前相同）
+        // 自定义播放器逻辑
         document.querySelectorAll('.custom-player').forEach(player => {
             const audio = player.querySelector('audio');
             const playBtn = player.querySelector('.play-btn');
