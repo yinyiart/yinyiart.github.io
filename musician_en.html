@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yin Yi · Musician</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #dae7eb;
+            font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+            color: #53585f;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #53585f;
+        }
+        .top-nav a {
+            color: #53585f;
+            text-decoration: none;
+        }
+        .top-nav a:hover,
+        .top-nav a.active {
+            color: #1f2c35;
+        }
+
+        /* 创作介绍文字 */
+        .intro {
+            margin-bottom: 40px;
+            color: #53585f;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        .intro p {
+            margin-bottom: 0.3em;
+        }
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 作品卡片 */
+        .work-item {
+            margin-bottom: 50px;
+        }
+
+        /* 图片区域 */
+        .work-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #c0d0e0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #53585f;
+            font-size: 0.9rem;
+            overflow: hidden;
+        }
+        .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .work-header {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-bottom: 8px;
+        }
+
+        .work-title {
+            font-size: 1.0rem;
+            font-weight: 400;
+            color: #53585f;
+            letter-spacing: 0.5px;
+        }
+
+        .work-year {
+            font-size: 0.85rem;
+            color: #53585f;
+        }
+
+        .player-box {
+            background: transparent;
+            padding: 0;
+            border: none;
+            margin-top: 5px;
+        }
+
+        .work-description {
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            color: #53585f;
+            padding-left: 0;
+            border-left: none;
+        }
+
+        /* 自定义播放器 */
+        .custom-player {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+        }
+
+        .play-btn {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            min-height: 28px;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            color: #53585f;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: none;
+            -webkit-appearance: none;
+            appearance: none;
+            outline: none;
+            box-shadow: none;
+            text-shadow: none;
+            padding: 0;
+            margin: 0;
+            line-height: 1;
+        }
+        .play-btn:hover {
+            background: transparent;
+            color: #53585f;
+        }
+
+        .time {
+            font-size: 0.85rem;
+            color: #53585f;
+            min-width: 80px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .seek-slider {
+            flex: 1;
+            height: 4px;
+            background: #b0c8e0;
+            border-radius: 0;
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            min-width: 100px;
+        }
+        .seek-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+        .seek-slider::-moz-range-thumb {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            border: none;
+        }
+        .seek-slider::-moz-range-track {
+            height: 4px;
+            background: #b0c8e0;
+            border-radius: 0;
+        }
+        .seek-slider::-webkit-slider-runnable-track {
+            height: 4px;
+            background: linear-gradient(to right, #3f5a6b, #3f5a6b) 0% / var(--progress) 100% no-repeat #b0c8e0;
+        }
+        .seek-slider::-moz-range-progress {
+            height: 4px;
+            background-color: #3f5a6b;
+        }
+
+        .audio-extra {
+            font-size: 0.8rem;
+            color: #53585f;
+            margin-top: 8px;
+            text-align: right;
+        }
+        .audio-extra a {
+            color: #53585f;
+            text-decoration: none;
+            border-bottom: 1px dotted;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 0 8%;
+            }
+            .top-nav {
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .intro {
+                margin-bottom: 30px;
+                line-height: 1.5;
+            }
+            .work-item { margin-bottom: 40px; }
+            .work-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+            .work-title { font-size: 0.95rem; }
+            .work-year { font-size: 0.8rem; }
+            .work-description { font-size: 0.8rem; }
+            .custom-player { flex-wrap: wrap; gap: 6px; }
+            .play-btn { width: 28px; height: 28px; }
+            .time { min-width: 70px; font-size: 0.75rem; }
+            .seek-slider { min-width: 120px; order: 4; width: 100%; }
+        }
+
+        @media (min-width: 601px) and (max-width: 900px) {
+            .container { max-width: 100%; }
+        }
+
+        @media (min-width: 1400px) {
+            .container { max-width: 1100px; }
+            .work-title { font-size: 1.2rem; }
+        }
+
+        @media (hover: none) {
+            .play-btn:hover {
+                background: transparent;
+                color: #53585f;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="index.html">Yin Yi</a>
+        <a href="musician.html">Musician</a>
+        <a href="artist.html">Artist</a>
+        <a href="curator.html">Curator</a>
+        <a href="writing.html">Writing</a>
+        <a href="about.html">About</a>
+        <a href="musician.html">CN</a>   <!-- 指向中文版 -->
+    </div>
+
+    <div class="container">
+        <!-- 音乐创作介绍 (English) -->
+        <div class="intro">
+            <p>Yin Yi's musical career began with the slowcore band, serving as bassist and lead vocalist.</p>
+            <p>In 2000, he turned to digital music composition and laptop performance. In 2005, as a musician, he became a founding member of the avant-garde performance group "Zuheniao" (Shanghai).</p>
+            <p>Yin Yi's early musical creations include: live music performance, contemporary dance, and physical theatre. His music has been commissioned by performance groups including "Zuheniao" (Shanghai), Rubato Dance Company (Berlin), Guangdong Modern Dance Company, Xie Xin Dance Theatre, and Ergao Performance.</p>
+            <p>In recent years, his musical work has focused on hybrid music based on field recordings and acoustic instruments.</p>
+        </div>
+
+        <!-- 作品列表（10首，英文） -->
+        <div class="work-item">
+            <div class="work-image" id="img-lian"><img src="images/lian.jpg" alt="Face"></div>
+            <div class="work-header">
+                <span class="work-title">Face (Lian)</span>
+                <span class="work-year">2005</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">For the physical theatre piece "Tongue for the Memory of Homeland", commissioned by Zuheniao</div>
+                <div class="custom-player" data-src="music/lian.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/lian.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-juluo"><img src="images/juluo.jpg" alt="Settlement"></div>
+            <div class="work-header">
+                <span class="work-title">Settlement (Juluo)</span>
+                <span class="work-year">2007/2024</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description"></div>
+                <div class="custom-player" data-src="music/juluo.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/juluo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-xiangtiankong"><img src="images/xiangtiankong.jpg" alt="Throw a Pebble into the Sky"></div>
+            <div class="work-header">
+                <span class="work-title">Throw a Pebble into the Sky</span>
+                <span class="work-year">2005</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">For the physical theatre piece "Tongue for the Memory of Homeland", commissioned by Zuheniao</div>
+                <div class="custom-player" data-src="music/xiang-tian-kong.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/xiang-tian-kong.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-tingdao"><img src="images/tingdedaohaisheng.jpg" alt="A Swimming Pool Where You Can Hear the Sea"></div>
+            <div class="work-header">
+                <span class="work-title">A Swimming Pool Where You Can Hear the Sea</span>
+                <span class="work-year">2007/2014</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">
+                    Included in XY#001, XY Record, Beijing, 2015<br>
+                    <span style="font-size:0.8rem"><a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#53585f;">Album details</a></span>
+                </div>
+                <div class="custom-player" data-src="music/ting-dao.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/ting-dao.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-biandaonan"><img src="images/biandaonannan.png" alt="Director Nannan"></div>
+            <div class="work-header">
+                <span class="work-title">Director Nannan</span>
+                <span class="work-year">2015</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">For the dance film "Eight"</div>
+                <div class="custom-player" data-src="music/bian-dao-nan-nan.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/bian-dao-nan-nan.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-erlun"><img src="images/erlun.jpg" alt="Auricle"></div>
+            <div class="work-header">
+                <span class="work-title">Auricle (Erlun)</span>
+                <span class="work-year">2010</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">Developed from a solo dance by contemporary dancer Li Lingxi</div>
+                <div class="custom-player" data-src="music/erlun.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/erlun.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-nannan"><img src="images/nannan.jpg" alt="Nannan Might Come to Dance"></div>
+            <div class="work-header">
+                <span class="work-title">Nannan Might Come to Dance</span>
+                <span class="work-year">2008</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">For Nannan</div>
+                <div class="custom-player" data-src="music/nan-nan-hui-lai.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/nan-nan-hui-lai.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-xuanzhuan"><img src="images/xuanzhuan.jpg" alt="Spinning"></div>
+            <div class="work-header">
+                <span class="work-title">Spinning (Xuanzhuan)</span>
+                <span class="work-year">2016</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description"></div>
+                <div class="custom-player" data-src="music/xuan-zhuan.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/xuan-zhuan.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-weijian"><img src="images/weijian.jpg" alt="Unseen"></div>
+            <div class="work-header">
+                <span class="work-title">Unseen (Weijian)</span>
+                <span class="work-year">2014</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description"></div>
+                <div class="custom-player" data-src="music/wei-jian.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/wei-jian.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-image" id="img-yitiaoxiaolu"><img src="images/yitiaoxiaolu.jpg" alt="A Small Path"></div>
+            <div class="work-header">
+                <span class="work-title">A Small Path (Yi Tiao Xiao Lu)</span>
+                <span class="work-year">2022</span>
+            </div>
+            <div class="player-box">
+                <div class="work-description">Commissioned for a path at the Nanjing Massacre Memorial Hall, for the exhibition "Ning Zai: Nanjing · Peace City Memory Design Exhibition"</div>
+                <div class="custom-player" data-src="music/yi-tiao-xiao-lu.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/yi-tiao-xiao-lu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const players = document.querySelectorAll('.custom-player');
+
+        function pauseAllExcept(currentAudio) {
+            players.forEach(player => {
+                const audio = player.querySelector('audio');
+                const btn = player.querySelector('.play-btn');
+                if (audio !== currentAudio && !audio.paused) {
+                    audio.pause();
+                    btn.textContent = '▶';
+                }
+            });
+        }
+
+        players.forEach(player => {
+            const audio = player.querySelector('audio');
+            const playBtn = player.querySelector('.play-btn');
+            const timeSpan = player.querySelector('.time');
+            const seekSlider = player.querySelector('.seek-slider');
+
+            audio.addEventListener('loadedmetadata', () => {
+                seekSlider.max = audio.duration;
+                timeSpan.textContent = `0:00 / ${formatTime(audio.duration)}`;
+            });
+
+            playBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    pauseAllExcept(audio);
+                    audio.play();
+                    playBtn.textContent = '❚❚';
+                } else {
+                    audio.pause();
+                    playBtn.textContent = '▶';
+                }
+            });
+
+            audio.addEventListener('timeupdate', () => {
+                seekSlider.value = audio.currentTime;
+                timeSpan.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+                const progress = (audio.currentTime / audio.duration) * 100 || 0;
+                seekSlider.style.setProperty('--progress', progress + '%');
+            });
+
+            seekSlider.addEventListener('input', () => {
+                audio.currentTime = seekSlider.value;
+            });
+
+            audio.addEventListener('ended', () => {
+                playBtn.textContent = '▶';
+                seekSlider.value = 0;
+                timeSpan.textContent = `0:00 / ${formatTime(audio.duration)}`;
+                seekSlider.style.setProperty('--progress', '0%');
+            });
+
+            function formatTime(seconds) {
+                if (isNaN(seconds)) return '0:00';
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+        });
+    </script>
+</body>
+</html>
