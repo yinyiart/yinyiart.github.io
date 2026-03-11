@@ -12,9 +12,9 @@
         }
 
         body {
-            background-color: #25323c;  /* 统一的背景色 */
+            background-color: #dae7eb;  /* R218 G231 B235 浅蓝灰 */
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #eef2f5;
+            color: #1f2c35;              /* 深色文字保证可读 */
             line-height: 1.6;
             padding: 40px 20px;
         }
@@ -33,40 +33,52 @@
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #8a9bb0;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            color: #3f5a6b;              /* 深灰蓝，适应浅色背景 */
         }
         .top-nav a {
-            color: #8a9bb0;
+            color: #3f5a6b;
             text-decoration: none;
             transition: color 0.2s;
         }
         .top-nav a:hover,
         .top-nav a.active {
-            color: white;
+            color: #1f2c35;
         }
 
-        /* 作品卡片——无背景、无内边距 */
+        /* 创作介绍文字 */
+        .intro {
+            background: #ffffffcc;        /* 半透明白，增加层次感 */
+            backdrop-filter: blur(2px);
+            padding: 24px 28px;
+            margin-bottom: 50px;
+            border: 1px solid #b0c8e0;
+            color: #1f2c35;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        .intro p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 作品卡片 */
         .work-item {
-            margin-bottom: 40px;        /* 间距适当缩小 */
-            border: none;
-            background: transparent;     /* 完全透明，直接显示背景 */
+            margin-bottom: 50px;
         }
 
         /* 图片区域 */
         .work-image {
             width: 100%;
             aspect-ratio: 16 / 9;
-            background-color: #2e3f4d;   /* 占位色，有图片后会被覆盖 */
+            background-color: #c0d0e0;    /* 占位色，有图片后会被覆盖 */
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #8a9bb0;
+            color: #3f5a6b;
             font-size: 0.9rem;
             overflow: hidden;
+            border: 1px solid #b0c8e0;
         }
         .work-image img {
             width: 100%;
@@ -84,82 +96,107 @@
         }
 
         .work-title {
-            font-size: 1.3rem;          /* 略微缩小 */
+            font-size: 1.3rem;
             font-weight: 400;
-            color: #eef2f5;
+            color: #1f2c35;
             letter-spacing: 0.5px;
         }
 
         .work-year {
             font-size: 0.85rem;
-            color: #8a9bb0;
-            background: #26323f;
+            color: #3f5a6b;
+            background: #e0f0f5;
             padding: 2px 12px;
             border-radius: 30px;
         }
 
-        .work-description {
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-            color: #c0d0e0;
-            padding-left: 10px;
-            border-left: 2px solid #3f5a6b;
+        /* 描述 + 播放器组合框 */
+        .player-box {
+            background: #ffffffcc;        /* 半透明白，与 intro 统一 */
+            backdrop-filter: blur(2px);
+            padding: 16px 20px;
+            border: 1px solid #b0c8e0;
         }
 
-        /* 音频播放器 - 彻底直角 */
-        /* 音频播放器 - 强制直角加强版 */
-audio {
-    width: 100%;
-    height: 40px;
-    margin: 5px 0 0;
-    border-radius: 0 !important;      /* 强制整体直角 */
-    outline: none;
-    border: none;
-    background: transparent;
-}
+        .work-description {
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            color: #1f2c35;
+            border-left: 2px solid #3f5a6b;
+            padding-left: 16px;
+        }
 
-/* 针对WebKit内核浏览器（Chrome, Safari）的内部控件 */
-audio::-webkit-media-controls-panel {
-    background-color: #26323f;
-    border-radius: 0 !important;       /* 强制面板直角 */
-    border: none !important;
-    outline: none !important;
-    -webkit-appearance: none;          /* 去除默认外观 */
-}
+        /* 自定义播放器样式 */
+        .custom-player {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;      /* 继承父级背景 */
+        }
 
-audio::-webkit-media-controls-play-button {
-    background-color: #5f7a91;
-    border-radius: 0 !important;        /* 强制播放按钮直角 */
-    -webkit-appearance: none;
-    margin: 0;
-    padding: 0;
-}
+        .play-btn {
+            min-width: 44px;              /* 触摸友好 */
+            min-height: 44px;
+            width: 44px;
+            height: 44px;
+            background: #3f5a6b;
+            border: none;
+            border-radius: 0;              /* 直角 */
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+        .play-btn:hover {
+            background: #5f7a91;
+        }
 
-audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display,
-audio::-webkit-media-controls-timeline,
-audio::-webkit-media-controls-volume-slider,
-audio::-webkit-media-controls-mute-button {
-    border-radius: 0 !important;
-    -webkit-appearance: none;
-}
+        .time {
+            font-size: 0.8rem;
+            color: #1f2c35;
+            min-width: 80px;
+            font-variant-numeric: tabular-nums;
+        }
 
-/* 针对Firefox */
-audio::-moz-range-track,
-audio::-moz-range-progress,
-audio::-moz-range-thumb {
-    border-radius: 0 !important;
-}
+        .seek-slider {
+            flex: 1;
+            height: 5px;
+            background: #c0d0e0;
+            border-radius: 0;
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            min-width: 100px;              /* 确保在手机上也能拖动 */
+        }
+        .seek-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #3f5a6b;
+            border-radius: 0;
+            cursor: pointer;
+        }
+        .seek-slider::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #3f5a6b;
+            border-radius: 0;
+            cursor: pointer;
+            border: none;
+        }
 
         .audio-extra {
             font-size: 0.8rem;
-            color: #8a9bb0;
-            margin-top: 4px;
+            color: #3f5a6b;
+            margin-top: 10px;
             text-align: right;
         }
-
         .audio-extra a {
-            color: #b0c8e0;
+            color: #1f2c35;
             text-decoration: none;
             border-bottom: 1px dotted;
         }
@@ -168,22 +205,95 @@ audio::-moz-range-thumb {
             margin-top: 60px;
             text-align: center;
             font-size: 0.8rem;
-            color: #5f7485;
+            color: #3f5a6b;
         }
         .footer-nav a {
-            color: #8a9bb0;
+            color: #1f2c35;
             text-decoration: none;
             margin: 0 12px;
             border-bottom: 1px solid transparent;
         }
         .footer-nav a:hover {
-            border-bottom-color: #5f7a91;
+            border-bottom-color: #3f5a6b;
         }
 
+        /* -------------------- 响应式设计 -------------------- */
+        /* 手机竖屏 (宽度 ≤ 600px) */
         @media (max-width: 600px) {
-            body { padding: 20px 15px; }
-            .work-item { margin-bottom: 30px; }
-            .work-title { font-size: 1.2rem; }
+            body {
+                padding: 20px 15px;
+            }
+            .top-nav {
+                justify-content: center;    /* 导航居中 */
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .intro {
+                padding: 18px 20px;
+                margin-bottom: 30px;
+            }
+            .work-item {
+                margin-bottom: 40px;
+            }
+            .work-header {
+                flex-direction: column;      /* 标题和年份上下排 */
+                align-items: flex-start;
+                gap: 4px;
+            }
+            .work-title {
+                font-size: 1.2rem;
+            }
+            .work-year {
+                font-size: 0.8rem;
+            }
+            .player-box {
+                padding: 12px 15px;
+            }
+            .custom-player {
+                flex-wrap: wrap;              /* 播放器换行 */
+                gap: 8px;
+            }
+            .play-btn {
+                width: 44px;
+                height: 44px;
+            }
+            .time {
+                min-width: 70px;
+                font-size: 0.75rem;
+            }
+            .seek-slider {
+                min-width: 120px;             /* 保证可拖动 */
+                order: 4;                      /* 放到下一行 */
+                width: 100%;                   /* 独占一行 */
+            }
+        }
+
+        /* 手机横屏 / 小平板 (601px - 900px) */
+        @media (min-width: 601px) and (max-width: 900px) {
+            .container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+            .work-image {
+                aspect-ratio: 16 / 9;
+            }
+        }
+
+        /* 大屏幕 (≥ 1400px) 可适当放大内容 */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1100px;
+            }
+            .work-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* 触摸设备优化：移除 hover 不影响点击 */
+        @media (hover: none) {
+            .play-btn:hover {
+                background: #3f5a6b;          /* 触摸时无变化，避免误触 */
+            }
         }
     </style>
 </head>
@@ -198,7 +308,12 @@ audio::-moz-range-thumb {
     </div>
 
     <div class="container">
-        <!-- 作品列表（无背景、无内边距） -->
+        <!-- 音乐创作介绍 -->
+        <div class="intro">
+            <p>殷漪的音乐生涯开始于慢核乐队，兼任贝司手与主唱。后转向数字音乐创作与笔记本现场表演。2001年转向数字音乐创作。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。殷漪早期的音乐创作领域包括:现场音乐表演、现代舞、肢体剧场。委约其音乐作品的表演团体包括“组合嬲”(上海)、Rubato 舞团(柏林)、广东现代舞蹈团、谢欣舞蹈剧场、二高表演。近年来其音乐创作主要集中于基于实地录音和原声乐器的混合音乐。</p>
+        </div>
+
+        <!-- 作品列表 -->
         <div class="work-item">
             <div class="work-image" id="img-lian">
                 <span>图片待上传</span>
@@ -207,11 +322,17 @@ audio::-moz-range-thumb {
                 <span class="work-title">脸</span>
                 <span class="work-year">2005</span>
             </div>
-            <div class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</div>
-            <audio controls preload="metadata">
-                <source src="music/lian.mp3" type="audio/mpeg">
-                您的浏览器不支持 audio 元素。
-            </audio>
+            <div class="player-box">
+                <div class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</div>
+                <div class="custom-player" data-src="music/lian.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/lian.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
         </div>
 
         <div class="work-item">
@@ -222,9 +343,17 @@ audio::-moz-range-thumb {
                 <span class="work-title">聚落</span>
                 <span class="work-year">2007/2024</span>
             </div>
-            <audio controls preload="metadata">
-                <source src="music/juluo.mp3" type="audio/mpeg">
-            </audio>
+            <div class="player-box">
+                <div class="work-description"></div>
+                <div class="custom-player" data-src="music/juluo.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/juluo.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
         </div>
 
         <div class="work-item">
@@ -235,10 +364,17 @@ audio::-moz-range-thumb {
                 <span class="work-title">向天空扔一粒石子</span>
                 <span class="work-year">2005</span>
             </div>
-            <div class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</div>
-            <audio controls preload="metadata">
-                <source src="music/xiang-tian-kong.mp3" type="audio/mpeg">
-            </audio>
+            <div class="player-box">
+                <div class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</div>
+                <div class="custom-player" data-src="music/xiang-tian-kong.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/xiang-tian-kong.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
         </div>
 
         <div class="work-item">
@@ -249,13 +385,20 @@ audio::-moz-range-thumb {
                 <span class="work-title">听的到海声的泳池</span>
                 <span class="work-year">2007/2014</span>
             </div>
-            <div class="work-description">
-                收录于 XY#001，XY Record，北京，2015<br>
-                <span style="font-size:0.8rem">🔗 <a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#b0c8e0;">Bandcamp 链接</a></span>
+            <div class="player-box">
+                <div class="work-description">
+                    收录于 XY#001，XY Record，北京，2015<br>
+                    <span style="font-size:0.8rem">🔗 <a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#1f2c35;">专辑链接</a></span>
+                </div>
+                <div class="custom-player" data-src="music/ting-dao.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/ting-dao.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
             </div>
-            <audio controls preload="metadata">
-                <source src="music/ting-dao.mp3" type="audio/mpeg">
-            </audio>
         </div>
 
         <div class="work-item">
@@ -266,10 +409,17 @@ audio::-moz-range-thumb {
                 <span class="work-title">编导囡囡</span>
                 <span class="work-year">2015</span>
             </div>
-            <div class="work-description">为舞蹈影像《八》而作</div>
-            <audio controls preload="metadata">
-                <source src="music/bian-dao-nan-nan.mp3" type="audio/mpeg">
-            </audio>
+            <div class="player-box">
+                <div class="work-description">为舞蹈影像《八》而作</div>
+                <div class="custom-player" data-src="music/bian-dao-nan-nan.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/bian-dao-nan-nan.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
         </div>
 
         <div class="work-item">
@@ -280,10 +430,17 @@ audio::-moz-range-thumb {
                 <span class="work-title">耳轮</span>
                 <span class="work-year">2010</span>
             </div>
-            <div class="work-description">从现代舞者李翎溪的一段独舞发展而来</div>
-            <audio controls preload="metadata">
-                <source src="music/erlun.mp3" type="audio/mpeg">
-            </audio>
+            <div class="player-box">
+                <div class="work-description">从现代舞者李翎溪的一段独舞发展而来</div>
+                <div class="custom-player" data-src="music/erlun.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/erlun.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
         </div>
 
         <div class="work-item">
@@ -294,10 +451,17 @@ audio::-moz-range-thumb {
                 <span class="work-title">囡囡可能会来跳舞</span>
                 <span class="work-year">2008</span>
             </div>
-            <div class="work-description">为囡囡而作</div>
-            <audio controls preload="metadata">
-                <source src="music/nan-nan-hui-lai.mp3" type="audio/mpeg">
-            </audio>
+            <div class="player-box">
+                <div class="work-description">为囡囡而作</div>
+                <div class="custom-player" data-src="music/nan-nan-hui-lai.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/nan-nan-hui-lai.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
         </div>
 
         <div class="work-item">
@@ -308,9 +472,17 @@ audio::-moz-range-thumb {
                 <span class="work-title">旋转</span>
                 <span class="work-year">2016</span>
             </div>
-            <audio controls preload="metadata">
-                <source src="music/xuan-zhuan.mp3" type="audio/mpeg">
-            </audio>
+            <div class="player-box">
+                <div class="work-description"></div>
+                <div class="custom-player" data-src="music/xuan-zhuan.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/xuan-zhuan.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
         </div>
 
         <div class="work-item">
@@ -321,9 +493,17 @@ audio::-moz-range-thumb {
                 <span class="work-title">未见</span>
                 <span class="work-year">2014</span>
             </div>
-            <audio controls preload="metadata">
-                <source src="music/wei-jian.mp3" type="audio/mpeg">
-            </audio>
+            <div class="player-box">
+                <div class="work-description"></div>
+                <div class="custom-player" data-src="music/wei-jian.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/wei-jian.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
         </div>
 
         <div class="work-item">
@@ -334,10 +514,17 @@ audio::-moz-range-thumb {
                 <span class="work-title">一条小路</span>
                 <span class="work-year">2022</span>
             </div>
-            <div class="work-description">为南京大屠杀纪念馆的一条小路而作 · 展览《宁在：南京·和平城市记忆设计展》委约</div>
-            <audio controls preload="metadata">
-                <source src="music/yi-tiao-xiao-lu.mp3" type="audio/mpeg">
-            </audio>
+            <div class="player-box">
+                <div class="work-description">为南京大屠杀纪念馆的一条小路而作 · 展览《宁在：南京·和平城市记忆设计展》委约</div>
+                <div class="custom-player" data-src="music/yi-tiao-xiao-lu.mp3">
+                    <button class="play-btn">▶</button>
+                    <span class="time">0:00 / 0:00</span>
+                    <input type="range" class="seek-slider" value="0" step="0.01">
+                    <audio preload="metadata" style="display: none;">
+                        <source src="music/yi-tiao-xiao-lu.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
         </div>
 
         <div class="footer-nav">
@@ -350,7 +537,56 @@ audio::-moz-range-thumb {
     </div>
 
     <script>
-        // 图片替换预留
+        // 自定义播放器逻辑
+        document.querySelectorAll('.custom-player').forEach(player => {
+            const audio = player.querySelector('audio');
+            const playBtn = player.querySelector('.play-btn');
+            const timeSpan = player.querySelector('.time');
+            const seekSlider = player.querySelector('.seek-slider');
+
+            // 初始化时间显示
+            audio.addEventListener('loadedmetadata', () => {
+                seekSlider.max = audio.duration;
+                timeSpan.textContent = `0:00 / ${formatTime(audio.duration)}`;
+            });
+
+            // 播放/暂停
+            playBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                    playBtn.textContent = '❚❚';
+                } else {
+                    audio.pause();
+                    playBtn.textContent = '▶';
+                }
+            });
+
+            // 更新时间
+            audio.addEventListener('timeupdate', () => {
+                seekSlider.value = audio.currentTime;
+                timeSpan.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+            });
+
+            // 拖动进度条
+            seekSlider.addEventListener('input', () => {
+                audio.currentTime = seekSlider.value;
+            });
+
+            // 播放结束
+            audio.addEventListener('ended', () => {
+                playBtn.textContent = '▶';
+                seekSlider.value = 0;
+                timeSpan.textContent = `0:00 / ${formatTime(audio.duration)}`;
+            });
+
+            // 辅助：格式化时间 mm:ss
+            function formatTime(seconds) {
+                if (isNaN(seconds)) return '0:00';
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+        });
     </script>
 </body>
 </html>
