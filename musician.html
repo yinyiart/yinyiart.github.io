@@ -90,7 +90,7 @@
         }
 
         .work-title {
-            font-size: 1.3rem;
+            font-size: 1.0rem;           /* 缩小20% (原1.3rem) */
             font-weight: 400;
             color: #53585f;
             letter-spacing: 0.5px;
@@ -236,7 +236,7 @@
             }
             .work-item { margin-bottom: 40px; }
             .work-header { flex-direction: column; align-items: flex-start; gap: 4px; }
-            .work-title { font-size: 1.2rem; }
+            .work-title { font-size: 0.95rem; }   /* 手机端再微调 */
             .work-year { font-size: 0.8rem; }
             .custom-player { flex-wrap: wrap; gap: 6px; }
             .play-btn { width: 28px; height: 28px; }
@@ -250,7 +250,7 @@
 
         @media (min-width: 1400px) {
             .container { max-width: 1100px; }
-            .work-title { font-size: 1.5rem; }
+            .work-title { font-size: 1.2rem; }    /* 大屏幕适当放大 */
         }
 
         @media (hover: none) {
@@ -272,7 +272,7 @@
     </div>
 
     <div class="container">
-        <!-- 音乐创作介绍（分段，无段落间距） -->
+        <!-- 音乐创作介绍 -->
         <div class="intro">
             <p>殷漪的音乐生涯开始于慢核乐队，兼任贝司手与主唱。</p>
             <p>2000年转向数字音乐创作与笔记本现场表演。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。</p>
@@ -280,7 +280,7 @@
             <p>近年来其音乐创作主要集中于基于实地录音和原声乐器的混合音乐。</p>
         </div>
 
-        <!-- 作品列表（共10首） -->
+        <!-- 作品列表 -->
         <div class="work-item">
             <div class="work-image" id="img-lian"><span>图片待上传</span></div>
             <div class="work-header">
@@ -347,7 +347,7 @@
             <div class="player-box">
                 <div class="work-description">
                     收录于 XY#001，XY Record，北京，2015<br>
-                    <span style="font-size:0.8rem">🔗 <a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#53585f;">Bandcamp 链接</a></span>
+                    <span style="font-size:0.8rem"><a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#53585f;">Bandcamp 链接</a></span>
                 </div>
                 <div class="custom-player" data-src="music/ting-dao.mp3">
                     <button class="play-btn">▶</button>
@@ -484,8 +484,23 @@
     </div>
 
     <script>
-        // 自定义播放器逻辑
-        document.querySelectorAll('.custom-player').forEach(player => {
+        // 获取所有播放器容器
+        const players = document.querySelectorAll('.custom-player');
+
+        // 辅助函数：暂停所有音频并重置按钮图标
+        function pauseAllExcept(currentAudio) {
+            players.forEach(player => {
+                const audio = player.querySelector('audio');
+                const btn = player.querySelector('.play-btn');
+                if (audio !== currentAudio && !audio.paused) {
+                    audio.pause();
+                    btn.textContent = '▶';
+                }
+            });
+        }
+
+        // 为每个播放器添加事件监听
+        players.forEach(player => {
             const audio = player.querySelector('audio');
             const playBtn = player.querySelector('.play-btn');
             const timeSpan = player.querySelector('.time');
@@ -498,6 +513,9 @@
 
             playBtn.addEventListener('click', () => {
                 if (audio.paused) {
+                    // 先暂停其他所有音频
+                    pauseAllExcept(audio);
+                    // 播放当前
                     audio.play();
                     playBtn.textContent = '❚❚';
                 } else {
