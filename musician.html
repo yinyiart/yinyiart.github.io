@@ -12,9 +12,9 @@
         }
 
         body {
-            background-color: #dae7eb;  /* R218 G231 B235 浅蓝灰 */
+            background-color: #dae7eb;          /* 整体背景浅蓝灰 */
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #1f2c35;              /* 深色文字保证可读 */
+            color: #53585f;                      /* R83 G88 B95 */
             line-height: 1.6;
             padding: 40px 20px;
         }
@@ -24,7 +24,7 @@
             margin: 0 auto;
         }
 
-        /* 顶部导航 */
+        /* 顶部导航 - 无背景无边框 */
         .top-nav {
             display: flex;
             justify-content: flex-end;
@@ -33,26 +33,22 @@
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #3f5a6b;              /* 深灰蓝，适应浅色背景 */
+            color: #53585f;
         }
         .top-nav a {
-            color: #3f5a6b;
+            color: #53585f;
             text-decoration: none;
-            transition: color 0.2s;
         }
         .top-nav a:hover,
         .top-nav a.active {
             color: #1f2c35;
         }
 
-        /* 创作介绍文字 */
+        /* 创作介绍文字 - 无背景无边框 */
         .intro {
-            background: #ffffffcc;        /* 半透明白，增加层次感 */
-            backdrop-filter: blur(2px);
-            padding: 24px 28px;
             margin-bottom: 50px;
-            border: 1px solid #b0c8e0;
-            color: #1f2c35;
+            padding: 0;
+            color: #53585f;
             font-size: 1rem;
             line-height: 1.7;
         }
@@ -66,19 +62,18 @@
             margin-bottom: 50px;
         }
 
-        /* 图片区域 */
+        /* 图片区域 - 占位色，上传图片后覆盖 */
         .work-image {
             width: 100%;
             aspect-ratio: 16 / 9;
-            background-color: #c0d0e0;    /* 占位色，有图片后会被覆盖 */
+            background-color: #c0d0e0;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #3f5a6b;
+            color: #53585f;
             font-size: 0.9rem;
             overflow: hidden;
-            border: 1px solid #b0c8e0;
         }
         .work-image img {
             width: 100%;
@@ -98,105 +93,112 @@
         .work-title {
             font-size: 1.3rem;
             font-weight: 400;
-            color: #1f2c35;
+            color: #53585f;
             letter-spacing: 0.5px;
         }
 
+        /* 年份 - 无边框无背景 */
         .work-year {
             font-size: 0.85rem;
-            color: #3f5a6b;
-            background: #e0f0f5;
-            padding: 2px 12px;
-            border-radius: 30px;
+            color: #53585f;
         }
 
-        /* 描述 + 播放器组合框 */
+        /* 描述 + 播放器组合框 - 无背景无边框 */
         .player-box {
-            background: #ffffffcc;        /* 半透明白，与 intro 统一 */
-            backdrop-filter: blur(2px);
-            padding: 16px 20px;
-            border: 1px solid #b0c8e0;
+            background: transparent;
+            padding: 0;
+            border: none;
+            margin-top: 5px;
         }
 
         .work-description {
             font-size: 0.95rem;
             margin-bottom: 16px;
-            color: #1f2c35;
-            border-left: 2px solid #3f5a6b;
-            padding-left: 16px;
+            color: #53585f;
+            padding-left: 0;                 /* 去掉竖线 */
+            border-left: none;
         }
 
         /* 自定义播放器样式 */
         .custom-player {
             display: flex;
             align-items: center;
-            gap: 10px;
-            background: transparent;      /* 继承父级背景 */
+            gap: 8px;
+            background: transparent;
         }
 
         .play-btn {
-            min-width: 44px;              /* 触摸友好 */
-            min-height: 44px;
-            width: 44px;
-            height: 44px;
-            background: #3f5a6b;
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            min-height: 28px;
+            background: #3f5a6b;               /* 固定按钮色 */
             border: none;
-            border-radius: 0;              /* 直角 */
+            border-radius: 0;
             color: white;
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.2s;
             flex-shrink: 0;
+            transition: none;
         }
         .play-btn:hover {
-            background: #5f7a91;
+            background: #3f5a6b;                 /* 无变化 */
         }
 
         .time {
-            font-size: 0.8rem;
-            color: #1f2c35;
+            font-size: 0.85rem;
+            color: #53585f;
             min-width: 80px;
             font-variant-numeric: tabular-nums;
         }
 
         .seek-slider {
             flex: 1;
-            height: 5px;
-            background: #c0d0e0;
+            height: 4px;
+            background: #b0c8e0;
             border-radius: 0;
             outline: none;
             -webkit-appearance: none;
             cursor: pointer;
-            min-width: 100px;              /* 确保在手机上也能拖动 */
+            min-width: 100px;
         }
         .seek-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 16px;
-            height: 16px;
-            background: #3f5a6b;
-            border-radius: 0;
-            cursor: pointer;
+            width: 0;
+            height: 0;
+            opacity: 0;
         }
         .seek-slider::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
-            background: #3f5a6b;
-            border-radius: 0;
-            cursor: pointer;
+            width: 0;
+            height: 0;
+            opacity: 0;
             border: none;
+        }
+        .seek-slider::-moz-range-track {
+            height: 4px;
+            background: #b0c8e0;
+            border-radius: 0;
+        }
+        .seek-slider::-webkit-slider-runnable-track {
+            height: 4px;
+            background: linear-gradient(to right, #3f5a6b, #3f5a6b) 0% / var(--progress) 100% no-repeat #b0c8e0;
+        }
+        .seek-slider::-moz-range-progress {
+            height: 4px;
+            background-color: #3f5a6b;
         }
 
         .audio-extra {
             font-size: 0.8rem;
-            color: #3f5a6b;
-            margin-top: 10px;
+            color: #53585f;
+            margin-top: 8px;
             text-align: right;
         }
         .audio-extra a {
-            color: #1f2c35;
+            color: #53585f;
             text-decoration: none;
             border-bottom: 1px dotted;
         }
@@ -205,95 +207,48 @@
             margin-top: 60px;
             text-align: center;
             font-size: 0.8rem;
-            color: #3f5a6b;
+            color: #53585f;
         }
         .footer-nav a {
-            color: #1f2c35;
+            color: #53585f;
             text-decoration: none;
             margin: 0 12px;
             border-bottom: 1px solid transparent;
         }
         .footer-nav a:hover {
-            border-bottom-color: #3f5a6b;
+            border-bottom-color: #53585f;
         }
 
-        /* -------------------- 响应式设计 -------------------- */
-        /* 手机竖屏 (宽度 ≤ 600px) */
+        /* 响应式 */
         @media (max-width: 600px) {
-            body {
-                padding: 20px 15px;
-            }
+            body { padding: 20px 15px; }
             .top-nav {
-                justify-content: center;    /* 导航居中 */
+                justify-content: center;
                 gap: 20px;
                 flex-wrap: wrap;
             }
-            .intro {
-                padding: 18px 20px;
-                margin-bottom: 30px;
-            }
-            .work-item {
-                margin-bottom: 40px;
-            }
-            .work-header {
-                flex-direction: column;      /* 标题和年份上下排 */
-                align-items: flex-start;
-                gap: 4px;
-            }
-            .work-title {
-                font-size: 1.2rem;
-            }
-            .work-year {
-                font-size: 0.8rem;
-            }
-            .player-box {
-                padding: 12px 15px;
-            }
-            .custom-player {
-                flex-wrap: wrap;              /* 播放器换行 */
-                gap: 8px;
-            }
-            .play-btn {
-                width: 44px;
-                height: 44px;
-            }
-            .time {
-                min-width: 70px;
-                font-size: 0.75rem;
-            }
-            .seek-slider {
-                min-width: 120px;             /* 保证可拖动 */
-                order: 4;                      /* 放到下一行 */
-                width: 100%;                   /* 独占一行 */
-            }
+            .intro { margin-bottom: 30px; }
+            .work-item { margin-bottom: 40px; }
+            .work-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+            .work-title { font-size: 1.2rem; }
+            .work-year { font-size: 0.8rem; }
+            .custom-player { flex-wrap: wrap; gap: 6px; }
+            .play-btn { width: 28px; height: 28px; }
+            .time { min-width: 70px; font-size: 0.75rem; }
+            .seek-slider { min-width: 120px; order: 4; width: 100%; }
         }
 
-        /* 手机横屏 / 小平板 (601px - 900px) */
         @media (min-width: 601px) and (max-width: 900px) {
-            .container {
-                max-width: 100%;
-                padding: 0 20px;
-            }
-            .work-image {
-                aspect-ratio: 16 / 9;
-            }
+            .container { max-width: 100%; padding: 0 20px; }
         }
 
-        /* 大屏幕 (≥ 1400px) 可适当放大内容 */
         @media (min-width: 1400px) {
-            .container {
-                max-width: 1100px;
-            }
-            .work-title {
-                font-size: 1.5rem;
-            }
+            .container { max-width: 1100px; }
+            .work-title { font-size: 1.5rem; }
         }
 
-        /* 触摸设备优化：移除 hover 不影响点击 */
         @media (hover: none) {
-            .play-btn:hover {
-                background: #3f5a6b;          /* 触摸时无变化，避免误触 */
-            }
+            .play-btn:hover { background: #3f5a6b; }
         }
     </style>
 </head>
@@ -310,7 +265,10 @@
     <div class="container">
         <!-- 音乐创作介绍 -->
         <div class="intro">
-            <p>殷漪的音乐生涯开始于慢核乐队，兼任贝司手与主唱。后转向数字音乐创作与笔记本现场表演。2001年转向数字音乐创作。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。殷漪早期的音乐创作领域包括:现场音乐表演、现代舞、肢体剧场。委约其音乐作品的表演团体包括“组合嬲”(上海)、Rubato 舞团(柏林)、广东现代舞蹈团、谢欣舞蹈剧场、二高表演。近年来其音乐创作主要集中于基于实地录音和原声乐器的混合音乐。</p>
+            <p>殷漪的音乐生涯开始于慢核乐队，兼任贝司手与主唱。
+                2001年转向数字音乐创作与笔记本现场表演。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。
+                殷漪早期的音乐创作领域包括:现场音乐表演、现代舞、肢体剧场。委约其音乐作品的表演团体包括“组合嬲”(上海)、Rubato 舞团(柏林)、广东现代舞蹈团、谢欣舞蹈剧场、二高表演。
+                近年来其音乐创作主要集中于基于实地录音和原声乐器的混合音乐。</p>
         </div>
 
         <!-- 作品列表 -->
@@ -388,7 +346,7 @@
             <div class="player-box">
                 <div class="work-description">
                     收录于 XY#001，XY Record，北京，2015<br>
-                    <span style="font-size:0.8rem">🔗 <a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#1f2c35;">专辑链接</a></span>
+                    <span style="font-size:0.8rem"> <a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#53585f;">专辑链接</a></span>
                 </div>
                 <div class="custom-player" data-src="music/ting-dao.mp3">
                     <button class="play-btn">▶</button>
@@ -544,13 +502,11 @@
             const timeSpan = player.querySelector('.time');
             const seekSlider = player.querySelector('.seek-slider');
 
-            // 初始化时间显示
             audio.addEventListener('loadedmetadata', () => {
                 seekSlider.max = audio.duration;
                 timeSpan.textContent = `0:00 / ${formatTime(audio.duration)}`;
             });
 
-            // 播放/暂停
             playBtn.addEventListener('click', () => {
                 if (audio.paused) {
                     audio.play();
@@ -561,25 +517,24 @@
                 }
             });
 
-            // 更新时间
             audio.addEventListener('timeupdate', () => {
                 seekSlider.value = audio.currentTime;
                 timeSpan.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+                const progress = (audio.currentTime / audio.duration) * 100 || 0;
+                seekSlider.style.setProperty('--progress', progress + '%');
             });
 
-            // 拖动进度条
             seekSlider.addEventListener('input', () => {
                 audio.currentTime = seekSlider.value;
             });
 
-            // 播放结束
             audio.addEventListener('ended', () => {
                 playBtn.textContent = '▶';
                 seekSlider.value = 0;
                 timeSpan.textContent = `0:00 / ${formatTime(audio.duration)}`;
+                seekSlider.style.setProperty('--progress', '0%');
             });
 
-            // 辅助：格式化时间 mm:ss
             function formatTime(seconds) {
                 if (isNaN(seconds)) return '0:00';
                 const mins = Math.floor(seconds / 60);
