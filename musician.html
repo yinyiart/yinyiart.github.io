@@ -119,7 +119,7 @@
             border-left: none;
         }
 
-        /* 自定义播放器 - 按钮透明 */
+        /* 自定义播放器 - 按钮透明，完全重置默认样式 */
         .custom-player {
             display: flex;
             align-items: center;
@@ -143,6 +143,15 @@
             justify-content: center;
             flex-shrink: 0;
             transition: none;
+            /* 强制重置所有可能导致不一致的默认样式 */
+            -webkit-appearance: none;
+            appearance: none;
+            outline: none;
+            box-shadow: none;
+            text-shadow: none;
+            padding: 0;
+            margin: 0;
+            line-height: 1;
         }
         .play-btn:hover {
             background: transparent;
@@ -276,7 +285,7 @@
     </div>
 
     <div class="container">
-        <!-- 音乐创作介绍（段落间距适中） -->
+        <!-- 音乐创作介绍 -->
         <div class="intro">
             <p>殷漪的音乐生涯开始于慢核乐队，兼任贝司手与主唱。</p>
             <p>2000年转向数字音乐创作与笔记本现场表演。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。</p>
