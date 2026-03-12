@@ -45,11 +45,11 @@
             color: #1f2c35;
         }
 
-        /* 创作介绍文字 */
+        /* 创作介绍文字 - 字体缩小至0.85rem，与作品描述一致 */
         .intro {
             margin-bottom: 40px;
             color: #53585f;
-            font-size: 1rem;
+            font-size: 0.85rem;          /* 从1rem缩小 */
             line-height: 1.5;
         }
         .intro p {
@@ -112,7 +112,7 @@
         }
 
         .work-description {
-            font-size: 0.85rem;
+            font-size: 0.85rem;            /* 作品描述字体大小 */
             margin-bottom: 16px;
             color: #53585f;
             padding-left: 0;
@@ -227,6 +227,7 @@
             }
             .intro {
                 margin-bottom: 30px;
+                font-size: 0.8rem;          /* 手机端再微调 */
                 line-height: 1.5;
             }
             .work-item { margin-bottom: 40px; }
@@ -247,6 +248,7 @@
         @media (min-width: 1400px) {
             .container { max-width: 1100px; }
             .work-title { font-size: 1.2rem; }
+            .intro { font-size: 0.9rem; }
         }
 
         @media (hover: none) {
@@ -269,7 +271,7 @@
     </div>
 
     <div class="container">
-        <!-- 音乐创作介绍 -->
+        <!-- 音乐创作介绍（字体已缩小） -->
         <div class="intro">
             <p>殷漪的音乐生涯开始于慢核乐队，兼任贝司手与主唱。</p>
             <p>2000年转向数字音乐创作与笔记本现场表演。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。</p>
