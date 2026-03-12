@@ -5,109 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>殷漪 · 作品详情</title>
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-        background-color: #59585f;
-        font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-        color: #f0f4f8;
-        line-height: 1.6;
-        padding: 40px 20px;
-    }
+body {
+    background-color: #59585f;
+    font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+    color: #f0f4f8;
+    line-height: 1.6;
+    padding: 40px 0 40px 20px;   /* 右侧顶格，左侧留白 */
+}
 
-    .container {
-    max-width: 1400px;      /* 从 1200px 增加到 1400px */
+.container {
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2%;          /* 从 5% 减小到 2% */
- }
-    .top-nav {
-        display: flex;
-        justify-content: flex-end;
-        gap: 30px;
-        margin-bottom: 40px;
-        font-size: 0.9rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #d0d8e0;
-    }
-    .top-nav a {
-        color: #d0d8e0;
-        text-decoration: none;
-    }
-    .top-nav a:hover {
-        color: #ffffff;
-    }
+    padding: 0;
+}
 
+.top-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-bottom: 40px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #d0d8e0;
+}
+.top-nav a {
+    color: #d0d8e0;
+    text-decoration: none;
+}
+.top-nav a:hover {
+    color: #ffffff;
+}
+
+.work-detail {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.work-info {
+    flex: 1 1 30%;
+    /* 已移除 sticky，随页面滚动 */
+}
+
+.work-title {
+    font-size: 1.0rem;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+.work-year {
+    font-size: 0.85rem;
+    color: #d0d8e0;
+    margin-bottom: 16px;
+}
+.work-description {
+    font-size: 0.85rem;
+    color: #f0f4f8;
+    white-space: pre-line;
+    line-height: 1.6;
+}
+
+.work-images {
+    flex: 1 1 70%;
+}
+.image-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.image-item {
+    width: 100%;
+    height: auto;
+}
+.image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.image-placeholder {
+    width: 300px;
+    background: #7a8088;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d0d8e0;
+    height: 200px;
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 20px 0;          /* 上下留白，左右无缩进，让图片撑满宽度 */
+    }
+    .container {
+        padding: 0;                /* 容器无内边距 */
+    }
     .work-detail {
-        display: flex;
-        gap: 40px;
-        margin-bottom: 40px;
+        flex-direction: column-reverse; /* 图片在上，文字在下 */
+        gap: 20px;                 /* 调整图片与文字间距 */
     }
-
     .work-info {
-    flex: 1 1 30%;          /* 原 40% */
-    position: sticky;
-    top: 40px;
-    align-self: flex-start;
-}
-
-    .work-title {
-        font-size: 1.0rem;
-        font-weight: 400;
-        color: #ffffff;
-        letter-spacing: 0.5px;
-        margin-bottom: 4px;
+        flex: auto;
+        width: 100%;
+        padding: 0 15px 15px 15px; /* 文字区域左右添加少量边距，避免贴边 */
     }
-    .work-year {
-        font-size: 0.85rem;
-        color: #d0d8e0;
-        margin-bottom: 16px;
-    }
-    .work-description {
-        font-size: 0.85rem;
-        color: #f0f4f8;
-        white-space: pre-line;
-        line-height: 1.6;
-    }
-
     .work-images {
-    flex: 1 1 70%;          /* 原 60% */
-}
+        flex: auto;
+        width: 100%;
+    }
     .image-list {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+        gap: 10px;                 /* 图片之间的间距可适当缩小 */
     }
     .image-item {
         width: 100%;
-        height: auto;
     }
     .image-item img {
         width: 100%;
         height: auto;
         display: block;
-        /* 背景色已移除，图片直接贴合网页背景 */
-    }
-    .image-placeholder {
-        width: 300px;
-        background: #7a8088;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #d0d8e0;
-        height: 200px;
-    }
-
-    @media (max-width: 800px) {
-    .work-info {
-        flex: auto;         /* 移动端重置比例 */
-    }
-    .work-images {
-        flex: auto;
     }
 }
 </style>
