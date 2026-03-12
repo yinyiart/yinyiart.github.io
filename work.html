@@ -49,12 +49,11 @@
     }
 
     .work-info {
-        flex: 1 1 40%;
-        position: sticky;
-        top: 40px;
-        align-self: flex-start;
-        /* 移除高度限制和内部滚动，内容自然撑开 */
-    }
+    flex: 1 1 30%;          /* 原 40% */
+    position: sticky;
+    top: 40px;
+    align-self: flex-start;
+}
 
     .work-title {
         font-size: 1.0rem;
@@ -76,9 +75,8 @@
     }
 
     .work-images {
-        flex: 1 1 60%;
-        /* 移除高度限制和内部滚动，高度自适应 */
-    }
+    flex: 1 1 70%;          /* 原 60% */
+}
     .image-list {
         display: flex;
         flex-direction: column;
@@ -105,17 +103,13 @@
     }
 
     @media (max-width: 800px) {
-        .work-detail {
-            flex-direction: column;
-        }
-        .work-info {
-            position: static;
-            /* 手机端也无需滚动 */
-        }
-        .image-item {
-            width: 100%;
-        }
+    .work-info {
+        flex: auto;         /* 移动端重置比例 */
     }
+    .work-images {
+        flex: auto;
+    }
+}
 </style>
 </head>
 <body>
