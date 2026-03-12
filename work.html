@@ -54,9 +54,7 @@
         position: sticky;
         top: 40px;
         align-self: flex-start;
-        max-height: calc(100vh - 120px);
-        overflow-y: auto;
-        padding-right: 10px;
+        /* 移除高度限制和内部滚动，内容自然撑开 */
     }
 
     .work-title {
@@ -80,10 +78,7 @@
 
     .work-images {
         flex: 1 1 60%;
-        overflow-y: auto;
-        max-height: calc(100vh - 200px);
-        padding-right: 10px;
-        -webkit-overflow-scrolling: touch;
+        /* 移除高度限制和内部滚动，高度自适应 */
     }
     .image-list {
         display: flex;
@@ -116,12 +111,7 @@
         }
         .work-info {
             position: static;
-            max-height: none;
-            overflow-y: visible;
-        }
-        .work-images {
-            max-height: none;
-            overflow-y: visible;
+            /* 手机端也无需滚动 */
         }
         .image-item {
             width: 100%;
