@@ -79,20 +79,21 @@
             line-height: 1.6;
         }
 
+        /* 右侧图片区域 - 纵向排列 */
         .work-images {
             flex: 1 1 60%;
-            overflow-x: auto;
-            white-space: nowrap;
+            overflow-y: auto;
+            max-height: calc(100vh - 200px);
+            padding-right: 10px;
             -webkit-overflow-scrolling: touch;
-            padding-bottom: 10px;
         }
         .image-list {
-            display: inline-flex;
+            display: flex;
+            flex-direction: column;
             gap: 15px;
         }
         .image-item {
-            flex: 0 0 auto;
-            width: 500px;
+            width: 100%;
             height: auto;
         }
         .image-item img {
@@ -121,10 +122,11 @@
                 overflow-y: visible;
             }
             .work-images {
-                overflow-x: auto;
+                max-height: none;          /* 手机端不限制高度 */
+                overflow-y: visible;
             }
             .image-item {
-                width: 80vw;
+                width: 100%;
             }
         }
     </style>
