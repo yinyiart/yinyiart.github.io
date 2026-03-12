@@ -20,7 +20,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 5%;
         }
@@ -43,9 +43,24 @@
             color: #ffffff;
         }
 
-        .work-header {
-            margin-bottom: 30px;
+        /* 左右布局容器 */
+        .work-detail {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
         }
+
+        /* 左侧文字区域（固定） */
+        .work-info {
+            flex: 1 1 40%;
+            position: sticky;
+            top: 40px;
+            align-self: flex-start;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;  /* 如果文字过多可滚动 */
+            padding-right: 10px;
+        }
+
         .work-title {
             font-size: 2rem;
             font-weight: 400;
@@ -56,58 +71,42 @@
         .work-year {
             font-size: 1rem;
             color: #d0d8e0;
+            margin-bottom: 20px;
         }
-
-        .work-image {
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            background-color: #7a8088;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #d0d8e0;
-            font-size: 1rem;
-            overflow: hidden;
-        }
-        .work-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         .work-description {
             font-size: 1rem;
-            margin-bottom: 30px;
             color: #f0f4f8;
             white-space: pre-line;  /* 保留换行 */
         }
 
-        .work-media {
-            margin-bottom: 40px;
+        /* 右侧图片列表（横向滑动） */
+        .work-images {
+            flex: 1 1 60%;
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 10px;  /* 留出滚动条空间 */
         }
-        .work-media h3 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            border-bottom: 1px solid #7a8088;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            color: #ffffff;
+        .image-list {
+            display: inline-flex;
+            gap: 15px;
         }
-
-        .audio-player, .video-player {
-            background: #4a4a52;
-            padding: 15px;
-            margin-bottom: 20px;
+        .image-item {
+            flex: 0 0 auto;
+            width: 500px;           /* 可调整图片显示宽度 */
+            height: auto;
         }
-        audio, video {
+        .image-item img {
             width: 100%;
-            outline: none;
+            height: auto;
+            display: block;
+            border: none;
+            background-color: #7a8088;  /* 占位色 */
         }
 
         .back-link {
             display: inline-block;
-            margin-top: 40px;
+            margin-top: 20px;
             color: #d0d8e0;
             text-decoration: none;
             border-bottom: 1px dotted;
@@ -116,8 +115,22 @@
             color: #ffffff;
         }
 
-        @media (max-width: 600px) {
-            .work-title { font-size: 1.6rem; }
+        /* 响应式：小屏幕时改为上下布局 */
+        @media (max-width: 800px) {
+            .work-detail {
+                flex-direction: column;
+            }
+            .work-info {
+                position: static;
+                max-height: none;
+                overflow-y: visible;
+            }
+            .work-images {
+                overflow-x: auto;
+            }
+            .image-item {
+                width: 80vw;  /* 移动端图片宽度为视窗80% */
+            }
         }
     </style>
 </head>
@@ -141,40 +154,40 @@
     </div>
 
     <script>
-        // 从 artist.html 中复制的作品数据（共31件）
+        // 作品数据（需补充 images 数组）
         const works = [
-            { id: 'gan', title: '感官的流动', year: '2025', image: 'images/gan.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'ligeti', title: '里盖蒂的100节拍器', year: '2025', image: 'images/ligeti.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'zhengduo', title: '争夺', year: '2025', image: 'images/zhengduo.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'wo', title: '我听到了', year: '2023', image: 'images/wo.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'guishi', title: '归时始无声', year: '2023', image: 'images/guishi.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'bumian', title: '不眠电台', year: '2023', image: 'images/bumian.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'women', title: '我们中的他们，他们中的我们', year: '2022', image: 'images/women.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'cong', title: '从_____到新天地', year: '2022', image: 'images/cong.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'linju', title: '邻居', year: '2022', image: 'images/linju.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'yinyue', title: '音乐对我们来说到底意味着什么？', year: '2022', image: 'images/yinyue.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'shanghai', title: '上海', year: '2021', image: 'images/shanghai.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'nide', title: '你的声音里', year: '2021', image: 'images/nide.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'ruch', title: '如初', year: '2021', image: 'images/ruch.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'shesheng', title: '摄生', year: '2020', image: 'images/shesheng.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'zhenshen', title: '真身', year: '2019', image: 'images/zhenshen.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'xiangxi', title: '向西', year: '2019', image: 'images/xiangxi.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'liuge', title: '聆听的六个姿态', year: '2019', image: 'images/liuge.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'shige', title: '十个墙角', year: '2018', image: 'images/shige.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'meishuguan', title: '美术馆', year: '2018', image: 'images/meishuguan.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'erzhai', title: '耳宅声景', year: '2018', image: 'images/erzhai.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'ditu', title: '地图', year: '2018', image: 'images/ditu.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'yici', title: '一次上海的旅程', year: '2017', image: 'images/yici.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'hailang', title: '海浪', year: '2016', image: 'images/hailang.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'tingdao', title: '你听到过海', year: '2016', image: 'images/tingdao.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'liwu', title: '礼物', year: '2016-2021', image: 'images/liwu.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'xinjing', title: '心经', year: '2014', image: 'images/xinjing.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'dinghai', title: '20140901-20140930', year: '2014', image: 'images/dinghai.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'weiliao', title: '为了告别的聚会', year: '2013-2019', image: 'images/weiliao.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'moshnegren', title: '陌生人', year: '2013', image: 'images/moshnegren.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'heliu', title: '你可以无数次聆听同一条河流', year: '2012-2016', image: 'images/heliu.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'wuti', title: '无题（乐谱一）', year: '2011', image: 'images/wuti.jpg', description: '作品描述待补充...', audio: '', video: '' },
-            { id: 'sanfenzhong', title: '三分钟', year: '2008|2020', image: 'images/sanfenzhong.jpg', description: '作品描述待补充...', audio: '', video: '' }
+            { id: 'gan', title: '感官的流动', year: '2025', description: '作品描述待补充...', images: ['images/gan-1.jpg', 'images/gan-2.jpg'] },
+            { id: 'ligeti', title: '里盖蒂的100节拍器', year: '2025', description: '作品描述待补充...', images: ['images/ligeti-1.jpg'] },
+            { id: 'zhengduo', title: '争夺', year: '2025', description: '作品描述待补充...', images: [] },
+            { id: 'wo', title: '我听到了', year: '2023', description: '作品描述待补充...', images: [] },
+            { id: 'guishi', title: '归时始无声', year: '2023', description: '作品描述待补充...', images: [] },
+            { id: 'bumian', title: '不眠电台', year: '2023', description: '作品描述待补充...', images: [] },
+            { id: 'women', title: '我们中的他们，他们中的我们', year: '2022', description: '作品描述待补充...', images: [] },
+            { id: 'cong', title: '从_____到新天地', year: '2022', description: '作品描述待补充...', images: [] },
+            { id: 'linju', title: '邻居', year: '2022', description: '作品描述待补充...', images: [] },
+            { id: 'yinyue', title: '音乐对我们来说到底意味着什么？', year: '2022', description: '作品描述待补充...', images: [] },
+            { id: 'shanghai', title: '上海', year: '2021', description: '作品描述待补充...', images: [] },
+            { id: 'nide', title: '你的声音里', year: '2021', description: '作品描述待补充...', images: [] },
+            { id: 'ruch', title: '如初', year: '2021', description: '作品描述待补充...', images: [] },
+            { id: 'shesheng', title: '摄生', year: '2020', description: '作品描述待补充...', images: [] },
+            { id: 'zhenshen', title: '真身', year: '2019', description: '作品描述待补充...', images: [] },
+            { id: 'xiangxi', title: '向西', year: '2019', description: '作品描述待补充...', images: [] },
+            { id: 'liuge', title: '聆听的六个姿态', year: '2019', description: '作品描述待补充...', images: [] },
+            { id: 'shige', title: '十个墙角', year: '2018', description: '作品描述待补充...', images: [] },
+            { id: 'meishuguan', title: '美术馆', year: '2018', description: '作品描述待补充...', images: [] },
+            { id: 'erzhai', title: '耳宅声景', year: '2018', description: '作品描述待补充...', images: [] },
+            { id: 'ditu', title: '地图', year: '2018', description: '作品描述待补充...', images: [] },
+            { id: 'yici', title: '一次上海的旅程', year: '2017', description: '作品描述待补充...', images: [] },
+            { id: 'hailang', title: '海浪', year: '2016', description: '作品描述待补充...', images: [] },
+            { id: 'tingdao', title: '你听到过海', year: '2016', description: '作品描述待补充...', images: [] },
+            { id: 'liwu', title: '礼物', year: '2016-2021', description: '作品描述待补充...', images: [] },
+            { id: 'xinjing', title: '心经', year: '2014', description: '作品描述待补充...', images: [] },
+            { id: 'dinghai', title: '20140901-20140930', year: '2014', description: '作品描述待补充...', images: [] },
+            { id: 'weiliao', title: '为了告别的聚会', year: '2013-2019', description: '作品描述待补充...', images: [] },
+            { id: 'moshnegren', title: '陌生人', year: '2013', description: '作品描述待补充...', images: [] },
+            { id: 'heliu', title: '你可以无数次聆听同一条河流', year: '2012-2016', description: '作品描述待补充...', images: [] },
+            { id: 'wuti', title: '无题（乐谱一）', year: '2011', description: '作品描述待补充...', images: [] },
+            { id: 'sanfenzhong', title: '三分钟', year: '2008|2020', description: '作品描述待补充...', images: [] }
         ];
 
         // 获取URL参数中的id
@@ -187,35 +200,41 @@
         if (!work) {
             container.innerHTML = '<p style="color:#d0d8e0;">作品不存在或ID错误。</p>';
         } else {
-            // 构建媒体区块（如果有音频或视频）
-            let mediaHtml = '';
-            if (work.audio) {
-                mediaHtml += `
-                    <div class="audio-player">
-                        <h3>音频</h3>
-                        <audio controls src="${work.audio}"></audio>
+            // 生成图片列表HTML
+            let imagesHtml = '';
+            if (work.images && work.images.length > 0) {
+                const imageItems = work.images.map(img => `
+                    <div class="image-item">
+                        <img src="${img}" alt="${work.title}">
+                    </div>
+                `).join('');
+                imagesHtml = `
+                    <div class="work-images">
+                        <div class="image-list">
+                            ${imageItems}
+                        </div>
                     </div>
                 `;
-            }
-            if (work.video) {
-                mediaHtml += `
-                    <div class="video-player">
-                        <h3>影像</h3>
-                        <video controls src="${work.video}"></video>
+            } else {
+                // 无图片时显示占位
+                imagesHtml = `
+                    <div class="work-images">
+                        <div class="image-list">
+                            <div class="image-item" style="width:300px; background:#7a8088; display:flex; align-items:center; justify-content:center; color:#d0d8e0;">暂无图片</div>
+                        </div>
                     </div>
                 `;
             }
 
             const html = `
-                <div class="work-header">
-                    <div class="work-title">${work.title}</div>
-                    <div class="work-year">${work.year}</div>
+                <div class="work-detail">
+                    <div class="work-info">
+                        <div class="work-title">${work.title}</div>
+                        <div class="work-year">${work.year}</div>
+                        <div class="work-description">${work.description.replace(/\n/g, '<br>')}</div>
+                    </div>
+                    ${imagesHtml}
                 </div>
-                <div class="work-image">
-                    <img src="${work.image || 'images/placeholder.jpg'}" alt="${work.title}">
-                </div>
-                <div class="work-description">${work.description}</div>
-                ${mediaHtml}
             `;
             container.innerHTML = html;
         }
