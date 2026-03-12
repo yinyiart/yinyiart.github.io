@@ -5,131 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>殷漪 · 作品详情</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            background-color: #59585f;
-            font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #f0f4f8;
-            line-height: 1.6;
-            padding: 40px 20px;
-        }
+    body {
+        background-color: #59585f;
+        font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+        color: #f0f4f8;
+        line-height: 1.6;
+        padding: 40px 20px;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5%;
+    }
 
-        .top-nav {
-            display: flex;
-            justify-content: flex-end;
-            gap: 30px;
-            margin-bottom: 40px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #d0d8e0;
-        }
-        .top-nav a {
-            color: #d0d8e0;
-            text-decoration: none;
-        }
-        .top-nav a:hover {
-            color: #ffffff;
-        }
+    .top-nav {
+        display: flex;
+        justify-content: flex-end;
+        gap: 30px;
+        margin-bottom: 40px;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #d0d8e0;
+    }
+    .top-nav a {
+        color: #d0d8e0;
+        text-decoration: none;
+    }
+    .top-nav a:hover {
+        color: #ffffff;
+    }
 
+    .work-detail {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+
+    .work-info {
+        flex: 1 1 40%;
+        position: sticky;
+        top: 40px;
+        align-self: flex-start;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+
+    .work-title {
+        font-size: 1.0rem;
+        font-weight: 400;
+        color: #ffffff;
+        letter-spacing: 0.5px;
+        margin-bottom: 4px;
+    }
+    .work-year {
+        font-size: 0.85rem;
+        color: #d0d8e0;
+        margin-bottom: 16px;
+    }
+    .work-description {
+        font-size: 0.85rem;
+        color: #f0f4f8;
+        white-space: pre-line;
+        line-height: 1.6;
+    }
+
+    .work-images {
+        flex: 1 1 60%;
+        overflow-y: auto;
+        max-height: calc(100vh - 200px);
+        padding-right: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+    .image-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .image-item {
+        width: 100%;
+        height: auto;
+    }
+    .image-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        /* 背景色已移除，图片直接贴合网页背景 */
+    }
+    .image-placeholder {
+        width: 300px;
+        background: #7a8088;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #d0d8e0;
+        height: 200px;
+    }
+
+    @media (max-width: 800px) {
         .work-detail {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .work-info {
-            flex: 1 1 40%;
-            position: sticky;
-            top: 40px;
-            align-self: flex-start;
-            max-height: calc(100vh - 120px);
-            overflow-y: auto;
-            padding-right: 10px;
-        }
-
-        /* 字体缩小，与音乐家页面统一 */
-        .work-title {
-            font-size: 1.0rem;
-            font-weight: 400;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-            margin-bottom: 4px;
-        }
-        .work-year {
-            font-size: 0.85rem;
-            color: #d0d8e0;
-            margin-bottom: 16px;
-        }
-        .work-description {
-            font-size: 0.85rem;
-            color: #f0f4f8;
-            white-space: pre-line;
-            line-height: 1.6;
-        }
-
-        /* 右侧图片区域 - 纵向排列 */
-        .work-images {
-            flex: 1 1 60%;
-            overflow-y: auto;
-            max-height: calc(100vh - 200px);
-            padding-right: 10px;
-            -webkit-overflow-scrolling: touch;
-        }
-        .image-list {
-            display: flex;
             flex-direction: column;
-            gap: 15px;
+        }
+        .work-info {
+            position: static;
+            max-height: none;
+            overflow-y: visible;
+        }
+        .work-images {
+            max-height: none;
+            overflow-y: visible;
         }
         .image-item {
             width: 100%;
-            height: auto;
         }
-        .image-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            background-color: #7a8088;
-        }
-        .image-placeholder {
-            width: 300px;
-            background: #7a8088;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #d0d8e0;
-            height: 200px;
-        }
-
-        @media (max-width: 800px) {
-            .work-detail {
-                flex-direction: column;
-            }
-            .work-info {
-                position: static;
-                max-height: none;
-                overflow-y: visible;
-            }
-            .work-images {
-                max-height: none;          /* 手机端不限制高度 */
-                overflow-y: visible;
-            }
-            .image-item {
-                width: 100%;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
     <div class="container">
@@ -152,7 +150,13 @@
         // 完整的作品数据（31件，id与artist.html卡片上的data-id完全一致）
         const works = [
             { id: 'gan', title: '感官的流动', year: '2025', description: '作品描述待补充。', images: [] },
-            { id: 'ligeti', title: '利盖蒂的100节拍器', year: '2025', description: '100个机械节拍器，10位表演者，1位指挥。上海当代艺术博物嘉伯丽儿·香奈儿空间揭幕仪式委托，改编利盖蒂作品《节拍器交响诗》。', images: ['images/ligeti01.jpg', 'images/ligeti02.jpg','images/ligeti03.jpg','images/ligeti04.jpg','images/ligeti05.jpg','images/ligeti06.jpg','images/ligeti07.jpg','images/ligeti08.jpg','images/ligeti09.jpg','images/ligeti10.jpg','images/ligeti11.jpg','images/ligeti12.jpg'] },
+            { id: 'ligeti', title: '利盖蒂的100节拍器', year: '2025', description: '100个机械节拍器，10位表演者，1位指挥。上海当代艺术博物嘉伯丽儿·香奈儿空间揭幕仪式委托，改编利盖蒂作品《节拍器交响诗》。整个表演将由10位表演者推动载有100个节拍器的手推车在表演现场按事先编排好的移动路线，停止点位，身体姿态，空间布局，节拍器与观众距离关系等等一系列条件实施完成。指挥沿袭古典音乐先锋派和激浪派的传统，混合使用图形谱和文字谱来现场指挥。
+        
+                显而易见，创作于1962年的《节拍器交响诗》受到当时激浪派的影响。在读到利盖蒂在自述中说到这个作品中文字谱的使用是对于音乐手段的批判时，我在想，音乐或者其他的艺术是如何影响当代艺术的。
+
+在我的构想中，在PSA进行的《节拍器交响诗》不是在技术上去复现当年利盖蒂的音乐声响和音乐批判，因为催生这两者的时代语境已经发生了深刻的变化。而是如何在这个作品的演绎中去激活在场所有人的听觉意识，在这种听觉意识中建立临时的文化共同体。这里所说的听觉意识不是抽象的概念，也不是声音理论中的具体的“主动聆听”，而是“听觉·声音”如何去与仪式、表演、身体、空间、时间相连接，或者进一步说，如何在仪式、表演、身体、空间、时间中去揭蔽由声音而激发的听觉。
+
+这次仪式|表演将是流动的，身体的，即生即灭的。', images: ['images/ligeti01.jpg', 'images/ligeti02.jpg','images/ligeti03.jpg','images/ligeti04.jpg','images/ligeti05.jpg','images/ligeti06.jpg','images/ligeti07.jpg','images/ligeti08.jpg','images/ligeti09.jpg','images/ligeti10.jpg','images/ligeti11.jpg','images/ligeti12.jpg'] },
             { id: 'zhengduo', title: '争夺', year: '2025', description: '作品描述待补充。', images: [] },
             { id: 'wo', title: '我听到了', year: '2023', description: `文本，气球，食物。
             
