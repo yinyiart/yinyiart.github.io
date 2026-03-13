@@ -84,12 +84,13 @@
             display: block;
         }
 
+        /* 作品头部：标题、年份、描述 放在同一行（自动换行） */
         .work-header {
             display: flex;
             align-items: baseline;
             flex-wrap: wrap;
-            gap: 8px 12px;               /* 缩小年份与标题的间距 */
-            margin-bottom: 4px;            /* 减小下方间距，让描述更靠近 */
+            gap: 8px 12px;
+            margin-bottom: 8px;
         }
 
         .work-title {
@@ -104,19 +105,17 @@
             color: #53585f;
         }
 
+        .work-description {
+            font-size: 0.85rem;
+            color: #53585f;
+            display: inline-block;  /* 与标题等在同一行 */
+        }
+
         .player-box {
             background: transparent;
             padding: 0;
             border: none;
-            margin-top: 0;                 /* 取消上边距，让描述紧挨标题 */
-        }
-
-        .work-description {
-            font-size: 0.85rem;
-            margin-bottom: 12px;            /* 稍微缩小下边距，整体紧凑 */
-            color: #53585f;
-            padding-left: 0;
-            border-left: none;
+            margin-top: 0;
         }
 
         /* 自定义播放器 */
@@ -132,7 +131,7 @@
             height: 28px;
             min-width: 28px;
             min-height: 28px;
-            background: transparent;
+            background: none !important;   /* 彻底移除背景 */
             border: none;
             border-radius: 0;
             color: #53585f;
@@ -145,14 +144,14 @@
             transition: none;
             -webkit-appearance: none;
             appearance: none;
-            outline: none;
+            outline: none !important;
             box-shadow: none;
             text-shadow: none;
             padding: 0;
             margin: 0;
             line-height: 1;
-            -webkit-tap-highlight-color: transparent; /* 移除手机点击高亮 */
-            user-select: none;                         /* 防止选中 */
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
         }
         .play-btn:hover {
             background: transparent;
@@ -236,8 +235,8 @@
                 margin-bottom: 40px;
             }
             .work-header {
-                gap: 6px 10px;             /* 手机端间距也更紧凑 */
-                margin-bottom: 4px;
+                gap: 6px 10px;
+                margin-bottom: 6px;
             }
             .work-title {
                 font-size: 0.95rem;
@@ -247,7 +246,6 @@
             }
             .work-description {
                 font-size: 0.8rem;
-                margin-bottom: 10px;
             }
             .custom-player {
                 flex-wrap: wrap;
@@ -256,9 +254,9 @@
             .play-btn {
                 width: 28px;
                 height: 28px;
-                -webkit-tap-highlight-color: transparent; /* 确保手机端也移除高亮 */
-                outline: none;
-                appearance: none;
+                background: none !important;  /* 确保手机端也无背景 */
+                -webkit-tap-highlight-color: transparent;
+                outline: none !important;
             }
             .time {
                 min-width: 70px;
@@ -323,9 +321,9 @@
             <div class="work-header">
                 <span class="work-title">脸</span>
                 <span class="work-year">2005</span>
+                <span class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</span>
             </div>
             <div class="player-box">
-                <div class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</div>
                 <div class="custom-player" data-src="music/lian.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -342,9 +340,9 @@
             <div class="work-header">
                 <span class="work-title">聚落</span>
                 <span class="work-year">2007/2024</span>
+                <!-- 无描述，留空 -->
             </div>
             <div class="player-box">
-                <div class="work-description"></div>
                 <div class="custom-player" data-src="music/juluo.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -361,9 +359,9 @@
             <div class="work-header">
                 <span class="work-title">向天空扔一粒石子</span>
                 <span class="work-year">2005</span>
+                <span class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</span>
             </div>
             <div class="player-box">
-                <div class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</div>
                 <div class="custom-player" data-src="music/xiang-tian-kong.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -380,12 +378,9 @@
             <div class="work-header">
                 <span class="work-title">听的到海声的泳池</span>
                 <span class="work-year">2007/2014</span>
+                <span class="work-description">收录于 XY#001，XY Record，北京，2015</span>
             </div>
             <div class="player-box">
-                <div class="work-description">
-                    收录于 XY#001，XY Record，北京，2015<br>
-                    <span style="font-size:0.8rem"><a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#53585f;">专辑详细信息</a></span>
-                </div>
                 <div class="custom-player" data-src="music/ting-dao.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -402,9 +397,9 @@
             <div class="work-header">
                 <span class="work-title">编导囡囡</span>
                 <span class="work-year">2015</span>
+                <span class="work-description">为舞蹈影像《八》而作</span>
             </div>
             <div class="player-box">
-                <div class="work-description">为舞蹈影像《八》而作</div>
                 <div class="custom-player" data-src="music/bian-dao-nan-nan.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -421,9 +416,9 @@
             <div class="work-header">
                 <span class="work-title">耳轮</span>
                 <span class="work-year">2010</span>
+                <span class="work-description">从现代舞者李翎溪的一段独舞发展而来</span>
             </div>
             <div class="player-box">
-                <div class="work-description">从现代舞者李翎溪的一段独舞发展而来</div>
                 <div class="custom-player" data-src="music/erlun.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -440,9 +435,9 @@
             <div class="work-header">
                 <span class="work-title">囡囡可能会来跳舞</span>
                 <span class="work-year">2008</span>
+                <span class="work-description">为囡囡而作</span>
             </div>
             <div class="player-box">
-                <div class="work-description">为囡囡而作</div>
                 <div class="custom-player" data-src="music/nan-nan-hui-lai.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -459,9 +454,9 @@
             <div class="work-header">
                 <span class="work-title">旋转</span>
                 <span class="work-year">2016</span>
+                <!-- 无描述 -->
             </div>
             <div class="player-box">
-                <div class="work-description"></div>
                 <div class="custom-player" data-src="music/xuan-zhuan.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -478,9 +473,9 @@
             <div class="work-header">
                 <span class="work-title">未见</span>
                 <span class="work-year">2014</span>
+                <!-- 无描述 -->
             </div>
             <div class="player-box">
-                <div class="work-description"></div>
                 <div class="custom-player" data-src="music/wei-jian.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -497,9 +492,9 @@
             <div class="work-header">
                 <span class="work-title">一条小路</span>
                 <span class="work-year">2022</span>
+                <span class="work-description">为南京大屠杀纪念馆的一条小路而作 · 展览《宁在：南京·和平城市记忆设计展》委约</span>
             </div>
             <div class="player-box">
-                <div class="work-description">为南京大屠杀纪念馆的一条小路而作 · 展览《宁在：南京·和平城市记忆设计展》委约</div>
                 <div class="custom-player" data-src="music/yi-tiao-xiao-lu.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
