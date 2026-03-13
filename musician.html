@@ -127,32 +127,33 @@
         }
 
         .play-btn {
-            width: 28px;
-            height: 28px;
-            min-width: 28px;
-            min-height: 28px;
-            background: none !important;   /* 彻底移除背景 */
-            border: none;
-            border-radius: 0;
-            color: #53585f;
-            font-size: 0.9rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            transition: none;
-            -webkit-appearance: none;
-            appearance: none;
-            outline: none !important;
-            box-shadow: none;
-            text-shadow: none;
-            padding: 0;
-            margin: 0;
-            line-height: 1;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-        }
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+    background: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: #53585f !important;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: none;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1;
+    -webkit-tap-highlight-color: transparent !important;
+    user-select: none;
+}
         .play-btn:hover {
             background: transparent;
             color: #53585f;
@@ -254,9 +255,12 @@
             .play-btn {
                 width: 28px;
                 height: 28px;
-                background: none !important;  /* 确保手机端也无背景 */
-                -webkit-tap-highlight-color: transparent;
-                outline: none !important;
+                background: none !important;
+        background-color: transparent !important;
+        border: none !important;
+        outline: none !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
             }
             .time {
                 min-width: 70px;
