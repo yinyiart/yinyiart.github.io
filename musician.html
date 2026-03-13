@@ -45,11 +45,11 @@
             color: #1f2c35;
         }
 
-        /* 创作介绍文字 - 字体缩小至0.85rem，与作品描述一致 */
+        /* 创作介绍文字 */
         .intro {
             margin-bottom: 40px;
             color: #53585f;
-            font-size: 0.85rem;          /* 从1rem缩小 */
+            font-size: 0.85rem;
             line-height: 1.5;
         }
         .intro p {
@@ -88,8 +88,8 @@
             display: flex;
             align-items: baseline;
             flex-wrap: wrap;
-            gap: 8px 16px;
-            margin-bottom: 8px;
+            gap: 8px 12px;               /* 缩小年份与标题的间距 */
+            margin-bottom: 4px;            /* 减小下方间距，让描述更靠近 */
         }
 
         .work-title {
@@ -108,12 +108,12 @@
             background: transparent;
             padding: 0;
             border: none;
-            margin-top: 5px;
+            margin-top: 0;                 /* 取消上边距，让描述紧挨标题 */
         }
 
         .work-description {
-            font-size: 0.85rem;            /* 作品描述字体大小 */
-            margin-bottom: 16px;
+            font-size: 0.85rem;
+            margin-bottom: 12px;            /* 稍微缩小下边距，整体紧凑 */
             color: #53585f;
             padding-left: 0;
             border-left: none;
@@ -151,6 +151,8 @@
             padding: 0;
             margin: 0;
             line-height: 1;
+            -webkit-tap-highlight-color: transparent; /* 移除手机点击高亮 */
+            user-select: none;                         /* 防止选中 */
         }
         .play-btn:hover {
             background: transparent;
@@ -227,28 +229,64 @@
             }
             .intro {
                 margin-bottom: 30px;
-                font-size: 0.8rem;          /* 手机端再微调 */
+                font-size: 0.8rem;
                 line-height: 1.5;
             }
-            .work-item { margin-bottom: 40px; }
-            .work-header { flex-direction: column; align-items: flex-start; gap: 4px; }
-            .work-title { font-size: 0.95rem; }
-            .work-year { font-size: 0.8rem; }
-            .work-description { font-size: 0.8rem; }
-            .custom-player { flex-wrap: wrap; gap: 6px; }
-            .play-btn { width: 28px; height: 28px; }
-            .time { min-width: 70px; font-size: 0.75rem; }
-            .seek-slider { min-width: 120px; order: 4; width: 100%; }
+            .work-item {
+                margin-bottom: 40px;
+            }
+            .work-header {
+                gap: 6px 10px;             /* 手机端间距也更紧凑 */
+                margin-bottom: 4px;
+            }
+            .work-title {
+                font-size: 0.95rem;
+            }
+            .work-year {
+                font-size: 0.8rem;
+            }
+            .work-description {
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+            .custom-player {
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+            .play-btn {
+                width: 28px;
+                height: 28px;
+                -webkit-tap-highlight-color: transparent; /* 确保手机端也移除高亮 */
+                outline: none;
+                appearance: none;
+            }
+            .time {
+                min-width: 70px;
+                font-size: 0.75rem;
+            }
+            .seek-slider {
+                min-width: 120px;
+                order: 4;
+                width: 100%;
+            }
         }
 
         @media (min-width: 601px) and (max-width: 900px) {
-            .container { max-width: 100%; }
+            .container {
+                max-width: 100%;
+            }
         }
 
         @media (min-width: 1400px) {
-            .container { max-width: 1100px; }
-            .work-title { font-size: 1.2rem; }
-            .intro { font-size: 0.9rem; }
+            .container {
+                max-width: 1100px;
+            }
+            .work-title {
+                font-size: 1.2rem;
+            }
+            .intro {
+                font-size: 0.9rem;
+            }
         }
 
         @media (hover: none) {
@@ -271,7 +309,7 @@
     </div>
 
     <div class="container">
-        <!-- 音乐创作介绍（字体已缩小） -->
+        <!-- 音乐创作介绍 -->
         <div class="intro">
             <p>殷漪的音乐生涯开始于慢核乐队，兼任贝司手与主唱。</p>
             <p>2000年转向数字音乐创作与笔记本现场表演。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。</p>
