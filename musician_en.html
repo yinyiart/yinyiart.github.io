@@ -45,11 +45,11 @@
             color: #1f2c35;
         }
 
-        /* 创作介绍文字 */
+        /* 创作介绍文字 - 理论化英文翻译 */
         .intro {
             margin-bottom: 40px;
             color: #53585f;
-            font-size: 1rem;
+            font-size: 0.85rem;
             line-height: 1.5;
         }
         .intro p {
@@ -84,24 +84,36 @@
             display: block;
         }
 
-        .work-header {
-            display: flex;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 8px 16px;
-            margin-bottom: 8px;
+        /* 作品文字容器：将所有文字合并为一个整体 */
+        .work-text {
+            display: inline;
+            font-size: 0;
         }
-
-        .work-title {
+        .work-text span {
+            display: inline;
+            font-size: 0.85rem;
+            white-space: normal;
+            word-break: break-word;
+        }
+        .work-text .work-title {
             font-size: 1.0rem;
             font-weight: 400;
             color: #53585f;
             letter-spacing: 0.5px;
+            margin-right: 0.25em;
+        }
+        .work-text .work-year {
+            color: #53585f;
+            margin-right: 0.25em;
+        }
+        .work-text .work-description {
+            color: #53585f;
         }
 
-        .work-year {
-            font-size: 0.85rem;
-            color: #53585f;
+        .work-text .work-title,
+        .work-text .work-year,
+        .work-text .work-description {
+            line-height: 1.4;
         }
 
         .player-box {
@@ -109,14 +121,6 @@
             padding: 0;
             border: none;
             margin-top: 5px;
-        }
-
-        .work-description {
-            font-size: 0.85rem;
-            margin-bottom: 16px;
-            color: #53585f;
-            padding-left: 0;
-            border-left: none;
         }
 
         /* 自定义播放器 */
@@ -132,10 +136,10 @@
             height: 28px;
             min-width: 28px;
             min-height: 28px;
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            color: #53585f;
+            background: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            color: #53585f !important;
             font-size: 0.9rem;
             cursor: pointer;
             display: flex;
@@ -143,14 +147,16 @@
             justify-content: center;
             flex-shrink: 0;
             transition: none;
-            -webkit-appearance: none;
-            appearance: none;
-            outline: none;
-            box-shadow: none;
-            text-shadow: none;
-            padding: 0;
-            margin: 0;
+            -webkit-appearance: none !important;
+            appearance: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
             line-height: 1;
+            -webkit-tap-highlight-color: transparent !important;
+            user-select: none;
         }
         .play-btn:hover {
             background: transparent;
@@ -227,17 +233,34 @@
             }
             .intro {
                 margin-bottom: 30px;
-                line-height: 1.5;
+                font-size: 0.8rem;
             }
-            .work-item { margin-bottom: 40px; }
-            .work-header { flex-direction: column; align-items: flex-start; gap: 4px; }
-            .work-title { font-size: 0.95rem; }
-            .work-year { font-size: 0.8rem; }
-            .work-description { font-size: 0.8rem; }
-            .custom-player { flex-wrap: wrap; gap: 6px; }
-            .play-btn { width: 28px; height: 28px; }
-            .time { min-width: 70px; font-size: 0.75rem; }
-            .seek-slider { min-width: 120px; order: 4; width: 100%; }
+            .work-item {
+                margin-bottom: 40px;
+            }
+            .work-text span {
+                font-size: 0.8rem;
+            }
+            .work-text .work-title {
+                font-size: 0.95rem;
+            }
+            .custom-player {
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+            .play-btn {
+                width: 28px;
+                height: 28px;
+            }
+            .time {
+                min-width: 70px;
+                font-size: 0.75rem;
+            }
+            .seek-slider {
+                min-width: 120px;
+                order: 4;
+                width: 100%;
+            }
         }
 
         @media (min-width: 601px) and (max-width: 900px) {
@@ -246,7 +269,7 @@
 
         @media (min-width: 1400px) {
             .container { max-width: 1100px; }
-            .work-title { font-size: 1.2rem; }
+            .work-text .work-title { font-size: 1.2rem; }
         }
 
         @media (hover: none) {
@@ -260,32 +283,32 @@
 <body>
     <div class="top-nav">
         <a href="index.html">Yin Yi</a>
-        <a href="musician.html">Musician</a>
-        <a href="artist.html">Artist</a>
-        <a href="curator.html">Curator</a>
-        <a href="writing.html">Writing</a>
-        <a href="about.html">About</a>
-        <a href="musician.html">CN</a>   <!-- 指向中文版 -->
+        <a href="musician_en.html" class="active">Musician</a>
+        <a href="artist_en.html">Artist</a>
+        <a href="curator_en.html">Curator</a>
+        <a href="writing_en.html">Writing</a>
+        <a href="about_en.html">About</a>
+        <a href="musician.html">CN</a>
     </div>
 
     <div class="container">
-        <!-- 音乐创作介绍 (English) -->
+        <!-- 音乐创作介绍 - 理论化英文翻译 -->
         <div class="intro">
-            <p>Yin Yi's musical career began with the slowcore band, serving as bassist and lead vocalist.</p>
-            <p>In 2000, he turned to digital music composition and laptop performance. In 2005, as a musician, he became a founding member of the avant-garde performance group "Zuhe Niao" (Shanghai).</p>
-            <p>Yin Yi's early musical creations include: live music performance, contemporary dance, and physical theatre. His music has been commissioned by performance groups including "Zuhe Niao" (Shanghai), Rubato Dance Company (Berlin), Guangdong Modern Dance Company, Xie Xin Dance Theatre, and Ergao Performance.</p>
-            <p>In recent years, his musical work has focused on hybrid music based on field recordings and acoustic instruments.</p>
+            <p>My intimacy with music began in the summer after junior high school graduation. More precisely, it wasn't intimacy but necessity. It all came down to hormones.</p>
+            <p>From forming rock bands to creating avant-garde electronic music, it wasn't just that I experienced the profound technological transformation of the music industry at the turn of the century, but also my contemplation and ideology about music itself.</p>
+            <p>Today's music is increasingly powerless. On one hand, everyone believes it should be the king in its own self-legislated realm; on the other hand, it continuously provides the means of production for the music industry and commerce. Radical music either becomes institutionalized as classic avant-garde or simply adopts a confrontational stance.</p>
+            <p>Music is powerless to respond to the real world. Yet it seems we cannot do without it.</p>
         </div>
 
-        <!-- 作品列表（10首，英文） -->
+        <!-- 作品列表（10首，文字合并） -->
         <div class="work-item">
             <div class="work-image" id="img-lian"><img src="images/lian.jpg" alt="Face"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">Face (Lian)</span>
                 <span class="work-year">2005</span>
+                <span class="work-description">For the physical theatre piece "Tongues Memory of Home", commissioned by Zuhe Niao</span>
             </div>
             <div class="player-box">
-                <div class="work-description">For the physical theatre piece "Tongues Memory of Home", commissioned by Zuhe Niao</div>
                 <div class="custom-player" data-src="music/lian.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -298,13 +321,13 @@
         </div>
 
         <div class="work-item">
-            <div class="work-image" id="img-juluo"><img src="images/juluo.jpg" alt="Settlement"></div>
-            <div class="work-header">
-                <span class="work-title">Settlement (Juluo)</span>
+            <div class="work-image" id="img-juluo"><img src="images/juluo.jpg" alt="Congregation"></div>
+            <div class="work-text">
+                <span class="work-title">Congregation</span>
                 <span class="work-year">2007/2024</span>
+                <!-- 无描述 -->
             </div>
             <div class="player-box">
-                <div class="work-description"></div>
                 <div class="custom-player" data-src="music/juluo.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -318,12 +341,12 @@
 
         <div class="work-item">
             <div class="work-image" id="img-xiangtiankong"><img src="images/xiangtiankong.jpg" alt="Throw a Pebble into the Sky"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">Throw a Pebble into the Sky</span>
                 <span class="work-year">2005</span>
+                <span class="work-description">For the physical theatre piece "Tongues Memory of Home", commissioned by Zuhe Niao</span>
             </div>
             <div class="player-box">
-                <div class="work-description">For the physical theatre piece "Tongues Memory of Home", commissioned by Zuhe Niao</div>
                 <div class="custom-player" data-src="music/xiang-tian-kong.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -337,15 +360,12 @@
 
         <div class="work-item">
             <div class="work-image" id="img-tingdao"><img src="images/tingdedaohaisheng.jpg" alt="The Swimming Pool with Ocean Sound within Earshot"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">The Swimming Pool with Ocean Sound within Earshot</span>
                 <span class="work-year">2007/2014</span>
+                <span class="work-description">Included in XY#001, XY Record, Beijing, 2015</span>
             </div>
             <div class="player-box">
-                <div class="work-description">
-                    Included in XY#001, XY Record, Beijing, 2015<br>
-                    <span style="font-size:0.8rem"><a href="https://xyrecords.bandcamp.com/album/xy-00" target="_blank" style="color:#53585f;">Album details</a></span>
-                </div>
                 <div class="custom-player" data-src="music/ting-dao.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -359,12 +379,12 @@
 
         <div class="work-item">
             <div class="work-image" id="img-biandaonan"><img src="images/biandaonannan.png" alt="Choreographer Nannan"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">Choreographer Nannan</span>
                 <span class="work-year">2015</span>
+                <span class="work-description">For the dance film "Eight"</span>
             </div>
             <div class="player-box">
-                <div class="work-description">For the dance film "Eight"</div>
                 <div class="custom-player" data-src="music/bian-dao-nan-nan.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -378,12 +398,12 @@
 
         <div class="work-item">
             <div class="work-image" id="img-erlun"><img src="images/erlun.jpg" alt="Helix"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">Helix (Erlun)</span>
                 <span class="work-year">2010</span>
+                <span class="work-description">Developed from a solo dance by contemporary dancer Li Lingxi</span>
             </div>
             <div class="player-box">
-                <div class="work-description">Developed from a solo dance by contemporary dancer Li Lingxi</div>
                 <div class="custom-player" data-src="music/erlun.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -397,12 +417,12 @@
 
         <div class="work-item">
             <div class="work-image" id="img-nannan"><img src="images/nannan.jpg" alt="Nannan Maybe Will Dance"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">Nannan Maybe Will Dance</span>
                 <span class="work-year">2008</span>
+                <span class="work-description">For Nannan</span>
             </div>
             <div class="player-box">
-                <div class="work-description">For Nannan</div>
                 <div class="custom-player" data-src="music/nan-nan-hui-lai.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -416,12 +436,12 @@
 
         <div class="work-item">
             <div class="work-image" id="img-xuanzhuan"><img src="images/xuanzhuan.jpg" alt="Rotation"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">Rotation (Xuanzhuan)</span>
                 <span class="work-year">2016</span>
+                <!-- 无描述 -->
             </div>
             <div class="player-box">
-                <div class="work-description"></div>
                 <div class="custom-player" data-src="music/xuan-zhuan.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -435,12 +455,12 @@
 
         <div class="work-item">
             <div class="work-image" id="img-weijian"><img src="images/weijian.jpg" alt="Unseen"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">Unseen (Weijian)</span>
                 <span class="work-year">2014</span>
+                <!-- 无描述 -->
             </div>
             <div class="player-box">
-                <div class="work-description"></div>
                 <div class="custom-player" data-src="music/wei-jian.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
@@ -454,12 +474,12 @@
 
         <div class="work-item">
             <div class="work-image" id="img-yitiaoxiaolu"><img src="images/yitiaoxiaolu.jpg" alt="A Small Path"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">A Small Path (Yi Tiao Xiao Lu)</span>
                 <span class="work-year">2022</span>
+                <span class="work-description">Commissioned for a path at the Nanjing Massacre Memorial Hall, for the exhibition "Sensing the Peaceful: Design for the Memory of Nanjing, as a City of Peace"</span>
             </div>
             <div class="player-box">
-                <div class="work-description">Commissioned for a path at the Nanjing Massacre Memorial Hall, for the exhibition "Sensing the Peaceful：Design for the Memory of Nanjing, as a City of Peace"</div>
                 <div class="custom-player" data-src="music/yi-tiao-xiao-lu.mp3">
                     <button class="play-btn">▶</button>
                     <span class="time">0:00 / 0:00</span>
