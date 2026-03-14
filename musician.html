@@ -20,9 +20,21 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 900px;      /* 默认宽度 */
             margin: 0 auto;
             padding: 0 5%;
+        }
+
+        /* 响应式宽度扩展 */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+        }
+        @media (min-width: 1600px) {
+            .container {
+                max-width: 1200px;
+            }
         }
 
         /* 顶部导航 */
@@ -100,11 +112,11 @@
             font-weight: 400;
             color: #53585f;
             letter-spacing: 0.5px;
-            margin-right: 0.25em;
+            margin-right: 0.75em;        /* 加大间距 */
         }
         .work-text .work-year {
             color: #53585f;
-            margin-right: 0.25em;
+            margin-right: 0.75em;        /* 加大间距 */
         }
         .work-text .work-description {
             color: #53585f;
@@ -243,6 +255,10 @@
             }
             .work-text .work-title {
                 font-size: 0.95rem;
+                margin-right: 0.5em;        /* 手机端适当减小 */
+            }
+            .work-text .work-year {
+                margin-right: 0.5em;
             }
             .custom-player {
                 flex-wrap: wrap;
@@ -265,11 +281,6 @@
 
         @media (min-width: 601px) and (max-width: 900px) {
             .container { max-width: 100%; }
-        }
-
-        @media (min-width: 1400px) {
-            .container { max-width: 1100px; }
-            .work-text .work-title { font-size: 1.2rem; }
         }
 
         @media (hover: none) {
@@ -300,7 +311,7 @@
             <p>音乐无力回应现实世界。但我们又好像不能没有音乐。</p>
         </div>
 
-        <!-- 作品列表（10首，文字合并） -->
+        <!-- 作品列表（10首，文字合并，间距加大） -->
         <div class="work-item">
             <div class="work-image" id="img-lian"><img src="images/lian.jpg" alt="脸"></div>
             <div class="work-text">
