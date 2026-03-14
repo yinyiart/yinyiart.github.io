@@ -45,7 +45,7 @@
             color: #1f2c35;
         }
 
-        /* 创作介绍文字 */
+        /* 创作介绍文字 - 最终版 */
         .intro {
             margin-bottom: 40px;
             color: #53585f;
@@ -84,38 +84,43 @@
             display: block;
         }
 
-        /* 作品头部：标题、年份、描述 放在同一行（自动换行） */
-        .work-header {
-            display: flex;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 8px 12px;
-            margin-bottom: 8px;
+        /* 作品文字容器：将所有文字合并为一个整体 */
+        .work-text {
+            display: inline;
+            font-size: 0;
         }
-
-        .work-title {
+        .work-text span {
+            display: inline;
+            font-size: 0.85rem;
+            white-space: normal;
+            word-break: break-word;
+        }
+        .work-text .work-title {
             font-size: 1.0rem;
             font-weight: 400;
             color: #53585f;
             letter-spacing: 0.5px;
+            margin-right: 0.25em;
         }
-
-        .work-year {
-            font-size: 0.85rem;
+        .work-text .work-year {
+            color: #53585f;
+            margin-right: 0.25em;
+        }
+        .work-text .work-description {
             color: #53585f;
         }
 
-        .work-description {
-            font-size: 0.85rem;
-            color: #53585f;
-            display: inline-block;  /* 与标题等在同一行 */
+        .work-text .work-title,
+        .work-text .work-year,
+        .work-text .work-description {
+            line-height: 1.4;
         }
 
         .player-box {
             background: transparent;
             padding: 0;
             border: none;
-            margin-top: 0;
+            margin-top: 5px;
         }
 
         /* 自定义播放器 */
@@ -127,33 +132,32 @@
         }
 
         .play-btn {
-    width: 28px;
-    height: 28px;
-    min-width: 28px;
-    min-height: 28px;
-    background: none !important;
-    background-color: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    color: #53585f !important;
-    font-size: 0.9rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: none;
-    -webkit-appearance: none !important;
-    appearance: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    line-height: 1;
-    -webkit-tap-highlight-color: transparent !important;
-    user-select: none;
-}
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            min-height: 28px;
+            background: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+            color: #53585f !important;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: none;
+            -webkit-appearance: none !important;
+            appearance: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            line-height: 1;
+            -webkit-tap-highlight-color: transparent !important;
+            user-select: none;
+        }
         .play-btn:hover {
             background: transparent;
             color: #53585f;
@@ -230,23 +234,15 @@
             .intro {
                 margin-bottom: 30px;
                 font-size: 0.8rem;
-                line-height: 1.5;
             }
             .work-item {
                 margin-bottom: 40px;
             }
-            .work-header {
-                gap: 6px 10px;
-                margin-bottom: 6px;
+            .work-text span {
+                font-size: 0.8rem;
             }
-            .work-title {
+            .work-text .work-title {
                 font-size: 0.95rem;
-            }
-            .work-year {
-                font-size: 0.8rem;
-            }
-            .work-description {
-                font-size: 0.8rem;
             }
             .custom-player {
                 flex-wrap: wrap;
@@ -255,12 +251,6 @@
             .play-btn {
                 width: 28px;
                 height: 28px;
-                background: none !important;
-        background-color: transparent !important;
-        border: none !important;
-        outline: none !important;
-        -webkit-appearance: none !important;
-        appearance: none !important;
             }
             .time {
                 min-width: 70px;
@@ -274,21 +264,12 @@
         }
 
         @media (min-width: 601px) and (max-width: 900px) {
-            .container {
-                max-width: 100%;
-            }
+            .container { max-width: 100%; }
         }
 
         @media (min-width: 1400px) {
-            .container {
-                max-width: 1100px;
-            }
-            .work-title {
-                font-size: 1.2rem;
-            }
-            .intro {
-                font-size: 0.9rem;
-            }
+            .container { max-width: 1100px; }
+            .work-text .work-title { font-size: 1.2rem; }
         }
 
         @media (hover: none) {
@@ -311,18 +292,18 @@
     </div>
 
     <div class="container">
-        <!-- 音乐创作介绍 -->
+        <!-- 音乐创作介绍 - 最终版中文 -->
         <div class="intro">
-            <p>殷漪的音乐生涯开始于慢核乐队，兼任贝司手与主唱。</p>
-            <p>2000年转向数字音乐创作与笔记本现场表演。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。</p>
-            <p>殷漪早期的音乐创作领域包括:现场音乐表演、现代舞、肢体剧场。委约其音乐作品的表演团体包括“组合嬲”(上海)、Rubato 舞团(柏林)、广东现代舞蹈团、谢欣舞蹈剧场、二高表演。</p>
-            <p>近年来其音乐创作主要集中于基于实地录音和原声乐器的混合音乐。</p>
+            <p>我和音乐产生亲近感是在初中毕业后的那个暑假。更准备地说不是亲近，而是需要。这都源于荷尔蒙。</p>
+            <p>从组建摇滚乐到前卫电子音乐创作，不仅仅是我经历了世纪初音乐产业深刻的技术转型，也是因为对于音乐本身的思考和意识形态。</p>
+            <p>今天的音乐越来越无力。一方面是所有人都相信，它应该是自我立法国度中的国王；另一方面它又不断为音乐工业和产业提供生产资料。而激进音乐，要么体制化成经典先锋，要么就简单地摆出对抗的姿态。</p>
+            <p>音乐无力回应现实世界。但我们又好像不能没有音乐。</p>
         </div>
 
-        <!-- 作品列表（10首） -->
+        <!-- 作品列表（10首，文字合并） -->
         <div class="work-item">
             <div class="work-image" id="img-lian"><img src="images/lian.jpg" alt="脸"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">脸</span>
                 <span class="work-year">2005</span>
                 <span class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</span>
@@ -341,10 +322,10 @@
 
         <div class="work-item">
             <div class="work-image" id="img-juluo"><img src="images/juluo.jpg" alt="聚落"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">聚落</span>
                 <span class="work-year">2007/2024</span>
-                <!-- 无描述，留空 -->
+                <!-- 无描述 -->
             </div>
             <div class="player-box">
                 <div class="custom-player" data-src="music/juluo.mp3">
@@ -360,7 +341,7 @@
 
         <div class="work-item">
             <div class="work-image" id="img-xiangtiankong"><img src="images/xiangtiankong.jpg" alt="向天空扔一粒石子"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">向天空扔一粒石子</span>
                 <span class="work-year">2005</span>
                 <span class="work-description">为肢体剧场《舌头为了家园的记忆》而作 · 组合嬲委约</span>
@@ -379,7 +360,7 @@
 
         <div class="work-item">
             <div class="work-image" id="img-tingdao"><img src="images/tingdedaohaisheng.jpg" alt="听的到海声的泳池"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">听的到海声的泳池</span>
                 <span class="work-year">2007/2014</span>
                 <span class="work-description">收录于 XY#001，XY Record，北京，2015</span>
@@ -398,7 +379,7 @@
 
         <div class="work-item">
             <div class="work-image" id="img-biandaonan"><img src="images/biandaonannan.png" alt="编导囡囡"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">编导囡囡</span>
                 <span class="work-year">2015</span>
                 <span class="work-description">为舞蹈影像《八》而作</span>
@@ -417,7 +398,7 @@
 
         <div class="work-item">
             <div class="work-image" id="img-erlun"><img src="images/erlun.jpg" alt="耳轮"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">耳轮</span>
                 <span class="work-year">2010</span>
                 <span class="work-description">从现代舞者李翎溪的一段独舞发展而来</span>
@@ -436,7 +417,7 @@
 
         <div class="work-item">
             <div class="work-image" id="img-nannan"><img src="images/nannan.jpg" alt="囡囡可能会来跳舞"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">囡囡可能会来跳舞</span>
                 <span class="work-year">2008</span>
                 <span class="work-description">为囡囡而作</span>
@@ -455,7 +436,7 @@
 
         <div class="work-item">
             <div class="work-image" id="img-xuanzhuan"><img src="images/xuanzhuan.jpg" alt="旋转"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">旋转</span>
                 <span class="work-year">2016</span>
                 <!-- 无描述 -->
@@ -474,7 +455,7 @@
 
         <div class="work-item">
             <div class="work-image" id="img-weijian"><img src="images/weijian.jpg" alt="未见"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">未见</span>
                 <span class="work-year">2014</span>
                 <!-- 无描述 -->
@@ -493,7 +474,7 @@
 
         <div class="work-item">
             <div class="work-image" id="img-yitiaoxiaolu"><img src="images/yitiaoxiaolu.jpg" alt="一条小路"></div>
-            <div class="work-header">
+            <div class="work-text">
                 <span class="work-title">一条小路</span>
                 <span class="work-year">2022</span>
                 <span class="work-description">为南京大屠杀纪念馆的一条小路而作 · 展览《宁在：南京·和平城市记忆设计展》委约</span>
