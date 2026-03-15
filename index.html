@@ -12,9 +12,9 @@
         }
 
         body {
-            background-color: #dae7eb;          /* 浅灰色背景 */
+            background-color: #dae7eb;
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #53585f;                      /* 深灰色文字 */
+            color: #53585f;
             line-height: 1.6;
             padding: 40px 20px;
             min-height: 100vh;
@@ -55,17 +55,17 @@
 
         /* 主内容区域 */
         .hero {
-            text-align: center;
+            text-align: left;          /* 左对齐 */
             max-width: 700px;
-            margin: 0 auto;
+            margin: 0;
         }
 
         .hero-image {
             width: 100%;
-            max-width: 500px;        /* 可根据需要调整图片最大宽度 */
+            max-width: 500px;
             height: auto;
             margin-bottom: 30px;
-            border-radius: 2px;       /* 轻微圆角，与整体风格协调 */
+            border-radius: 2px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
@@ -108,7 +108,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- 导航栏（与全站统一） -->
+        <!-- 导航栏 -->
         <div class="top-nav">
             <a href="index.html" class="active">殷漪</a>
             <a href="musician.html">音乐家</a>
@@ -116,12 +116,12 @@
             <a href="curator.html">策展人</a>
             <a href="writing.html">文字</a>
             <a href="about.html">简历</a>
-            <a href="index_en.html">EN</a>   <!-- 指向英文版首页，请确保文件存在 -->
+            <a href="index_en.html">EN</a>
         </div>
 
-        <!-- 首页主体：图片 + 文字 -->
+        <!-- 首页主体：图片 + 文字（左对齐） -->
         <div class="hero">
-            <img src="images/yinyi.jpg" alt="殷漪" class="hero-image">
+            <img src="main/yinyi.jpg" alt="殷漪" class="hero-image">
             <div class="hero-text">
                 <p>与我而言，艺术既是自我治愈的良方，亦是检验思考的试金石。</p>
                 <p>艺术应该是个动词。</p>
