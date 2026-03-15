@@ -3,42 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>殷漪</title>
+    <title>殷漪 · 首页</title>
     <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: "Helvetica Neue", "Helvetica", "Arial", "PingFang SC", "Microsoft YaHei", sans-serif;
-        background-color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-    .container {
-        text-align: center;
-    }
-    img {
-        max-width: 90vw;
-        max-height: 80vh;
-        display: block;
-        margin: 0 auto;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.06); /* 更淡的阴影，更轻盈 */
-    }
-    .name {
-        margin-top: 24px;          /* 稍增加间距，呼吸感 */
-        font-size: 18px;            /* 更小的字号 */
-        font-weight: 300;           /* 细体（如果字体支持） */
-        letter-spacing: 2px;        /* 增加字母间距，更显雅致 */
-        color: #555;                /* 深灰色，不刺眼 */
-        text-transform: uppercase;  /* 可选：若名字是拼音，大写更有设计感 */
-    }
-</style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #dae7eb;          /* 浅灰色背景 */
+            font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+            color: #53585f;                      /* 深灰色文字 */
+            line-height: 1.6;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 5%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            margin-bottom: 80px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #53585f;                       /* 导航文字深灰色 */
+        }
+        .top-nav a {
+            color: #53585f;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-nav a:hover,
+        .top-nav a.active {
+            color: #1f2c35;                        /* 悬停/激活时稍深一点 */
+        }
+
+        /* 首页主内容 */
+        .hero {
+            text-align: left;
+            max-width: 800px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            color: #1f2c35;                         /* 主标题颜色略深 */
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #5a6b7a;                          /* 副标题颜色 */
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+        .hero .intro-quote {
+            font-size: 0.95rem;
+            color: #3f4f60;                          /* 引言文字颜色 */
+            border-left: 3px solid #b0c8d0;          /* 左边框颜色调浅 */
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 0 8%;
+            }
+            .top-nav {
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-bottom: 50px;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <img src="yinyi.jpg" alt="殷漪作品">
-        <div class="name">殷漪 YIN YI</div>
+        <!-- 导航栏（与全站统一） -->
+        <div class="top-nav">
+            <a href="index.html" class="active">殷漪</a>
+            <a href="musician.html">音乐家</a>
+            <a href="artist.html">艺术家</a>
+            <a href="curator.html">策展人</a>
+            <a href="writing.html">文字</a>
+            <a href="about.html">简历</a>
+            <a href="index_en.html">EN</a>   <!-- 指向英文版首页，请确保文件存在 -->
+        </div>
+
+        <!-- 首页主体内容 -->
+        <div class="hero">
+            <h1>殷漪</h1>
+            <p>音乐家 · 艺术家 · 策展人</p>
+            <div class="intro-quote">
+                以听觉为基底，在声音、空间、身体与文化之间<br>
+                探寻感知的边界与可能的共振。
+            </div>
+        </div>
     </div>
 </body>
 </html>
