@@ -37,11 +37,11 @@
             display: flex;
             justify-content: flex-end;
             gap: 30px;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #53585f;                       /* 导航文字深灰色 */
+            color: #53585f;
         }
         .top-nav a {
             color: #53585f;
@@ -50,34 +50,37 @@
         }
         .top-nav a:hover,
         .top-nav a.active {
-            color: #1f2c35;                        /* 悬停/激活时稍深一点 */
+            color: #1f2c35;
         }
 
-        /* 首页主内容 */
+        /* 主内容区域 */
         .hero {
-            text-align: left;
-            max-width: 800px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
         }
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 300;
-            letter-spacing: 8px;
-            margin-bottom: 20px;
-            color: #1f2c35;                         /* 主标题颜色略深 */
-            line-height: 1.2;
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;        /* 可根据需要调整图片最大宽度 */
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 2px;       /* 轻微圆角，与整体风格协调 */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .hero p {
-            font-size: 1.1rem;
-            color: #5a6b7a;                          /* 副标题颜色 */
-            max-width: 600px;
-            margin-bottom: 40px;
+
+        .hero-text {
+            font-size: 1.2rem;
+            color: #3f4f60;
+            line-height: 1.8;
         }
-        .hero .intro-quote {
-            font-size: 0.95rem;
-            color: #3f4f60;                          /* 引言文字颜色 */
-            border-left: 3px solid #b0c8d0;          /* 左边框颜色调浅 */
-            padding-left: 20px;
-            margin-top: 30px;
+
+        .hero-text p {
+            margin-bottom: 0.5em;
+        }
+
+        .hero-text p:last-child {
+            margin-bottom: 0;
         }
 
         /* 响应式 */
@@ -92,13 +95,12 @@
                 justify-content: center;
                 gap: 20px;
                 flex-wrap: wrap;
-                margin-bottom: 50px;
+                margin-bottom: 40px;
             }
-            .hero h1 {
-                font-size: 2.5rem;
-                letter-spacing: 4px;
+            .hero-image {
+                max-width: 100%;
             }
-            .hero p {
+            .hero-text {
                 font-size: 1rem;
             }
         }
@@ -117,13 +119,12 @@
             <a href="index_en.html">EN</a>   <!-- 指向英文版首页，请确保文件存在 -->
         </div>
 
-        <!-- 首页主体内容 -->
+        <!-- 首页主体：图片 + 文字 -->
         <div class="hero">
-            <h1>殷漪</h1>
-            <p>音乐家 · 艺术家 · 策展人</p>
-            <div class="intro-quote">
-                以听觉为基底，在声音、空间、身体与文化之间<br>
-                探寻感知的边界与可能的共振。
+            <img src="images/yinyi.jpg" alt="殷漪" class="hero-image">
+            <div class="hero-text">
+                <p>与我而言，艺术既是自我治愈的良方，亦是检验思考的试金石。</p>
+                <p>艺术应该是个动词。</p>
             </div>
         </div>
     </div>
