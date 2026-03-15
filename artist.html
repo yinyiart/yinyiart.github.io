@@ -216,14 +216,14 @@
                 gap: 30px;
             }
             .work-image {
-                height: 200px;           /* 固定高度，统一图片显示 */
+                height: 200px;
                 width: 100%;
-                aspect-ratio: auto;      /* 取消aspect-ratio，由固定高度控制 */
+                aspect-ratio: auto;
             }
             .work-image img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;       /* 保持图片裁剪填充 */
+                object-fit: cover;
             }
             .work-title {
                 font-size: 1.0rem;
@@ -279,7 +279,7 @@
     </div>
 
     <script>
-        // 作品数据（已更新 cong 的图片为 xin04.jpg）
+        // 作品数据（已删除耳宅声景、你听到过海、心经，并更新了指定作品的预览图片）
         const works = [
             { id: 'gan', title: '感官的流动', year: '2025', image: 'images/flux15.jpg', tags: ['public-space', 'public-memory', 'media', 'field-recording'] },
             { id: 'ligeti', title: '利盖蒂的100节拍器', year: '2025', image: 'images/ligeti01.jpg', tags: ['body', 'performance'] },
@@ -296,20 +296,18 @@
             { id: 'zhenshen', title: '真身', year: '2019', image: 'images/05.jpg', tags: ['zhesi', 'body', 'media', 'performance'] },
             { id: 'xiangxi', title: '向西', year: '2019', image: 'images/xiang04.jpg', tags: ['public-space', 'public-memory', 'sound-image', 'performance', 'field-recording'] },
             { id: 'liuge', title: '聆听的六个姿态', year: '2019', image: 'images/liu01.jpg', tags: ['public-space', 'performance'] },
-            { id: 'shige', title: '十个墙角', year: '2018', image: '', tags: ['zhesi'] },
-            { id: 'meishuguan', title: '美术馆', year: '2018', image: '', tags: ['body', 'sound-image'] },
-            { id: 'erzhai', title: '耳宅声景', year: '2018', image: '', tags: ['public-space', 'field-recording'] },
-            { id: 'ditu', title: '地图', year: '2018', image: '', tags: ['body', 'sound-image', 'field-recording'] },
-            { id: 'yici', title: '一次上海的旅程', year: '2017', image: '', tags: ['public-space', 'public-memory', 'sound-image'] },
-            { id: 'hailang', title: '海浪', year: '2016', image: 'images/hai02.jpg', tags: ['zhesi', 'performance'] },
-            { id: 'tingdao', title: '你听到过海', year: '2016', image: '', tags: ['public-space', 'media', 'field-recording'] },
-            { id: 'liwu', title: '礼物', year: '2016-2021', image: '', tags: ['public-space', 'media', 'performance'] },
-            { id: 'xinjing', title: '心经', year: '2014', image: '', tags: ['zhesi', 'media'] },
-            { id: 'dinghai', title: '20140901-20140930', year: '2014', image: '', tags: ['public-space', 'public-memory', 'field-recording'] },
-            { id: 'weiliao', title: '为了告别的聚会', year: '2013-2019', image: '', tags: ['public-space', 'public-memory', 'field-recording'] },
-            { id: 'moshnegren', title: '陌生人', year: '2013', image: '', tags: ['body'] },
+            { id: 'shige', title: '十个墙角', year: '2018', image: 'images/shi01.jpg', tags: ['zhesi'] },
+            { id: 'meishuguan', title: '美术馆', year: '2018', image: 'images/mei01.jpg', tags: ['body', 'sound-image'] },
+            { id: 'ditu', title: '地图', year: '2018', image: 'images/ditu01.jpg', tags: ['body', 'sound-image', 'field-recording'] },
+            { id: 'yici', title: '一次上海的旅程', year: '2017', image: 'images/yi01.jpg', tags: ['public-space', 'public-memory', 'sound-image'] },
+            { id: 'hailang', title: '海浪', year: '2016', image: 'images/hai03.jpg', tags: ['zhesi', 'performance'] },
+            { id: 'liwu', title: '礼物', year: '2016-2021', image: 'images/li02.jpg', tags: ['public-space', 'media', 'performance'] },
+            { id: 'dinghai', title: '20140901-20140930', year: '2014', image: 'images/201402.jpg', tags: ['public-space', 'public-memory', 'field-recording'] },
+            { id: 'weiliao', title: '为了告别的聚会', year: '2013-2019', image: 'images/wei01.jpg', tags: ['public-space', 'public-memory', 'field-recording'] },
+            { id: 'moshnegren', title: '陌生人', year: '2013', image: 'images/mo01.jpg', tags: ['body'] },
             { id: 'heliu', title: '你可以无数次聆听同一条河流', year: '2012-2016', image: '', tags: ['zhesi', 'field-recording'] },
-            { id: 'sanfenzhong', title: '三分钟', year: '2008|2020', image: '', tags: ['public-memory', 'performance'] }
+            { id: 'wuti', title: '无题（乐谱一）', year: '2011', image: '', tags: ['zhesi', 'media'] },
+            { id: 'sanfenzhong', title: '三分钟', year: '2008|2020', image: 'images/san03.jpg', tags: ['public-memory', 'performance'] }
         ];
 
         // 脉络中文名称映射
