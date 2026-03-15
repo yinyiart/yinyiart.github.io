@@ -104,32 +104,32 @@ body {
 
 @media (max-width: 800px) {
     body {
-        padding: 20px 0;
+        padding: 20px 0;          /* 上下留白，左右无缩进，让图片撑满宽度 */
     }
     .container {
-        padding: 0;
+        padding: 0;                /* 容器无内边距 */
     }
     .top-nav {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-bottom: 20px;
+        justify-content: center;    /* 导航居中 */
+        flex-wrap: wrap;            /* 允许换行 */
+        gap: 15px;                  /* 减小间距适应小屏 */
+        margin-bottom: 20px;        /* 可选调整 */
     }
     .work-detail {
-        flex-direction: column-reverse;
-        gap: 20px;
+        flex-direction: column-reverse; /* 图片在上，文字在下 */
+        gap: 20px;                 /* 调整图片与文字间距 */
     }
     .work-info {
         flex: auto;
         width: 100%;
-        padding: 0 15px 30px 15px; /* 增加底部间距 */
+        padding: 0 15px 15px 15px; /* 文字区域左右添加少量边距，避免贴边 */
     }
     .work-images {
         flex: auto;
         width: 100%;
     }
     .image-list {
-        gap: 10px;
+        gap: 10px;                 /* 图片之间的间距可适当缩小 */
     }
     .image-item {
         width: 100%;
