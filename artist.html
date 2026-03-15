@@ -215,6 +215,16 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+            .work-image {
+                height: 200px;           /* 固定高度，统一图片显示 */
+                width: 100%;
+                aspect-ratio: auto;      /* 取消aspect-ratio，由固定高度控制 */
+            }
+            .work-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;       /* 保持图片裁剪填充 */
+            }
             .work-title {
                 font-size: 1.0rem;
             }
