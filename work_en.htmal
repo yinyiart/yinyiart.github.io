@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yin Yi · Work Detail</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #59585f;
+    font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+    color: #f0f4f8;
+    line-height: 1.6;
+    padding: 40px 0 40px 20px;   /* 右侧顶格，左侧留白 */
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-bottom: 40px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #d0d8e0;
+}
+.top-nav a {
+    color: #d0d8e0;
+    text-decoration: none;
+}
+.top-nav a:hover {
+    color: #ffffff;
+}
+
+.work-detail {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.work-info {
+    flex: 1 1 30%;
+    position: sticky;      /* 电脑端固定 */
+    top: 40px;
+    align-self: flex-start;
+}
+
+.work-title {
+    font-size: 1.0rem;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+.work-year {
+    font-size: 0.85rem;
+    color: #d0d8e0;
+    margin-bottom: 16px;
+}
+.work-description {
+    font-size: 0.85rem;
+    color: #f0f4f8;
+    white-space: pre-line;
+    line-height: 1.6;
+}
+
+.work-images {
+    flex: 1 1 70%;
+}
+.image-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.image-item {
+    width: 100%;
+    height: auto;
+}
+.image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.image-placeholder {
+    width: 300px;
+    background: #7a8088;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d0d8e0;
+    height: 200px;
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 20px 0;          /* 上下留白，左右无缩进，让图片撑满宽度 */
+    }
+    .container {
+        padding: 0;                /* 容器无内边距 */
+    }
+    .top-nav {
+        justify-content: center;    /* 导航居中 */
+        flex-wrap: wrap;            /* 允许换行 */
+        gap: 15px;                  /* 减小间距适应小屏 */
+        margin-bottom: 20px;        /* 可选调整 */
+    }
+    .work-detail {
+        flex-direction: column-reverse; /* 图片在上，文字在下 */
+        gap: 20px;                 /* 调整图片与文字间距 */
+    }
+    .work-info {
+        flex: auto;
+        width: 100%;
+        padding: 0 15px 40px 15px; /* 增加底部间距，使文字与图片更远 */
+    }
+    .work-images {
+        flex: auto;
+        width: 100%;
+    }
+    .image-list {
+        gap: 10px;                 /* 图片之间的间距可适当缩小 */
+    }
+    .image-item {
+        width: 100%;
+    }
+    .image-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-nav">
+            <a href="index_en.html">Yin Yi</a>
+            <a href="musician_en.html">Musician</a>
+            <a href="artist_en.html">Artist</a>
+            <a href="curator_en.html">Curator</a>
+            <a href="writing_en.html">Texts</a>
+            <a href="about_en.html">CV</a>
+            <a href="work.html">CN</a>   <!-- 返回中文版 -->
+        </div>
+
+        <div id="work-content">
+            <p style="color:#d0d8e0;">Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        console.log("English version script started");
+        const works = [
+            { id: 'gan', title: 'Sensory Flow', year: '2025', description: `10-channel video, 4-channel sound
+
+This work was commissioned for the exhibition "Building Shanghai: Architecture, City and Culture since 1949" at the West Bund Museum. Like my previous work "Heading West", I focus my spatial attention on Suzhou Creek.
+
+In mainstream urban narratives, the Huangpu River is Shanghai's most important waterway. Its large volume divides Puxi and Pudong, historically playing a crucial role in waterborne transportation, especially for the transport of industrial raw materials. Today, we can see many transformed and untouched industrial relics along its banks.
+
+However, as a Shanghai citizen, I believe Suzhou Creek is more intimately connected to the daily lives of Shanghainese. One need only look at the history and current state of the bridges over Suzhou Creek to feel this.
+
+Suzhou Creek, once vibrant, then heavily polluted, and now after remediation, presents a calm and peaceful appearance. But this tranquility is a rejection of human presence. Today, Suzhou Creek has become a fixed, static urban landscape.
+
+I have always imagined being able to enter Suzhou Creek, to view and listen to Shanghai along its course, to recreate the feeling my mother had when she once crossed it by ferry. I chose this perspective from within the riverbed.
+
+During the filming and recording, I spent two days tracing the creek upstream, revisiting Suzhou Creek. It felt like a tunnel compressing time and space. Along the banks were unexpectedly varied urban fragments, pieced together by Suzhou Creek. In the work's presentation, I incorporated this sense of splicing.
+
+The work consists of two groups totaling 10 screens of video and 4 channels of sound. Each group of images selects fragments from a larger scene, divided into riverbed and riverbank. Gaps are left between screens. Each group simultaneously plays city sounds I recorded—not synchronous sound, but field recordings from my revisit to Suzhou Creek combined with selected urban sounds from my personal audio archive.
+
+The multi-screen video and multi-channel sound set weave together gazes at the same perspective from different tenses, while the ceaselessly changing city sounds reveal the dynamics of the city's own operation. I aim to awaken the audience's awareness of urban experience through the interplay of absence and continuity, stillness and flow, in the visual and auditory realms, and to flow between the two senses. In the uncoordinated operation of the two media, image and sound, I explore the characteristics and differences between seeing and listening. As a landscape, Suzhou Creek has become a kind of urban boundary. Yet urban sounds continuously cross this boundary.
+
+Due to exhibition constraints, monitors were used on site. In the future, I hope to use projections to expand the scale. I imagine the effect would be quite different.`, images: ['images/flux00.jpg','images/flux01.jpg','images/flux02.jpg','images/flux03.jpg','images/flux04.jpg','images/flux05.jpg','images/flux06.jpg','images/flux07.jpg','images/flux08.jpg','images/flux09.jpg','images/flux10.jpg','images/flux11.jpg','images/flux12.jpg','images/flux13.jpg','images/flux14.jpg','images/flux15.jpg'] },
+            { id: 'ligeti', title: 'Ligeti\'s 100 Metronomes', year: '2025', description: `100 mechanical metronomes, 10 serving trolleys, 10 performers, 1 conductor
+
+100 mechanical metronomes, 10 performers, 1 conductor. Commissioned for the inauguration of the Gabrielle Chanel Space at the Power Station of Art, Shanghai, an adaptation of Ligeti's "Poème Symphonique for 100 Metronomes".
+
+The entire performance will be carried out by 10 performers pushing trolleys loaded with 100 metronomes, following a pre-arranged movement route, stopping points, body postures, spatial layout, and relationship between metronomes and audience distance. The conductor follows the tradition of avant-garde classical music and Fluxus, using a mixture of graphic and text scores for live conduction.
+
+It is evident that the 1962 "Poème Symphonique" was influenced by Fluxus. Reading Ligeti's statement about the use of text scores as a critique of musical means, I ponder how music or other arts influence contemporary art.
+
+In my conception, the performance of "Poème Symphonique" at PSA is not about technically replicating Ligeti's sonic and musical critique, as the context that gave rise to both has profoundly changed. Rather, it is about how, through the enactment of this work, to activate the auditory awareness of everyone present, and within this auditory awareness, establish a temporary cultural community. The auditory awareness here is not an abstract concept, nor the concrete "active listening" of sound theory, but how "auditory-sound" connects with ritual, performance, body, space, time—or further, how within ritual, performance, body, space, time, to reveal the hearing evoked by sound.
+
+This ritual|performance will be fluid, corporeal, ephemeral.
+
+To avoid disturbing the performance, I requested no photography during it. The photos here are from rehearsals. In the future, I envision this work as an installation with performance, alternating between static and dynamic states.`, images: ['images/ligeti01.jpg', 'images/ligeti02.jpg','images/ligeti03.jpg','images/ligeti04.jpg','images/ligeti05.jpg','images/ligeti06.jpg','images/ligeti07.jpg','images/ligeti08.jpg','images/ligeti09.jpg','images/ligeti10.jpg','images/ligeti11.jpg','images/ligeti12.jpg'] },
+            { id: 'wo', title: 'I Am Listening', year: '2023', description: `Text, balloon, food
+
+"I Am Listening" is an auditory theatre piece. It developed from the eponymous auditory workshop I conducted during the RanRan art residency. The workshop was delivered to participants in the form of an auditory exercise manual, completing listening exercises and reflections through a series of written instructions.
+
+I rewrite the text based on the physical context of each performance location, the perceptual consciousness of hearing, historical concepts of sound, and the physical and human environment of the site. I invite the audience to perform listening exercises, reflect on sound concepts, and wander through the space while reading the text. In the specific environment, they encounter various postures of listening firsthand, thereby encountering what I term the "polysemic wholeness generated in listening."
+
+In this theatrical work, audience members temporarily deposit their phones to receive an instructional text, a lightweight balloon, and a piece of food. The instructional text guides them to autonomously perform the auditory work. Compared to typical performances, the boundary between performer and audience disappears. The lightweight balloon serves as a visible marker, forming an ever-changing listening community among the identifiable audience members throughout the venue. The food is a sensory channel back from the artistic time-space to daily life.
+
+"I Am Listening" is a declarative result in language, but in the process of the work's enactment, it is a state, an action, a gesture; in the audience's action, it is the starting point of listening. The work is both an auditory theatre occurring in public space and a mobile lecture taking place within the audience's consciousness and body.`, images: ['images/listening01.jpg','images/listening02.jpg','images/listening03.jpg','images/listening04.jpg','images/listening05.jpg','images/listening06.jpg','images/listening07.jpg'] },
+            { id: 'guishi', title: 'Silence Begins When Returning', year: '2023', description: `Soil, raw speakers, audio player, amplifier, electromagnetic microphone, stainless steel, LED lights, timer
+
+After sitting quietly in an anechoic chamber, John Cage heard the sounds inside his own body without an external source. From this, he made his famous statement: There is no such thing as Silence. The anechoic chamber is a laboratory; Cage tried to strip away all external conditions to find pure silence, but he found he could not strip away himself. A person is a sounding body. In Cage's experience, "human" is an ineliminable condition, yet his assertion ignores this condition.
+
+The human is the sole condition; further, the body is the sole condition. Listening occurs in the body. In the act of listening, one hears and simultaneously vocalizes; the vocalizer and the hearer coexist in one body. Cage's assertion severs them, denies this unity, and negates the corporeality inscribed in listening.
+
+Silence is not a thing; silence is a situation, a situation arising from the human.
+
+"Silence Begins When Returning" — ultimate silence is the moment the physical body vanishes, the moment of death.
+
+The text "归时始无声" in the work is made of black stainless steel, indistinguishable against a dark background by default, only appearing when the LEDs hidden within the stainless steel characters are powered on. When powered, the electromagnetic field generated by the LED power circuit is picked up by the electromagnetic pickup as an electrical signal, converted into audible sound. The work continuously switches between powered on and off states in a one-minute cycle. In darkness, the characters constantly appear and disappear, and the space synchronizes sound and silence. The work cycles between "vitality" and "death".`, images: ['images/gui01.jpg','images/gui02.jpg'] },
+            { id: 'bumian', title: 'Sleepless Radio', year: '2003', description: `Radio transmitters, audio players, radios, Shanghai intangible cultural heritage crochet fabric
+
+Radio is both technology and memory. So in my view, technology and memory are always secretly intertwined.
+
+This work was created for the historic Shanghai Wu Changshuo Art Museum. The building's original owner was Chen Guichun, a modern Shanghai celebrity and wealthy merchant. After visiting, I noticed that the doors and windows on the north-south side extensively used Shanghai-style yellow rosewood carvings, while those on the east-west side were Western neoclassical. This aptly reflects Chen Guichun's entrepreneurial journey, from handling dock business for foreign firms to operating his own barge shipping.
+
+I set up multiple FM radio stations in different spaces within the building, each using a separate FM frequency to transmit radio signals. Numerous radio receivers in the space pick up the sound content from each station. This content includes my interviews with some of Shanghai's first radio announcers after its opening; accounts of wireless technology and the history of Shanghai's commercial radio; early Peking opera and jazz audio materials from after Shanghai's opening; and local operas that Shanghai citizens used to listen to. On site, I created a multi-dimensional temporal-spatial sound realm. Additionally, I added significant radio frequency noise to the work, metaphorically suggesting those unrecorded sounds submerged in historical sound, transformed into unrecognizable auditory signals.
+
+As a Shanghai-born artist, I infuse the radio sounds with personal emotion, understanding, and imagination for this city.`, images: ['images/bu01.jpg','images/bu02.jpg','images/bu03.jpg'] },
+            { id: 'women', title: 'Us Among Them, Them Among Us', year: '2022', description: `Raw speakers, micro motors, steel cables, switches, custom software, computer, iPad
+
+"Vocalization" is the initial act by which a subject reveals its existence to others. It is the incarnation of the self, without the need for technology beyond the skin.
+
+In his "A Priori Argument," Zhao Tingyang points out that in any language, every sentence a priori requires at least one corresponding response sentence, which may be affirmative or negative—in short, a response. If language lacked such a transcendental dialogic structure, it would not be language; what is "said" must be "heard" and "answered," otherwise it is mere sound, not language.
+
+I believe that in daily life, when a concrete "utterance" is spoken, it does not await a response in the linguistic structural sense; rather, it immediately enters the social structure, awaiting a response from the other within that structure.
+
+"Us Among Them, Them Among Us" is a participatory sound installation, commissioned by UCCA Edge for the exhibition "Digitized." 49 raw speakers are suspended in mid-air, producing sound in a regulated disorder. I provided a set of interactive rules that establish the work's "regularity," including censorship of certain words, but within the framework of these rules, the gathered sound fragments weave a chaotic relational web.
+
+The public can scan a QR code with their phones to enter the work's communication page and send a "voice message" to the work. After being received by the terminal system, this audio is amplified in the public space via a concealed high-power speaker. Immediately afterward, participants hear the "response" from the collective—the voices of the previous 49 participants stored in the system, played through low-power speakers. The new participant's voice is also retained in the installation, randomly replacing one of the previous voices. As more viewers interact, the stored utterances are continuously updated and replaced.
+
+Through the sound installation as an intermediary, individual expressions enter public space, forming a clamorous, constantly flowing confluence of speech in the call and response of voices—a microcosm of the contemporary public discourse sphere. Under the popularization of internet communication technology and the penetration of social media, voices from daily life and private spheres, through the act of individual "vocalization," enter the public realm symbolized by the internet, activating the potential of cyberspace as a site for public discussion. However, in my view, the "publicness" of internet discourse is debatable, as I mentioned earlier: when a concrete utterance is spoken, it does not await a semantically corresponding answer but immediately enters the social structure, awaiting a response from the other in society.
+
+Every sentence spoken to the work inevitably echoes in the voices of countless others. But does this echo shape a dialogue that truly connects individuals, or is it merely an illusion of dialogue, a void of conversation?`, images: ['images/wo01.jpg','images/wo02.jpg','images/wo03.jpg','images/wo04.jpg'] },
+            { id: 'cong', title: 'From_____to Xintiandi', year: '2022', description: `Concrete, paint, audio players, headphones
+
+Modernity represents itself in the city by continuously producing various types of space. In this production, urban change is often characterized by disappearance and new construction. As a classic case of Shanghai's post-reform urban land development, the new construction of the Xintiandi real estate project once implied certain disappearances. Is it possible to seek, through sound and listening, a critique of the symbiont modernity-capital, and the after-sound of such critique?
+
+This work was created during my residency at the RanRan Art Season hosted by Xintiandi, Shanghai. I took my daily living space, Xintiandi's public space, and the urban space between them as listening spaces. I invited four collaborators—an independent musician, an anthropologist, a 3D soundscape designer, and a game sound designer—to participate. Each of us set out from our familiar places (homes or workplaces) to Xintiandi using our chosen transportation, conducting field recordings of urban sounds while moving. Based on these field recordings, each creator independently composed their own sound works. These sound works are placed in concrete installations whose form derives from the layout of demolished Shikumen old district houses during Xintiandi's renovation.
+
+Visitors can use headphones to freely capture the five sound works within the concrete installation. In the work, the sound of Xintiandi itself is absent. What audiences hear are sounds from other parts of the city, yet these other places are intimately connected to Xintiandi through sound. I think, just as a word's meaning and value are endowed within a sentence, a paragraph, a text, Xintiandi must find its meaning within the urban context, in its connection to other parts of the city.
+
+Actually, without sound, the installation part of this work could still stand. This seems to assert something, but the assertion feels familiar, like a correct platitude. With sound, there is a sustainable way out—not to reconfirm what is already known, but to give hope for exploration.`, images: ['images/xin01.jpg','images/xin02.jpg','images/xin03.jpg','images/xin04.jpg','images/xin05.jpg','images/xin06.jpg','images/xin07.jpg','images/xin08.jpg','images/xin09.jpg','images/xin10.jpg','images/xin11.jpg'] },
+            { id: 'linju', title: 'Neighbor', year: '2022', description: `Furniture, floor lamp, letter, headphones, tape player
+
+During the pandemic, people recounted on social platforms how they heard the calls of urban birds. This became a mainstream narrative for coping with the negative emotions of the pandemic. In my view, this way of listening to the city falls into a habitual misconception: people tend to attribute beautiful sounds to objectified nature, romanticizing them as emotional placebos during the pandemic. But nothing is new under the sun. Looking back at the history of field recording in natural history, one finds that with the maturation of new technologies, especially recording technology, humans, through the materialization of natural sounds, continuously objectify and socialize nature, turning it into a cultural resource and object of appreciation. The result is forgetting that humanity itself belongs to nature.
+
+Coincidentally, during the pandemic, from my balcony I recorded the morning calls of Eurasian blackbirds in my neighborhood and the suona practice coming from some unknown household. In my view, the blackbird does not represent nature; like the anonymous suona practitioner, it is my neighbor.
+
+I wrote about this whole affair to Benjamin Wood, the architect who oversaw the renovation of Xintiandi's Shikumen. During his preliminary research, he filmed a documentary about the original Taipingqiao alleyways on the Xintiandi site. The documentary was titled "Neighbor."`, images: ['images/lin01.jpg','images/lin02.jpg'] },
+            { id: 'yinyue', title: 'What Does Music Really Mean to Us?', year: '2022', description: `A performative lecture incorporating field recordings, images, text reading, live music, and food
+
+While revisiting my urban field recording archive, I discovered I had inadvertently recorded a lot of music. This music, appearing in urban public spaces, does not manifest as artistic performance within social structures; it is not an object of appreciation or a cultural commodity.
+
+I want to ask: today, when music mostly plays the role of entertainment, leisure, and emotional compensation, what does music really mean to us? Besides these superficial and singular relationships, how else can we connect with music?
+
+"What Does Music Really Mean to Us?" is a performative lecture based on field recordings. Through text reading, musical performance, sound listening, and food tasting, I invite the audience to reflect on and physically experience this question.
+
+The photos document the performance on May 1, 2025, on the grand staircase of the Power Station of Art, Shanghai.
+
+Performative lecture: Yin Yi
+
+Live music: Yin Yi (bass/vocals), Mai Mai (guitar), Wang Yudong (drums), Lü Yunlong (trumpet)
+
+Stage manager: Guo Chenxing`, images: ['images/yin01.jpg','images/yin02.jpg','images/yin03.jpg','images/yin04.jpg','images/yin05.jpg','images/yin06.jpg','images/yin07.jpg','images/yin08.jpg','images/yin09.jpg','images/yin10.jpg','images/yin11.jpg','images/yin12.jpg'] },
+            { id: 'shanghai', title: 'Shanghai', year: '2021', description: `Treadmill, headphones, audio player, custom sensor, WeChat computer, custom program
+
+Chatting with a few musician friends, we agreed that the practice of field recording in mainland China, which began in the early 2000s, is waning today. In my view, a significant reason is that early field recordings still entered society through the publishing and circulation modes of music. These sounds were still being listened to as music.
+
+My question is: if recorded sounds are not listened to as music, how should they be listened to? This refers not only to the concept of the object of listening but also to the form of listening.
+
+In 2021, I was invited to create a work on the 38th floor of a high-rise in Shanghai. Through the glass, one could see the iconic Pudong Lujiazui buildings 30 kilometers away. I thought: I am looking down at the city, but I cannot hear any city sounds. I also thought of those people exercising on treadmills behind street-level glass in the city.
+
+So I placed a treadmill by the window in the 38th-floor exhibition hall. When the audience stepped onto the treadmill and began walking, headphones first played real-time sounds from outside the window, then randomly played 100 urban sounds I had recorded in Shanghai, each lasting one minute. The playback length of each sound was related to the walking speed: the faster the speed, the shorter the sound switching interval, the higher the frequency. When the audience stopped moving, the sound disappeared.
+
+This work later appeared in a commercial underpass and a museum cafe.`, images: ['images/shanghai01.jpg','images/shanghai02.jpg','images/shanghai03.jpg','images/shanghai04.jpg'] },
+            { id: 'nide', title: 'In Your Sound', year: '2021', description: `This is a work that requires the audience to "enter." More precisely, the work is generated in real time only when the audience's body and consciousness simultaneously enter the space conceived and constructed by the artist. The artist takes the most subtle rhythm of life—"walking—footsteps"—as a starting point, using different ground construction materials to resurface an unconventional exhibition space within the museum. These materials exist in their original form in various places in today's Taiyuan, from the ancient Jinci Temple and Confucian Temple to the newly built subway. Within the reconstructed physical space of the museum, a new sound space is formed again. The artist attempts, through this decontextualized daily act—walking—to reawaken the audience's perceptual abilities—auditory and tactile—and hopes to return to our daily life through perception. For the artist, the audience's walking also becomes a performance within the museum space, making the artist a director.`, images: [] },
+            { id: 'ruch', title: 'As Before (Ruchu)', year: '2021', description: `Carousel
+
+In 2021, I was invited to participate in a rural revitalization cultural project. I was assigned to Zaima Township, Rongjiang County, Guizhou Province, in Zaidao Village. Because there is a national-level intangible cultural heritage inheritor of Dong Chorus, Hu Guanmei, and a Dong chorus group she leads. What impressed me most was the Jiasuo Children's Chorus within the group.
+
+I wanted to make something for the children of Zaidao, something local villagers could use daily. Yet, when a certain artistic context arises, it would also possess the qualities of an artwork.
+
+It sits at the intersection of daily life and artistic reflection, accessible from both sides. So I appropriated the carousel, said to originate from Byzantium, to this place, and appropriated the voices of the Zaidao Dong children's chorus to surround the carousel. They meet here, like the meeting of local and foreign. Whether this encounter will generate something new, I do not yet know.
+
+The children's voices surround the carousel in surround sound, like the melodies of the chorus singing in the drum tower. When the carousel turns, a dream begins to form. Initially, we all loved dreaming.
+
+Throughout the creation and production process, I deeply felt the dilemmas in rural revitalization and construction. I also deeply felt the presence of the other. At certain moments, they made me envious and respectful.`, images: ['images/ru01.jpg','images/ru02.jpg','images/ru03.jpg','images/ru04.jpg','images/ru05.jpg','images/ru06.jpg','images/ru07.jpg'] },
+            { id: 'shesheng', title: 'Nourishing Life (Shesheng)', year: '2020', description: `Physical theatre
+
+In the Phaedo, Plato's discussion of writing already raises the dual nature of technology accompanying human evolution—it is both remedy and poison. Today, this dilemma manifests as the continuous externalization of human sensory functions and rational mind, constantly replaced by technology, resulting in our increasing disbelief in ourselves. Faced with the cycle of desire creation and satisfaction outside the body ruled by technology, we are "separated from the body and the spirit (shen)," "disintegrated in form and spirit."
+
+I began practicing Chinese health-preserving exercises, including Baduanjin, Liuzijue, Wuqinxi. Traditional Chinese body culture inspired me. I began to re-understand the significance and value of "spirit (shen)" for Chinese people and its relation to life consciousness, contemplating its connection with the "body," and seeking a path to reconcile life with technology, body with perception.
+
+The overall performance content and form of "Nourishing Life" gradually emerged from the steps, movements, gestures, postures, spatiality, and dynamic-static characteristics of traditional Chinese exercises and dance. I attempt to use a new mode of expression to connect the "body" and "spirit."
+
+Director: Yin Yi
+
+Choreography: Yin Yi, Liu Yanan
+
+Dancers: Liu Yanan, Wang Shaojun
+
+Live music: Viola/Jiao Ying, Celesta/Wang Tian, Guitar/Mai Mai, Alto Saxophone/Zhao Junyuan
+
+Lighting: Gao Yelin`, images: ['images/she01.jpg','images/she02.jpg','images/she03.jpg','images/she04.jpg','images/she05.jpg','images/she06.jpg','images/she07.jpg','images/she08.jpg','images/she09.jpg','images/she10.jpg','images/she11.jpg','images/she12.jpg','images/she13.jpg','images/she14.jpg','images/she15.jpg','images/she16.jpg','images/she17.jpg','images/she18.jpg','images/she19.jpg','images/she20.jpg','images/she21.jpg','images/she22.jpg'] },
+            { id: 'zhenshen', title: 'True Body (Zhenshen)', year: '2019', description: `Mixed media performance
+
+Once during a performance, looking at the audience, I wondered: who are these people? They know my name, but I know nothing about them.
+
+They are anonymous, but the identity of "audience" is also assigned to them. From a micropolitical perspective, the audience is absent. I wanted to transform the abstract, passively positioned audience into active performance participants.
+
+"True Body" takes the form of one-on-one performance. I will use a "one person, one prescription" approach, like traditional Chinese medicine, to co-create the performance content with each participant. The content revolves around sound, including but not limited to: interpretations of classic sound works, live laptop music, mixed performance with electronic hardware and objects, field recording walks, soundscape creation based on field recordings, and construction of internal and external auditory spaces.
+
+Before the performance, participants need to tell me their names, pay a deposit for attendance, and sign a relevant agreement.
+
+After the performance, I will, based on my subjective feelings, prepare a herbal tea named after the participant, constructing an auditory image of the participant, conveying and displaying this image through the tea.
+
+As the title "True Body" suggests, I invite participants to appear in person, face-to-face, to collaboratively enact the performer-audience relationship within the performance, while altering the production mode of the performed work, and reflecting on the respective powers, responsibilities, and obligations in the performance process.`, images: ['images/01.jpg','images/02.jpg','images/03.jpg','images/04.jpg','images/05.jpg','images/06.jpg','images/07.jpg','images/08.jpg','images/09.jpg','images/10.jpg','images/11.jpg','images/12.jpg','images/13.jpg','images/14.jpg','images/15.jpg'] },
+            { id: 'xiangxi', title: 'Heading West (Xiangxi)', year: '2019', description: `5-channel video, 8-channel sound
+
+This work was commissioned by the 2019 Shanghai Urban Space Art Season.
+
+One of my focuses on Shanghai is Suzhou Creek. Compared to the Huangpu River, Suzhou Creek is more intimately connected to the daily lives of Shanghai citizens. A remark by my mother has always stayed with me: "When I was a little girl, I used to cross Suzhou Creek by ferry." Today, the ferries are gone, but I became deeply interested in the bridges over Suzhou Creek.
+
+"Heading West" is a 5-channel video, 8-channel sound installation created at the Sichuan Road Bridge over Suzhou Creek. I invited musician Zhao Junyuan to perform on the bridge at different times, always facing west—the direction of Suzhou Creek's source. I had him imagine in his performance a free improvisation ensemble with himself at different times. I felt free improvisation matched the urban sounds. The synchronized sound recording captured both the city sounds and the musician's playing. I conceived of injecting music into the urban soundscape, using mixing techniques to weave together sounds and images from different times and spaces through Zhao Junyuan's free improvisation, creating a murmuring urban place.
+
+The Sichuan Road Bridge is part of my childhood memories. I want to invite viewers to use their bodies and consciousness to construct, in the exhibition space, an overflowing Sichuan Road Bridge where time and space overlap.`, images: ['images/xiang01.jpg','images/xiang02.jpg','images/xiang03.jpg','images/xiang04.jpg','images/xiang05.jpg','images/xiang06.jpg','images/xiang07.jpg','images/xiang08.jpg','images/xiang09.jpg','images/xiang10.jpg'] },
+            { id: 'liuge', title: 'Six Attitudes of Listening', year: '2019', description: `Letters, noise-cancelling headphones, headphones, online stored audio files
+
+I wrote six letters to the audience.
+
+These six letters were handed over by messengers at different locations, guiding the audience to move between specific historically significant urban places, using listening to experience and respond to numerous concepts in sound art history, including works and ideas from John Cage, Max Neuhaus, and Pierre Schaeffer.
+
+If listening is not merely a rhetoric or a metaphysical speculation, it must be due to the engagement of the body. The body appears in a position, and a space is thereby generated. Listening is not only about the auditory system. It actually occurs within the body. Once listening occurs, it immediately crosses the boundary of the body. A gesture shapes the body and also frames listening.
+
+Listening is the clue; urban space is the performance venue.`, images: ['images/liu01.jpg','images/liu02.jpg','images/liu03.jpg','images/liu04.jpg','images/liu05.jpg','images/liu06.jpg','images/liu07.jpg','images/liu08.jpg','images/liu09.jpg','images/liu10.jpg','images/liu11.jpg','images/liu12.jpg'] },
+            { id: 'shige', title: 'Ten Corners', year: '2018', description: `Video, silent
+
+A space is not the enclosure of an interface.
+
+An event occurs, a space becomes.`, images: ['images/shi01.jpg'] },
+            { id: 'meishuguan', title: 'Art Museum', year: '2018', description: `Single-channel video, stereo sound
+
+Sound has the ability to cross boundaries.
+
+As sound crosses boundaries, it also generates its own boundaries. But these boundaries are constantly changing, blurred.
+
+"Use" an unfinished art museum in a "sonic way." Shoot a sound-driven sound art video work.
+
+This work was created at the invitation of architect Liu Yichun for his design of the Taizhou Art Museum. Liu wanted to document the museum artistically before its completion. My idea was to distinguish it from placing exhibits, using art differently to "use" the museum. This was also the beginning of my experimentation with "sound-driven image."`, images: ['images/mei01.jpg'] },
+            { id: 'ditu', title: 'Map', year: '2018', description: `4-channel video, stereo sound
+
+My wife, a contemporary dancer, was pregnant again.
+
+I wanted to perform an improvisation with my wife and the unborn child. The 4-channel video consists of green fluorite, raw rhodochrosite, raw azurite, and traces of fetal movements recorded with lipstick. The sound comes from my underwater recordings on beaches in the Mediterranean and Indian Ocean. The hydrophone captured sounds above and below the water surface as the tides rose and fell, as well as friction with beach gravel.
+
+This is a direct feeling of "friction": the sea receding from the sand, the sounds of children playing on the beach.`, images: ['images/ditu01.jpg','images/ditu02.jpg','images/ditu03.jpg','images/ditu04.jpg','images/ditu05.jpg','images/ditu06.jpg','images/ditu07.jpg'] },
+            { id: 'yici', title: 'A Journey in Shanghai', year: '2017', description: `Video, stereo sound
+
+I always ask my daughter to speak Shanghainese, at least at home. The reason is simple: Shanghainese should speak Shanghainese.
+
+When she was four, we took the subway together. She suddenly asked me, "Why don't they speak Shanghainese?" I realized she was referring to the subway station announcements, which only use Mandarin and English.
+
+Within social public space, organized and systematized sound not only disciplines our bodies but also our knowledge and culture. In Shanghai, Shanghainese is excluded from the city's largest officially managed mobile public space—the rail transit system. Information within this public space cannot be conveyed in Shanghainese. Shanghainese is implicitly derogated and banned here.
+
+During the 2017 Spring Festival, I invited my friend, economist Liang Jie, to be the announcer for "A Journey in Shanghai." On Shanghai Metro Line 4, after each station announcement in Mandarin and English, Liang Jie played pre-recorded announcements of the same content in Shanghainese.
+
+The resulting video shows: when there is no announcement, the image is blurred; when Mandarin and English announcements play, figures become discernible; when Shanghainese appears, Liang Jie's image becomes clear and recognizable.
+
+I said it before: Shanghainese should speak Shanghainese.`, images: ['images/yi01.jpg','images/yi02.jpg','images/yi03.jpg'] },
+            { id: 'hailang', title: 'Ocean Waves', year: '2016', description: `Floor-standing electric fans, timer
+
+A curator once asked me if there is anything that can only be heard, not seen. I answered: wind.
+
+Multiple floor-standing fans are arranged in a rectangle, alternating between running and stationary at five-minute intervals. Through careful positioning, the wind generated by the fans moves and dissipates only within the rectangle. When opposing fans face each other, the sounds of colliding winds from different directions mix. In this work, sound and wind share the same origin—the movement of air. The generation of sound and the dissipation of wind occur simultaneously. Here, generation is dissipation, and dissipation is generation.`, images: ['images/hai01.jpg','images/hai02.jpg'] },
+            { id: 'liwu', title: 'Gift', year: '2016-2021', description: `Letter, outdoor speakers, amplifier, custom Bluetooth audio player
+
+In 2014, during an artist residency in Hamburg, Germany, a local friend told me that the Hamburg train station plays classical music to drive away homeless people. I was puzzled and shocked.
+
+According to reports, since 2008, Deutsche Bahn has been playing classical music, such as Vivaldi's "Four Seasons," in the forecourt of Hamburg Central Station to disperse homeless people lingering in the area. Officials claim these individuals are involved in drug-related crime. The local newspaper Hamburger Abendblatt reported the measure as effective.
+
+"Gift" establishes a unique auditory space in a public space. In its default state, Vivaldi's "Four Seasons" plays continuously in a loop. Depending on the venue, viewers will see a letter I wrote describing what I witnessed in Hamburg. It then invites them to connect their phones to a Bluetooth device named "Gift" and play music of their choice. When their music sounds in the space, "The Four Seasons" disappears; when their music ends, "The Four Seasons" returns.
+
+Who decides what sound is heard in public space? "Gift" is a reversal and action against the sound playback at Hamburg Central Station, an exploration and experiment into the logic and mechanisms of sound in public space across different contexts.`, images: ['images/li01.jpg','images/li02.jpg','images/li03.jpg','images/li04.jpg'] },
+            { id: 'dinghai', title: '20140901-20140930', year: '2014', description: `Glass jars, raw speakers, audio players, amplifiers, aspirin
+
+The Dinghaiqiao area is one of the few remaining large old districts in downtown Shanghai. It has a rich history, with many gray anecdotes circulating among the people, like an old scabies sore of modern Shanghai. Upon receiving the creation invitation, I fell into a contradictory psychology. Because I also grew up in a similar old district; the area where I grew up has disappeared. Returning to a similar environment, I cannot embrace the past, nor can I view it with an outsider's exoticizing gaze.
+
+The roads here are mostly wet because there is no indoor drainage system. People here know each other well; so-called public life is rich, but there is a lack of awareness of the boundary between private and public space. The air is filled with familiar food smells, but hygiene is worrying. Day and night are two different worlds.
+
+From September 1 to 30, 2014, I went to Dinghaiqiao everyday, recording at different times and in different locations. These sounds were individually placed in sealed glass jars, with labels outside indicating the time, place, and weather of the recording. Next to each sound, a piece of aspirin was placed. Through the glass, the speakers are clear, but the sound is muffled, like the repressed old district abandoned by the modern city.`, images: ['images/201401.jpg','images/201402.jpg','images/201403.jpg','images/201404.jpg'] },
+            { id: 'weiliao', title: 'A Farewell Party', year: '2013-2019', description: `50 years ago, they responded to Chairman Mao's call to go up to the mountains and down to the countryside. 50 years later, they return to the city of their birth and sing collectively in the park. Why do 200 retired elderly people gather in the park every weekend to sing songs of their era? Why do they choose to vocalize? Why do they choose the park? It resembles a farewell party.
+
+"A Farewell Party" is a sound installation with musical performance. Photographs and 8 speakers sealed in glass jars are arranged on a slowly rotating turntable, resembling a dinner party scene. Each speaker loops a song recorded by the artist on site, sung by the spontaneous singing collective in Luxun Park. Inside the sealed jars, all sounds are muffled and suppressed, forming a changing sound field as the turntable rotates. Every 30 minutes, a live trumpeter performs music composed by the artist, sounding together with the speakers in the jars.`, images: ['images/wei01.jpg','images/wei02.jpg','images/wei03.jpg','images/wei04.jpg','images/wei05.jpg','images/wei06.jpg'] },
+            { id: 'moshnegren', title: 'Stranger', year: '2013', description: `Two-channel video, silent
+
+In 2013, I welcomed my first child. Before the child was born, I gradually felt it was a stranger. I would meet a stranger. This unfamiliarity must come from my ignorance of the child. At the same time, reason told me this stranger would be my closest person, which deepened the sense of strangeness. My acquaintance with my parents was gradual; my acquaintance with my child was sudden. I had many doubts and concerns.
+
+In the two-channel video, the left side shows my wife's pregnant body; the right side resembles a scrolling cast list at the end of a film. But in reality, it scrolls through the social identities I imagined my child might have.`, images: ['images/mo01.jpg','images/mo02.jpg'] },
+            { id: 'heliu', title: 'You Could Listen to the Same River Infinitely', year: '2012-2016', description: `Text, tape recorders, cassettes, raw speakers, audio players, amplifiers
+
+Sound is an energy change entangled with time. What adheres to sound is not abstracted pulsed time, but duration, a flow of time. When humans began to acquire the technology to record sound streams, they also began to record time streams. The earliest analog technologies and media for storing sound streams well illustrate the concept of "flow." The energy changes preserved on wax cylinders, steel wires, turntables, and tapes are continuous. All current image recording and digital sound technologies are discrete systems, preserving time slices. What you see and hear is a sequence of time slices.
+
+Listening to the sound of a tape playing, you hear the sound stream and experience the flow of time.`, images: ['images/ni02.jpg','images/ni03.jpg'] },
+            { id: 'sanfenzhong', title: 'Three Minutes', year: '2008|2020', description: `Two-channel video, stereo sound
+
+On the afternoon of May 19, 2008, I filmed the nationwide three-minute silence mourning the Wenchuan earthquake at the overpass intersection of Yan'an West Road and Kaixuan Road in Shanghai. Afterwards, I invited two female friends to inhale as deeply as possible and then vocalize while covering their mouths with their hands, exhaling as much breath as they could. These near-limit exhalations and vocalizations were recorded and used as material for the music composed for the three-minute silence mourning the Wenchuan earthquake.
+
+12 years later, China sounded air raid sirens again to mourn those who died in the COVID-19 pandemic. At 10 a.m. on April 4, 2020, I filmed another three-minute video on Nanjing East Road Pedestrian Street in Shanghai.
+
+In sound, an emotional community is created.`, images: ['images/san01.jpg','images/san02.jpg','images/san03.jpg','images/san04.jpg'] }
+        ];
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const workId = urlParams.get('id');
+        const work = works.find(w => w.id === workId);
+
+        const container = document.getElementById('work-content');
+
+        if (!work) {
+            container.innerHTML = '<p style="color:#d0d8e0;">Work not found or ID error.</p>';
+        } else {
+            let imagesHtml = '';
+            if (work.images && work.images.length > 0) {
+                const imageItems = work.images.map(img => `
+                    <div class="image-item">
+                        <img src="${img}" alt="${work.title}">
+                    </div>
+                `).join('');
+                imagesHtml = `
+                    <div class="work-images">
+                        <div class="image-list">
+                            ${imageItems}
+                        </div>
+                    </div>
+                `;
+            } else {
+                imagesHtml = `
+                    <div class="work-images">
+                        <div class="image-list">
+                            <div class="image-placeholder">No images yet</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            const html = `
+                <div class="work-detail">
+                    <div class="work-info">
+                        <div class="work-title">${work.title}</div>
+                        <div class="work-year">${work.year}</div>
+                        <div class="work-description">${work.description.replace(/\n/g, '<br>')}</div>
+                    </div>
+                    ${imagesHtml}
+                </div>
+            `;
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
