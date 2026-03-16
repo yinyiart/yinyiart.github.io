@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yin Yi · Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #dae7eb;
+            font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+            color: #53585f;
+            line-height: 1.6;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 5%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            margin-bottom: 60px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #53585f;
+        }
+        .top-nav a {
+            color: #53585f;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-nav a:hover,
+        .top-nav a.active {
+            color: #1f2c35;
+        }
+
+        /* 主内容区域 */
+        .hero {
+            text-align: left;
+            max-width: 700px;
+            margin: 0;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 2px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            color: #3f4f60;
+            line-height: 1.8;
+        }
+
+        .hero-text p {
+            margin-bottom: 0.5em;
+        }
+
+        .hero-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 0 8%;
+            }
+            .top-nav {
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-bottom: 40px;
+            }
+            .hero-image {
+                max-width: 100%;
+            }
+            .hero-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 导航栏 (英文版) -->
+        <div class="top-nav">
+            <a href="index_en.html" class="active">Yin Yi</a>
+            <a href="musician_en.html">Musician</a>
+            <a href="artist_en.html">Artist</a>
+            <a href="curator_en.html">Curator</a>
+            <a href="writing_en.html">Texts</a>
+            <a href="about_en.html">CV</a>
+            <a href="index.html">CN</a>   <!-- 返回中文版首页 -->
+        </div>
+
+        <!-- 首页主体：图片 + 文字 (英文) -->
+        <div class="hero">
+            <img src="images/yinyi01.jpg" alt="Yin Yi" class="hero-image">
+            <div class="hero-text">
+                <p>For me, art is both a remedy for self-healing and a touchstone for testing thought.</p>
+                <p>Art should be a verb.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
