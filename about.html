@@ -12,9 +12,9 @@
         }
 
         body {
-            background-color: #59585f;
+            background-color: #dae7eb;          /* 浅灰背景 */
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #f0f4f8;
+            color: #53585f;                      /* 深灰文字 */
             line-height: 1.6;
             padding: 40px 20px;
         }
@@ -25,7 +25,7 @@
             padding: 0 5%;
         }
 
-        /* 顶部导航 */
+        /* 顶部导航 - 浅色背景下的深色文字 */
         .top-nav {
             display: flex;
             justify-content: flex-end;
@@ -34,93 +34,64 @@
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #d0d8e0;
+            color: #53585f;
         }
         .top-nav a {
-            color: #d0d8e0;
+            color: #53585f;
             text-decoration: none;
+            transition: color 0.2s;
         }
         .top-nav a:hover,
         .top-nav a.active {
-            color: #ffffff;
+            color: #1f2c35;                      /* 更深色 */
         }
 
         /* 页面标题 */
         .page-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 300;
             letter-spacing: 4px;
             margin-bottom: 30px;
-            color: #ffffff;
-            border-bottom: 1px solid #7a8088;
+            color: #1f2c35;
+            border-bottom: 1px solid #b0c8d0;    /* 浅灰边框 */
             padding-bottom: 10px;
         }
 
-        /* 简介段落 */
+        /* 简介 - 无背景无边框，直接贴在背景上 */
         .intro {
             margin-bottom: 40px;
-            font-size: 1rem;
-            color: #f0f4f8;
-            background: #4a4f58;
-            padding: 20px;
-            border-left: 4px solid #d0d8e0;
+            font-size: 0.85rem;                  /* 缩小字体 */
+            color: #3f4f60;
+        }
+        .intro p {
+            margin-bottom: 0.8em;
         }
 
-        /* 章节样式 */
+        /* 章节样式 - 去掉左边框线 */
         .cv-section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         .cv-section h2 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;                    /* 缩小标题 */
             font-weight: 400;
-            color: #d0d8e0;
-            margin-bottom: 15px;
-            border-left: 4px solid #d0d8e0;
-            padding-left: 10px;
+            color: #1f2c35;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
         }
 
+        /* 条目列表 - 无符号，年份放在末尾 */
         .cv-list {
             list-style: none;
-            margin-left: 10px;
+            margin-left: 0;
         }
         .cv-list li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-            color: #f0f4f8;
+            margin-bottom: 6px;
+            font-size: 0.85rem;                   /* 缩小字体 */
+            color: #53585f;
         }
         .cv-list .year {
-            display: inline-block;
-            width: 70px;
-            color: #d0d8e0;
-            font-weight: 300;
-            margin-right: 10px;
-        }
-
-        /* 子标题（如“群展（部分）”） */
-        .cv-subsection {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-            color: #d0d8e0;
-            font-weight: 400;
-        }
-
-        /* PDF下载按钮 */
-        .pdf-download {
-            margin-top: 50px;
-            text-align: center;
-        }
-        .pdf-download a {
-            display: inline-block;
-            padding: 10px 30px;
-            background-color: #7a8088;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 2px;
-            transition: background-color 0.2s;
-        }
-        .pdf-download a:hover {
-            background-color: #9aa2ad;
+            margin-left: 6px;                      /* 年份前加空格 */
+            color: #6f7c8a;                         /* 稍浅色区分 */
         }
 
         /* 响应式 */
@@ -137,24 +108,23 @@
                 flex-wrap: wrap;
             }
             .page-title {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
             .intro {
-                font-size: 0.9rem;
-                padding: 15px;
+                font-size: 0.8rem;
             }
             .cv-section h2 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
-            .cv-list .year {
-                width: 60px;
+            .cv-list li {
+                font-size: 0.8rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 导航栏（与全站统一） -->
+        <!-- 导航栏 -->
         <div class="top-nav">
             <a href="index.html">殷漪</a>
             <a href="musician.html">音乐家</a>
@@ -167,20 +137,20 @@
 
         <h1 class="page-title">简历</h1>
 
-        <!-- 简介 -->
+        <!-- 简介 - 无背景容器 -->
         <div class="intro">
             <p>殷漪，音乐家、艺术家、策展人，出生于上海。他的创作以“听觉-声音”为核心，涉及：声音艺术、音乐、装置、表演、影像、文本、剧场等多重领域。</p>
-            <p style="margin-top:10px;">殷漪音乐生涯开始于慢核乐队，兼任贝司手与主唱。后转向数字音乐创作与笔记本现场表演。2001年转向数字音乐创作。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。殷漪早期的音乐创作领域包括:现场音乐表演、现代舞、肢体剧场。近年来其音乐创作主要集中于基于实地录音和原声乐器的混合音乐。</p>
-            <p style="margin-top:10px;">殷漪的艺术创作也从音乐拓展至声音艺术，作品富有哲思与诗意。他对于公共空间的观察与思考敏锐且深度，相关作品兼具前卫与批判精神。他提出“听觉-声音空间”这一概念，尝试建立一套围绕此概念的工作方法，与其他学科建立跨领域合作。</p>
-            <p style="margin-top:10px;">殷漪的作品出现诸多艺术节与艺术机构，包括上海外滩建筑节（2023），第九届深港城市\建筑双城双年展（2022）、越后妻有大地艺术祭（2018），第十一届上海双年展（2016），中国声音艺术大展（2013），Harvest Work(纽约），余德耀美术馆，上海当代艺术博物馆（PSA），上海外滩美术馆，OCAT深圳馆，UCCA Edge，上海多伦现代美术馆，上海国际舞蹈中心，成都美术馆，声音艺术博物馆（北京），成都美术馆学院美术馆，上海明当代美术馆（McaM)，上海当代艺术馆（MoCA），Unsafe and Sound Festival（维也纳），坪山美术馆（深圳），上海城市空间艺术季，香港文化中心等。</p>
-            <p style="margin-top:10px;">从2011年开始，殷漪持续关注前卫音乐和声音艺术的艺术生态，策划包括声音艺术展“共振峰”，实验音乐交流项目“声音传输”、实验音乐节“合声”等。2012年他与舞蹈编导刘亚囡共同创建专注于前卫音乐与当代舞蹈的艺术空间BM Space。2013起，与艺术机构展开合作，策划展览和活动，合作机构包括上海外滩美术馆，OCAT 上海馆，上海多伦现代美术馆上海西岸美术馆。</p>
+            <p>殷漪音乐生涯开始于慢核乐队，兼任贝司手与主唱。后转向数字音乐创作与笔记本现场表演。2001年转向数字音乐创作。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。殷漪早期的音乐创作领域包括:现场音乐表演、现代舞、肢体剧场。近年来其音乐创作主要集中于基于实地录音和原声乐器的混合音乐。</p>
+            <p>殷漪的艺术创作也从音乐拓展至声音艺术，作品富有哲思与诗意。他对于公共空间的观察与思考敏锐且深度，相关作品兼具前卫与批判精神。他提出“听觉-声音空间”这一概念，尝试建立一套围绕此概念的工作方法，与其他学科建立跨领域合作。</p>
+            <p>殷漪的作品出现诸多艺术节与艺术机构，包括上海外滩建筑节（2023），第九届深港城市\建筑双城双年展（2022）、越后妻有大地艺术祭（2018），第十一届上海双年展（2016），中国声音艺术大展（2013），Harvest Work(纽约），余德耀美术馆，上海当代艺术博物馆（PSA），上海外滩美术馆，OCAT深圳馆，UCCA Edge，上海多伦现代美术馆，上海国际舞蹈中心，成都美术馆，声音艺术博物馆（北京），成都美术馆学院美术馆，上海明当代美术馆（McaM)，上海当代艺术馆（MoCA），Unsafe and Sound Festival（维也纳），坪山美术馆（深圳），上海城市空间艺术季，香港文化中心等。</p>
+            <p>从2011年开始，殷漪持续关注前卫音乐和声音艺术的艺术生态，策划包括声音艺术展“共振峰”，实验音乐交流项目“声音传输”、实验音乐节“合声”等。2012年他与舞蹈编导刘亚囡共同创建专注于前卫音乐与当代舞蹈的艺术空间BM Space。2013起，与艺术机构展开合作，策划展览和活动，合作机构包括上海外滩美术馆，OCAT 上海馆，上海多伦现代美术馆上海西岸美术馆。</p>
         </div>
 
         <!-- 个展 -->
         <div class="cv-section">
             <h2>个展</h2>
             <ul class="cv-list">
-                <li><span class="year">2025</span> 我听到了 - 余德耀美术馆项目空间，上海</li>
+                <li>我听到了 - 余德耀美术馆项目空间，上海 <span class="year">2025</span></li>
             </ul>
         </div>
 
@@ -188,35 +158,35 @@
         <div class="cv-section">
             <h2>群展（部分）</h2>
             <ul class="cv-list">
-                <li><span class="year">2025</span> 从前 - 上海当代艺术博物馆，上海</li>
-                <li><span class="year">2025</span> 建造上海·1949年以来的建筑、城市与文化，上海西岸美术馆，上海</li>
-                <li><span class="year">2024</span> 麓湖环境戏剧周 - 成都</li>
-                <li><span class="year">2024</span> 响亮的吻 - 燃冉艺术季，上海</li>
-                <li><span class="year">2023</span> 流变：中国当代声音艺术展 - 成都市美术馆，成都</li>
-                <li><span class="year">2023</span> 音顾 ：中国当代艺术中的声音创作三十年回顾展 - 声音艺术博物馆，北京</li>
-                <li><span class="year">2023</span> RAMA：2023外滩建筑节 - 外滩美术馆，上海</li>
-                <li><span class="year">2023</span> 不眠的剧场 - 吴昌硕纪念馆，上海</li>
-                <li><span class="year">2022</span> 露台计划 - 上海当代艺术博物馆，上海</li>
-                <li><span class="year">2022</span> 集光片羽 - UCCA Edge，上海</li>
-                <li><span class="year">2022</span> 回环之歌 - 新天地 & UCCA，上海</li>
-                <li><span class="year">2022</span> 城市生息 - 第九届深港城市\建筑双城双年展，深圳</li>
-                <li><span class="year">2021</span> 露台上的音乐 - 露台计划，正向艺术研究会，法国总领事官邸，上海</li>
-                <li><span class="year">2020</span> 公·园 - 多伦现代美术馆，上海</li>
-                <li><span class="year">2020</span> 二O20年：整个世界变成了剧场 - 当代表演文献开放展 - OCAT深圳馆，深圳</li>
-                <li><span class="year">2020</span> 青年编导扶植计划 - 上海国际舞蹈中心，上海</li>
-                <li><span class="year">2019</span> 未知城市：中国当代建筑装置影像展 - 坪山美术馆，深圳</li>
-                <li><span class="year">2019</span> 可善的陌生 - UNArt艺术中心，上海</li>
-                <li><span class="year">2019</span> 相遇 - 上海城市空间艺术季，上海</li>
-                <li><span class="year">2018</span> 方丈记 - 越后妻有大地艺术节，日本（大舍 + 殷漪）</li>
-                <li><span class="year">2017</span> 就地起舞 - 明当代美术馆，上海</li>
-                <li><span class="year">2016</span> 南方迭代 - 2016深圳新媒体艺术节，深圳</li>
-                <li><span class="year">2016</span> 南方引力 - 2016深圳新媒体艺术节，深圳</li>
-                <li><span class="year">2016</span> 何不再问？- 第十一届上海双年展 ，上海当代艺术博物馆/PSA，上海</li>
-                <li><span class="year">2016</span> 定海桥：对历史的艺术实践 - 上海当代艺术博物馆/PSA，上海</li>
-                <li><span class="year">2016</span> Synchronized Reality - Unsafe and Sound Festival，维也纳</li>
-                <li><span class="year">2013</span> 中国声音艺术大展，上海</li>
-                <li><span class="year">2013</span> 失落于迷宫：声音艺术在中国 - Harvest Works，纽约</li>
-                <li><span class="year">2012</span> 日常观 ：一种生活实践 - 上海多伦美术馆，上海</li>
+                <li>从前 - 上海当代艺术博物馆，上海 <span class="year">2025</span></li>
+                <li>建造上海·1949年以来的建筑、城市与文化，上海西岸美术馆，上海 <span class="year">2025</span></li>
+                <li>麓湖环境戏剧周 - 成都 <span class="year">2024</span></li>
+                <li>响亮的吻 - 燃冉艺术季，上海 <span class="year">2024</span></li>
+                <li>流变：中国当代声音艺术展 - 成都市美术馆，成都 <span class="year">2023</span></li>
+                <li>音顾 ：中国当代艺术中的声音创作三十年回顾展 - 声音艺术博物馆，北京 <span class="year">2023</span></li>
+                <li>RAMA：2023外滩建筑节 - 外滩美术馆，上海 <span class="year">2023</span></li>
+                <li>不眠的剧场 - 吴昌硕纪念馆，上海 <span class="year">2023</span></li>
+                <li>露台计划 - 上海当代艺术博物馆，上海 <span class="year">2022</span></li>
+                <li>集光片羽 - UCCA Edge，上海 <span class="year">2022</span></li>
+                <li>回环之歌 - 新天地 & UCCA，上海 <span class="year">2022</span></li>
+                <li>城市生息 - 第九届深港城市\建筑双城双年展，深圳 <span class="year">2022</span></li>
+                <li>露台上的音乐 - 露台计划，正向艺术研究会，法国总领事官邸，上海 <span class="year">2021</span></li>
+                <li>公·园 - 多伦现代美术馆，上海 <span class="year">2020</span></li>
+                <li>二O20年：整个世界变成了剧场 - 当代表演文献开放展 - OCAT深圳馆，深圳 <span class="year">2020</span></li>
+                <li>青年编导扶植计划 - 上海国际舞蹈中心，上海 <span class="year">2020</span></li>
+                <li>未知城市：中国当代建筑装置影像展 - 坪山美术馆，深圳 <span class="year">2019</span></li>
+                <li>可善的陌生 - UNArt艺术中心，上海 <span class="year">2019</span></li>
+                <li>相遇 - 上海城市空间艺术季，上海 <span class="year">2019</span></li>
+                <li>方丈记 - 越后妻有大地艺术节，日本（大舍 + 殷漪） <span class="year">2018</span></li>
+                <li>就地起舞 - 明当代美术馆，上海 <span class="year">2017</span></li>
+                <li>南方迭代 - 2016深圳新媒体艺术节，深圳 <span class="year">2016</span></li>
+                <li>南方引力 - 2016深圳新媒体艺术节，深圳 <span class="year">2016</span></li>
+                <li>何不再问？- 第十一届上海双年展 ，上海当代艺术博物馆/PSA，上海 <span class="year">2016</span></li>
+                <li>定海桥：对历史的艺术实践 - 上海当代艺术博物馆/PSA，上海 <span class="year">2016</span></li>
+                <li>Synchronized Reality - Unsafe and Sound Festival，维也纳 <span class="year">2016</span></li>
+                <li>中国声音艺术大展，上海 <span class="year">2013</span></li>
+                <li>失落于迷宫：声音艺术在中国 - Harvest Works，纽约 <span class="year">2013</span></li>
+                <li>日常观 ：一种生活实践 - 上海多伦美术馆，上海 <span class="year">2012</span></li>
             </ul>
         </div>
 
@@ -224,16 +194,16 @@
         <div class="cv-section">
             <h2>策展</h2>
             <ul class="cv-list">
-                <li><span class="year">2025</span> 上海声音，西岸美术馆，上海</li>
-                <li><span class="year">2024</span> 听路：中国当代声音艺术实践听路，多伦现代美术馆 ，上海</li>
-                <li><span class="year">2023</span> 为TA作曲 - RAM Assembles，外滩美术馆 ，上海</li>
-                <li><span class="year">2016</span> 一声一城 - 艺术新闻中文版，线上展</li>
-                <li><span class="year">2015</span> Agora 广场 - OCAT 上海馆</li>
-                <li><span class="year">2014</span> 他们到底在干什么？ - 上海当代艺术馆</li>
-                <li><span class="year">2013</span> 声闻：亚洲实验音乐呈现 - 外滩美术馆 ，上海</li>
-                <li><span class="year">2013</span> 合声音乐节，上海</li>
-                <li><span class="year">2012</span> 声音传输 : 上海香港实验音乐交换项目 - 外滩美术馆，上海/香港艺术中心，香港</li>
-                <li><span class="year">2012</span> 共振峰：从聆听到聆听的形式 - 视界艺术中心，上海</li>
+                <li>上海声音，西岸美术馆，上海 <span class="year">2025</span></li>
+                <li>听路：中国当代声音艺术实践听路，多伦现代美术馆 ，上海 <span class="year">2024</span></li>
+                <li>为TA作曲 - RAM Assembles，外滩美术馆 ，上海 <span class="year">2023</span></li>
+                <li>一声一城 - 艺术新闻中文版，线上展 <span class="year">2016</span></li>
+                <li>Agora 广场 - OCAT 上海馆 <span class="year">2015</span></li>
+                <li>他们到底在干什么？ - 上海当代艺术馆 <span class="year">2014</span></li>
+                <li>声闻：亚洲实验音乐呈现 - 外滩美术馆 ，上海 <span class="year">2013</span></li>
+                <li>合声音乐节，上海 <span class="year">2013</span></li>
+                <li>声音传输 : 上海香港实验音乐交换项目 - 外滩美术馆，上海/香港艺术中心，香港 <span class="year">2012</span></li>
+                <li>共振峰：从聆听到聆听的形式 - 视界艺术中心，上海 <span class="year">2012</span></li>
             </ul>
         </div>
 
@@ -241,61 +211,56 @@
         <div class="cv-section">
             <h2>音乐/表演（部分）</h2>
             <ul class="cv-list">
-                <li><span class="year">2023</span> 唤醒巴特西 - System，上海</li>
-                <li><span class="year">2023</span> 整蛊集·终章 - 声音艺术博物馆，北京</li>
-                <li><span class="year">2023</span> 器乐音景NO.10，想象空间，北京</li>
-                <li><span class="year">2022</span> Vital Festival - 外滩美术馆，上海</li>
-                <li><span class="year">2022</span> 音乐对我们来说到底意味着什么？ - UCCA Edge，上海</li>
-                <li><span class="year">2021</span> 默声 - 长江美术馆，太原</li>
-                <li><span class="year">2020</span> 摄生 - 上海国际舞蹈中心，上海</li>
-                <li><span class="year">2020</span> 撒丽不跳舞先锋音乐节，成都</li>
-                <li><span class="year">2020</span> 摄生 - 余德耀美术馆，上海</li>
-                <li><span class="year">2017</span> 《花木》 - 上海种子委约，喜马拉雅美术馆，上海</li>
-                <li><span class="year">2017</span> 有种音乐 - 喜马拉雅美术馆，上海</li>
-                <li><span class="year">2016</span> 《声音的面容》 - 第十一届上海双年展“理论剧场”委约声音作品，PSA，上海</li>
-                <li><span class="year">2016</span> “事件、理论与艺术” 学术研讨会，华东师范大学文学系，上海</li>
-                <li><span class="year">2015</span> 撒丽不跳舞先锋音乐节，北京</li>
-                <li><span class="year">2015</span> 玄音 - UCCA，北京 / 西溪天堂，杭州</li>
-                <li><span class="year">2015</span> “听-觉-会” + Multipletap，上海</li>
-                <li><span class="year">2014</span> BUS周年AV派对， 杭州</li>
-                <li><span class="year">2014</span> 冷声音 II - 西泠艺廊，杭州</li>
-                <li><span class="year">2013</span> 听-觉-会 - 独奏音乐会 - 新时线艺术中心，上海</li>
-                <li><span class="year">2013</span> 合声音乐节，上海</li>
-                <li><span class="year">2013</span> 密集音乐节 - 上海外滩美术馆，上海</li>
-                <li><span class="year">2013</span> Sonic Anchor VIII - 香港艺术中心 ，香港</li>
-                <li><span class="year">2012</span> Frischzelle Festival 2012 - 科隆/杜塞尔多夫，德国</li>
-                <li><span class="year">2012</span> 点亮 - 外滩18号画廊，上海</li>
-                <li><span class="year">2012</span> 超级紧 - 广东当代舞蹈团，广州</li>
-                <li><span class="year">2012</span> Sound Anchor III - 香港艺术中心，香港</li>
-                <li><span class="year">2012</span> 密集音乐会 * 八 - 上海视界艺术中心 ，上海</li>
-                <li><span class="year">2012</span> 共振峰 - 上海视界艺术中心，上海</li>
-                <li><span class="year">2012</span> 中间 - 广东当代舞蹈团，广州</li>
-                <li><span class="year">2011</span> 重力场 - 2011喜马拉雅艺术跨媒体艺术节，上海</li>
-                <li><span class="year">2011</span> 静时 - 2011上海音乐学院电子音乐周独立音乐家专场，上海</li>
-                <li><span class="year">2011</span> 未来的未来 - 桃浦大楼BM SPACE，上海</li>
-                <li><span class="year">2011</span> 牛奶面包米饭白水 -（德国Rubato舞团），柏林，上海，斯旺西</li>
-                <li><span class="year">2010</span> 看我，我是中国人（德国柏林 Rubato + 中国麻将舞团）- 柏林，上海</li>
-                <li><span class="year">2010</span> 红楼梦 - 上海荷兰文化中心，上海/阿姆斯特丹七月艺术节，阿姆斯特丹</li>
-                <li><span class="year">2010</span> 皮相 - 下河米仓，上海</li>
-                <li><span class="year">2010</span> 对话 - 爱丁堡Fringe艺术节，爱丁堡/Dancebase，伦敦</li>
-                <li><span class="year">2010</span> 边缘场 - “先行”上海青年创意戏剧节/上海电子艺术创意产业基地，上海</li>
-                <li><span class="year">2010</span> 左脸 - 欧洲巡演（明斯特，波兹坦，杜塞尔多夫，奥斯陆）</li>
-                <li><span class="year">2010</span> 舌头对家园的记忆 - 新加坡Fringe艺术节，新加坡</li>
-                <li><span class="year">2008</span> 对话 - 都柏林（爱尔兰都柏林城市委员会资助项目）</li>
-                <li><span class="year">2008</span> 左脸 - 阿姆斯特丹“七月艺术节”， 阿姆斯特丹</li>
-                <li><span class="year">2008</span> 边缘场 - 荷兰格罗宁根博物馆</li>
-                <li><span class="year">2008</span> 舌头对家园的记忆 - 香港艺穗双周艺术节</li>
-                <li><span class="year">2007</span> 左脸 - 萨尔茨堡中国印度艺术节，奥地利萨尔茨堡</li>
-                <li><span class="year">2007</span> 舌头对家园的记忆 - 柏林Umweg Uber中国艺术节/萨尔茨堡中国印度艺术节/罗马Europa艺术节</li>
-                <li><span class="year">2007</span> 触 - 上海证大艺术馆/上海芷江梦工场</li>
-                <li><span class="year">2007</span> 14号病房 - 上海DDM艺术创库</li>
-                <li><span class="year">2007</span> 舌头对家园的记忆 - 阿姆斯特丹七月艺术节/苏黎士戏剧艺术节/北京交叉艺术节/上海越界艺术节</li>
+                <li>唤醒巴特西 - System，上海 <span class="year">2023</span></li>
+                <li>整蛊集·终章 - 声音艺术博物馆，北京 <span class="year">2023</span></li>
+                <li>器乐音景NO.10，想象空间，北京 <span class="year">2023</span></li>
+                <li>Vital Festival - 外滩美术馆，上海 <span class="year">2022</span></li>
+                <li>音乐对我们来说到底意味着什么？ - UCCA Edge，上海 <span class="year">2022</span></li>
+                <li>默声 - 长江美术馆，太原 <span class="year">2021</span></li>
+                <li>摄生 - 上海国际舞蹈中心，上海 <span class="year">2020</span></li>
+                <li>撒丽不跳舞先锋音乐节，成都 <span class="year">2020</span></li>
+                <li>摄生 - 余德耀美术馆，上海 <span class="year">2020</span></li>
+                <li>《花木》 - 上海种子委约，喜马拉雅美术馆，上海 <span class="year">2017</span></li>
+                <li>有种音乐 - 喜马拉雅美术馆，上海 <span class="year">2017</span></li>
+                <li>《声音的面容》 - 第十一届上海双年展“理论剧场”委约声音作品，PSA，上海 <span class="year">2016</span></li>
+                <li>“事件、理论与艺术” 学术研讨会，华东师范大学文学系，上海 <span class="year">2016</span></li>
+                <li>撒丽不跳舞先锋音乐节，北京 <span class="year">2015</span></li>
+                <li>玄音 - UCCA，北京 / 西溪天堂，杭州 <span class="year">2015</span></li>
+                <li>“听-觉-会” + Multipletap，上海 <span class="year">2015</span></li>
+                <li>BUS周年AV派对， 杭州 <span class="year">2014</span></li>
+                <li>冷声音 II - 西泠艺廊，杭州 <span class="year">2014</span></li>
+                <li>听-觉-会 - 独奏音乐会 - 新时线艺术中心，上海 <span class="year">2013</span></li>
+                <li>合声音乐节，上海 <span class="year">2013</span></li>
+                <li>密集音乐节 - 上海外滩美术馆，上海 <span class="year">2013</span></li>
+                <li>Sonic Anchor VIII - 香港艺术中心 ，香港 <span class="year">2013</span></li>
+                <li>Frischzelle Festival 2012 - 科隆/杜塞尔多夫，德国 <span class="year">2012</span></li>
+                <li>点亮 - 外滩18号画廊，上海 <span class="year">2012</span></li>
+                <li>超级紧 - 广东当代舞蹈团，广州 <span class="year">2012</span></li>
+                <li>Sound Anchor III - 香港艺术中心，香港 <span class="year">2012</span></li>
+                <li>密集音乐会 * 八 - 上海视界艺术中心 ，上海 <span class="year">2012</span></li>
+                <li>共振峰 - 上海视界艺术中心，上海 <span class="year">2012</span></li>
+                <li>中间 - 广东当代舞蹈团，广州 <span class="year">2012</span></li>
+                <li>重力场 - 2011喜马拉雅艺术跨媒体艺术节，上海 <span class="year">2011</span></li>
+                <li>静时 - 2011上海音乐学院电子音乐周独立音乐家专场，上海 <span class="year">2011</span></li>
+                <li>未来的未来 - 桃浦大楼BM SPACE，上海 <span class="year">2011</span></li>
+                <li>牛奶面包米饭白水 -（德国Rubato舞团），柏林，上海，斯旺西 <span class="year">2011</span></li>
+                <li>看我，我是中国人（德国柏林 Rubato + 中国麻将舞团）- 柏林，上海 <span class="year">2010</span></li>
+                <li>红楼梦 - 上海荷兰文化中心，上海/阿姆斯特丹七月艺术节，阿姆斯特丹 <span class="year">2010</span></li>
+                <li>皮相 - 下河米仓，上海 <span class="year">2010</span></li>
+                <li>对话 - 爱丁堡Fringe艺术节，爱丁堡/Dancebase，伦敦 <span class="year">2010</span></li>
+                <li>边缘场 - “先行”上海青年创意戏剧节/上海电子艺术创意产业基地，上海 <span class="year">2010</span></li>
+                <li>左脸 - 欧洲巡演（明斯特，波兹坦，杜塞尔多夫，奥斯陆） <span class="year">2010</span></li>
+                <li>舌头对家园的记忆 - 新加坡Fringe艺术节，新加坡 <span class="year">2010</span></li>
+                <li>对话 - 都柏林（爱尔兰都柏林城市委员会资助项目） <span class="year">2008</span></li>
+                <li>左脸 - 阿姆斯特丹“七月艺术节”， 阿姆斯特丹 <span class="year">2008</span></li>
+                <li>边缘场 - 荷兰格罗宁根博物馆 <span class="year">2008</span></li>
+                <li>舌头对家园的记忆 - 香港艺穗双周艺术节 <span class="year">2008</span></li>
+                <li>左脸 - 萨尔茨堡中国印度艺术节，奥地利萨尔茨堡 <span class="year">2007</span></li>
+                <li>舌头对家园的记忆 - 柏林Umweg Uber中国艺术节/萨尔茨堡中国印度艺术节/罗马Europa艺术节 <span class="year">2007</span></li>
+                <li>触 - 上海证大艺术馆/上海芷江梦工场 <span class="year">2007</span></li>
+                <li>14号病房 - 上海DDM艺术创库 <span class="year">2007</span></li>
+                <li>舌头对家园的记忆 - 阿姆斯特丹七月艺术节/苏黎士戏剧艺术节/北京交叉艺术节/上海越界艺术节 <span class="year">2007</span></li>
             </ul>
-        </div>
-
-        <!-- PDF下载按钮（示例路径，请替换为实际PDF文件） -->
-        <div class="pdf-download">
-            <a href="cv/YinYi_CV_Chinese.pdf" download>下载完整简历（PDF）</a>
         </div>
     </div>
 </body>
