@@ -23,7 +23,7 @@
             position: relative;
         }
 
-        /* 导航栏 - 独立固定于右上角 */
+        /* 导航栏 - 独立固定于右上角，与音乐家页面完全一致 */
         .top-nav {
             position: absolute;
             top: 40px;
@@ -47,7 +47,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;                     /* 稍加宽整体容器，适应更大图片 */
             margin: 0 auto;
             padding: 0 5%;
             flex: 1;
@@ -60,7 +60,7 @@
         /* 主内容区域 */
         .hero {
             text-align: left;
-            max-width: 700px;
+            max-width: 800px;                       /* 增加最大宽度 */
             margin: 0;
         }
 
@@ -68,9 +68,9 @@
         .carousel {
             position: relative;
             width: 100%;
-            max-width: 600px;
+            max-width: 700px;                       /* 从600px增加到700px，使图片更大 */
             height: 0;
-            padding-bottom: 66.67%; /* 3:2 比例 (2/3 = 0.6667) */
+            padding-bottom: 66.67%;                  /* 3:2 比例 (2/3 = 0.6667) */
             margin-bottom: 30px;
             overflow: hidden;
         }
@@ -82,7 +82,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;       /* 保持裁剪统一 */
+            object-fit: cover;                       /* 保持裁剪统一 */
             border-radius: 2px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             opacity: 0;
@@ -115,7 +115,7 @@
                 padding: 20px 10px;
             }
             .top-nav {
-                position: static;               /* 手机端取消固定，改为流式 */
+                position: static;                     /* 手机端取消固定，改为流式 */
                 justify-content: center;
                 flex-wrap: wrap;
                 gap: 20px;
@@ -126,7 +126,7 @@
                 padding-top: 0;
             }
             .carousel {
-                max-width: 100%;                /* 手机端占满宽度 */
+                max-width: 100%;                        /* 手机端占满宽度 */
             }
             .hero-text {
                 font-size: 0.95rem;
