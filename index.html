@@ -14,7 +14,7 @@
         body {
             background-color: #9c9ca5;          /* R156 G156 B165 */
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #1f2c35;                      /* 深灰色文字，保证可读 */
+            color: #1f2c35;
             line-height: 1.6;
             padding: 40px 20px;
             min-height: 100vh;
@@ -23,25 +23,25 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 900px;                     /* 与音乐家页面一致 */
             margin: 0 auto;
-            padding: 0 5%;
+            padding: 0 5%;                         /* 左右内边距恢复为5%，与音乐家统一 */
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        /* 顶部导航 */
+        /* 顶部导航 - 靠右，与音乐家页面样式完全一致 */
         .top-nav {
             display: flex;
             justify-content: flex-end;
             gap: 30px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;                   /* 间距与音乐家统一 */
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #2f3a44;                      /* 导航文字加深 */
+            color: #2f3a44;                         /* 适应浅色背景的深色文字 */
         }
         .top-nav a {
             color: #2f3a44;
@@ -50,7 +50,7 @@
         }
         .top-nav a:hover,
         .top-nav a.active {
-            color: #0f1a24;                      /* 更深色 */
+            color: #0f1a24;
         }
 
         /* 主内容区域 */
@@ -60,45 +60,40 @@
             margin: 0;
         }
 
-        .hero-image {
+        /* 轮播容器 - 与艺术家页面卡片比例一致 */
+        .carousel {
+            position: relative;
             width: 100%;
-            max-width: 500px;
-            height: auto;
+            max-width: 600px;                     /* 图片最大宽度 600px */
+            aspect-ratio: 3 / 2;                   /* 与艺术家页面卡片比例一致 */
             margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        /* 轮播图片 */
+        .carousel-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;                     /* 统一裁剪，保证每张图片充满容器 */
             border-radius: 2px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            pointer-events: none;
         }
-/* 轮播容器 */
-.carousel {
-    position: relative;
-    width: 100%;
-    max-width: 500px; /* 与原来图片的最大宽度保持一致 */
-    height: auto;      /* 高度由图片撑开 */
-    margin-bottom: 30px; /* 与下方文字的间距 */
-}
 
-/* 轮播图片的样式 */
-.carousel-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    border-radius: 2px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    opacity: 0;                /* 默认完全透明 */
-    transition: opacity 1.5s ease-in-out; /* 透明度变化时产生平滑的淡入淡出效果 */
-    pointer-events: none;      /* 让透明层的图片不干扰点击事件 */
-}
+        .carousel-image.active {
+            opacity: 1;
+            position: relative;                    /* 激活的图片参与布局，撑开容器高度 */
+        }
 
-/* 当前激活的图片 */
-.carousel-image.active {
-    opacity: 1;                /* 显示当前图片 */
-    position: relative;        /* 激活的图片脱离绝对定位的层叠顺序问题，确保它可见 */
-}
+        /* 下方文字 */
         .hero-text {
-            font-size: 1.2rem;
-            color: #1f2c35;                      /* 正文加深 */
+            font-size: 1rem;                       /* 缩小字体 */
+            color: #1f2c35;
             line-height: 1.8;
         }
 
@@ -116,19 +111,19 @@
                 padding: 20px 10px;
             }
             .container {
-                padding: 0 8%;
+                padding: 0 8%;                     /* 手机端稍加内边距 */
             }
             .top-nav {
-                justify-content: center;
+                justify-content: center;            /* 手机端导航居中 */
                 gap: 20px;
                 flex-wrap: wrap;
                 margin-bottom: 40px;
             }
-            .hero-image {
-                max-width: 100%;
+            .carousel {
+                max-width: 100%;                    /* 手机端占满宽度 */
             }
             .hero-text {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -146,44 +141,41 @@
             <a href="index_en.html">EN</a>
         </div>
 
-        <!-- 首页主体：图片 + 文字 -->
+        <!-- 首页主体：图片轮播 + 文字 -->
         <div class="hero">
-           <!-- 轮播容器 -->
-    <div class="carousel">
-        <img src="images/yinyi01.jpg" alt="殷漪 01" class="carousel-image active">
-        <img src="images/yinyi02.jpg" alt="殷漪 02" class="carousel-image">
-        <!-- 可以继续添加更多图片，JavaScript会自动适应 -->
-    </div>
+            <div class="carousel">
+                <img src="images/yinyi01.jpg" alt="殷漪 01" class="carousel-image active">
+                <img src="images/yinyi02.jpg" alt="殷漪 02" class="carousel-image">
+            </div>
             <div class="hero-text">
                 <p>与我而言，艺术既是自我治愈的良方，亦是检验思考的试金石。</p>
                 <p>艺术应该是个动词。</p>
             </div>
         </div>
     </div>
+
+    <!-- 轮播脚本 -->
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const images = document.querySelectorAll('.carousel-image');
-        if (images.length === 0) return; // 如果没有图片，则不执行
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.carousel-image');
+            if (images.length === 0) return;
 
-        let currentIndex = 0;
+            let currentIndex = 0;
 
-        // 将第一张图片设为激活状态（如果HTML中没有预设active类）
-        images[currentIndex].classList.add('active');
+            // 确保第一张有 active 类
+            images.forEach((img, idx) => {
+                if (idx === 0) img.classList.add('active');
+                else img.classList.remove('active');
+            });
 
-        function showNextImage() {
-            // 移除当前图片的激活类
-            images[currentIndex].classList.remove('active');
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }
 
-            // 计算下一张图片的索引
-            currentIndex = (currentIndex + 1) % images.length;
-
-            // 为下一张图片添加激活类，触发CSS过渡效果
-            images[currentIndex].classList.add('active');
-        }
-
-        // 设置定时器，每4000毫秒（4秒）切换一次
-        setInterval(showNextImage, 4000);
-    });
-</script>
+            setInterval(showNextImage, 4000); // 每4秒切换
+        });
+    </script>
 </body>
 </html>
