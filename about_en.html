@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yin Yi · Home</title>
+    <title>Yin Yi · CV</title>
     <style>
         * {
             margin: 0;
@@ -12,29 +12,28 @@
         }
 
         body {
-            background-color: #9c9ca5;
+            background-color: #dae7eb;
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
             color: #1f2c35;
             line-height: 1.6;
             padding: 40px 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
         }
 
-        /* 桌面端导航栏：一行靠右 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
         .top-nav {
-            position: absolute;
-            top: 40px;
-            right: 20px;
             display: flex;
+            justify-content: flex-end;
             gap: 30px;
+            margin-bottom: 40px;
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #2f3a44;
-            z-index: 100;
         }
         .top-nav a {
             color: #2f3a44;
@@ -46,173 +45,214 @@
             color: #0f1a24;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 5%;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 60px;
+        .intro {
+            margin-bottom: 40px;
+            font-size: 0.85rem;
+            color: #3f4f60;
+        }
+        .intro p {
+            margin-bottom: 0.8em;
         }
 
-        .hero {
-            text-align: left;
-            max-width: 900px;
-            margin: 0;
-        }
-
-        .carousel {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            height: 0;
-            padding-bottom: 66.67%;
+        .cv-section {
             margin-bottom: 30px;
-            overflow: hidden;
         }
-
-        .carousel-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 2px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            opacity: 0;
-            transition: opacity 2.5s ease-in-out;
-            pointer-events: none;
-        }
-
-        .carousel-image.active {
-            opacity: 1;
-        }
-
-        .hero-text {
-            font-size: 1rem;
+        .cv-section h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
             color: #1f2c35;
-            line-height: 1.8;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
         }
 
-        .hero-text p {
-            margin-bottom: 0.5em;
+        .cv-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        .cv-list li {
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            color: #53585f;
+        }
+        .cv-list .year {
+            margin-left: 6px;
+            color: #6f7c8a;
+        }
+        .cv-list a {
+            color: #53585f;
+            text-decoration: none;
+            border-bottom: 1px dotted #a0b3c5;
+            margin-left: 8px;
+            font-size: 0.8rem;
+        }
+        .cv-list a:hover {
+            color: #0f1a24;
+            border-bottom-color: #0f1a24;
         }
 
-        .hero-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* 手机端导航栏：与艺术家英文版完全一致 - flex wrap 居中对齐 */
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
             }
-            .top-nav {
-                position: static;              /* 取消绝对定位 */
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;       /* 居中对齐 */
-                gap: 20px 25px;                /* 水平和垂直间距 */
-                margin-bottom: 30px;
-                width: 100%;
-                background: transparent;
-            }
-            .top-nav a {
-                font-size: 0.85rem;            /* 手机端字体稍小 */
-                padding: 5px 0;
-                white-space: nowrap;
-            }
             .container {
                 padding: 0 8%;
-                padding-top: 0;
             }
-            .carousel {
-                max-width: 100%;
+            .top-nav {
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
             }
-            .hero-text {
-                font-size: 0.95rem;
+            .intro {
+                font-size: 0.8rem;
+            }
+            .cv-section h2 {
+                font-size: 1.1rem;
+            }
+            .cv-list li {
+                font-size: 0.8rem;
+            }
+            .cv-list a {
+                font-size: 0.75rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="top-nav">
-        <a href="index_en.html" class="active">Yin Yi</a>
-        <a href="musician_en.html">Musician</a>
-        <a href="artist_en.html">Artist</a>
-        <a href="curator_en.html">Curator</a>
-        <a href="writing_en.html">Texts</a>
-        <a href="about_en.html">CV</a>
-        <a href="index.html">CN</a>
-    </div>
-
     <div class="container">
-        <div class="hero">
-            <div class="carousel" id="carousel">
-                <!-- 图片由JavaScript动态生成 -->
-            </div>
-            <div class="hero-text">
-                <p>For me, art is both a remedy for self-healing and a touchstone for reflecting on thought.</p>
-                <p>Art should be a verb.</p>
-            </div>
+        <div class="top-nav">
+            <a href="index_en.html">Yin Yi</a>
+            <a href="musician_en.html">Musician</a>
+            <a href="artist_en.html">Artist</a>
+            <a href="curator_en.html">Curator</a>
+            <a href="writing_en.html">Texts</a>
+            <a href="about_en.html" class="active">CV</a>
+            <a href="about.html">CN</a>
+        </div>
+
+        <div class="intro">
+            <p>Yin Yi is a musician, artist, and curator born in Shanghai. His creative practice revolves around "auditory-sound," spanning multimedia domains such as sound art, music, installation, performance, video, text, and theater.</p>
+            <p>Yin formed the Dead Poets Society in 1998, a slowcore band in which he was the lead singer and also a bassist. Yin turned to digital music three years later and he became a founding member of the avant-garde performance collective Zuhe Niao as a musician in 2005. His musical creation started to cover a wide range, e.g., live music performance, contemporary dance, and physical theatre. Commissioned by individual artists and modern dance groups, Yin's works are frequently heard in the performances of Zuheniao (Shanghai), Tanzcompagnie Rubato (Berlin), Guangdong Modern Dance Company, Xie Xin Dance Company, Ergao Performance etc. In recent years, Yin starts to focus on live laptop performances and site-specific soundscape compositions rooted in field recordings.</p>
+            <p>In the creation of sound art, Yin Yi is known for his philosophical and poetic ideas. His observation and reflection on public space is both acute and deep, and his works are both avant-garde and critical. He also proposes the notion of "auditory – sound space" and attempts to establish a working method around this concept, bringing his praxis to the discourse of multi-disciplinary collaborations.</p>
+            <p>Yin Yi's work has been featured in numerous art festivals and institutions, including RAM Assembles (2023), Echigo-Tsumari Art Triennial (2018), the 11th Shanghai Bienniale (2016) and Sound Art China (2013), Harvest Work (New York), Power Station of Art (Shanghai), Yuz Museum, Rock Bund Museum, Unsafe and Sound Festival (Vienna), HongKong Art Centre, Museum of Contemporary Art (Shanghai), Ming Contemporary Art Museum (Shanghai), Shanghai International Dance Centre, OCAT Shenzhen, Pingshan Museum (Shenzhen), Shanghai Urban Space Art Season, etc.</p>
+            <p>Since 2011, Yin Yi has been paying close attention to the artistic ecology of experimental music and sound art across China. Activities that he recently curated include, "Formant" (a sound art exhibition), "Co-Sound" (sound performance festival), "Sonic Transmission" (exchange project between Shanghai and HongKong), etc. In 2012 Yin and choreographer Liu Yanan founded artist running alternative art space - BM Space. Since 2013, he has collaborated with art institutions to curate exhibitions and programs, including the Rockbund Art Museum, OCAT Shanghai, Shanghai Duolun Museum of Modern Art, and West Bund Museum.</p>
+        </div>
+
+        <!-- Solo Exhibition -->
+        <div class="cv-section">
+            <h2>Solo Exhibition</h2>
+            <ul class="cv-list">
+                <li>I am listening - Yuz Museum, Shanghai <span class="year">2025</span> <a href="http://www.yuzmshanghai.org/pdf/i_am_listening_2025.pdf" target="_blank">Exhibition Brochure</a></li>
+            </ul>
+        </div>
+
+        <!-- Group Exhibition (Selected) -->
+        <div class="cv-section">
+            <h2>Group Exhibition (Selected)</h2>
+            <ul class="cv-list">
+                <li>Once Upon A Time - Power Station of Art, Shanghai <span class="year">2025</span></li>
+                <li>Building Shanghai: Architecture, Urbanism, and Culture since 1949 - West Bund Museum, Shanghai <span class="year">2025</span></li>
+                <li>Luhu Environmental Theatre Week - Chengdu <span class="year">2024</span></li>
+                <li>Sparking Into Sparkling - 2024 Ranran Art Season, Shanghai <span class="year">2024</span></li>
+                <li>Sound Variation : Contemporary Chinese Sound Art Exhibition - Chengdu Art Museum, Chengdu <span class="year">2023</span></li>
+                <li>YINGU : A Thirty Year Retrospective Exhibition of Sound Creation in Contemporary Chinese Art, Sound Art Museum, Beijing <span class="year">2023</span></li>
+                <li>RAM Assembles - Rock Bund Museum, Shanghai <span class="year">2023</span></li>
+                <li>Sleepless Theatre - Wu Changsuo Museum, Shanghai <span class="year">2023</span></li>
+                <li>Project Terrance@1431 Huaihai Rd. - Power Station of Art, Shanghai <span class="year">2022</span></li>
+                <li>The Pieces I Am - UCCA Edge, Shanghai <span class="year">2022</span></li>
+                <li>RANRAN : Song Of The Return - XINTIANDI & UCCA, Shanghai <span class="year">2022</span></li>
+                <li>Urban Cosmologies - The 9th Shenzhen · City Of Design, Shenzhen <span class="year">2022</span></li>
+                <li>Music for The Terrace (Project Terrance@1431 Huaihai Rd.) - Positive Art Research Centre, Shanghai <span class="year">2021</span></li>
+                <li>Public Park - Duolun Modern Art Museum, Shanghai <span class="year">2020</span></li>
+                <li>2020：twenty Years Towards a World Theatre, Participatory Exhibition with Archived Contemporary Performance - OCAT Shenzhen Hall, Shenzhen <span class="year">2020</span></li>
+                <li>Young Choreographers Project - Shanghai International Dance Centre, Shanghai <span class="year">2020</span></li>
+                <li>Unknown City - Pingshan Museum, Shenzhen <span class="year">2019</span></li>
+                <li>Kind Stranger - UNArt Center, Shanghai <span class="year">2019</span></li>
+                <li>Encounter - 2019 Shanghai Urban Space Art Season, Shanghai <span class="year">2019</span></li>
+                <li>Echigo-Tsumari Art Triennale 2018 - Japan (Atelier Dashaus + Yin Yi) <span class="year">2018</span></li>
+                <li>On Site Impromptus - Ming Contemporary Art Museum, Shanghai <span class="year">2017</span></li>
+                <li>Sound:Chambers - 2016 Shenzhen New Media Art Festival, Shenzhen <span class="year">2016</span></li>
+                <li>Sound:Phenomena - 2016 Shenzhen New Media Art Festival, Shenzhen <span class="year">2016</span></li>
+                <li>Why not ask again? - 11th Shanghai Biennale - Power Station of Art, Shanghai <span class="year">2016</span></li>
+                <li>Dinghaiqiao (Artistic Practice of History) - Power Station of Art, Shanghai <span class="year">2016</span></li>
+                <li>Synchronized Reality - Unsafe and Sound Festival, Vienna <span class="year">2016</span></li>
+                <li>Sound Art China - West Bund 2013: A Biennial of Architecture and Contemporary Art, Shanghai <span class="year">2013</span></li>
+                <li>Lost In The Labyrinth - Harvest Works, New York <span class="year">2013</span></li>
+                <li>Daily of Concept (The Fifth Shanghai Duolun Youth Art Exhibition) - Duolun Art Museum, Shanghai <span class="year">2012</span></li>
+            </ul>
+        </div>
+
+        <!-- Curator -->
+        <div class="cv-section">
+            <h2>Curator</h2>
+            <ul class="cv-list">
+                <li>Shanghai Sound - West Bund Museum, Shanghai <span class="year">2025</span></li>
+                <li>Listening Path: Contemporary Sound Art Practice in China - Duolun Modern Art Museum, Shanghai <span class="year">2024</span></li>
+                <li>Compose For - RAM Assembles, Rockbund Art Museum, Shanghai <span class="year">2023</span></li>
+                <li>One Sound One City - Art Newspaper Chinese Version, Online Exhibition <span class="year">2016</span></li>
+                <li>Agora - OCT Contemporary Art Terminal, Shanghai <span class="year">2015</span></li>
+                <li>What Are They Doing? - Museum of Contemporary Art, Shanghai <span class="year">2014</span></li>
+                <li>Savaka (Asia Experimental Music Currents) - Rockbund Art Museum, Shanghai <span class="year">2013</span></li>
+                <li>CO-Sound Festival - Zhujiajiao, Shanghai <span class="year">2013</span></li>
+                <li>Sonic Transmission - Sound Performance Between Shanghai and HongKong – supported by Rockbund Art Museum, Shanghai / HongKong Art Centre, HongKong / Art Network Asian, Singapore <span class="year">2012</span></li>
+                <li>Formant - Forms of Listening to Forms - V Arts Centre, Shanghai <span class="year">2012</span></li>
+            </ul>
+        </div>
+
+        <!-- Performance (Selected) -->
+        <div class="cv-section">
+            <h2>Performance (Selected)</h2>
+            <ul class="cv-list">
+                <li>Awakening Battersea - System, Shanghai <span class="year">2023</span></li>
+                <li>Zengo Collection·Final Chapter - Sound Art Museum, Beijing <span class="year">2023</span></li>
+                <li>Instrumental Soundscape NO.10 - Imagination Space, Beijing <span class="year">2023</span></li>
+                <li>Vital Festival - Rockbund Museum, Shanghai <span class="year">2022</span></li>
+                <li>What Does Music Really Mean to Us? - UCCA Edge, Shanghai <span class="year">2022</span></li>
+                <li>Silence - Changjiang Museum, Taiyuan <span class="year">2021</span></li>
+                <li>Nourishing the Life - Shanghai International Dance Centre, Shanghai <span class="year">2020</span></li>
+                <li>Sally Can't Dance Avant-garde Music Festival, Chengdu <span class="year">2020</span></li>
+                <li>Nourishing the Life - Yuz Museum, Shanghai <span class="year">2020</span></li>
+                <li>Sound Writing - HuaMu (commissioned by Shanghai Project) - Himalayas Museum, Shanghai <span class="year">2017</span></li>
+                <li>You Zhong Music - Himalayas Museum, Shanghai <span class="year">2017</span></li>
+                <li>Le Visage Acoustique - 11th Shanghai Biennale "Theory Theatre" commissioned sound work, PSA, Shanghai <span class="year">2016</span></li>
+                <li>"Event, Theory and Art" Academic Symposium - East China Normal University, Shanghai <span class="year">2016</span></li>
+                <li>Sally Can't Dance Avant-garde Music Festival, Beijing <span class="year">2015</span></li>
+                <li>Xuan Yin - UCCA, Beijing / Xixi Tiandi, Hangzhou <span class="year">2015</span></li>
+                <li>"Auditory-Sensory-Meeting" + Multipletap, Shanghai <span class="year">2015</span></li>
+                <li>BUS Anniversary AV Party, Hangzhou <span class="year">2014</span></li>
+                <li>Cool Sound II - Xileng Gallery, Hangzhou <span class="year">2014</span></li>
+                <li>Auditory-Sensory-Meeting (solo concert) - Chronus Art Center, Shanghai <span class="year">2013</span></li>
+                <li>CO-Sound Festival, Shanghai <span class="year">2013</span></li>
+                <li>Miji Festival - Rockbund Art Museum, Shanghai <span class="year">2013</span></li>
+                <li>Sonic Anchor VIII - HongKong Art Centre, Hong Kong <span class="year">2013</span></li>
+                <li>Frischzelle Festival 2012 - Cologne/Dusseldorf, Germany <span class="year">2012</span></li>
+                <li>Illumination - 18 Gallery, Shanghai <span class="year">2012</span></li>
+                <li>Super Tight - Guangdong Modern Dance Company, Guangzhou <span class="year">2012</span></li>
+                <li>Sound Anchor III - HongKong Art Centre, Hong Kong <span class="year">2012</span></li>
+                <li>Miji Concerts * 8 - V Arts Centre, Shanghai <span class="year">2012</span></li>
+                <li>Formant - V Arts Centre, Shanghai <span class="year">2012</span></li>
+                <li>Inbetween - Guangdong Modern Dance Company, Guangzhou <span class="year">2012</span></li>
+                <li>Gravitational Field - 2011 Himalayas Cross-Media Art Festival, Shanghai <span class="year">2011</span></li>
+                <li>Still Concert - 2011 Electronic Music Week of Conservatory of Shanghai, Shanghai <span class="year">2011</span></li>
+                <li>Future of Future - BM SPACE, Shanghai <span class="year">2011</span></li>
+                <li>Milk and Bread, Rice and Water (with Rubato Tanzcompagnie) - Berlin, Shanghai, Swansea <span class="year">2011</span></li>
+                <li>Look at me, I am Chinese (Rubato Berlin + Majiang Dance Company) - Berlin, Shanghai <span class="year">2010</span></li>
+                <li>Red Chamber - Dutch Culture Centre, Shanghai / Amsterdam JuliDans Festival, Amsterdam <span class="year">2010</span></li>
+                <li>Epidermis - Xiahe Micang, Shanghai <span class="year">2010</span></li>
+                <li>Dialogue - Edinburgh Fringe Festival / Dancebase, London <span class="year">2010</span></li>
+                <li>Verge Field - "Pioneer" Shanghai Youth Creative Theatre Festival / Shanghai eArts Community, Shanghai <span class="year">2010</span></li>
+                <li>Left Cheek – European Tour (Munster, Potsdam, Dusseldorf, Oslo) <span class="year">2010</span></li>
+                <li>Tongue's Memory of Home - Singapore Fringe Festival, Singapore <span class="year">2010</span></li>
+                <li>Dialogue - Dublin (funded by Dublin City Council, Ireland) <span class="year">2008</span></li>
+                <li>Left Cheek - Amsterdam JuliDans Festival, Amsterdam <span class="year">2008</span></li>
+                <li>Verge Field - Groninger Museum, Netherlands <span class="year">2008</span></li>
+                <li>Tongue's Memory of Home - Hong Kong Fringe Biennial, Hong Kong <span class="year">2008</span></li>
+                <li>Left Cheek - Salzburg China India Festival, Salzburg, Austria <span class="year">2007</span></li>
+                <li>Tongue's Memory of Home - Berlin Umweg Uber China Festival / Salzburg China India Festival / Rome Europa Festival <span class="year">2007</span></li>
+                <li>Touch - Shanghai Zendai Art Museum / Shanghai Zhijiang DreamWorks <span class="year">2007</span></li>
+                <li>Ward 14 - Shanghai DDM Art Center <span class="year">2007</span></li>
+                <li>Tongue's Memory of Home - Amsterdam JuliDans Festival / Zurich Theater Spektakel / Beijing Crossing Art Festival / Shanghai Fringe Festival <span class="year">2007</span></li>
+            </ul>
         </div>
     </div>
-
-    <script>
-        (function() {
-            const carousel = document.getElementById('carousel');
-            if (!carousel) return;
-
-            const totalImages = 20;
-            const imagePaths = [];
-            for (let i = 1; i <= totalImages; i++) {
-                imagePaths.push(`images/yinyi${i.toString().padStart(2, '0')}.jpg`);
-            }
-
-            imagePaths.forEach((path, index) => {
-                const img = document.createElement('img');
-                img.src = path;
-                img.alt = `Yin Yi ${index + 1}`;
-                img.className = 'carousel-image';
-                if (index === 0) img.classList.add('active');
-                carousel.appendChild(img);
-            });
-
-            const images = document.querySelectorAll('.carousel-image');
-            if (images.length === 0) return;
-
-            let order = [0];
-            let remaining = Array.from({ length: totalImages - 1 }, (_, i) => i + 1);
-            for (let i = remaining.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [remaining[i], remaining[j]] = [remaining[j], remaining[i]];
-            }
-            order = order.concat(remaining);
-
-            let currentIndex = 0;
-            images.forEach(img => img.classList.remove('active'));
-            images[order[0]].classList.add('active');
-
-            function showNextImage() {
-                images[order[currentIndex]].classList.remove('active');
-                currentIndex++;
-                if (currentIndex >= order.length) {
-                    let newRemaining = Array.from({ length: totalImages - 1 }, (_, i) => i + 1);
-                    for (let i = newRemaining.length - 1; i > 0; i--) {
-                        const j = Math.floor(Math.random() * (i + 1));
-                        [newRemaining[i], newRemaining[j]] = [newRemaining[j], newRemaining[i]];
-                    }
-                    order = [0].concat(newRemaining);
-                    currentIndex = 0;
-                }
-                images[order[currentIndex]].classList.add('active');
-            }
-
-            setInterval(showNextImage, 5000);
-        })();
-    </script>
 </body>
 </html>
