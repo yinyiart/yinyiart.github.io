@@ -16,7 +16,7 @@ body {
     font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
     color: #f0f4f8;
     line-height: 1.6;
-    padding: 40px 0 40px 20px;   /* 右侧顶格，左侧留白 */
+    padding: 40px 0 40px 20px;
 }
 
 .container {
@@ -51,7 +51,7 @@ body {
 
 .work-info {
     flex: 1 1 30%;
-    position: sticky;      /* 电脑端固定 */
+    position: sticky;
     top: 40px;
     align-self: flex-start;
 }
@@ -102,34 +102,47 @@ body {
     height: 200px;
 }
 
+.video-container {
+    margin-top: 30px;
+    width: 100%;
+    background: #4a4f58;
+    border: 1px solid #7a8088;
+}
+.video-container iframe {
+    display: block;
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
 @media (max-width: 800px) {
     body {
-        padding: 20px 0;          /* 上下留白，左右无缩进，让图片撑满宽度 */
+        padding: 20px 0;
     }
     .container {
-        padding: 0;                /* 容器无内边距 */
+        padding: 0;
     }
     .top-nav {
-        justify-content: center;    /* 导航居中 */
-        flex-wrap: wrap;            /* 允许换行 */
-        gap: 15px;                  /* 减小间距适应小屏 */
-        margin-bottom: 20px;        /* 可选调整 */
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 20px;
     }
     .work-detail {
-        flex-direction: column-reverse; /* 图片在上，文字在下 */
-        gap: 20px;                 /* 调整图片与文字间距 */
+        flex-direction: column-reverse;
+        gap: 20px;
     }
     .work-info {
         flex: auto;
         width: 100%;
-        padding: 0 15px 40px 15px; /* 增加底部间距，使文字与图片更远 */
+        padding: 0 15px 40px 15px;
     }
     .work-images {
         flex: auto;
         width: 100%;
     }
     .image-list {
-        gap: 10px;                 /* 图片之间的间距可适当缩小 */
+        gap: 10px;
     }
     .image-item {
         width: 100%;
@@ -138,6 +151,9 @@ body {
         width: 100%;
         height: auto;
         display: block;
+    }
+    .video-container iframe {
+        height: 250px;
     }
 }
 </style>
@@ -151,7 +167,7 @@ body {
             <a href="curator_en.html">Curator</a>
             <a href="writing_en.html">Texts</a>
             <a href="about_en.html">CV</a>
-            <a href="work.html">CN</a>   <!-- 返回中文版 -->
+            <a href="work.html">CN</a>
         </div>
 
         <div id="work-content">
@@ -308,7 +324,7 @@ Dancers: Liu Yanan, Wang Shaojun
 
 Live music: Viola/Jiao Ying, Celesta/Wang Tian, Guitar/Mai Mai, Alto Saxophone/Zhao Junyuan
 
-Lighting: Gao Yelin`, images: ['images/she01.jpg','images/she02.jpg','images/she03.jpg','images/she04.jpg','images/she05.jpg','images/she06.jpg','images/she07.jpg','images/she08.jpg','images/she09.jpg','images/she10.jpg','images/she11.jpg','images/she12.jpg','images/she13.jpg','images/she14.jpg','images/she15.jpg','images/she16.jpg','images/she17.jpg','images/she18.jpg','images/she19.jpg','images/she20.jpg','images/she21.jpg','images/she22.jpg'] },
+Lighting: Gao Yelin`, images: ['images/she01.jpg','images/she02.jpg','images/she03.jpg','images/she04.jpg','images/she05.jpg','images/she06.jpg','images/she07.jpg','images/she08.jpg','images/she09.jpg','images/she10.jpg','images/she11.jpg','images/she12.jpg','images/she13.jpg','images/she14.jpg','images/she15.jpg','images/she16.jpg','images/she17.jpg','images/she18.jpg','images/she19.jpg','images/she20.jpg','images/she21.jpg','images/she22.jpg'], video: 'https://player.vimeo.com/video/891867031' },
             { id: 'zhenshen', title: 'True Body (Zhenshen)', year: '2019', description: `Mixed media performance
 
 Once during a performance, looking at the audience, I wondered: who are these people? They know my name, but I know nothing about them.
@@ -339,12 +355,12 @@ These six letters were handed over by messengers at different locations, guiding
 
 If listening is not merely a rhetoric or a metaphysical speculation, it must be due to the engagement of the body. The body appears in a position, and a space is thereby generated. Listening is not only about the auditory system. It actually occurs within the body. Once listening occurs, it immediately crosses the boundary of the body. A gesture shapes the body and also frames listening.
 
-Listening is the clue; urban space is the performance venue.`, images: ['images/liu01.jpg','images/liu02.jpg','images/liu03.jpg','images/liu04.jpg','images/liu05.jpg','images/liu06.jpg','images/liu07.jpg','images/liu08.jpg','images/liu09.jpg','images/liu10.jpg','images/liu11.jpg','images/liu12.jpg'] },
+Listening is the clue; urban space is the performance venue.`, images: ['images/liu01.jpg','images/liu02.jpg','images/liu03.jpg','images/liu04.jpg','images/liu05.jpg','images/liu06.jpg','images/liu07.jpg','images/liu08.jpg','images/liu09.jpg','images/liu10.jpg','images/liu11.jpg','images/liu12.jpg'], video: 'https://player.vimeo.com/video/390302614' },
             { id: 'shige', title: 'Ten Corners', year: '2018', description: `Video, silent
 
 A space is not the enclosure of an interface.
 
-An event occurs, a space becomes.`, images: ['images/shi01.jpg'] },
+An event occurs, a space becomes.`, images: ['images/shi01.jpg'], video: 'https://player.vimeo.com/video/257713205' },
             { id: 'meishuguan', title: 'Art Museum', year: '2018', description: `Single-channel video, stereo sound
 
 Sound has the ability to cross boundaries.
@@ -353,7 +369,7 @@ As sound crosses boundaries, it also generates its own boundaries. But these bou
 
 "Use" an unfinished art museum in a "sonic way." Shoot a sound-driven sound art video work.
 
-This work was created at the invitation of architect Liu Yichun for his design of the Taizhou Art Museum. Liu wanted to document the museum artistically before its completion. My idea was to distinguish it from placing exhibits, using art differently to "use" the museum. This was also the beginning of my experimentation with "sound-driven image."`, images: ['images/mei01.jpg'] },
+This work was created at the invitation of architect Liu Yichun for his design of the Taizhou Art Museum. Liu wanted to document the museum artistically before its completion. My idea was to distinguish it from placing exhibits, using art differently to "use" the museum. This was also the beginning of my experimentation with "sound-driven image."`, images: ['images/mei01.jpg'], video: 'https://player.vimeo.com/video/722087139' },
             { id: 'ditu', title: 'Map', year: '2018', description: `4-channel video, stereo sound
 
 My wife, a contemporary dancer, was pregnant again.
@@ -394,10 +410,10 @@ The Dinghaiqiao area is one of the few remaining large old districts in downtown
 
 The roads here are mostly wet because there is no indoor drainage system. People here know each other well; so-called public life is rich, but there is a lack of awareness of the boundary between private and public space. The air is filled with familiar food smells, but hygiene is worrying. Day and night are two different worlds.
 
-From September 1 to 30, 2014, I went to Dinghaiqiao everyday, recording at different times and in different locations. These sounds were individually placed in sealed glass jars, with labels outside indicating the time, place, and weather of the recording. Next to each sound, a piece of aspirin was placed. Through the glass, the speakers are clear, but the sound is muffled, like the repressed old district abandoned by the modern city.`, images: ['images/201401.jpg','images/201402.jpg','images/201403.jpg','images/201404.jpg'] },
+From September 1 to 30, 2014, we went to Dinghaiqiao, recording at different times and in different locations. These sounds were individually placed in sealed glass jars, with labels outside indicating the time, place, and weather of the recording. Next to each sound, a piece of aspirin was placed. Through the glass, the speakers are clear, but the sound is muffled, like the repressed old district abandoned by the modern city.`, images: ['images/201401.jpg','images/201402.jpg','images/201403.jpg','images/201404.jpg'] },
             { id: 'weiliao', title: 'A Farewell Party', year: '2013-2019', description: `50 years ago, they responded to Chairman Mao's call to go up to the mountains and down to the countryside. 50 years later, they return to the city of their birth and sing collectively in the park. Why do 200 retired elderly people gather in the park every weekend to sing songs of their era? Why do they choose to vocalize? Why do they choose the park? It resembles a farewell party.
 
-"A Farewell Party" is a sound installation with musical performance. Photographs and 8 speakers sealed in glass jars are arranged on a slowly rotating turntable, resembling a dinner party scene. Each speaker loops a song recorded by the artist on site, sung by the spontaneous singing collective in Luxun Park. Inside the sealed jars, all sounds are muffled and suppressed, forming a changing sound field as the turntable rotates. Every 30 minutes, a live trumpeter performs music composed by the artist, sounding together with the speakers in the jars.`, images: ['images/wei01.jpg','images/wei02.jpg','images/wei03.jpg','images/wei04.jpg','images/wei05.jpg','images/wei06.jpg'] },
+"A Farewell Party" is a sound installation with musical performance. Photographs and 8 speakers sealed in glass jars are arranged on a slowly rotating turntable, resembling a dinner party scene. Each speaker loops a song recorded by the artist on site, sung by the spontaneous singing collective in Luxun Park. Inside the sealed jars, all sounds are muffled and suppressed, forming a changing sound field as the turntable rotates. Every 30 minutes, a live trumpeter performs music composed by the artist, sounding together with the speakers in the jars.`, images: ['images/wei01.jpg','images/wei02.jpg','images/wei03.jpg','images/wei04.jpg','images/wei05.jpg','images/wei06.jpg'], video: 'https://player.vimeo.com/video/716272868' },
             { id: 'moshnegren', title: 'Stranger', year: '2013', description: `Two-channel video, silent
 
 In 2013, I welcomed my first child. Before the child was born, I gradually felt it was a stranger. I would meet a stranger. This unfamiliarity must come from my ignorance of the child. At the same time, reason told me this stranger would be my closest person, which deepened the sense of strangeness. My acquaintance with my parents was gradual; my acquaintance with my child was sudden. I had many doubts and concerns.
@@ -414,7 +430,7 @@ On the afternoon of May 19, 2008, I filmed the nationwide three-minute silence m
 
 12 years later, China sounded air raid sirens again to mourn those who died in the COVID-19 pandemic. At 10 a.m. on April 4, 2020, I filmed another three-minute video on Nanjing East Road Pedestrian Street in Shanghai.
 
-In sound, an emotional community is created.`, images: ['images/san01.jpg','images/san02.jpg','images/san03.jpg','images/san04.jpg'] }
+In sound, an emotional community is created.`, images: ['images/san01.jpg','images/san02.jpg','images/san03.jpg','images/san04.jpg'], video: 'https://player.vimeo.com/video/61903048' }
         ];
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -450,6 +466,15 @@ In sound, an emotional community is created.`, images: ['images/san01.jpg','imag
                 `;
             }
 
+            let videoHtml = '';
+            if (work.video) {
+                videoHtml = `
+                    <div class="video-container">
+                        <iframe src="${work.video}?title=0&byline=0&portrait=0" allowfullscreen></iframe>
+                    </div>
+                `;
+            }
+
             const html = `
                 <div class="work-detail">
                     <div class="work-info">
@@ -459,6 +484,7 @@ In sound, an emotional community is created.`, images: ['images/san01.jpg','imag
                     </div>
                     ${imagesHtml}
                 </div>
+                ${videoHtml}
             `;
             container.innerHTML = html;
         }
