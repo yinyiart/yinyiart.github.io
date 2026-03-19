@@ -60,14 +60,30 @@
             list-style: none;
             margin-left: 0;
         }
-        .cv-list li {
-            margin-bottom: 6px;
+        .cv-list > li {
+            margin-bottom: 15px;
             font-size: 0.85rem;
             color: #53585f;
         }
         .cv-list .year {
             margin-left: 6px;
             color: #6f7c8a;
+        }
+        .links {
+            margin-top: 5px;
+            margin-left: 0;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+        .links a {
+            color: #53585f;
+            text-decoration: none;
+            border-bottom: 1px dotted #a0b3c5;
+            margin-right: 10px;
+        }
+        .links a:hover {
+            color: #0f1a24;
+            border-bottom-color: #0f1a24;
         }
 
         @media (max-width: 600px) {
@@ -85,8 +101,11 @@
             .cv-section h2 {
                 font-size: 1.1rem;
             }
-            .cv-list li {
+            .cv-list > li {
                 font-size: 0.8rem;
+            }
+            .links {
+                font-size: 0.75rem;
             }
         }
     </style>
@@ -103,21 +122,32 @@
             <a href="curator_en.html">EN</a>
         </div>
 
-        <!-- 策展项目 -->
         <div class="cv-section">
             <h2>策展项目</h2>
             <ul class="cv-list">
-                <li>上海声音，西岸美术馆，上海 <span class="year">2025</span></li>
-                <li>听路：中国当代声音艺术实践，多伦现代美术馆，上海 <span class="year">2024</span></li>
-                <li>为TA作曲，外滩美术馆，上海 <span class="year">2023</span></li>
-                <li>一声一城，艺术新闻中文版（线上） <span class="year">2016</span></li>
-                <li>Agora 广场，OCAT 上海馆 <span class="year">2015</span></li>
-                <li>他们到底在干什么？，上海当代艺术馆 <span class="year">2014</span></li>
-                <li>声闻：亚洲实验音乐呈现，外滩美术馆，上海 <span class="year">2013</span></li>
+                <li>
+                    听路：中国当代声音艺术实践，多伦现代美术馆，上海 <span class="year">2024</span>
+                    <div class="links">
+                        <a href="https://artforum.com.cn/picks/15075" target="_blank">Art Forum</a>
+                        <a href="https://www.thepaper.cn/newsDetail_forward_26716945" target="_blank">澎湃新闻</a>
+                        <a href="https://mp.weixin.qq.com/s/fuaFv2chdjZFt5EP9jtRsw" target="_blank">OUI ART</a>
+                        <a href="https://mp.weixin.qq.com/s/YewQwDNgUZB0AKbM-_7uDA" target="_blank">ARTnews中文版</a>
+                    </div>
+                </li>
+                <li>
+                    为TA作曲 - RAM Assembles，外滩美术馆，上海 <span class="year">2023</span>
+                    <div class="links">
+                        <a href="https://mp.weixin.qq.com/s/kUg0F3YqPoo6-fYb9HTcSg" target="_blank">Art Ba Ba</a>
+                        <a href="https://mp.weixin.qq.com/s/5XVRzkUb1tCS47gtB8IDuA" target="_blank">OUIART</a>
+                    </div>
+                </li>
+                <li>一声一城 - 艺术新闻中文版，线上展 <span class="year">2016</span></li>
+                <li>Agora 广场 - OCAT 上海馆 <span class="year">2015</span></li>
+                <li>他们到底在干什么？ - 上海当代艺术馆 <span class="year">2014</span></li>
+                <li>声闻：亚洲实验音乐呈现 - 外滩美术馆，上海 <span class="year">2013</span></li>
                 <li>合声音乐节，上海 <span class="year">2013</span></li>
-                <li>声音传输：上海香港实验音乐交换项目，外滩美术馆/香港艺术中心 <span class="year">2012</span></li>
-                <li>共振峰：从聆听到聆听的形式，视界艺术中心，上海 <span class="year">2012</span></li>
-                <!-- 在此处添加更多条目 -->
+                <li>声音传输 : 上海香港实验音乐交换项目 - 外滩美术馆，上海/香港艺术中心，香港 <span class="year">2012</span></li>
+                <li>共振峰：从聆听到聆听的形式 - 视界艺术中心，上海 <span class="year">2012</span></li>
             </ul>
         </div>
     </div>
