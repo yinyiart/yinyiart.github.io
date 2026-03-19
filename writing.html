@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>殷漪 · 文字</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #dae7eb;
+            font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+            color: #1f2c35;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #2f3a44;
+        }
+        .top-nav a {
+            color: #2f3a44;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-nav a:hover,
+        .top-nav a.active {
+            color: #0f1a24;
+        }
+
+        .cv-section {
+            margin-bottom: 30px;
+        }
+        .cv-section h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #1f2c35;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .cv-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        .cv-list li {
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            color: #53585f;
+        }
+        .cv-list .year {
+            margin-left: 6px;
+            color: #6f7c8a;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 0 8%;
+            }
+            .top-nav {
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .cv-section h2 {
+                font-size: 1.1rem;
+            }
+            .cv-list li {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-nav">
+            <a href="index.html">殷漪</a>
+            <a href="musician.html">音乐家</a>
+            <a href="artist.html">艺术家</a>
+            <a href="curator.html">策展人</a>
+            <a href="writing.html" class="active">文字</a>
+            <a href="about.html">简历</a>
+            <a href="writing_en.html">EN</a>
+        </div>
+
+        <!-- 写作 -->
+        <div class="cv-section">
+            <h2>写作</h2>
+            <ul class="cv-list">
+                <li>文章标题示例 1 <span class="year">2026</span></li>
+                <li>文章标题示例 2 <span class="year">2025</span></li>
+                <li>文章标题示例 3 <span class="year">2024</span></li>
+                <!-- 在此处添加更多条目 -->
+            </ul>
+        </div>
+
+        <!-- 访谈 -->
+        <div class="cv-section">
+            <h2>访谈</h2>
+            <ul class="cv-list">
+                <li>访谈标题示例 1 <span class="year">2025</span></li>
+                <li>访谈标题示例 2 <span class="year">2024</span></li>
+                <li>访谈标题示例 3 <span class="year">2023</span></li>
+                <!-- 在此处添加更多条目 -->
+            </ul>
+        </div>
+
+        <!-- 评论 -->
+        <div class="cv-section">
+            <h2>评论</h2>
+            <ul class="cv-list">
+                <li>评论标题示例 1 <span class="year">2025</span></li>
+                <li>评论标题示例 2 <span class="year">2024</span></li>
+                <li>评论标题示例 3 <span class="year">2023</span></li>
+                <!-- 在此处添加更多条目 -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
