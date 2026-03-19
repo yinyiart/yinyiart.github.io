@@ -12,15 +12,15 @@
         }
 
         body {
-            background-color: #dae7eb;
+            background-color: #59585f;          /* 与艺术家页面背景色一致 */
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #1f2c35;
+            color: #f0f4f8;                      /* 浅色文字 */
             line-height: 1.6;
             padding: 40px 20px;
             position: relative;
         }
 
-        /* 独立导航栏（与首页相同） */
+        /* 独立导航栏（与艺术家页面统一） */
         .top-nav {
             position: absolute;
             top: 40px;
@@ -30,35 +30,24 @@
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #2f3a44;
+            color: #d0d8e0;
             z-index: 100;
         }
         .top-nav a {
-            color: #2f3a44;
+            color: #d0d8e0;
             text-decoration: none;
             transition: color 0.2s;
         }
         .top-nav a:hover,
         .top-nav a.active {
-            color: #0f1a24;
+            color: #ffffff;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 5%;
-            padding-top: 60px; /* 为导航栏留空间 */
-        }
-
-        /* 页面标题（可选） */
-        .page-title {
-            font-size: 1.8rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            margin-bottom: 40px;
-            color: #1f2c35;
-            border-bottom: 1px solid #b0c8d0;
-            padding-bottom: 10px;
+            padding-top: 100px;                  /* 与艺术家页面顶部间距一致 */
         }
 
         /* 每个展览区块 */
@@ -66,17 +55,17 @@
             margin-bottom: 60px;
         }
 
-        /* 图片容器：固定宽高比 3:2，居中，无背景色 */
+        /* 图片容器：固定宽高比 3:2，居中 */
         .exhibition-image {
             width: 100%;
-            max-width: 700px;          /* 与音乐人页面图片宽度相近 */
+            max-width: 700px;
             aspect-ratio: 3 / 2;
-            margin: 0 auto 20px auto;   /* 水平居中，下方留白 */
-            background-color: #c0d0e0;  /* 占位色，有图片时会被覆盖 */
+            margin: 0 auto 20px auto;
+            background-color: #7a8088;           /* 占位色，与艺术家卡片背景统一 */
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #53585f;
+            color: #d0d8e0;
             font-size: 0.9rem;
             overflow: hidden;
         }
@@ -90,29 +79,29 @@
         /* 文字信息左对齐 */
         .exhibition-info {
             max-width: 700px;
-            margin: 0 auto;             /* 与图片宽度对齐 */
+            margin: 0 auto;
         }
 
         .exhibition-title {
             font-size: 1.4rem;
             font-weight: 400;
-            color: #1f2c35;
+            color: #ffffff;                       /* 标题白色 */
             margin-bottom: 5px;
         }
         .exhibition-year-location {
             font-size: 0.9rem;
-            color: #5a6b7a;
+            color: #d0d8e0;                        /* 年份地点稍浅 */
             margin-bottom: 10px;
         }
         .exhibition-description {
             font-size: 0.9rem;
-            color: #3f4f60;
+            color: #f0f4f8;
             margin-bottom: 15px;
             line-height: 1.5;
         }
         .artist-list {
             font-size: 0.85rem;
-            color: #53585f;
+            color: #d0d8e0;
             margin-bottom: 15px;
             list-style: none;
             padding-left: 0;
@@ -121,7 +110,7 @@
             margin-bottom: 3px;
         }
         .artist-list strong {
-            color: #1f2c35;
+            color: #ffffff;
             font-weight: 500;
         }
         .links {
@@ -131,14 +120,14 @@
             display: inline-block;
             margin-right: 15px;
             margin-bottom: 5px;
-            color: #3f5a6b;
+            color: #b0c8e0;                        /* 链接色与艺术家页面统一 */
             text-decoration: none;
-            border-bottom: 1px dotted #a0b3c5;
+            border-bottom: 1px dotted #b0c8e0;
             font-size: 0.85rem;
         }
         .links a:hover {
-            color: #0f1a24;
-            border-bottom-color: #0f1a24;
+            color: #ffffff;
+            border-bottom-color: #ffffff;
         }
 
         @media (max-width: 600px) {
@@ -146,7 +135,7 @@
                 padding: 20px 10px;
             }
             .top-nav {
-                position: static;               /* 手机端取消固定 */
+                position: static;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
@@ -156,9 +145,6 @@
             .container {
                 padding: 0 8%;
                 padding-top: 0;
-            }
-            .page-title {
-                font-size: 1.5rem;
             }
             .exhibition-image {
                 max-width: 100%;
@@ -181,8 +167,6 @@
     </div>
 
     <div class="container">
-        <h1 class="page-title">策展项目</h1>
-
         <!-- 1. 听路 2024 -->
         <div class="exhibition-item">
             <div class="exhibition-image">
@@ -242,7 +226,7 @@
                     <li><strong>艺术家：</strong> 待补充</li>
                 </ul>
                 <div class="links">
-                    <span style="color:#6f7c8a;">暂无链接</span>
+                    <span style="color:#8a9bb0;">暂无链接</span>
                 </div>
             </div>
         </div>
@@ -262,7 +246,7 @@
                     <li><strong>参与者：</strong> 待补充</li>
                 </ul>
                 <div class="links">
-                    <span style="color:#6f7c8a;">暂无链接</span>
+                    <span style="color:#8a9bb0;">暂无链接</span>
                 </div>
             </div>
         </div>
@@ -282,7 +266,7 @@
                     <li><strong>艺术家：</strong> 待补充</li>
                 </ul>
                 <div class="links">
-                    <span style="color:#6f7c8a;">暂无链接</span>
+                    <span style="color:#8a9bb0;">暂无链接</span>
                 </div>
             </div>
         </div>
@@ -302,7 +286,7 @@
                     <li><strong>音乐家：</strong> 待补充</li>
                 </ul>
                 <div class="links">
-                    <span style="color:#6f7c8a;">暂无链接</span>
+                    <span style="color:#8a9bb0;">暂无链接</span>
                 </div>
             </div>
         </div>
@@ -322,7 +306,7 @@
                     <li><strong>音乐家：</strong> 待补充</li>
                 </ul>
                 <div class="links">
-                    <span style="color:#6f7c8a;">暂无链接</span>
+                    <span style="color:#8a9bb0;">暂无链接</span>
                 </div>
             </div>
         </div>
@@ -342,7 +326,7 @@
                     <li><strong>音乐家：</strong> 待补充</li>
                 </ul>
                 <div class="links">
-                    <span style="color:#6f7c8a;">暂无链接</span>
+                    <span style="color:#8a9bb0;">暂无链接</span>
                 </div>
             </div>
         </div>
@@ -362,7 +346,7 @@
                     <li><strong>艺术家：</strong> 待补充</li>
                 </ul>
                 <div class="links">
-                    <span style="color:#6f7c8a;">暂无链接</span>
+                    <span style="color:#8a9bb0;">暂无链接</span>
                 </div>
             </div>
         </div>
