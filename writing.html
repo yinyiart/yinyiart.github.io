@@ -49,7 +49,7 @@
             margin-bottom: 30px;
         }
         .cv-section h2 {
-            font-size: 1.2rem;
+            font-size: 1rem;                    /* 从1.2rem缩小至1rem */
             font-weight: 400;
             color: #1f2c35;
             margin-bottom: 12px;
@@ -70,15 +70,16 @@
             color: #6f7c8a;
         }
         .links {
-            margin-top: 2px;
-            margin-left: 0;
-            font-size: 0.8rem;
+            display: inline;                      /* 改为行内元素，与文字并列 */
+            margin-left: 8px;
         }
         .links a {
             color: #53585f;
             text-decoration: none;
             border-bottom: 1px dotted #a0b3c5;
-            word-break: break-all;
+            margin-right: 5px;
+            white-space: nowrap;
+            font-size: 0.8rem;
         }
         .links a:hover {
             color: #0f1a24;
@@ -98,12 +99,12 @@
                 flex-wrap: wrap;
             }
             .cv-section h2 {
-                font-size: 1.1rem;
+                font-size: 0.95rem;
             }
             .cv-list li {
                 font-size: 0.8rem;
             }
-            .links {
+            .links a {
                 font-size: 0.75rem;
             }
         }
@@ -133,7 +134,7 @@
                 <li>排练声音：BM Space. 《不建立，未建立：2008-2016年上海艺术机构实践》，编著：巢佳幸 <span class="year">2017</span></li>
                 <li>Urban Space as Resource and Practice Field for Sound Art.[J] Communication and Public, 2017, Vol.2(4)：365-370 <span class="year">2017</span></li>
                 <li>《声音艺术？》 - ARTFORUM/艺术论坛，观点, 2017-07 <span class="year">2017</span>
-                    <div class="links"><a href="https://artforum.com.cn/slant/10694#" target="_blank">阅读原文</a></div>
+                    <span class="links"><a href="https://artforum.com.cn/slant/10694#" target="_blank">阅读原文</a></span>
                 </li>
             </ul>
         </div>
@@ -151,57 +152,52 @@
         <div class="cv-section">
             <h2>评论</h2>
             <ul class="cv-list">
-                <li>Yishu ： Spatializing Soundscapes, Julie Chun, Yishu September/October <span class="year">2018</span></li>
+                <li>Spatializing Soundscapes, Julie Chun, Yishu September/October <span class="year">2018</span></li>
+                <li>声音艺术家如何把聆听作为一种方法？ | 卷宗Wallpaper
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/5eCzfc9PZC9Wpw_79QgIkA" target="_blank">阅读原文</a></span>
+                </li>
+                <li>殷漪 : 音乐是一种文化意识形 | 凤凰艺术
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/dBlSS2Cv4x01LKcAmz7GnA" target="_blank">阅读原文</a></span>
+                </li>
             </ul>
         </div>
 
-        <!-- 访谈与采访 -->
+        <!-- 报道 -->
         <div class="cv-section">
-            <h2>访谈与采访</h2>
+            <h2>报道</h2>
             <ul class="cv-list">
-                <li>
-                    睿信周报 ： 关于"胎儿"的另一种讲述#"赛博生育"专栏05
-                    <div class="links"><a href="https://mp.weixin.qq.com/s/bgV1jAJ_m9IhjRbOcQ-e5Q" target="_blank">阅读原文</a></div>
+                <li>关于"胎儿"的另一种讲述#"赛博生育"专栏05，睿信周报
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/bgV1jAJ_m9IhjRbOcQ-e5Q" target="_blank">阅读原文</a></span>
                 </li>
-                <li>
-                    米行MNG ：殷漪：艺术家有些时候是需要犹豫的 \| 关于《真身III》的一次访谈
-                    <div class="links"><a href="https://mp.weixin.qq.com/s/Eb7Hz-rLeGadpDrw9YgBvA" target="_blank">阅读原文</a></div>
+                <li>殷漪：艺术家有些时候是需要犹豫的 | 关于《真身III》的一次访谈，米行MNG
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/Eb7Hz-rLeGadpDrw9YgBvA" target="_blank">阅读原文</a></span>
                 </li>
-                <li>
-                    燃冉RANRAN："燃冉"驻留回顾｜殷漪：在城市里，拓展听觉的感知边界
-                    <div class="links"><a href="https://mp.weixin.qq.com/s/FuqC68MjzrxqIdNho14kQA" target="_blank">阅读原文</a></div>
+                <li>"燃冉"驻留回顾｜殷漪：在城市里，拓展听觉的感知边界，燃冉RANRAN
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/FuqC68MjzrxqIdNho14kQA" target="_blank">阅读原文</a></span>
                 </li>
-                <li>
-                    燃冉RANRAN："燃冉"驻留艺术家对谈 \| 殷漪：在视觉成瘾之间，发现听觉的可能性
-                    <div class="links"><a href="https://mp.weixin.qq.com/s/qtXi0GY9eaONIXUgg4UyvQ" target="_blank">阅读原文</a></div>
+                <li>"燃冉"驻留艺术家对谈 | 殷漪：在视觉成瘾之间，发现听觉的可能性，燃冉RANRAN
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/qtXi0GY9eaONIXUgg4UyvQ" target="_blank">阅读原文</a></span>
                 </li>
-                <li>
-                    建筑实践 ： APTalk｜殷漪：声音介入建筑
-                    <div class="links"><a href="https://mp.weixin.qq.com/s/nYngkhr5ZzUAjzeiYv5JhA" target="_blank">阅读原文</a></div>
+                <li>APTalk｜殷漪：声音介入建筑，建筑实践
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/nYngkhr5ZzUAjzeiYv5JhA" target="_blank">阅读原文</a></span>
                 </li>
-                <li>
-                    正向艺术研究会 PARC : "露台计划"第四期：殷漪「露台上的音乐」
-                    <div class="links"><a href="https://mp.weixin.qq.com/s/4vbstledxKbPhJwp23cgmg" target="_blank">阅读原文</a></div>
+                <li>"露台计划"第四期：殷漪「露台上的音乐」，正向艺术研究会 PARC
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/4vbstledxKbPhJwp23cgmg" target="_blank">阅读原文</a></span>
                 </li>
-                <li>
-                    复刊 ： 《复·刊》访谈 \| 殷漪："聆听的六个姿态"
-                    <div class="links"><a href="https://mp.weixin.qq.com/s/SW2lg7UrijuKoxwAcC_J3g" target="_blank">阅读原文</a></div>
+                <li>《复·刊》访谈 | 殷漪："聆听的六个姿态"，复刊
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/SW2lg7UrijuKoxwAcC_J3g" target="_blank">阅读原文</a></span>
                 </li>
-                <li>
-                    上观新闻： 这是我看过的最慢的一场表演
-                    <div class="links"><a href="https://www.shobserver.com/news/detail?id=292027" target="_blank">阅读原文</a></div>
+                <li>这是我看过的最慢的一场表演，上观新闻
+                    <span class="links"><a href="https://www.shobserver.com/news/detail?id=292027" target="_blank">阅读原文</a></span>
                 </li>
-                <li>
-                    澎湃新闻： BMW卓越城市｜殷漪谈声音、音乐与城市边界
-                    <div class="links"><a href="https://www.thepaper.cn/newsDetail_forward_4083193" target="_blank">阅读原文</a></div>
+                <li>BMW卓越城市｜殷漪谈声音、音乐与城市边界，澎湃新闻
+                    <span class="links"><a href="https://www.thepaper.cn/newsDetail_forward_4083193" target="_blank">阅读原文</a></span>
                 </li>
-                <li>
-                    有方空间 ： 听见世界的风景：耳宅 / 大舍 + 殷漪
-                    <div class="links"><a href="https://mp.weixin.qq.com/s/gLE2eMroZHG8qC02Z3CmvA" target="_blank">阅读原文</a></div>
+                <li>听见世界的风景：耳宅 / 大舍 + 殷漪，有方空间
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/gLE2eMroZHG8qC02Z3CmvA" target="_blank">阅读原文</a></span>
                 </li>
-                <li>
-                    上观新闻： 什么声音最能代表上海
-                    <div class="links"><a href="https://www.shobserver.com/news/detail?id=24683" target="_blank">阅读原文</a></div>
+                <li>什么声音最能代表上海，上观新闻
+                    <span class="links"><a href="https://www.shobserver.com/news/detail?id=24683" target="_blank">阅读原文</a></span>
                 </li>
             </ul>
         </div>
