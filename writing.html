@@ -17,10 +17,10 @@
             color: #1f2c35;
             line-height: 1.6;
             padding: 40px 20px;
-            position: relative;          /* 为绝对定位导航提供参考 */
+            position: relative;
         }
 
-        /* 独立导航栏（与首页完全统一） */
+        /* 独立导航栏（与首页统一） */
         .top-nav {
             position: absolute;
             top: 40px;
@@ -47,17 +47,19 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 5%;
-            padding-top: 100px;          /* 增加顶部间距，避免紧贴导航栏 */
+            padding-top: 150px;          /* 顶部间距扩大至150px */
         }
 
+        /* 分类区块间距加大 */
         .cv-section {
-            margin-bottom: 30px;
+            margin-bottom: 50px;          /* 从30px增至50px */
         }
+
         .cv-section h2 {
-            font-size: 1.2rem;
+            font-size: 1rem;               /* 从1.2rem减至1rem */
             font-weight: 400;
             color: #1f2c35;
-            margin-bottom: 12px;
+            margin-bottom: 16px;           /* 与下方条目保持一定距离 */
             letter-spacing: 1px;
         }
 
@@ -66,9 +68,12 @@
             margin-left: 0;
         }
         .cv-list li {
-            margin-bottom: 8px;
-            font-size: 1.0rem;
+            margin-bottom: 20px;            /* 条目之间空一行（从8px增至20px） */
+            font-size: 0.8rem;              /* 从1.0rem减至0.8rem */
             color: #53585f;
+        }
+        .cv-list li:last-child {
+            margin-bottom: 0;               /* 最后一个条目不额外增加下边距 */
         }
         .cv-list strong {
             font-weight: 600;
@@ -88,20 +93,19 @@
             border-bottom: 1px dotted #a0b3c5;
             margin-right: 8px;
             white-space: nowrap;
-            font-size: 0.95rem;
+            font-size: 0.75rem;             /* 随正文缩小调整 */
         }
         .links a:hover {
             color: #0f1a24;
             border-bottom-color: #0f1a24;
         }
 
-        /* 手机端：导航栏静态，容器顶部边距归零 */
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
             }
             .top-nav {
-                position: static;               /* 取消绝对定位 */
+                position: static;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
@@ -110,16 +114,20 @@
             }
             .container {
                 padding: 0 8%;
-                padding-top: 0;                 /* 手机端无需额外顶部间距 */
+                padding-top: 0;             /* 手机端重置顶部间距 */
+            }
+            .cv-section {
+                margin-bottom: 40px;          /* 手机端适当缩小 */
             }
             .cv-section h2 {
-                font-size: 1.1rem;
-            }
-            .cv-list li {
                 font-size: 0.95rem;
             }
+            .cv-list li {
+                font-size: 0.75rem;
+                margin-bottom: 16px;          /* 手机端条目间距略减 */
+            }
             .links a {
-                font-size: 0.9rem;
+                font-size: 0.7rem;
             }
         }
     </style>
