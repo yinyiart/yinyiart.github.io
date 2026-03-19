@@ -23,6 +23,7 @@
             position: relative;
         }
 
+        /* 导航栏 - 独立固定于右上角 */
         .top-nav {
             position: absolute;
             top: 40px;
@@ -53,7 +54,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-top: 60px;
+            padding-top: 60px; /* 为导航栏留出空间 */
         }
 
         .hero {
@@ -67,7 +68,7 @@
             width: 100%;
             max-width: 800px;
             height: 0;
-            padding-bottom: 66.67%;
+            padding-bottom: 66.67%; /* 3:2比例 */
             margin-bottom: 30px;
             overflow: hidden;
         }
@@ -104,17 +105,39 @@
             margin-bottom: 0;
         }
 
+        /* 手机端导航栏调整为两行三列+四列布局 */
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
             }
             .top-nav {
-                position: static;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 20px;
+                position: static; /* 取消固定定位 */
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-areas: 
+                    "a b c ."
+                    "d e f g";
+                gap: 10px 5px;
+                justify-items: center;
+                align-items: center;
                 margin-bottom: 30px;
+                background-color: transparent;
+                padding: 0;
             }
+            .top-nav a {
+                width: 100%;
+                text-align: center;
+                padding: 5px 0;
+            }
+            /* 分配网格区域 */
+            .top-nav a:nth-child(1) { grid-area: a; }
+            .top-nav a:nth-child(2) { grid-area: b; }
+            .top-nav a:nth-child(3) { grid-area: c; }
+            .top-nav a:nth-child(4) { grid-area: d; }
+            .top-nav a:nth-child(5) { grid-area: e; }
+            .top-nav a:nth-child(6) { grid-area: f; }
+            .top-nav a:nth-child(7) { grid-area: g; }
+
             .container {
                 padding: 0 8%;
                 padding-top: 0;
@@ -141,54 +164,75 @@
 
     <div class="container">
         <div class="hero">
-            <div class="carousel">
-                <img src="images/yinyi01.jpg" alt="殷漪 01" class="carousel-image active">
-                <img src="images/yinyi02.jpg" alt="殷漪 02" class="carousel-image">
-                <img src="images/yinyi03.jpg" alt="殷漪 03" class="carousel-image">
-                <img src="images/yinyi04.jpg" alt="殷漪 04" class="carousel-image">
-                <img src="images/yinyi05.jpg" alt="殷漪 05" class="carousel-image">
-                <img src="images/yinyi06.jpg" alt="殷漪 06" class="carousel-image">
-                <img src="images/yinyi07.jpg" alt="殷漪 07" class="carousel-image">
-                <img src="images/yinyi08.jpg" alt="殷漪 08" class="carousel-image">
-                <img src="images/yinyi09.jpg" alt="殷漪 09" class="carousel-image">
-                <img src="images/yinyi10.jpg" alt="殷漪 10" class="carousel-image">
-                <img src="images/yinyi11.jpg" alt="殷漪 11" class="carousel-image">
-                <img src="images/yinyi12.jpg" alt="殷漪 12" class="carousel-image">
-                <img src="images/yinyi13.jpg" alt="殷漪 13" class="carousel-image">
-                <img src="images/yinyi14.jpg" alt="殷漪 14" class="carousel-image">
-                <img src="images/yinyi15.jpg" alt="殷漪 15" class="carousel-image">
-                <img src="images/yinyi16.jpg" alt="殷漪 16" class="carousel-image">
-                <img src="images/yinyi17.jpg" alt="殷漪 17" class="carousel-image">
-                <img src="images/yinyi18.jpg" alt="殷漪 18" class="carousel-image">
-                <img src="images/yinyi19.jpg" alt="殷漪 19" class="carousel-image">
-                <img src="images/yinyi19.jpg" alt="殷漪 20" class="carousel-image">
+            <div class="carousel" id="carousel">
+                <!-- 图片将由JavaScript动态生成 -->
             </div>
             <div class="hero-text">
-                <p>与我而言，艺术既是自我治愈的良方，亦是反观思考的试金石。</p>  <!-- 修改此处 -->
+                <p>与我而言，艺术既是自我治愈的良方，亦是反观思考的试金石。</p>
                 <p>艺术应该是个动词。</p>
             </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        (function() {
+            const carousel = document.getElementById('carousel');
+            if (!carousel) return;
+
+            // 生成20张图片
+            const totalImages = 20;
+            const imagePaths = [];
+            for (let i = 1; i <= totalImages; i++) {
+                imagePaths.push(`images/yinyi${i.toString().padStart(2, '0')}.jpg`);
+            }
+
+            // 创建img元素
+            imagePaths.forEach((path, index) => {
+                const img = document.createElement('img');
+                img.src = path;
+                img.alt = `殷漪 ${index + 1}`;
+                img.className = 'carousel-image';
+                if (index === 0) img.classList.add('active');
+                carousel.appendChild(img);
+            });
+
             const images = document.querySelectorAll('.carousel-image');
             if (images.length === 0) return;
 
+            // 构建顺序数组：第一个固定为0，其余随机
+            let order = [0];
+            let remaining = Array.from({ length: totalImages - 1 }, (_, i) => i + 1);
+            // 随机打乱剩余数组
+            for (let i = remaining.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [remaining[i], remaining[j]] = [remaining[j], remaining[i]];
+            }
+            order = order.concat(remaining);
+
             let currentIndex = 0;
-            images.forEach((img, idx) => {
-                if (idx === 0) img.classList.add('active');
-                else img.classList.remove('active');
-            });
+
+            // 确保第一张正确
+            images.forEach(img => img.classList.remove('active'));
+            images[order[0]].classList.add('active');
 
             function showNextImage() {
-                images[currentIndex].classList.remove('active');
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].classList.add('active');
+                images[order[currentIndex]].classList.remove('active');
+                currentIndex++;
+                if (currentIndex >= order.length) {
+                    // 一轮结束，重新生成随机顺序（第一个仍为0）
+                    let newRemaining = Array.from({ length: totalImages - 1 }, (_, i) => i + 1);
+                    for (let i = newRemaining.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [newRemaining[i], newRemaining[j]] = [newRemaining[j], newRemaining[i]];
+                    }
+                    order = [0].concat(newRemaining);
+                    currentIndex = 0;
+                }
+                images[order[currentIndex]].classList.add('active');
             }
 
-            setInterval(showNextImage, 5000);
-        });
+            setInterval(showNextImage, 5000); // 每5秒切换
+        })();
     </script>
 </body>
 </html>
