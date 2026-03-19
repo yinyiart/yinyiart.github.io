@@ -23,7 +23,6 @@
             position: relative;
         }
 
-        /* 导航栏 - 独立固定于右上角，与音乐家页面完全一致 */
         .top-nav {
             position: absolute;
             top: 40px;
@@ -54,28 +53,25 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-top: 60px; /* 为导航栏留出空间 */
+            padding-top: 60px;
         }
 
-        /* 主内容区域 */
         .hero {
             text-align: left;
             max-width: 900px;
             margin: 0;
         }
 
-        /* 轮播容器 - 使用padding-bottom固定比例，兼容所有设备 */
         .carousel {
             position: relative;
             width: 100%;
             max-width: 800px;
             height: 0;
-            padding-bottom: 66.67%; /* 3:2 比例 */
+            padding-bottom: 66.67%;
             margin-bottom: 30px;
             overflow: hidden;
         }
 
-        /* 轮播图片 - 绝对定位填充容器 */
         .carousel-image {
             position: absolute;
             top: 0;
@@ -94,7 +90,6 @@
             opacity: 1;
         }
 
-        /* 下方文字 */
         .hero-text {
             font-size: 1rem;
             color: #1f2c35;
@@ -109,7 +104,6 @@
             margin-bottom: 0;
         }
 
-        /* 响应式 */
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
@@ -135,7 +129,6 @@
     </style>
 </head>
 <body>
-    <!-- 独立导航栏 -->
     <div class="top-nav">
         <a href="index.html" class="active">殷漪</a>
         <a href="musician.html">音乐家</a>
@@ -149,7 +142,6 @@
     <div class="container">
         <div class="hero">
             <div class="carousel">
-                <!-- 从 yinyi01.jpg 到 yinyi19.jpg 共19张照片 -->
                 <img src="images/yinyi01.jpg" alt="殷漪 01" class="carousel-image active">
                 <img src="images/yinyi02.jpg" alt="殷漪 02" class="carousel-image">
                 <img src="images/yinyi03.jpg" alt="殷漪 03" class="carousel-image">
@@ -171,20 +163,18 @@
                 <img src="images/yinyi19.jpg" alt="殷漪 19" class="carousel-image">
             </div>
             <div class="hero-text">
-                <p>与我而言，艺术既是自我治愈的良方，亦是检验思考的试金石。</p>
+                <p>与我而言，艺术既是自我治愈的良方，亦是反观思考的试金石。</p>  <!-- 修改此处 -->
                 <p>艺术应该是个动词。</p>
             </div>
         </div>
     </div>
 
-    <!-- 轮播脚本 -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('.carousel-image');
             if (images.length === 0) return;
 
             let currentIndex = 0;
-            // 确保第一张有 active 类（如果HTML中已设置则保留）
             images.forEach((img, idx) => {
                 if (idx === 0) img.classList.add('active');
                 else img.classList.remove('active');
@@ -196,7 +186,7 @@
                 images[currentIndex].classList.add('active');
             }
 
-            setInterval(showNextImage, 5000); // 每5秒切换一张
+            setInterval(showNextImage, 5000);
         });
     </script>
 </body>
