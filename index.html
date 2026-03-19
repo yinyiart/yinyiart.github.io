@@ -23,6 +23,7 @@
             position: relative;
         }
 
+        /* 桌面端导航栏：一行靠右 */
         .top-nav {
             position: absolute;
             top: 40px;
@@ -104,26 +105,40 @@
             margin-bottom: 0;
         }
 
-        /* 手机端导航栏：flex 两端对齐，自动换行成两行 */
+        /* 手机端导航栏：两行独立对齐 */
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
             }
             .top-nav {
-                position: static;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                gap: 10px 0;              /* 上下间距10px，左右间距由 space-between 控制 */
+                position: static;              /* 取消固定定位 */
+                display: grid;
+                grid-template-columns: repeat(4, 1fr); /* 四列等宽 */
+                grid-template-areas: 
+                    "a b c ."
+                    "d e f g";
+                gap: 10px 8px;
                 margin-bottom: 30px;
                 width: 100%;
+                background: transparent;
             }
             .top-nav a {
-                padding: 8px 0;             /* 增加点击区域，不设左右内边距以保证两端对齐精确 */
-                flex: 0 0 auto;              /* 宽度自适应内容 */
-                text-align: left;
-                white-space: nowrap;         /* 防止单词换行 */
+                padding: 6px 0;
+                white-space: nowrap;
+                color: #2f3a44;
+                text-decoration: none;
+                transition: color 0.2s;
+                font-size: 0.85rem;            /* 手机端稍小 */
             }
+            /* 分配网格区域 */
+            .top-nav a:nth-child(1) { grid-area: a; text-align: left; }
+            .top-nav a:nth-child(2) { grid-area: b; text-align: center; }
+            .top-nav a:nth-child(3) { grid-area: c; text-align: right; }
+            .top-nav a:nth-child(4) { grid-area: d; text-align: left; }
+            .top-nav a:nth-child(5) { grid-area: e; text-align: center; }
+            .top-nav a:nth-child(6) { grid-area: f; text-align: center; }
+            .top-nav a:nth-child(7) { grid-area: g; text-align: right; }
+
             .container {
                 padding: 0 8%;
                 padding-top: 0;
@@ -151,10 +166,10 @@
     <div class="container">
         <div class="hero">
             <div class="carousel" id="carousel">
-                <!-- 图片将由JavaScript动态生成 -->
+                <!-- 图片由JavaScript动态生成 -->
             </div>
             <div class="hero-text">
-                <p>与我而言，艺术既是自我治愈的良方，亦是反身思考的试金石。</p>
+                <p>与我而言，艺术既是自我治愈的良方，亦是反观思考的试金石。</p>
                 <p>艺术应该是个动词。</p>
             </div>
         </div>
