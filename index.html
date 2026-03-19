@@ -23,7 +23,6 @@
             position: relative;
         }
 
-        /* 导航栏 - 独立固定于右上角 */
         .top-nav {
             position: absolute;
             top: 40px;
@@ -54,7 +53,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-top: 60px; /* 为导航栏留出空间 */
+            padding-top: 60px;
         }
 
         .hero {
@@ -68,7 +67,7 @@
             width: 100%;
             max-width: 800px;
             height: 0;
-            padding-bottom: 66.67%; /* 3:2比例 */
+            padding-bottom: 66.67%;
             margin-bottom: 30px;
             overflow: hidden;
         }
@@ -105,39 +104,26 @@
             margin-bottom: 0;
         }
 
-        /* 手机端导航栏调整为两行三列+四列布局 */
+        /* 手机端导航栏：flex 两端对齐，自动换行成两行 */
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
             }
             .top-nav {
-                position: static; /* 取消固定定位 */
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-areas: 
-                    "a b c ."
-                    "d e f g";
-                gap: 10px 5px;
-                justify-items: center;
-                align-items: center;
+                position: static;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 10px 0;              /* 上下间距10px，左右间距由 space-between 控制 */
                 margin-bottom: 30px;
-                background-color: transparent;
-                padding: 0;
+                width: 100%;
             }
             .top-nav a {
-                width: 100%;
-                text-align: center;
-                padding: 5px 0;
+                padding: 8px 0;             /* 增加点击区域，不设左右内边距以保证两端对齐精确 */
+                flex: 0 0 auto;              /* 宽度自适应内容 */
+                text-align: left;
+                white-space: nowrap;         /* 防止单词换行 */
             }
-            /* 分配网格区域 */
-            .top-nav a:nth-child(1) { grid-area: a; }
-            .top-nav a:nth-child(2) { grid-area: b; }
-            .top-nav a:nth-child(3) { grid-area: c; }
-            .top-nav a:nth-child(4) { grid-area: d; }
-            .top-nav a:nth-child(5) { grid-area: e; }
-            .top-nav a:nth-child(6) { grid-area: f; }
-            .top-nav a:nth-child(7) { grid-area: g; }
-
             .container {
                 padding: 0 8%;
                 padding-top: 0;
@@ -168,7 +154,7 @@
                 <!-- 图片将由JavaScript动态生成 -->
             </div>
             <div class="hero-text">
-                <p>与我而言，艺术既是自我治愈的良方，亦是反观思考的试金石。</p>
+                <p>与我而言，艺术既是自我治愈的良方，亦是反身思考的试金石。</p>
                 <p>艺术应该是个动词。</p>
             </div>
         </div>
@@ -179,14 +165,12 @@
             const carousel = document.getElementById('carousel');
             if (!carousel) return;
 
-            // 生成20张图片
             const totalImages = 20;
             const imagePaths = [];
             for (let i = 1; i <= totalImages; i++) {
                 imagePaths.push(`images/yinyi${i.toString().padStart(2, '0')}.jpg`);
             }
 
-            // 创建img元素
             imagePaths.forEach((path, index) => {
                 const img = document.createElement('img');
                 img.src = path;
@@ -199,10 +183,8 @@
             const images = document.querySelectorAll('.carousel-image');
             if (images.length === 0) return;
 
-            // 构建顺序数组：第一个固定为0，其余随机
             let order = [0];
             let remaining = Array.from({ length: totalImages - 1 }, (_, i) => i + 1);
-            // 随机打乱剩余数组
             for (let i = remaining.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [remaining[i], remaining[j]] = [remaining[j], remaining[i]];
@@ -211,7 +193,6 @@
 
             let currentIndex = 0;
 
-            // 确保第一张正确
             images.forEach(img => img.classList.remove('active'));
             images[order[0]].classList.add('active');
 
@@ -219,7 +200,6 @@
                 images[order[currentIndex]].classList.remove('active');
                 currentIndex++;
                 if (currentIndex >= order.length) {
-                    // 一轮结束，重新生成随机顺序（第一个仍为0）
                     let newRemaining = Array.from({ length: totalImages - 1 }, (_, i) => i + 1);
                     for (let i = newRemaining.length - 1; i > 0; i--) {
                         const j = Math.floor(Math.random() * (i + 1));
@@ -231,7 +211,7 @@
                 images[order[currentIndex]].classList.add('active');
             }
 
-            setInterval(showNextImage, 5000); // 每5秒切换
+            setInterval(showNextImage, 5000);
         })();
     </script>
 </body>
