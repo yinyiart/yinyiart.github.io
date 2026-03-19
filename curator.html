@@ -12,15 +12,14 @@
         }
 
         body {
-            background-color: #59585f;          /* 与艺术家页面背景色一致 */
+            background-color: #59585f;
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #f0f4f8;                      /* 浅色文字 */
+            color: #f0f4f8;
             line-height: 1.6;
             padding: 40px 20px;
             position: relative;
         }
 
-        /* 独立导航栏（与艺术家页面统一） */
         .top-nav {
             position: absolute;
             top: 40px;
@@ -47,21 +46,19 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 5%;
-            padding-top: 100px;                  /* 与艺术家页面顶部间距一致 */
+            padding-top: 100px;
         }
 
-        /* 每个展览区块 */
         .exhibition-item {
             margin-bottom: 60px;
         }
 
-        /* 图片容器：固定宽高比 3:2，居中 */
         .exhibition-image {
             width: 100%;
             max-width: 700px;
             aspect-ratio: 3 / 2;
             margin: 0 auto 20px auto;
-            background-color: #7a8088;           /* 占位色，与艺术家卡片背景统一 */
+            background-color: #7a8088;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -76,7 +73,6 @@
             display: block;
         }
 
-        /* 文字信息左对齐 */
         .exhibition-info {
             max-width: 700px;
             margin: 0 auto;
@@ -85,24 +81,23 @@
         .exhibition-title {
             font-size: 1.4rem;
             font-weight: 400;
-            color: #ffffff;                       /* 标题白色 */
+            color: #ffffff;
             margin-bottom: 5px;
         }
         .exhibition-year-location {
             font-size: 0.9rem;
-            color: #d0d8e0;                        /* 年份地点稍浅 */
+            color: #d0d8e0;
             margin-bottom: 10px;
         }
-        .exhibition-description {
+        .curator {
             font-size: 0.9rem;
             color: #f0f4f8;
-            margin-bottom: 15px;
-            line-height: 1.5;
+            margin-bottom: 10px;
         }
         .artist-list {
             font-size: 0.85rem;
             color: #d0d8e0;
-            margin-bottom: 15px;
+            margin-bottom: 0;
             list-style: none;
             padding-left: 0;
         }
@@ -112,22 +107,6 @@
         .artist-list strong {
             color: #ffffff;
             font-weight: 500;
-        }
-        .links {
-            margin-top: 10px;
-        }
-        .links a {
-            display: inline-block;
-            margin-right: 15px;
-            margin-bottom: 5px;
-            color: #b0c8e0;                        /* 链接色与艺术家页面统一 */
-            text-decoration: none;
-            border-bottom: 1px dotted #b0c8e0;
-            font-size: 0.85rem;
-        }
-        .links a:hover {
-            color: #ffffff;
-            border-bottom-color: #ffffff;
         }
 
         @media (max-width: 600px) {
@@ -167,7 +146,7 @@
     </div>
 
     <div class="container">
-        <!-- 1. 听路 2024 -->
+        <!-- 听路 2024 -->
         <div class="exhibition-item">
             <div class="exhibition-image">
                 <img src="images/curator/listening-path.jpg" alt="听路展览海报">
@@ -175,22 +154,15 @@
             <div class="exhibition-info">
                 <div class="exhibition-title">听路：中国当代声音艺术实践</div>
                 <div class="exhibition-year-location">2024 · 多伦现代美术馆，上海</div>
-                <div class="exhibition-description">
-                    展览聚焦中国当代声音艺术的发展脉络，通过文献、装置、表演等形式呈现声音艺术的多元实践。
-                </div>
+                <div class="curator">策展人：殷漪</div>
+                <div class="curator">文献顾问：欧宁，姚大钧</div>
                 <ul class="artist-list">
-                    <li><strong>艺术家：</strong> 陈睦琏、李剑鸿、王长存、颜峻、殷漪、照骏园等</li>
+                    <li><strong>艺术家：</strong> 陈维，孙玮，王长存，颜峻，杨嘉辉，张安定</li>
                 </ul>
-                <div class="links">
-                    <a href="https://artforum.com.cn/picks/15075" target="_blank">Art Forum</a>
-                    <a href="https://www.thepaper.cn/newsDetail_forward_26716945" target="_blank">澎湃新闻</a>
-                    <a href="https://mp.weixin.qq.com/s/fuaFv2chdjZFt5EP9jtRsw" target="_blank">OUI ART</a>
-                    <a href="https://mp.weixin.qq.com/s/YewQwDNgUZB0AKbM-_7uDA" target="_blank">ARTnews中文版</a>
-                </div>
             </div>
         </div>
 
-        <!-- 2. 为TA作曲 2023 -->
+        <!-- 为TA作曲 2023 -->
         <div class="exhibition-item">
             <div class="exhibition-image">
                 <img src="images/curator/compose-for.jpg" alt="为TA作曲展览海报">
@@ -198,20 +170,14 @@
             <div class="exhibition-info">
                 <div class="exhibition-title">为TA作曲 - RAM Assembles</div>
                 <div class="exhibition-year-location">2023 · 外滩美术馆，上海</div>
-                <div class="exhibition-description">
-                    作为外滩建筑节的音乐单元，邀请多位音乐家围绕城市空间创作，以声音激活建筑。
-                </div>
+                <div class="curator">策划人：殷漪</div>
                 <ul class="artist-list">
-                    <li><strong>音乐家：</strong> 殷漪、照骏园、卖卖、王田等</li>
+                    <li><strong>艺术家：</strong> 刘㔻，卖卖，小老虎，张安定，陈维，楼南立，马海平，孙玮，王长存，汪文婧</li>
                 </ul>
-                <div class="links">
-                    <a href="https://mp.weixin.qq.com/s/kUg0F3YqPoo6-fYb9HTcSg" target="_blank">Art Ba Ba</a>
-                    <a href="https://mp.weixin.qq.com/s/5XVRzkUb1tCS47gtB8IDuA" target="_blank">OUIART</a>
-                </div>
             </div>
         </div>
 
-        <!-- 3. 一声一城 2016 -->
+        <!-- 一声一城 2016 -->
         <div class="exhibition-item">
             <div class="exhibition-image">
                 <img src="images/curator/one-sound-one-city.jpg" alt="一声一城线上展海报">
@@ -219,19 +185,14 @@
             <div class="exhibition-info">
                 <div class="exhibition-title">一声一城</div>
                 <div class="exhibition-year-location">2016 · 艺术新闻中文版（线上）</div>
-                <div class="exhibition-description">
-                    线上声音展览，邀请艺术家以城市为背景创作声音作品。
-                </div>
+                <div class="curator">策划人：殷漪</div>
                 <ul class="artist-list">
-                    <li><strong>艺术家：</strong> 待补充</li>
+                    <li><strong>艺术家：</strong> A Shere，陈睦琏，罗润庭，陆正，孙玮，王福瑞，张健夫，殷漪</li>
                 </ul>
-                <div class="links">
-                    <span style="color:#8a9bb0;">暂无链接</span>
-                </div>
             </div>
         </div>
 
-        <!-- 4. Agora 广场 2015 -->
+        <!-- Agora 广场 2015 -->
         <div class="exhibition-item">
             <div class="exhibition-image">
                 <img src="images/curator/agora.jpg" alt="Agora 广场海报">
@@ -239,19 +200,12 @@
             <div class="exhibition-info">
                 <div class="exhibition-title">Agora 广场</div>
                 <div class="exhibition-year-location">2015 · OCAT 上海馆</div>
-                <div class="exhibition-description">
-                    系列圆桌论坛，探讨声音、公共空间与当代艺术的关系。
-                </div>
-                <ul class="artist-list">
-                    <li><strong>参与者：</strong> 待补充</li>
-                </ul>
-                <div class="links">
-                    <span style="color:#8a9bb0;">暂无链接</span>
-                </div>
+                <div class="curator">策划人：殷漪</div>
+                <!-- 无艺术家列表，省略 -->
             </div>
         </div>
 
-        <!-- 5. 他们到底在干什么？ 2014 -->
+        <!-- 他们到底在干什么？ 2014 -->
         <div class="exhibition-item">
             <div class="exhibition-image">
                 <img src="images/curator/what-are-they-doing.jpg" alt="他们到底在干什么？海报">
@@ -259,19 +213,14 @@
             <div class="exhibition-info">
                 <div class="exhibition-title">他们到底在干什么？</div>
                 <div class="exhibition-year-location">2014 · 上海当代艺术馆</div>
-                <div class="exhibition-description">
-                    展览呈现年轻艺术家的实验性创作。
-                </div>
+                <div class="curator">策划人：殷漪</div>
                 <ul class="artist-list">
-                    <li><strong>艺术家：</strong> 待补充</li>
+                    <li><strong>艺术家：</strong> 卖卖，徐程，照骏园</li>
                 </ul>
-                <div class="links">
-                    <span style="color:#8a9bb0;">暂无链接</span>
-                </div>
             </div>
         </div>
 
-        <!-- 6. 声闻 2013 -->
+        <!-- 声闻 2013 -->
         <div class="exhibition-item">
             <div class="exhibition-image">
                 <img src="images/curator/savaka.jpg" alt="声闻展览海报">
@@ -279,19 +228,15 @@
             <div class="exhibition-info">
                 <div class="exhibition-title">声闻：亚洲实验音乐呈现</div>
                 <div class="exhibition-year-location">2013 · 外滩美术馆，上海</div>
-                <div class="exhibition-description">
-                    聚焦亚洲实验音乐，呈现音乐家现场表演与对话。
-                </div>
+                <div class="curator">策划人：殷漪</div>
+                <div class="curator">学术主持：王婧</div>
                 <ul class="artist-list">
-                    <li><strong>音乐家：</strong> 待补充</li>
+                    <li><strong>艺术家：</strong> 核桃室，李劲松，ISO，角田俊也，李剑鸿，吴立光，洪铁基，陆正，王福瑞，Junky，Trinh，颜峻</li>
                 </ul>
-                <div class="links">
-                    <span style="color:#8a9bb0;">暂无链接</span>
-                </div>
             </div>
         </div>
 
-        <!-- 7. 合声音乐节 2013 -->
+        <!-- 合声音乐节 2013 -->
         <div class="exhibition-item">
             <div class="exhibition-image">
                 <img src="images/curator/co-sound.jpg" alt="合声音乐节海报">
@@ -299,39 +244,29 @@
             <div class="exhibition-info">
                 <div class="exhibition-title">合声音乐节</div>
                 <div class="exhibition-year-location">2013 · 上海</div>
-                <div class="exhibition-description">
-                    实验音乐节，汇集国内外音乐家进行跨界合作。
-                </div>
+                <div class="curator">策划人：殷漪</div>
                 <ul class="artist-list">
-                    <li><strong>音乐家：</strong> 待补充</li>
+                    <li><strong>艺术家：</strong> Dora Video，柳汉吉，照骏园，卖卖，杨嘉辉，盛洁，陆正，殷漪</li>
                 </ul>
-                <div class="links">
-                    <span style="color:#8a9bb0;">暂无链接</span>
-                </div>
             </div>
         </div>
 
-        <!-- 8. 声音传输 2012 -->
+        <!-- 声音传输 2012 -->
         <div class="exhibition-item">
             <div class="exhibition-image">
                 <img src="images/curator/sonic-transmission.jpg" alt="声音传输海报">
             </div>
             <div class="exhibition-info">
-                <div class="exhibition-title">声音传输：上海香港实验音乐交换项目</div>
-                <div class="exhibition-year-location">2012 · 外滩美术馆/香港艺术中心</div>
-                <div class="exhibition-description">
-                    上海与香港实验音乐家的交流项目，包括工作坊和演出。
-                </div>
+                <div class="exhibition-title">声音传输 : 上海香港实验音乐交换项目</div>
+                <div class="exhibition-year-location">2012 · 外滩美术馆，上海 / 香港艺术中心，香港</div>
+                <div class="curator">策划人：杨嘉辉，殷漪</div>
                 <ul class="artist-list">
-                    <li><strong>音乐家：</strong> 待补充</li>
+                    <li><strong>艺术家：</strong> 大小，田鹏，徐程，於笑鹿，王长存，罗润庭，Cedric Maridet，刘振声，许敖山，杨嘉辉，殷漪</li>
                 </ul>
-                <div class="links">
-                    <span style="color:#8a9bb0;">暂无链接</span>
-                </div>
             </div>
         </div>
 
-        <!-- 9. 共振峰 2012 -->
+        <!-- 共振峰 2012 -->
         <div class="exhibition-item">
             <div class="exhibition-image">
                 <img src="images/curator/formant.jpg" alt="共振峰展览海报">
@@ -339,15 +274,10 @@
             <div class="exhibition-info">
                 <div class="exhibition-title">共振峰：从聆听到聆听的形式</div>
                 <div class="exhibition-year-location">2012 · 视界艺术中心，上海</div>
-                <div class="exhibition-description">
-                    声音艺术展览，探索聆听的形式与感知边界。
-                </div>
+                <div class="curator">策划人：Luca Forcucci，殷漪</div>
                 <ul class="artist-list">
-                    <li><strong>艺术家：</strong> 待补充</li>
+                    <li><strong>艺术家：</strong> Lawrence English，Luca Forcucci，颜峻，殷漪，张鼎</li>
                 </ul>
-                <div class="links">
-                    <span style="color:#8a9bb0;">暂无链接</span>
-                </div>
             </div>
         </div>
     </div>
