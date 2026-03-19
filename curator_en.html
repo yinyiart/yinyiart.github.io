@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yin Yi · Curator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #dae7eb;
+            font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+            color: #1f2c35;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #2f3a44;
+        }
+        .top-nav a {
+            color: #2f3a44;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-nav a:hover,
+        .top-nav a.active {
+            color: #0f1a24;
+        }
+
+        .cv-section {
+            margin-bottom: 30px;
+        }
+        .cv-section h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #1f2c35;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .cv-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        .cv-list li {
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            color: #53585f;
+        }
+        .cv-list .year {
+            margin-left: 6px;
+            color: #6f7c8a;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 0 8%;
+            }
+            .top-nav {
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .cv-section h2 {
+                font-size: 1.1rem;
+            }
+            .cv-list li {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-nav">
+            <a href="index_en.html">Yin Yi</a>
+            <a href="musician_en.html">Musician</a>
+            <a href="artist_en.html">Artist</a>
+            <a href="curator_en.html" class="active">Curator</a>
+            <a href="writing_en.html">Texts</a>
+            <a href="about_en.html">CV</a>
+            <a href="curator.html">CN</a>
+        </div>
+
+        <div class="cv-section">
+            <h2>Curatorial Projects</h2>
+            <ul class="cv-list">
+                <li>Shanghai Sound, West Bund Museum, Shanghai <span class="year">2025</span></li>
+                <li>Listening Path: Contemporary Sound Art Practice in China, Duolun Modern Art Museum, Shanghai <span class="year">2024</span></li>
+                <li>Compose For, Rockbund Art Museum, Shanghai <span class="year">2023</span></li>
+                <li>One Sound One City, Art Newspaper Chinese Version (online) <span class="year">2016</span></li>
+                <li>Agora, OCT Contemporary Art Terminal, Shanghai <span class="year">2015</span></li>
+                <li>What Are They Doing?, Museum of Contemporary Art, Shanghai <span class="year">2014</span></li>
+                <li>Savaka (Asia Experimental Music Currents), Rockbund Art Museum, Shanghai <span class="year">2013</span></li>
+                <li>CO-Sound Festival, Shanghai <span class="year">2013</span></li>
+                <li>Sonic Transmission, Rockbund Art Museum / Hong Kong Arts Centre <span class="year">2012</span></li>
+                <li>Formant, V Arts Centre, Shanghai <span class="year">2012</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
