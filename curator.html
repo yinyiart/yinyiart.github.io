@@ -50,26 +50,25 @@
         }
 
         .exhibition-item {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
+        /* 图片容器：宽度统一，高度自适应，无固定比例 */
         .exhibition-image {
             width: 100%;
             max-width: 700px;
-            aspect-ratio: 3 / 2;
-            margin: 0 auto 20px auto;
-            background-color: #7a8088;
+            margin: 0 auto 15px auto;
+            background-color: #7a8088;      /* 占位色，有图片时会被覆盖 */
             display: flex;
             align-items: center;
             justify-content: center;
             color: #d0d8e0;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             overflow: hidden;
         }
         .exhibition-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;                    /* 高度自适应，保持原始比例 */
             display: block;
         }
 
@@ -79,30 +78,31 @@
         }
 
         .exhibition-title {
-            font-size: 1.4rem;
+            font-size: 1.0rem;
             font-weight: 400;
             color: #ffffff;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
+            letter-spacing: 0.5px;
         }
         .exhibition-year-location {
-            font-size: 0.9rem;
-            color: #d0d8e0;
-            margin-bottom: 10px;
-        }
-        .curator {
-            font-size: 0.9rem;
-            color: #f0f4f8;
-            margin-bottom: 10px;
-        }
-        .artist-list {
             font-size: 0.85rem;
             color: #d0d8e0;
-            margin-bottom: 0;
+            margin-bottom: 8px;
+        }
+        .curator {
+            font-size: 0.85rem;
+            color: #f0f4f8;
+            margin-bottom: 4px;
+        }
+        .artist-list {
+            font-size: 0.8rem;
+            color: #d0d8e0;
+            margin-top: 6px;
             list-style: none;
             padding-left: 0;
         }
         .artist-list li {
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
         .artist-list strong {
             color: #ffffff;
@@ -129,7 +129,7 @@
                 max-width: 100%;
             }
             .exhibition-title {
-                font-size: 1.2rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -146,10 +146,10 @@
     </div>
 
     <div class="container">
-        <!-- 听路 2024 -->
+        <!-- 1. 听路 2024 (c01.jpg) -->
         <div class="exhibition-item">
             <div class="exhibition-image">
-                <img src="images/curator/listening-path.jpg" alt="听路展览海报">
+                <img src="images/c01.jpg" alt="听路展览海报">
             </div>
             <div class="exhibition-info">
                 <div class="exhibition-title">听路：中国当代声音艺术实践</div>
@@ -162,10 +162,10 @@
             </div>
         </div>
 
-        <!-- 为TA作曲 2023 -->
+        <!-- 2. 为TA作曲 2023 (c02.jpg) -->
         <div class="exhibition-item">
             <div class="exhibition-image">
-                <img src="images/curator/compose-for.jpg" alt="为TA作曲展览海报">
+                <img src="images/c02.jpg" alt="为TA作曲展览海报">
             </div>
             <div class="exhibition-info">
                 <div class="exhibition-title">为TA作曲 - RAM Assembles</div>
@@ -177,10 +177,10 @@
             </div>
         </div>
 
-        <!-- 一声一城 2016 -->
+        <!-- 3. 一声一城 2016 (c03.jpg) -->
         <div class="exhibition-item">
             <div class="exhibition-image">
-                <img src="images/curator/one-sound-one-city.jpg" alt="一声一城线上展海报">
+                <img src="images/c03.jpg" alt="一声一城线上展海报">
             </div>
             <div class="exhibition-info">
                 <div class="exhibition-title">一声一城</div>
@@ -192,23 +192,23 @@
             </div>
         </div>
 
-        <!-- Agora 广场 2015 -->
+        <!-- 4. Agora 广场 2015 (c04.jpg) -->
         <div class="exhibition-item">
             <div class="exhibition-image">
-                <img src="images/curator/agora.jpg" alt="Agora 广场海报">
+                <img src="images/c04.jpg" alt="Agora 广场海报">
             </div>
             <div class="exhibition-info">
                 <div class="exhibition-title">Agora 广场</div>
                 <div class="exhibition-year-location">2015 · OCAT 上海馆</div>
                 <div class="curator">策划人：殷漪</div>
-                <!-- 无艺术家列表，省略 -->
+                <!-- 无艺术家列表 -->
             </div>
         </div>
 
-        <!-- 他们到底在干什么？ 2014 -->
+        <!-- 5. 他们到底在干什么？ 2014 (c05.jpg) -->
         <div class="exhibition-item">
             <div class="exhibition-image">
-                <img src="images/curator/what-are-they-doing.jpg" alt="他们到底在干什么？海报">
+                <img src="images/c05.jpg" alt="他们到底在干什么？海报">
             </div>
             <div class="exhibition-info">
                 <div class="exhibition-title">他们到底在干什么？</div>
@@ -220,10 +220,10 @@
             </div>
         </div>
 
-        <!-- 声闻 2013 -->
+        <!-- 6. 声闻 2013 (c06.jpg) -->
         <div class="exhibition-item">
             <div class="exhibition-image">
-                <img src="images/curator/savaka.jpg" alt="声闻展览海报">
+                <img src="images/c06.jpg" alt="声闻展览海报">
             </div>
             <div class="exhibition-info">
                 <div class="exhibition-title">声闻：亚洲实验音乐呈现</div>
@@ -236,10 +236,10 @@
             </div>
         </div>
 
-        <!-- 合声音乐节 2013 -->
+        <!-- 7. 合声音乐节 2013 (c07.jpg) -->
         <div class="exhibition-item">
             <div class="exhibition-image">
-                <img src="images/curator/co-sound.jpg" alt="合声音乐节海报">
+                <img src="images/c07.jpg" alt="合声音乐节海报">
             </div>
             <div class="exhibition-info">
                 <div class="exhibition-title">合声音乐节</div>
@@ -251,10 +251,10 @@
             </div>
         </div>
 
-        <!-- 声音传输 2012 -->
+        <!-- 8. 声音传输 2012 (c08.jpg) -->
         <div class="exhibition-item">
             <div class="exhibition-image">
-                <img src="images/curator/sonic-transmission.jpg" alt="声音传输海报">
+                <img src="images/c08.jpg" alt="声音传输海报">
             </div>
             <div class="exhibition-info">
                 <div class="exhibition-title">声音传输 : 上海香港实验音乐交换项目</div>
@@ -266,10 +266,10 @@
             </div>
         </div>
 
-        <!-- 共振峰 2012 -->
+        <!-- 9. 共振峰 2012 (c09.jpg) -->
         <div class="exhibition-item">
             <div class="exhibition-image">
-                <img src="images/curator/formant.jpg" alt="共振峰展览海报">
+                <img src="images/c09.jpg" alt="共振峰展览海报">
             </div>
             <div class="exhibition-info">
                 <div class="exhibition-title">共振峰：从聆听到聆听的形式</div>
