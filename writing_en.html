@@ -17,23 +17,20 @@
             color: #1f2c35;
             line-height: 1.6;
             padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 5%;
+            position: relative;
         }
 
         .top-nav {
+            position: absolute;
+            top: 40px;
+            right: 20px;
             display: flex;
-            justify-content: flex-end;
             gap: 30px;
-            margin-bottom: 40px;
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #2f3a44;
+            z-index: 100;
         }
         .top-nav a {
             color: #2f3a44;
@@ -45,14 +42,22 @@
             color: #0f1a24;
         }
 
-        .cv-section {
-            margin-bottom: 30px;
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 5%;
+            padding-top: 150px;
         }
+
+        .cv-section {
+            margin-bottom: 40px;
+        }
+
         .cv-section h2 {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 400;
             color: #1f2c35;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             letter-spacing: 1px;
         }
 
@@ -61,24 +66,32 @@
             margin-left: 0;
         }
         .cv-list li {
-            margin-bottom: 6px;
-            font-size: 0.85rem;
+            margin-bottom: 30px;
+            font-size: 0.8rem;
             color: #53585f;
         }
+        .cv-list li:last-child {
+            margin-bottom: 0;
+        }
+        .cv-list strong {
+            font-weight: 600;
+            color: #1f2c35;
+        }
         .cv-list .year {
-            margin-left: 6px;
+            margin-left: 8px;
             color: #6f7c8a;
         }
         .links {
-            margin-top: 2px;
-            margin-left: 0;
-            font-size: 0.8rem;
+            display: inline;
+            margin-left: 10px;
         }
         .links a {
             color: #53585f;
             text-decoration: none;
             border-bottom: 1px dotted #a0b3c5;
-            word-break: break-all;
+            margin-right: 8px;
+            white-space: nowrap;
+            font-size: 0.75rem;
         }
         .links a:hover {
             color: #0f1a24;
@@ -89,71 +102,125 @@
             body {
                 padding: 20px 10px;
             }
-            .container {
-                padding: 0 8%;
-            }
             .top-nav {
+                position: static;
+                display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
                 gap: 20px;
-                flex-wrap: wrap;
+                margin-bottom: 30px;
+            }
+            .container {
+                padding: 0 8%;
+                padding-top: 0;
+            }
+            .cv-section {
+                margin-bottom: 30px;
             }
             .cv-section h2 {
-                font-size: 1.1rem;
+                font-size: 0.95rem;
             }
             .cv-list li {
-                font-size: 0.8rem;
-            }
-            .links {
                 font-size: 0.75rem;
+                margin-bottom: 25px;
+            }
+            .links a {
+                font-size: 0.7rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="top-nav">
-            <a href="index_en.html">Yin Yi</a>
-            <a href="musician_en.html">Musician</a>
-            <a href="artist_en.html">Artist</a>
-            <a href="curator_en.html">Curator</a>
-            <a href="writing_en.html" class="active">Texts</a>
-            <a href="about_en.html">CV</a>
-            <a href="writing.html">CN</a>
-        </div>
+    <div class="top-nav">
+        <a href="index_en.html">Yin Yi</a>
+        <a href="musician_en.html">Musician</a>
+        <a href="artist_en.html">Artist</a>
+        <a href="curator_en.html">Curator</a>
+        <a href="writing_en.html" class="active">Texts</a>
+        <a href="about_en.html">CV</a>
+        <a href="writing.html">CN</a>
+    </div>
 
-        <!-- Articles -->
+    <div class="container">
+        <!-- Articles (写作) -->
         <div class="cv-section">
             <h2>Articles</h2>
             <ul class="cv-list">
-                <li>I Am Listening [J]. (2025)</li>
-                <li>YIN Y. City Forest - Physical Strategies for Sound, Walking, and Listening[J]. Chinese Landscape Architecture, 2023, 39(5):27-32. <span class="year">2023</span></li>
-                <li>Zhuang Sh, YIN Y, Hong X. On the Listening Space and Its Design Research[J]. Time Architecture, 2022,4:44-51 <span class="year">2022</span></li>
-                <li>YIN Y. Urban Space as Resource and Practice Field for Sound Art [J]. Communication and Public, 2017, Vol.2(4) 365-370 <span class="year">2017</span></li>
-                <li>Sound Art？ - ARTFORUM, 2017-07 <span class="year">2017</span>
-                    <div class="links"><a href="https://artforum.com.cn/slant/10694#" target="_blank">Read</a></div>
+                <li><strong>I Am Listening [J].</strong> Art Monthly, 2025(8)</li>
+                <li><strong>Unconscious Sounds</strong>, RanRan Art Season 2024 Catalogue <span class="year">2024</span></li>
+                <li><strong>Urban Jungle: Physical Strategies for Sound, Walking, and Listening [J].</strong> Chinese Landscape Architecture, 2023, 39(5): 27-32. <span class="year">2023</span></li>
+                <li><strong>On Auditory Space and Its Design [J].</strong> Time Architecture, 2022(4): 44-51 / Zhuang Shen, Yin Yi, Hua Xiahong. <span class="year">2022</span></li>
+                <li><strong>Sound Fever.</strong> In "No Build, Not Built: Art Institution Practices in Shanghai 2008-2016", ed. Chao Jiaxing <span class="year">2017</span></li>
+                <li><strong>Rehearsing Sound: BM Space.</strong> In "No Build, Not Built: Art Institution Practices in Shanghai 2008-2016", ed. Chao Jiaxing <span class="year">2017</span></li>
+                <li><strong>Urban Space as Resource and Practice Field for Sound Art [J].</strong> Communication and Public, 2017, Vol.2(4): 365-370 <span class="year">2017</span></li>
+                <li><strong>Sound Art?</strong> - ARTFORUM / Artforum China, Opinions, 2017-07 <span class="year">2017</span>
+                    <span class="links"><a href="https://artforum.com.cn/slant/10694#" target="_blank">Read</a></span>
                 </li>
             </ul>
         </div>
 
-        <!-- Publications -->
+        <!-- Publications (出版) -->
         <div class="cv-section">
             <h2>Publications</h2>
             <ul class="cv-list">
-                <li>Agora - Editor, OCT Contemporary Art Terminal, Shanghai <span class="year">2015</span></li>
-                <li>Savaka : Asia Experimental Music Currents - Editor, Rockbund Art Museum, Shanghai <span class="year">2013</span></li>
+                <li><strong>Savaka: Asia Experimental Music Currents</strong> (Editor), Rockbund Art Museum, Shanghai <span class="year">2013</span></li>
+                <li><strong>Agora</strong> (Editor), OCT Contemporary Art Terminal, Shanghai <span class="year">2015</span></li>
             </ul>
         </div>
 
-        <!-- Reviews -->
+        <!-- Reviews (评论) -->
         <div class="cv-section">
             <h2>Reviews</h2>
             <ul class="cv-list">
-                <li>Yishu : Spatializing Soundscapes, Julie Chun, Yishu September/October <span class="year">2018</span></li>
+                <li><strong>Spatializing Soundscapes</strong>, Julie Chun, Yishu September/October <span class="year">2018</span></li>
+                <li><strong>How Do Sound Artists Use Listening as a Method?</strong> | Wallpaper*
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/5eCzfc9PZC9Wpw_79QgIkA" target="_blank">Read</a></span>
+                </li>
+                <li><strong>Yin Yi: Music is a Cultural Ideology</strong> | Phoenix Art
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/dBlSS2Cv4x01LKcAmz7GnA" target="_blank">Read</a></span>
+                </li>
             </ul>
         </div>
 
-        <!-- Interviews (to be added) -->
-        <!-- 可根据需要补充英文采访条目 -->
+        <!-- Reports / Interviews (报道) -->
+        <div class="cv-section">
+            <h2>Interviews & Reports</h2>
+            <ul class="cv-list">
+                <li><strong>Another Narration of "Fetus" #CyberBirth Column 05</strong>, Rui Xin Weekly
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/bgV1jAJ_m9IhjRbOcQ-e5Q" target="_blank">Read</a></span>
+                </li>
+                <li><strong>Yin Yi: Artists Sometimes Need to Hesitate – An Interview on "True Body III"</strong>, M Space (MNG)
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/Eb7Hz-rLeGadpDrw9YgBvA" target="_blank">Read</a></span>
+                </li>
+                <li><strong>RanRan Residency Review | Yin Yi: Expanding the Perceptual Boundaries of Listening in the City</strong>, RanRan RANRAN
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/FuqC68MjzrxqIdNho14kQA" target="_blank">Read</a></span>
+                </li>
+                <li><strong>RanRan Residency Artist Talk | Yin Yi: Discovering the Possibilities of Hearing Amidst Visual Addiction</strong>, RanRan RANRAN
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/qtXi0GY9eaONIXUgg4UyvQ" target="_blank">Read</a></span>
+                </li>
+                <li><strong>APTalk | Yin Yi: Sound Intervenes in Architecture</strong>, Architectural Practice
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/nYngkhr5ZzUAjzeiYv5JhA" target="_blank">Read</a></span>
+                </li>
+                <li><strong>Project Terrace Phase 4: Yin Yi "Music on the Terrace"</strong>, Positive Art Research Centre (PARC)
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/4vbstledxKbPhJwp23cgmg" target="_blank">Read</a></span>
+                </li>
+                <li><strong>Fu Kan Interview | Yin Yi: "Six Attitudes of Listening"</strong>, Fu Kan
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/SW2lg7UrijuKoxwAcC_J3g" target="_blank">Read</a></span>
+                </li>
+                <li><strong>This Is the Slowest Performance I Have Ever Seen</strong>, Shangguan News
+                    <span class="links"><a href="https://www.shobserver.com/news/detail?id=292027" target="_blank">Read</a></span>
+                </li>
+                <li><strong>BMW Remarkable Cities | Yin Yi on Sound, Music, and Urban Boundaries</strong>, The Paper
+                    <span class="links"><a href="https://www.thepaper.cn/newsDetail_forward_4083193" target="_blank">Read</a></span>
+                </li>
+                <li><strong>Hearing the World's Scenery: Ear House / Atelier Dashaus + Yin Yi</strong>, Youfang Space
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/gLE2eMroZHG8qC02Z3CmvA" target="_blank">Read</a></span>
+                </li>
+                <li><strong>What Sound Best Represents Shanghai?</strong>, Shangguan News
+                    <span class="links"><a href="https://www.shobserver.com/news/detail?id=24683" target="_blank">Read</a></span>
+                </li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
