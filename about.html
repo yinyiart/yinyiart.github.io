@@ -14,39 +14,41 @@
         body {
             background-color: #dae7eb;
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #53585f;
+            color: #1f2c35;
             line-height: 1.6;
             padding: 40px 20px;
+            position: relative;
+        }
+
+        .top-nav {
+            position: absolute;
+            top: 40px;
+            right: 20px;
+            display: flex;
+            gap: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #2f3a44;
+            z-index: 100;
+        }
+        .top-nav a {
+            color: #2f3a44;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-nav a:hover,
+        .top-nav a.active {
+            color: #0f1a24;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 5%;
+            padding-top: 60px;
         }
 
-        /* 顶部导航 */
-        .top-nav {
-            display: flex;
-            justify-content: flex-end;
-            gap: 30px;
-            margin-bottom: 40px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #53585f;
-        }
-        .top-nav a {
-            color: #53585f;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .top-nav a:hover,
-        .top-nav a.active {
-            color: #1f2c35;
-        }
-
-        /* 简介 - 直接贴在背景上 */
         .intro {
             margin-bottom: 40px;
             font-size: 0.85rem;
@@ -56,7 +58,6 @@
             margin-bottom: 0.8em;
         }
 
-        /* 章节样式 */
         .cv-section {
             margin-bottom: 30px;
         }
@@ -82,18 +83,39 @@
             color: #6f7c8a;
         }
 
-        /* 响应式 */
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
             }
+            .top-nav {
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-areas: 
+                    "a b c ."
+                    "d e f g";
+                gap: 10px 8px;
+                margin-bottom: 30px;
+                width: 100%;
+                background: transparent;
+            }
+            .top-nav a {
+                padding: 6px 0;
+                white-space: nowrap;
+                color: #2f3a44;
+                font-size: 0.85rem;
+            }
+            .top-nav a:nth-child(1) { grid-area: a; text-align: left; }
+            .top-nav a:nth-child(2) { grid-area: b; text-align: center; }
+            .top-nav a:nth-child(3) { grid-area: c; text-align: right; }
+            .top-nav a:nth-child(4) { grid-area: d; text-align: left; }
+            .top-nav a:nth-child(5) { grid-area: e; text-align: center; }
+            .top-nav a:nth-child(6) { grid-area: f; text-align: center; }
+            .top-nav a:nth-child(7) { grid-area: g; text-align: right; }
+
             .container {
                 padding: 0 8%;
-            }
-            .top-nav {
-                justify-content: center;
-                gap: 20px;
-                flex-wrap: wrap;
+                padding-top: 0;
             }
             .intro {
                 font-size: 0.8rem;
@@ -108,19 +130,17 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- 导航栏 -->
-        <div class="top-nav">
-            <a href="index.html">殷漪</a>
-            <a href="musician.html">音乐家</a>
-            <a href="artist.html">艺术家</a>
-            <a href="curator.html">策展人</a>
-            <a href="writing.html">文字</a>
-            <a href="about.html" class="active">简历</a>
-            <a href="about_en.html">EN</a>
-        </div>
+    <div class="top-nav">
+        <a href="index.html">殷漪</a>
+        <a href="musician.html">音乐家</a>
+        <a href="artist.html">艺术家</a>
+        <a href="curator.html">策展人</a>
+        <a href="writing.html">文字</a>
+        <a href="about.html" class="active">简历</a>
+        <a href="index_en.html">EN</a>
+    </div>
 
-        <!-- 简介 - 直接开始，无标题 -->
+    <div class="container">
         <div class="intro">
             <p>殷漪，音乐家、艺术家、策展人，出生于上海。他的创作以“听觉-声音”为核心，涉及：声音艺术、音乐、装置、表演、影像、文本、剧场等多重领域。</p>
             <p>殷漪音乐生涯开始于慢核乐队，兼任贝司手与主唱。后转向数字音乐创作与笔记本现场表演。2001年转向数字音乐创作。2005以音乐家的角色成为前卫表演团体“组合嬲”的创始成员。殷漪早期的音乐创作领域包括:现场音乐表演、现代舞、肢体剧场。近年来其音乐创作主要集中于基于实地录音和原声乐器的混合音乐。</p>
@@ -129,7 +149,6 @@
             <p>从2011年开始，殷漪持续关注前卫音乐和声音艺术的艺术生态，策划包括声音艺术展“共振峰”，实验音乐交流项目“声音传输”、实验音乐节“合声”等。2012年他与舞蹈编导刘亚囡共同创建专注于前卫音乐与当代舞蹈的艺术空间BM Space。2013起，与艺术机构展开合作，策划展览和活动，合作机构包括上海外滩美术馆，OCAT 上海馆，上海多伦现代美术馆上海西岸美术馆。</p>
         </div>
 
-        <!-- 个展 -->
         <div class="cv-section">
             <h2>个展</h2>
             <ul class="cv-list">
@@ -137,7 +156,6 @@
             </ul>
         </div>
 
-        <!-- 群展（部分） -->
         <div class="cv-section">
             <h2>群展（部分）</h2>
             <ul class="cv-list">
@@ -173,7 +191,6 @@
             </ul>
         </div>
 
-        <!-- 策展 -->
         <div class="cv-section">
             <h2>策展</h2>
             <ul class="cv-list">
@@ -190,7 +207,6 @@
             </ul>
         </div>
 
-        <!-- 音乐/表演（部分） -->
         <div class="cv-section">
             <h2>音乐/表演（部分）</h2>
             <ul class="cv-list">
