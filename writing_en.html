@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yin Yi · Texts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #dae7eb;
+            font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+            color: #1f2c35;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 30px;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #2f3a44;
+        }
+        .top-nav a {
+            color: #2f3a44;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-nav a:hover,
+        .top-nav a.active {
+            color: #0f1a24;
+        }
+
+        .cv-section {
+            margin-bottom: 30px;
+        }
+        .cv-section h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #1f2c35;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .cv-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        .cv-list li {
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            color: #53585f;
+        }
+        .cv-list .year {
+            margin-left: 6px;
+            color: #6f7c8a;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .container {
+                padding: 0 8%;
+            }
+            .top-nav {
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .cv-section h2 {
+                font-size: 1.1rem;
+            }
+            .cv-list li {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-nav">
+            <a href="index_en.html">Yin Yi</a>
+            <a href="musician_en.html">Musician</a>
+            <a href="artist_en.html">Artist</a>
+            <a href="curator_en.html">Curator</a>
+            <a href="writing_en.html" class="active">Texts</a>
+            <a href="about_en.html">CV</a>
+            <a href="writing.html">CN</a>
+        </div>
+
+        <div class="cv-section">
+            <h2>Articles by Yin Yi</h2>
+            <ul class="cv-list">
+                <li>Example Article Title 1 <span class="year">2026</span></li>
+                <li>Example Article Title 2 <span class="year">2025</span></li>
+                <li>Example Article Title 3 <span class="year">2024</span></li>
+            </ul>
+        </div>
+
+        <div class="cv-section">
+            <h2>Interviews</h2>
+            <ul class="cv-list">
+                <li>Example Interview Title 1 <span class="year">2025</span></li>
+                <li>Example Interview Title 2 <span class="year">2024</span></li>
+                <li>Example Interview Title 3 <span class="year">2023</span></li>
+            </ul>
+        </div>
+
+        <div class="cv-section">
+            <h2>Reviews</h2>
+            <ul class="cv-list">
+                <li>Example Review Title 1 <span class="year">2025</span></li>
+                <li>Example Review Title 2 <span class="year">2024</span></li>
+                <li>Example Review Title 3 <span class="year">2023</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
