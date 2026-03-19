@@ -47,7 +47,7 @@
         }
 
         .container {
-            max-width: 1000px;                     /* 稍加宽整体容器，适应更大图片 */
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 5%;
             flex: 1;
@@ -60,7 +60,7 @@
         /* 主内容区域 */
         .hero {
             text-align: left;
-            max-width: 900px;                       /* 增加最大宽度 */
+            max-width: 900px;
             margin: 0;
         }
 
@@ -68,9 +68,9 @@
         .carousel {
             position: relative;
             width: 100%;
-            max-width: 800px;                       /* 从600px增加到800px，使图片更大 */
+            max-width: 800px;
             height: 0;
-            padding-bottom: 66.67%;                  /* 3:2 比例 (2/3 = 0.6667) */
+            padding-bottom: 66.67%; /* 3:2 比例 */
             margin-bottom: 30px;
             overflow: hidden;
         }
@@ -82,7 +82,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;                       /* 保持裁剪统一 */
+            object-fit: cover;
             border-radius: 2px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             opacity: 0;
@@ -115,7 +115,7 @@
                 padding: 20px 10px;
             }
             .top-nav {
-                position: static;                     /* 手机端取消固定，改为流式 */
+                position: static;
                 justify-content: center;
                 flex-wrap: wrap;
                 gap: 20px;
@@ -126,7 +126,7 @@
                 padding-top: 0;
             }
             .carousel {
-                max-width: 100%;                        /* 手机端占满宽度 */
+                max-width: 100%;
             }
             .hero-text {
                 font-size: 0.95rem;
@@ -149,8 +149,26 @@
     <div class="container">
         <div class="hero">
             <div class="carousel">
+                <!-- 从 yinyi01.jpg 到 yinyi19.jpg 共19张照片 -->
                 <img src="images/yinyi01.jpg" alt="殷漪 01" class="carousel-image active">
                 <img src="images/yinyi02.jpg" alt="殷漪 02" class="carousel-image">
+                <img src="images/yinyi03.jpg" alt="殷漪 03" class="carousel-image">
+                <img src="images/yinyi04.jpg" alt="殷漪 04" class="carousel-image">
+                <img src="images/yinyi05.jpg" alt="殷漪 05" class="carousel-image">
+                <img src="images/yinyi06.jpg" alt="殷漪 06" class="carousel-image">
+                <img src="images/yinyi07.jpg" alt="殷漪 07" class="carousel-image">
+                <img src="images/yinyi08.jpg" alt="殷漪 08" class="carousel-image">
+                <img src="images/yinyi09.jpg" alt="殷漪 09" class="carousel-image">
+                <img src="images/yinyi10.jpg" alt="殷漪 10" class="carousel-image">
+                <img src="images/yinyi11.jpg" alt="殷漪 11" class="carousel-image">
+                <img src="images/yinyi12.jpg" alt="殷漪 12" class="carousel-image">
+                <img src="images/yinyi13.jpg" alt="殷漪 13" class="carousel-image">
+                <img src="images/yinyi14.jpg" alt="殷漪 14" class="carousel-image">
+                <img src="images/yinyi15.jpg" alt="殷漪 15" class="carousel-image">
+                <img src="images/yinyi16.jpg" alt="殷漪 16" class="carousel-image">
+                <img src="images/yinyi17.jpg" alt="殷漪 17" class="carousel-image">
+                <img src="images/yinyi18.jpg" alt="殷漪 18" class="carousel-image">
+                <img src="images/yinyi19.jpg" alt="殷漪 19" class="carousel-image">
             </div>
             <div class="hero-text">
                 <p>与我而言，艺术既是自我治愈的良方，亦是检验思考的试金石。</p>
@@ -166,7 +184,7 @@
             if (images.length === 0) return;
 
             let currentIndex = 0;
-            // 确保第一张显示
+            // 确保第一张有 active 类（如果HTML中已设置则保留）
             images.forEach((img, idx) => {
                 if (idx === 0) img.classList.add('active');
                 else img.classList.remove('active');
@@ -178,7 +196,7 @@
                 images[currentIndex].classList.add('active');
             }
 
-            setInterval(showNextImage, 5000);
+            setInterval(showNextImage, 5000); // 每5秒切换一张
         });
     </script>
 </body>
