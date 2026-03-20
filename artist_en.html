@@ -24,7 +24,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 5%;
-            padding-top: 150px; /* 从60px改为150px，与文字英文页面一致 */
+            padding-top: 100px;           /* 增大与导航栏的间距，与文字英文页面一致 */
         }
 
         /* 响应式宽度扩展 */
@@ -196,7 +196,7 @@
             }
             .site-container {
                 padding: 0 8%;
-                padding-top: 0; /* 手机端取消顶部内边距 */
+                padding-top: 0;
             }
             .main-content {
                 flex-direction: column;
@@ -266,11 +266,11 @@
 
     <div class="site-container">
         <div class="main-content">
-            <!-- 左侧脉络面板（英文） -->
+            <!-- 左侧脉络面板（英文，哲思改为 Contemplative） -->
             <div class="tag-panel">
                 <div class="tag-list" id="tag-panel">
                     <div class="tag active" data-tag="all">All</div>
-                    <div class="tag" data-tag="zhesi">Philosophy</div>
+                    <div class="tag" data-tag="zhesi">Contemplative</div>
                     <div class="tag" data-tag="public-space">Public Space</div>
                     <div class="tag" data-tag="public-memory">Public Memory</div>
                     <div class="tag" data-tag="body">Body</div>
@@ -319,9 +319,9 @@
             { id: 'sanfenzhong', title: 'Three Minutes', year: '2008|2020', image: 'images/san03.jpg', tags: ['public-memory', 'performance'] }
         ];
 
-        // 脉络英文名称映射
+        // 脉络英文名称映射（哲思改为 Contemplative）
         const tagNames = {
-            'zhesi': 'Philosophy',
+            'zhesi': 'Contemplative',
             'public-space': 'Public Space',
             'public-memory': 'Public Memory',
             'body': 'Body',
