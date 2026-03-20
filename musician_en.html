@@ -17,48 +17,43 @@
             color: #53585f;
             line-height: 1.6;
             padding: 40px 20px;
+            position: relative;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 5%;
-        }
-
-        @media (min-width: 1200px) {
-            .container {
-                max-width: 1000px;
-            }
-        }
-        @media (min-width: 1600px) {
-            .container {
-                max-width: 1200px;
-            }
-        }
-
+        /* 导航栏 - 与文字英文页面完全一致 */
         .top-nav {
+            position: absolute;
+            top: 40px;
+            right: 20px;
             display: flex;
-            justify-content: flex-end;
-            gap: 30px;
-            margin-bottom: 40px;
-            font-size: 0.9rem;
+            gap: 20px;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #53585f;
+            color: #2f3a44;
+            z-index: 100;
         }
         .top-nav a {
-            color: #53585f;
+            color: #2f3a44;
             text-decoration: none;
+            transition: color 0.2s;
         }
         .top-nav a:hover,
         .top-nav a.active {
-            color: #1f2c35;
+            color: #0f1a24;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 5%;
+            padding-top: 150px;          /* 与文字英文页面一致 */
         }
 
         .intro {
             margin-bottom: 40px;
             color: #53585f;
-            font-size: 0.85rem;
+            font-size: 0.85rem;           /* 与艺术家页面正文一致 */
             line-height: 1.5;
         }
         .intro p {
@@ -97,12 +92,12 @@
         }
         .work-text span {
             display: inline;
-            font-size: 0.85rem;
+            font-size: 0.85rem;           /* 描述与年份字体一致 */
             white-space: normal;
             word-break: break-word;
         }
         .work-text .work-title {
-            font-size: 1.0rem;
+            font-size: 1.0rem;              /* 与艺术家作品标题一致 */
             font-weight: 400;
             color: #53585f;
             letter-spacing: 0.5px;
@@ -227,16 +222,26 @@
             body {
                 padding: 20px 10px;
             }
-            .container {
-                padding: 0 8%;
-            }
             .top-nav {
+                position: static;
+                display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
                 gap: 20px;
-                flex-wrap: wrap;
+                margin-bottom: 30px;
+                width: 100%;
+            }
+            .top-nav a {
+                padding: 6px 0;
+                white-space: nowrap;
+                color: #2f3a44;
+                font-size: 0.8rem;
+            }
+            .container {
+                padding: 0 8%;
+                padding-top: 0;
             }
             .intro {
-                margin-bottom: 30px;
                 font-size: 0.8rem;
             }
             .work-item {
@@ -271,10 +276,6 @@
             }
         }
 
-        @media (min-width: 601px) and (max-width: 900px) {
-            .container { max-width: 100%; }
-        }
-
         @media (hover: none) {
             .play-btn:hover {
                 background: transparent;
@@ -285,25 +286,24 @@
 </head>
 <body>
     <div class="top-nav">
-        <a href="index.html">Yin Yi</a>
+        <a href="index_en.html">Yin Yi</a>
         <a href="musician_en.html" class="active">Musician</a>
         <a href="artist_en.html">Artist</a>
         <a href="curator_en.html">Curator</a>
-        <a href="writing_en.html">TEXTS</a>
-        <a href="about_en.html">CV</a>   <!-- “About”改为“CV” -->
+        <a href="writing_en.html">Texts</a>
+        <a href="about_en.html">CV</a>
         <a href="musician.html">CN</a>
     </div>
 
     <div class="container">
         <div class="intro">
-            <p>My resonance with music began in the summer after junior high school graduation. More precisely, it wasn't resonance but necessity. It all came down to hormones.</p>
+            <p>My intimacy with music began in the summer after junior high school graduation. More precisely, it wasn't intimacy but necessity. It all came down to hormones.</p>
             <p>From forming rock bands to creating avant-garde electronic music, it wasn't just that I experienced the profound technological transformation of the music industry at the turn of the century, but also my contemplation and ideology about music itself.</p>
-            
             <p>Today's music is increasingly powerless. On one hand, everyone believes it should be the king in its own self-legislated realm; on the other hand, it continuously provides the means of production for the music industry and commerce. Radical music either becomes institutionalized as classic avant-garde or simply adopts a confrontational stance.</p>
             <p>Music is powerless to respond to the real world. Yet it seems we cannot do without it.</p>
         </div>
 
-        <!-- 作品列表（10首，已去除拼音） -->
+        <!-- Face (Lian) -->
         <div class="work-item">
             <div class="work-image" id="img-lian"><img src="images/lian.jpg" alt="Face"></div>
             <div class="work-text">
@@ -323,12 +323,13 @@
             </div>
         </div>
 
+        <!-- Congregation (Juluo) -->
         <div class="work-item">
             <div class="work-image" id="img-juluo"><img src="images/juluo.jpg" alt="Congregation"></div>
             <div class="work-text">
                 <span class="work-title">Congregation</span>
                 <span class="work-year">2007/2024</span>
-                <!-- 无描述 -->
+                <!-- no description -->
             </div>
             <div class="player-box">
                 <div class="custom-player" data-src="music/juluo.mp3">
@@ -342,6 +343,7 @@
             </div>
         </div>
 
+        <!-- Throw a Pebble into the Sky -->
         <div class="work-item">
             <div class="work-image" id="img-xiangtiankong"><img src="images/xiangtiankong.jpg" alt="Throw a Pebble into the Sky"></div>
             <div class="work-text">
@@ -361,6 +363,7 @@
             </div>
         </div>
 
+        <!-- The Swimming Pool with Ocean Sound within Earshot -->
         <div class="work-item">
             <div class="work-image" id="img-tingdao"><img src="images/tingdedaohaisheng.jpg" alt="The Swimming Pool with Ocean Sound within Earshot"></div>
             <div class="work-text">
@@ -380,6 +383,7 @@
             </div>
         </div>
 
+        <!-- Choreographer Nannan -->
         <div class="work-item">
             <div class="work-image" id="img-biandaonan"><img src="images/biandaonannan.png" alt="Choreographer Nannan"></div>
             <div class="work-text">
@@ -399,6 +403,7 @@
             </div>
         </div>
 
+        <!-- Helix (Erlun) -->
         <div class="work-item">
             <div class="work-image" id="img-erlun"><img src="images/erlun.jpg" alt="Helix"></div>
             <div class="work-text">
@@ -418,6 +423,7 @@
             </div>
         </div>
 
+        <!-- Nannan Maybe Will Dance -->
         <div class="work-item">
             <div class="work-image" id="img-nannan"><img src="images/nannan.jpg" alt="Nannan Maybe Will Dance"></div>
             <div class="work-text">
@@ -437,12 +443,13 @@
             </div>
         </div>
 
+        <!-- Rotation (Xuanzhuan) -->
         <div class="work-item">
             <div class="work-image" id="img-xuanzhuan"><img src="images/xuanzhuan.jpg" alt="Rotation"></div>
             <div class="work-text">
                 <span class="work-title">Rotation</span>
                 <span class="work-year">2016</span>
-                <!-- 无描述 -->
+                <!-- no description -->
             </div>
             <div class="player-box">
                 <div class="custom-player" data-src="music/xuan-zhuan.mp3">
@@ -456,12 +463,13 @@
             </div>
         </div>
 
+        <!-- Unseen (Weijian) -->
         <div class="work-item">
             <div class="work-image" id="img-weijian"><img src="images/weijian.jpg" alt="Unseen"></div>
             <div class="work-text">
                 <span class="work-title">Unseen</span>
                 <span class="work-year">2014</span>
-                <!-- 无描述 -->
+                <!-- no description -->
             </div>
             <div class="player-box">
                 <div class="custom-player" data-src="music/wei-jian.mp3">
@@ -475,6 +483,7 @@
             </div>
         </div>
 
+        <!-- A Small Path (Yi Tiao Xiao Lu) -->
         <div class="work-item">
             <div class="work-image" id="img-yitiaoxiaolu"><img src="images/yitiaoxiaolu.jpg" alt="A Small Path"></div>
             <div class="work-text">
