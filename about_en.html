@@ -50,7 +50,7 @@
         }
 
         .intro {
-            margin-bottom: 100px;          /* 从40px改为100px，与分类间距一致 */
+            margin-bottom: 100px;
             font-size: 0.85rem;
             color: #3f4f60;
         }
@@ -89,6 +89,21 @@
             margin-left: 8px;
             color: #6f7c8a;
         }
+        .links {
+            display: inline;
+            margin-left: 10px;
+        }
+        .links a {
+            color: #53585f;
+            text-decoration: none;
+            border-bottom: 1px dotted #a0b3c5;
+            white-space: nowrap;
+            font-size: 0.75rem;
+        }
+        .links a:hover {
+            color: #0f1a24;
+            border-bottom-color: #0f1a24;
+        }
 
         @media (max-width: 600px) {
             body {
@@ -115,7 +130,7 @@
             }
             .intro {
                 font-size: 0.8rem;
-                margin-bottom: 80px;        /* 手机端同步调整 */
+                margin-bottom: 80px;
             }
             .cv-section {
                 margin-bottom: 80px;
@@ -126,6 +141,9 @@
             .cv-list li {
                 font-size: 0.75rem;
                 margin-bottom: 16px;
+            }
+            .links a {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -154,7 +172,10 @@
         <div class="cv-section">
             <h2>Solo Exhibition</h2>
             <ul class="cv-list">
-                <li><strong>I am listening</strong> - Yuz Museum, Shanghai <span class="year">2025</span></li>
+                <li>
+                    <strong>I am listening</strong> - Yuz Museum, Shanghai <span class="year">2025</span>
+                    <span class="links"><a href="http://www.yuzmshanghai.org/pdf/i_am_listening_2025.pdf" target="_blank">Exhibition Brochure</a></span>
+                </li>
             </ul>
         </div>
 
