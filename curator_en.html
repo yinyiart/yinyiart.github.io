@@ -12,108 +12,279 @@
         }
 
         body {
-            background-color: #dae7eb;
+            background-color: #59585f;
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #1f2c35;
+            color: #f0f4f8;
             line-height: 1.6;
             padding: 40px 20px;
+            position: relative;
+        }
+
+        .top-nav {
+            position: absolute;
+            top: 40px;
+            right: 20px;
+            display: flex;
+            gap: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d0d8e0;
+            z-index: 100;
+        }
+        .top-nav a {
+            color: #d0d8e0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .top-nav a:hover,
+        .top-nav a.active {
+            color: #ffffff;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 5%;
+            padding-top: 60px;
         }
 
-        .top-nav {
+        .exhibition-item {
+            margin-bottom: 50px;
+        }
+
+        .exhibition-image {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 15px auto;
+            background-color: #7a8088;
             display: flex;
-            justify-content: flex-end;
-            gap: 30px;
-            margin-bottom: 40px;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #2f3a44;
-        }
-        .top-nav a {
-            color: #2f3a44;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .top-nav a:hover,
-        .top-nav a.active {
-            color: #0f1a24;
-        }
-
-        .cv-section {
-            margin-bottom: 30px;
-        }
-        .cv-section h2 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: #1f2c35;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .cv-list {
-            list-style: none;
-            margin-left: 0;
-        }
-        .cv-list li {
-            margin-bottom: 6px;
+            align-items: center;
+            justify-content: center;
+            color: #d0d8e0;
             font-size: 0.85rem;
-            color: #53585f;
+            overflow: hidden;
         }
-        .cv-list .year {
-            margin-left: 6px;
-            color: #6f7c8a;
+        .exhibition-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .exhibition-info {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .exhibition-title {
+            font-size: 1.0rem;
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 2px;
+            letter-spacing: 0.5px;
+        }
+        .exhibition-year-location {
+            font-size: 0.85rem;
+            color: #d0d8e0;
+            margin-bottom: 8px;
+        }
+        .curator {
+            font-size: 0.85rem;
+            color: #d0d8e0;
+            margin-bottom: 4px;
+        }
+        .artist-list {
+            font-size: 0.85rem;
+            color: #d0d8e0;
+            margin-top: 6px;
+            list-style: none;
+            padding-left: 0;
+        }
+        .artist-list li {
+            margin-bottom: 2px;
+        }
+        .artist-list strong {
+            font-weight: 400;
+            color: inherit;
         }
 
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
             }
-            .container {
-                padding: 0 8%;
-            }
             .top-nav {
+                position: static;
+                display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
                 gap: 20px;
-                flex-wrap: wrap;
+                margin-bottom: 30px;
+                width: 100%;
             }
-            .cv-section h2 {
-                font-size: 1.1rem;
+            .top-nav a {
+                padding: 6px 0;
+                white-space: nowrap;
+                color: #d0d8e0;
+                font-size: 0.85rem;
             }
-            .cv-list li {
-                font-size: 0.8rem;
+            .container {
+                padding: 0 8%;
+                padding-top: 0;
+            }
+            .exhibition-image {
+                max-width: 100%;
+            }
+            .exhibition-title {
+                font-size: 0.95rem;
             }
         }
     </style>
 </head>
 <body>
+    <div class="top-nav">
+        <a href="index_en.html">Yin Yi</a>
+        <a href="musician_en.html">Musician</a>
+        <a href="artist_en.html">Artist</a>
+        <a href="curator_en.html" class="active">Curator</a>
+        <a href="writing_en.html">Texts</a>
+        <a href="about_en.html">CV</a>
+        <a href="curator.html">CN</a>
+    </div>
+
     <div class="container">
-        <div class="top-nav">
-            <a href="index_en.html">Yin Yi</a>
-            <a href="musician_en.html">Musician</a>
-            <a href="artist_en.html">Artist</a>
-            <a href="curator_en.html" class="active">Curator</a>
-            <a href="writing_en.html">Texts</a>
-            <a href="about_en.html">CV</a>
-            <a href="curator.html">CN</a>
+        <!-- Listening Path 2024 -->
+        <div class="exhibition-item">
+            <div class="exhibition-image">
+                <img src="images/c01.jpg" alt="Listening Path exhibition poster">
+            </div>
+            <div class="exhibition-info">
+                <div class="exhibition-title">Listening Path: Contemporary Sound Art Practice in China</div>
+                <div class="exhibition-year-location">2024 · Duolun Modern Art Museum, Shanghai</div>
+                <div class="curator">Curator: Yin Yi</div>
+                <div class="curator">Archival Advisors: Ou Ning, Yao Dajun</div>
+                <ul class="artist-list">
+                    <li><strong>Artists:</strong> Chen Wei, Sun Wei, Wang Changcun, Yan Jun, Samson Young, Zhang Anding</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="cv-section">
-            <h2>Curatorial Projects</h2>
-            <ul class="cv-list">
-                <li>Listening Path: Contemporary Sound Art Practice in China, Duolun Modern Art Museum, Shanghai <span class="year">2024</span></li>
-                <li>Compose For - RAM Assembles, Rockbund Art Museum, Shanghai <span class="year">2023</span></li>
-                <li>One Sound One City - Art Newspaper Chinese Version, Online Exhibition <span class="year">2016</span></li>
-                <li>Agora - OCT Contemporary Art Terminal, Shanghai <span class="year">2015</span></li>
-                <li>What Are They Doing? - Museum of Contemporary Art, Shanghai <span class="year">2014</span></li>
-                <li>Savaka (Asia Experimental Music Currents) - Rockbund Art Museum, Shanghai <span class="year">2013</span></li>
-                <li>CO-Sound Festival - Zhujiajiao, Shanghai <span class="year">2013</span></li>
-            </ul>
+        <!-- Compose For 2023 -->
+        <div class="exhibition-item">
+            <div class="exhibition-image">
+                <img src="images/c02.jpg" alt="Compose For exhibition poster">
+            </div>
+            <div class="exhibition-info">
+                <div class="exhibition-title">Compose For - RAM Assembles</div>
+                <div class="exhibition-year-location">2023 · Rockbund Art Museum, Shanghai</div>
+                <div class="curator">Curator: Yin Yi</div>
+                <ul class="artist-list">
+                    <li><strong>Artists:</strong> Liu Pi, Mai Mai, Xiao Laohu, Zhang Anding, Chen Wei, Lou Nanli, Ma Haiping, Sun Wei, Wang Changcun, Wang Wenjing</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- One Sound One City 2016 -->
+        <div class="exhibition-item">
+            <div class="exhibition-image">
+                <img src="images/c03.jpg" alt="One Sound One City online exhibition poster">
+            </div>
+            <div class="exhibition-info">
+                <div class="exhibition-title">One Sound One City</div>
+                <div class="exhibition-year-location">2016 · Art Newspaper Chinese Version (online)</div>
+                <div class="curator">Curator: Yin Yi</div>
+                <ul class="artist-list">
+                    <li><strong>Artists:</strong> A Shere, Chen Mulian, Luo Runtin, Lu Zheng, Sun Wei, Wang Furui, Zhang Jianfu, Yin Yi</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Agora 2015 -->
+        <div class="exhibition-item">
+            <div class="exhibition-image">
+                <img src="images/c04.jpg" alt="Agora poster">
+            </div>
+            <div class="exhibition-info">
+                <div class="exhibition-title">Agora</div>
+                <div class="exhibition-year-location">2015 · OCT Contemporary Art Terminal, Shanghai</div>
+                <div class="curator">Curator: Yin Yi</div>
+                <!-- no artist list -->
+            </div>
+        </div>
+
+        <!-- What Are They Doing? 2014 -->
+        <div class="exhibition-item">
+            <div class="exhibition-image">
+                <img src="images/c05.jpg" alt="What Are They Doing? poster">
+            </div>
+            <div class="exhibition-info">
+                <div class="exhibition-title">What Are They Doing?</div>
+                <div class="exhibition-year-location">2014 · Museum of Contemporary Art, Shanghai</div>
+                <div class="curator">Curator: Yin Yi</div>
+                <ul class="artist-list">
+                    <li><strong>Artists:</strong> Mai Mai, Xu Cheng, Zhao Junyuan</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Savaka 2013 -->
+        <div class="exhibition-item">
+            <div class="exhibition-image">
+                <img src="images/c06.jpg" alt="Savaka exhibition poster">
+            </div>
+            <div class="exhibition-info">
+                <div class="exhibition-title">Savaka: Asia Experimental Music Currents</div>
+                <div class="exhibition-year-location">2013 · Rockbund Art Museum, Shanghai</div>
+                <div class="curator">Curator: Yin Yi</div>
+                <div class="curator">Academic Host: Wang Jing</div>
+                <ul class="artist-list">
+                    <li><strong>Artists:</strong> Walnut Room, Li Chin-sung, ISO, Toshihiro Koide, Li Jianhong, Wu Liguang, Hong Tieji, Lu Zheng, Wang Furui, Junky, Trinh, Yan Jun</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CO-Sound Festival 2013 -->
+        <div class="exhibition-item">
+            <div class="exhibition-image">
+                <img src="images/c07.jpg" alt="CO-Sound Festival poster">
+            </div>
+            <div class="exhibition-info">
+                <div class="exhibition-title">CO-Sound Festival</div>
+                <div class="exhibition-year-location">2013 · Zhujiajiao, Shanghai</div>
+                <div class="curator">Curator: Yin Yi</div>
+                <ul class="artist-list">
+                    <li><strong>Artists:</strong> Dora Video, Liu Hanji, Zhao Junyuan, Mai Mai, Samson Young, Sheng Jie, Lu Zheng, Yin Yi</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sonic Transmission 2012 -->
+        <div class="exhibition-item">
+            <div class="exhibition-image">
+                <img src="images/c08.jpg" alt="Sonic Transmission poster">
+            </div>
+            <div class="exhibition-info">
+                <div class="exhibition-title">Sonic Transmission: Shanghai-Hong Kong Experimental Music Exchange Project</div>
+                <div class="exhibition-year-location">2012 · Rockbund Art Museum, Shanghai / Hong Kong Arts Centre, Hong Kong</div>
+                <div class="curator">Curators: Samson Young, Yin Yi</div>
+                <ul class="artist-list">
+                    <li><strong>Artists:</strong> Da Xiao, Tian Peng, Xu Cheng, Yu Xiaolu, Wang Changcun, Luo Runtin, Cedric Maridet, Liu Zhensheng, Xu Aoshan, Samson Young, Yin Yi</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Formant 2012 -->
+        <div class="exhibition-item">
+            <div class="exhibition-image">
+                <img src="images/c09.jpg" alt="Formant exhibition poster">
+            </div>
+            <div class="exhibition-info">
+                <div class="exhibition-title">Formant: From Listening to Forms of Listening</div>
+                <div class="exhibition-year-location">2012 · V Arts Centre, Shanghai</div>
+                <div class="curator">Curators: Luca Forcucci, Yin Yi</div>
+                <ul class="artist-list">
+                    <li><strong>Artists:</strong> Lawrence English, Luca Forcucci, Yan Jun, Yin Yi, Zhang Ding</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
