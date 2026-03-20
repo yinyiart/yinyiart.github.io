@@ -102,7 +102,6 @@ body {
     height: 200px;
 }
 
-/* 修改1：视频容器自适应，保持16:9比例，去除固定高度 */
 .video-container {
     margin-top: 30px;
     width: 100%;
@@ -115,19 +114,6 @@ body {
     height: auto;
     aspect-ratio: 16 / 9;
     border: none;
-}
-/* 备用链接样式 */
-.video-fallback {
-    margin-top: 8px;
-    font-size: 0.8rem;
-    text-align: center;
-}
-.video-fallback a {
-    color: #d0d8e0;
-    text-decoration: underline;
-}
-.video-fallback a:hover {
-    color: #ffffff;
 }
 
 @media (max-width: 800px) {
@@ -167,7 +153,6 @@ body {
         height: auto;
         display: block;
     }
-    /* 移动端视频仍保持比例，无需单独高度 */
     .video-container iframe {
         aspect-ratio: 16 / 9;
     }
@@ -484,13 +469,9 @@ In sound, an emotional community is created.`, images: ['images/san01.jpg','imag
 
             let videoHtml = '';
             if (work.video) {
-                // 修改2：添加备用链接，如果 iframe 因隐私设置无法播放，观众可点击链接直接观看
                 videoHtml = `
                     <div class="video-container">
                         <iframe src="${work.video}?title=0&byline=0&portrait=0" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-fallback">
-                        <a href="${work.video}" target="_blank">如果视频无法播放，请点击此处观看 ↗</a>
                     </div>
                 `;
             }
