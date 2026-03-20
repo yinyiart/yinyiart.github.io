@@ -17,12 +17,14 @@
             color: #f0f4f8;
             line-height: 1.6;
             padding: 40px 20px;
+            position: relative;
         }
 
         .site-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 5%;
+            padding-top: 150px; /* 从60px改为150px，与文字英文页面一致 */
         }
 
         /* 响应式宽度扩展 */
@@ -37,20 +39,23 @@
             }
         }
 
-        /* 顶部导航 */
+        /* 顶部导航 - 绝对定位，与文字英文页面一致 */
         .top-nav {
+            position: absolute;
+            top: 40px;
+            right: 20px;
             display: flex;
-            justify-content: flex-end;
             gap: 30px;
-            margin-bottom: 40px;
             font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #d0d8e0;
+            z-index: 100;
         }
         .top-nav a {
             color: #d0d8e0;
             text-decoration: none;
+            transition: color 0.2s;
         }
         .top-nav a:hover,
         .top-nav a.active {
@@ -180,13 +185,18 @@
             body {
                 padding: 20px 10px;
             }
-            .site-container {
-                padding: 0 8%;
-            }
             .top-nav {
+                position: static;
+                display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
                 gap: 20px;
-                flex-wrap: wrap;
+                margin-bottom: 30px;
+                width: 100%;
+            }
+            .site-container {
+                padding: 0 8%;
+                padding-top: 0; /* 手机端取消顶部内边距 */
             }
             .main-content {
                 flex-direction: column;
@@ -244,17 +254,17 @@
     </style>
 </head>
 <body>
-    <div class="site-container">
-        <div class="top-nav">
-            <a href="index_en.html">Yin Yi</a>
-            <a href="musician_en.html">Musician</a>
-            <a href="artist_en.html" class="active">Artist</a>
-            <a href="curator_en.html">Curator</a>
-            <a href="writing_en.html">Texts</a>
-            <a href="about_en.html">CV</a>
-            <a href="artist.html">CN</a>
-        </div>
+    <div class="top-nav">
+        <a href="index_en.html">Yin Yi</a>
+        <a href="musician_en.html">Musician</a>
+        <a href="artist_en.html" class="active">Artist</a>
+        <a href="curator_en.html">Curator</a>
+        <a href="writing_en.html">Texts</a>
+        <a href="about_en.html">CV</a>
+        <a href="artist.html">CN</a>
+    </div>
 
+    <div class="site-container">
         <div class="main-content">
             <!-- 左侧脉络面板（英文） -->
             <div class="tag-panel">
