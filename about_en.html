@@ -17,23 +17,20 @@
             color: #1f2c35;
             line-height: 1.6;
             padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 5%;
+            position: relative;
         }
 
         .top-nav {
+            position: absolute;
+            top: 40px;
+            right: 20px;
             display: flex;
-            justify-content: flex-end;
-            gap: 30px;
-            margin-bottom: 40px;
-            font-size: 0.9rem;
+            gap: 20px;
+            font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #2f3a44;
+            z-index: 100;
         }
         .top-nav a {
             color: #2f3a44;
@@ -45,8 +42,15 @@
             color: #0f1a24;
         }
 
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 5%;
+            padding-top: 150px;
+        }
+
         .intro {
-            margin-bottom: 40px;
+            margin-bottom: 100px;          /* 从40px改为100px，与分类间距一致 */
             font-size: 0.85rem;
             color: #3f4f60;
         }
@@ -55,13 +59,13 @@
         }
 
         .cv-section {
-            margin-bottom: 30px;
+            margin-bottom: 100px;
         }
         .cv-section h2 {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 400;
             color: #1f2c35;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             letter-spacing: 1px;
         }
 
@@ -70,78 +74,87 @@
             margin-left: 0;
         }
         .cv-list li {
-            margin-bottom: 6px;
-            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-size: 0.8rem;
             color: #53585f;
+        }
+        .cv-list li:last-child {
+            margin-bottom: 0;
+        }
+        .cv-list strong {
+            font-weight: 600;
+            color: #1f2c35;
         }
         .cv-list .year {
-            margin-left: 6px;
-            color: #6f7c8a;
-        }
-        .cv-list a {
-            color: #53585f;
-            text-decoration: none;
-            border-bottom: 1px dotted #a0b3c5;
             margin-left: 8px;
-            font-size: 0.8rem;
-        }
-        .cv-list a:hover {
-            color: #0f1a24;
-            border-bottom-color: #0f1a24;
+            color: #6f7c8a;
         }
 
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
             }
-            .container {
-                padding: 0 8%;
-            }
             .top-nav {
+                position: static;
+                display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
                 gap: 20px;
-                flex-wrap: wrap;
+                margin-bottom: 30px;
+                width: 100%;
+            }
+            .top-nav a {
+                padding: 6px 0;
+                white-space: nowrap;
+                color: #2f3a44;
+                font-size: 0.8rem;
+            }
+            .container {
+                padding: 0 8%;
+                padding-top: 0;
             }
             .intro {
                 font-size: 0.8rem;
+                margin-bottom: 80px;        /* 手机端同步调整 */
+            }
+            .cv-section {
+                margin-bottom: 80px;
             }
             .cv-section h2 {
-                font-size: 1.1rem;
+                font-size: 0.95rem;
             }
             .cv-list li {
-                font-size: 0.8rem;
-            }
-            .cv-list a {
                 font-size: 0.75rem;
+                margin-bottom: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="top-nav">
-            <a href="index_en.html">Yin Yi</a>
-            <a href="musician_en.html">Musician</a>
-            <a href="artist_en.html">Artist</a>
-            <a href="curator_en.html">Curator</a>
-            <a href="writing_en.html">Texts</a>
-            <a href="about_en.html" class="active">CV</a>
-            <a href="about.html">CN</a>
-        </div>
+    <div class="top-nav">
+        <a href="index_en.html">Yin Yi</a>
+        <a href="musician_en.html">Musician</a>
+        <a href="artist_en.html">Artist</a>
+        <a href="curator_en.html">Curator</a>
+        <a href="writing_en.html">Texts</a>
+        <a href="about_en.html" class="active">CV</a>
+        <a href="about.html">CN</a>
+    </div>
 
+    <div class="container">
         <div class="intro">
             <p>Yin Yi is a musician, artist, and curator born in Shanghai. His creative practice revolves around "auditory-sound," spanning multimedia domains such as sound art, music, installation, performance, video, text, and theater.</p>
-            <p>Yin formed the Dead Poets Society in 1998, a slowcore band in which he was the lead singer and also a bassist. Yin turned to digital music three years later and he became a founding member of the avant-garde performance collective Zuhe Niao as a musician in 2005. His musical creation started to cover a wide range, e.g., live music performance, contemporary dance, and physical theatre. Commissioned by individual artists and modern dance groups, Yin's works are frequently heard in the performances of Zuheniao (Shanghai), Tanzcompagnie Rubato (Berlin), Guangdong Modern Dance Company, Xie Xin Dance Company, Ergao Performance etc. In recent years, Yin starts to focus on live laptop performances and site-specific soundscape compositions rooted in field recordings.</p>
+            <p>In 1998 Yin formed a slowcore band in which he was the lead singer and also a bassist. Yin turned to digital music three years later and he became a founding member of the avant-garde performance collective Zuhe Niao as a musician in 2005. His musical creation started to cover a wide range, e.g., live music performance, contemporary dance, and physical theatre. Commissioned by individual artists and modern dance groups. In recent years, Yin starts to focus on the hybrid music based on field recording and acoustic instruments.</p>
             <p>In the creation of sound art, Yin Yi is known for his philosophical and poetic ideas. His observation and reflection on public space is both acute and deep, and his works are both avant-garde and critical. He also proposes the notion of "auditory – sound space" and attempts to establish a working method around this concept, bringing his praxis to the discourse of multi-disciplinary collaborations.</p>
             <p>Yin Yi's work has been featured in numerous art festivals and institutions, including RAM Assembles (2023), Echigo-Tsumari Art Triennial (2018), the 11th Shanghai Bienniale (2016) and Sound Art China (2013), Harvest Work (New York), Power Station of Art (Shanghai), Yuz Museum, Rock Bund Museum, Unsafe and Sound Festival (Vienna), HongKong Art Centre, Museum of Contemporary Art (Shanghai), Ming Contemporary Art Museum (Shanghai), Shanghai International Dance Centre, OCAT Shenzhen, Pingshan Museum (Shenzhen), Shanghai Urban Space Art Season, etc.</p>
-            <p>Since 2011, Yin Yi has been paying close attention to the artistic ecology of experimental music and sound art across China. Activities that he recently curated include, "Formant" (a sound art exhibition), "Co-Sound" (sound performance festival), "Sonic Transmission" (exchange project between Shanghai and HongKong), etc. In 2012 Yin and choreographer Liu Yanan founded artist running alternative art space - BM Space. Since 2013, he has collaborated with art institutions to curate exhibitions and programs, including the Rockbund Art Museum, OCAT Shanghai, Shanghai Duolun Museum of Modern Art, and West Bund Museum.</p>
+            <p>Since 2011, Yin Yi has been paying close attention to the artistic ecology of experimental music and sound art across China. In 2012 Yin and choreographer Liu Yanan founded artist running alternative art space - BM Space. Since 2013, he has collaborated with art institutions to curate exhibitions and programs, including the Rockbund Art Museum, OCAT Shanghai, Shanghai Duolun Museum of Modern Art, and West Bund Museum.</p>
         </div>
 
         <!-- Solo Exhibition -->
         <div class="cv-section">
             <h2>Solo Exhibition</h2>
             <ul class="cv-list">
-                <li>I am listening - Yuz Museum, Shanghai <span class="year">2025</span> <a href="http://www.yuzmshanghai.org/pdf/i_am_listening_2025.pdf" target="_blank">Exhibition Brochure</a></li>
+                <li><strong>I am listening</strong> - Yuz Museum, Shanghai <span class="year">2025</span></li>
             </ul>
         </div>
 
@@ -149,35 +162,35 @@
         <div class="cv-section">
             <h2>Group Exhibition (Selected)</h2>
             <ul class="cv-list">
-                <li>Once Upon A Time - Power Station of Art, Shanghai <span class="year">2025</span></li>
-                <li>Building Shanghai: Architecture, Urbanism, and Culture since 1949 - West Bund Museum, Shanghai <span class="year">2025</span></li>
-                <li>Luhu Environmental Theatre Week - Chengdu <span class="year">2024</span></li>
-                <li>Sparking Into Sparkling - 2024 Ranran Art Season, Shanghai <span class="year">2024</span></li>
-                <li>Sound Variation : Contemporary Chinese Sound Art Exhibition - Chengdu Art Museum, Chengdu <span class="year">2023</span></li>
-                <li>YINGU : A Thirty Year Retrospective Exhibition of Sound Creation in Contemporary Chinese Art, Sound Art Museum, Beijing <span class="year">2023</span></li>
-                <li>RAM Assembles - Rock Bund Museum, Shanghai <span class="year">2023</span></li>
-                <li>Sleepless Theatre - Wu Changsuo Museum, Shanghai <span class="year">2023</span></li>
-                <li>Project Terrance@1431 Huaihai Rd. - Power Station of Art, Shanghai <span class="year">2022</span></li>
-                <li>The Pieces I Am - UCCA Edge, Shanghai <span class="year">2022</span></li>
-                <li>RANRAN : Song Of The Return - XINTIANDI & UCCA, Shanghai <span class="year">2022</span></li>
-                <li>Urban Cosmologies - The 9th Shenzhen · City Of Design, Shenzhen <span class="year">2022</span></li>
-                <li>Music for The Terrace (Project Terrance@1431 Huaihai Rd.) - Positive Art Research Centre, Shanghai <span class="year">2021</span></li>
-                <li>Public Park - Duolun Modern Art Museum, Shanghai <span class="year">2020</span></li>
-                <li>2020：twenty Years Towards a World Theatre, Participatory Exhibition with Archived Contemporary Performance - OCAT Shenzhen Hall, Shenzhen <span class="year">2020</span></li>
-                <li>Young Choreographers Project - Shanghai International Dance Centre, Shanghai <span class="year">2020</span></li>
-                <li>Unknown City - Pingshan Museum, Shenzhen <span class="year">2019</span></li>
-                <li>Kind Stranger - UNArt Center, Shanghai <span class="year">2019</span></li>
-                <li>Encounter - 2019 Shanghai Urban Space Art Season, Shanghai <span class="year">2019</span></li>
-                <li>Echigo-Tsumari Art Triennale 2018 - Japan (Atelier Dashaus + Yin Yi) <span class="year">2018</span></li>
-                <li>On Site Impromptus - Ming Contemporary Art Museum, Shanghai <span class="year">2017</span></li>
-                <li>Sound:Chambers - 2016 Shenzhen New Media Art Festival, Shenzhen <span class="year">2016</span></li>
-                <li>Sound:Phenomena - 2016 Shenzhen New Media Art Festival, Shenzhen <span class="year">2016</span></li>
-                <li>Why not ask again? - 11th Shanghai Biennale - Power Station of Art, Shanghai <span class="year">2016</span></li>
-                <li>Dinghaiqiao (Artistic Practice of History) - Power Station of Art, Shanghai <span class="year">2016</span></li>
-                <li>Synchronized Reality - Unsafe and Sound Festival, Vienna <span class="year">2016</span></li>
-                <li>Sound Art China - West Bund 2013: A Biennial of Architecture and Contemporary Art, Shanghai <span class="year">2013</span></li>
-                <li>Lost In The Labyrinth - Harvest Works, New York <span class="year">2013</span></li>
-                <li>Daily of Concept (The Fifth Shanghai Duolun Youth Art Exhibition) - Duolun Art Museum, Shanghai <span class="year">2012</span></li>
+                <li><strong>Once Upon A Time</strong> - Power Station of Art, Shanghai <span class="year">2025</span></li>
+                <li><strong>Building Shanghai: Architecture, Urbanism, and Culture since 1949</strong> - West Bund Museum, Shanghai <span class="year">2025</span></li>
+                <li><strong>Luhu Environmental Theatre Week</strong> - Chengdu <span class="year">2024</span></li>
+                <li><strong>Sparking Into Sparkling</strong> - 2024 Ranran Art Season, Shanghai <span class="year">2024</span></li>
+                <li><strong>Sound Variation : Contemporary Chinese Sound Art Exhibition</strong> - Chengdu Art Museum, Chengdu <span class="year">2023</span></li>
+                <li><strong>YINGU : A Thirty Year Retrospective Exhibition of Sound Creation in Contemporary Chinese Art</strong> - Sound Art Museum, Beijing <span class="year">2023</span></li>
+                <li><strong>RAM Assembles</strong> - Rock Bund Museum, Shanghai <span class="year">2023</span></li>
+                <li><strong>Sleepless Theatre</strong> - Wu Changsuo Museum, Shanghai <span class="year">2023</span></li>
+                <li><strong>Project Terrance@1431 Huaihai Rd.</strong> - Power Station of Art, Shanghai <span class="year">2022</span></li>
+                <li><strong>The Pieces I Am</strong> - UCCA Edge, Shanghai <span class="year">2022</span></li>
+                <li><strong>RANRAN : Song Of The Return</strong> - XINTIANDI & UCCA, Shanghai <span class="year">2022</span></li>
+                <li><strong>Urban Cosmologies</strong> - The 9th Shenzhen · City Of Design, Shenzhen <span class="year">2022</span></li>
+                <li><strong>Music for The Terrace (Project Terrance@1431 Huaihai Rd.)</strong> - Positive Art Research Centre, Shanghai <span class="year">2021</span></li>
+                <li><strong>Public Park</strong> - Duolun Modern Art Museum, Shanghai <span class="year">2020</span></li>
+                <li><strong>2020：twenty Years Towards a World Theatre, Participatory Exhibition with Archived Contemporary Performance</strong> - OCAT Shenzhen Hall, Shenzhen <span class="year">2020</span></li>
+                <li><strong>Young Choreographers Project</strong> - Shanghai International Dance Centre, Shanghai <span class="year">2020</span></li>
+                <li><strong>Unknown City</strong> - Pingshan Museum, Shenzhen <span class="year">2019</span></li>
+                <li><strong>Kind Stranger</strong> - UNArt Center, Shanghai <span class="year">2019</span></li>
+                <li><strong>Encounter</strong> - 2019 Shanghai Urban Space Art Season, Shanghai <span class="year">2019</span></li>
+                <li><strong>Echigo-Tsumari Art Triennale 2018</strong> - Japan (Atelier Dashaus + Yin Yi) <span class="year">2018</span></li>
+                <li><strong>On Site Impromptus</strong> - Ming Contemporary Art Museum, Shanghai <span class="year">2017</span></li>
+                <li><strong>Sound:Chambers</strong> - 2016 Shenzhen New Media Art Festival, Shenzhen <span class="year">2016</span></li>
+                <li><strong>Sound:Phenomena</strong> - 2016 Shenzhen New Media Art Festival, Shenzhen <span class="year">2016</span></li>
+                <li><strong>Why not ask again?</strong> - 11th Shanghai Biennale - Power Station of Art, Shanghai <span class="year">2016</span></li>
+                <li><strong>Dinghaiqiao (Artistic Practice of History)</strong> - Power Station of Art, Shanghai <span class="year">2016</span></li>
+                <li><strong>Synchronized Reality</strong> - Unsafe and Sound Festival, Vienna <span class="year">2016</span></li>
+                <li><strong>Sound Art China</strong> - West Bund 2013: A Biennial of Architecture and Contemporary Art, Shanghai <span class="year">2013</span></li>
+                <li><strong>Lost In The Labyrinth</strong> - Harvest Works, New York <span class="year">2013</span></li>
+                <li><strong>Daily of Concept (The Fifth Shanghai Duolun Youth Art Exhibition)</strong> - Duolun Art Museum, Shanghai <span class="year">2012</span></li>
             </ul>
         </div>
 
@@ -185,16 +198,16 @@
         <div class="cv-section">
             <h2>Curator</h2>
             <ul class="cv-list">
-                <li>Shanghai Sound - West Bund Museum, Shanghai <span class="year">2025</span></li>
-                <li>Listening Path: Contemporary Sound Art Practice in China - Duolun Modern Art Museum, Shanghai <span class="year">2024</span></li>
-                <li>Compose For - RAM Assembles, Rockbund Art Museum, Shanghai <span class="year">2023</span></li>
-                <li>One Sound One City - Art Newspaper Chinese Version, Online Exhibition <span class="year">2016</span></li>
-                <li>Agora - OCT Contemporary Art Terminal, Shanghai <span class="year">2015</span></li>
-                <li>What Are They Doing? - Museum of Contemporary Art, Shanghai <span class="year">2014</span></li>
-                <li>Savaka (Asia Experimental Music Currents) - Rockbund Art Museum, Shanghai <span class="year">2013</span></li>
-                <li>CO-Sound Festival - Zhujiajiao, Shanghai <span class="year">2013</span></li>
-                <li>Sonic Transmission - Sound Performance Between Shanghai and HongKong – supported by Rockbund Art Museum, Shanghai / HongKong Art Centre, HongKong / Art Network Asian, Singapore <span class="year">2012</span></li>
-                <li>Formant - Forms of Listening to Forms - V Arts Centre, Shanghai <span class="year">2012</span></li>
+                <li><strong>Shanghai Sound</strong> - West Bund Museum, Shanghai <span class="year">2025</span></li>
+                <li><strong>Listening Path: Contemporary Sound Art Practice in China</strong> - Duolun Modern Art Museum, Shanghai <span class="year">2024</span></li>
+                <li><strong>Compose For - RAM Assembles</strong> - Rockbund Art Museum, Shanghai <span class="year">2023</span></li>
+                <li><strong>One Sound One City</strong> - Art Newspaper Chinese Version, Online Exhibition <span class="year">2016</span></li>
+                <li><strong>Agora</strong> - OCT Contemporary Art Terminal, Shanghai <span class="year">2015</span></li>
+                <li><strong>What Are They Doing?</strong> - Museum of Contemporary Art, Shanghai <span class="year">2014</span></li>
+                <li><strong>Savaka (Asia Experimental Music Currents)</strong> - Rockbund Art Museum, Shanghai <span class="year">2013</span></li>
+                <li><strong>CO-Sound Festival</strong> - Zhujiajiao, Shanghai <span class="year">2013</span></li>
+                <li><strong>Sonic Transmission - Sound Performance Between Shanghai and HongKong</strong> – supported by Rockbund Art Museum, Shanghai / HongKong Art Centre, HongKong / Art Network Asian, Singapore <span class="year">2012</span></li>
+                <li><strong>Formant - Forms of Listening to Forms</strong> - V Arts Centre, Shanghai <span class="year">2012</span></li>
             </ul>
         </div>
 
@@ -202,55 +215,55 @@
         <div class="cv-section">
             <h2>Performance (Selected)</h2>
             <ul class="cv-list">
-                <li>Awakening Battersea - System, Shanghai <span class="year">2023</span></li>
-                <li>Zengo Collection·Final Chapter - Sound Art Museum, Beijing <span class="year">2023</span></li>
-                <li>Instrumental Soundscape NO.10 - Imagination Space, Beijing <span class="year">2023</span></li>
-                <li>Vital Festival - Rockbund Museum, Shanghai <span class="year">2022</span></li>
-                <li>What Does Music Really Mean to Us? - UCCA Edge, Shanghai <span class="year">2022</span></li>
-                <li>Silence - Changjiang Museum, Taiyuan <span class="year">2021</span></li>
-                <li>Nourishing the Life - Shanghai International Dance Centre, Shanghai <span class="year">2020</span></li>
-                <li>Sally Can't Dance Avant-garde Music Festival, Chengdu <span class="year">2020</span></li>
-                <li>Nourishing the Life - Yuz Museum, Shanghai <span class="year">2020</span></li>
-                <li>Sound Writing - HuaMu (commissioned by Shanghai Project) - Himalayas Museum, Shanghai <span class="year">2017</span></li>
-                <li>You Zhong Music - Himalayas Museum, Shanghai <span class="year">2017</span></li>
-                <li>Le Visage Acoustique - 11th Shanghai Biennale "Theory Theatre" commissioned sound work, PSA, Shanghai <span class="year">2016</span></li>
-                <li>"Event, Theory and Art" Academic Symposium - East China Normal University, Shanghai <span class="year">2016</span></li>
-                <li>Sally Can't Dance Avant-garde Music Festival, Beijing <span class="year">2015</span></li>
-                <li>Xuan Yin - UCCA, Beijing / Xixi Tiandi, Hangzhou <span class="year">2015</span></li>
-                <li>"Auditory-Sensory-Meeting" + Multipletap, Shanghai <span class="year">2015</span></li>
-                <li>BUS Anniversary AV Party, Hangzhou <span class="year">2014</span></li>
-                <li>Cool Sound II - Xileng Gallery, Hangzhou <span class="year">2014</span></li>
-                <li>Auditory-Sensory-Meeting (solo concert) - Chronus Art Center, Shanghai <span class="year">2013</span></li>
-                <li>CO-Sound Festival, Shanghai <span class="year">2013</span></li>
-                <li>Miji Festival - Rockbund Art Museum, Shanghai <span class="year">2013</span></li>
-                <li>Sonic Anchor VIII - HongKong Art Centre, Hong Kong <span class="year">2013</span></li>
-                <li>Frischzelle Festival 2012 - Cologne/Dusseldorf, Germany <span class="year">2012</span></li>
-                <li>Illumination - 18 Gallery, Shanghai <span class="year">2012</span></li>
-                <li>Super Tight - Guangdong Modern Dance Company, Guangzhou <span class="year">2012</span></li>
-                <li>Sound Anchor III - HongKong Art Centre, Hong Kong <span class="year">2012</span></li>
-                <li>Miji Concerts * 8 - V Arts Centre, Shanghai <span class="year">2012</span></li>
-                <li>Formant - V Arts Centre, Shanghai <span class="year">2012</span></li>
-                <li>Inbetween - Guangdong Modern Dance Company, Guangzhou <span class="year">2012</span></li>
-                <li>Gravitational Field - 2011 Himalayas Cross-Media Art Festival, Shanghai <span class="year">2011</span></li>
-                <li>Still Concert - 2011 Electronic Music Week of Conservatory of Shanghai, Shanghai <span class="year">2011</span></li>
-                <li>Future of Future - BM SPACE, Shanghai <span class="year">2011</span></li>
-                <li>Milk and Bread, Rice and Water (with Rubato Tanzcompagnie) - Berlin, Shanghai, Swansea <span class="year">2011</span></li>
-                <li>Look at me, I am Chinese (Rubato Berlin + Majiang Dance Company) - Berlin, Shanghai <span class="year">2010</span></li>
-                <li>Red Chamber - Dutch Culture Centre, Shanghai / Amsterdam JuliDans Festival, Amsterdam <span class="year">2010</span></li>
-                <li>Epidermis - Xiahe Micang, Shanghai <span class="year">2010</span></li>
-                <li>Dialogue - Edinburgh Fringe Festival / Dancebase, London <span class="year">2010</span></li>
-                <li>Verge Field - "Pioneer" Shanghai Youth Creative Theatre Festival / Shanghai eArts Community, Shanghai <span class="year">2010</span></li>
-                <li>Left Cheek – European Tour (Munster, Potsdam, Dusseldorf, Oslo) <span class="year">2010</span></li>
-                <li>Tongue's Memory of Home - Singapore Fringe Festival, Singapore <span class="year">2010</span></li>
-                <li>Dialogue - Dublin (funded by Dublin City Council, Ireland) <span class="year">2008</span></li>
-                <li>Left Cheek - Amsterdam JuliDans Festival, Amsterdam <span class="year">2008</span></li>
-                <li>Verge Field - Groninger Museum, Netherlands <span class="year">2008</span></li>
-                <li>Tongue's Memory of Home - Hong Kong Fringe Biennial, Hong Kong <span class="year">2008</span></li>
-                <li>Left Cheek - Salzburg China India Festival, Salzburg, Austria <span class="year">2007</span></li>
-                <li>Tongue's Memory of Home - Berlin Umweg Uber China Festival / Salzburg China India Festival / Rome Europa Festival <span class="year">2007</span></li>
-                <li>Touch - Shanghai Zendai Art Museum / Shanghai Zhijiang DreamWorks <span class="year">2007</span></li>
-                <li>Ward 14 - Shanghai DDM Art Center <span class="year">2007</span></li>
-                <li>Tongue's Memory of Home - Amsterdam JuliDans Festival / Zurich Theater Spektakel / Beijing Crossing Art Festival / Shanghai Fringe Festival <span class="year">2007</span></li>
+                <li><strong>Awakening Battersea</strong> - System, Shanghai <span class="year">2023</span></li>
+                <li><strong>Zengo Collection·Final Chapter</strong> - Sound Art Museum, Beijing <span class="year">2023</span></li>
+                <li><strong>Instrumental Soundscape NO.10</strong> - Imagination Space, Beijing <span class="year">2023</span></li>
+                <li><strong>Vital Festival</strong> - Rockbund Museum, Shanghai <span class="year">2022</span></li>
+                <li><strong>What Does Music Really Mean to Us?</strong> - UCCA Edge, Shanghai <span class="year">2022</span></li>
+                <li><strong>Silence</strong> - Changjiang Museum, Taiyuan <span class="year">2021</span></li>
+                <li><strong>Nourishing the Life</strong> - Shanghai International Dance Centre, Shanghai <span class="year">2020</span></li>
+                <li><strong>Sally Can't Dance Avant-garde Music Festival</strong> - Chengdu <span class="year">2020</span></li>
+                <li><strong>Nourishing the Life</strong> - Yuz Museum, Shanghai <span class="year">2020</span></li>
+                <li><strong>Sound Writing - HuaMu (commissioned by Shanghai Project)</strong> - Himalayas Museum, Shanghai <span class="year">2017</span></li>
+                <li><strong>You Zhong Music</strong> - Himalayas Museum, Shanghai <span class="year">2017</span></li>
+                <li><strong>Le Visage Acoustique</strong> - 11th Shanghai Biennale "Theory Theatre" commissioned sound work, PSA, Shanghai <span class="year">2016</span></li>
+                <li><strong>"Event, Theory and Art" Academic Symposium</strong> - East China Normal University, Shanghai <span class="year">2016</span></li>
+                <li><strong>Sally Can't Dance Avant-garde Music Festival</strong> - Beijing <span class="year">2015</span></li>
+                <li><strong>Xuan Yin</strong> - UCCA, Beijing / Xixi Tiandi, Hangzhou <span class="year">2015</span></li>
+                <li><strong>"Auditory-Sensory-Meeting" + Multipletap</strong> - Shanghai <span class="year">2015</span></li>
+                <li><strong>BUS Anniversary AV Party</strong> - Hangzhou <span class="year">2014</span></li>
+                <li><strong>Cool Sound II</strong> - Xileng Gallery, Hangzhou <span class="year">2014</span></li>
+                <li><strong>Auditory-Sensory-Meeting (solo concert)</strong> - Chronus Art Center, Shanghai <span class="year">2013</span></li>
+                <li><strong>CO-Sound Festival</strong> - Shanghai <span class="year">2013</span></li>
+                <li><strong>Miji Festival</strong> - Rockbund Art Museum, Shanghai <span class="year">2013</span></li>
+                <li><strong>Sonic Anchor VIII</strong> - HongKong Art Centre, Hong Kong <span class="year">2013</span></li>
+                <li><strong>Frischzelle Festival 2012</strong> - Cologne/Dusseldorf, Germany <span class="year">2012</span></li>
+                <li><strong>Illumination</strong> - 18 Gallery, Shanghai <span class="year">2012</span></li>
+                <li><strong>Super Tight</strong> - Guangdong Modern Dance Company, Guangzhou <span class="year">2012</span></li>
+                <li><strong>Sound Anchor III</strong> - HongKong Art Centre, Hong Kong <span class="year">2012</span></li>
+                <li><strong>Miji Concerts * 8</strong> - V Arts Centre, Shanghai <span class="year">2012</span></li>
+                <li><strong>Formant</strong> - V Arts Centre, Shanghai <span class="year">2012</span></li>
+                <li><strong>Inbetween</strong> - Guangdong Modern Dance Company, Guangzhou <span class="year">2012</span></li>
+                <li><strong>Gravitational Field</strong> - 2011 Himalayas Cross-Media Art Festival, Shanghai <span class="year">2011</span></li>
+                <li><strong>Still Concert</strong> - 2011 Electronic Music Week of Conservatory of Shanghai, Shanghai <span class="year">2011</span></li>
+                <li><strong>Future of Future</strong> - BM SPACE, Shanghai <span class="year">2011</span></li>
+                <li><strong>Milk and Bread, Rice and Water (with Rubato Tanzcompagnie)</strong> - Berlin, Shanghai, Swansea <span class="year">2011</span></li>
+                <li><strong>Look at me, I am Chinese (Rubato Berlin + Majiang Dance Company)</strong> - Berlin, Shanghai <span class="year">2010</span></li>
+                <li><strong>Red Chamber</strong> - Dutch Culture Centre, Shanghai / Amsterdam JuliDans Festival, Amsterdam <span class="year">2010</span></li>
+                <li><strong>Epidermis</strong> - Xiahe Micang, Shanghai <span class="year">2010</span></li>
+                <li><strong>Dialogue</strong> - Edinburgh Fringe Festival / Dancebase, London <span class="year">2010</span></li>
+                <li><strong>Verge Field</strong> - "Pioneer" Shanghai Youth Creative Theatre Festival / Shanghai eArts Community, Shanghai <span class="year">2010</span></li>
+                <li><strong>Left Cheek – European Tour (Munster, Potsdam, Dusseldorf, Oslo)</strong> <span class="year">2010</span></li>
+                <li><strong>Tongue's Memory of Home</strong> - Singapore Fringe Festival, Singapore <span class="year">2010</span></li>
+                <li><strong>Dialogue</strong> - Dublin (funded by Dublin City Council, Ireland) <span class="year">2008</span></li>
+                <li><strong>Left Cheek</strong> - Amsterdam JuliDans Festival, Amsterdam <span class="year">2008</span></li>
+                <li><strong>Verge Field</strong> - Groninger Museum, Netherlands <span class="year">2008</span></li>
+                <li><strong>Tongue's Memory of Home</strong> - Hong Kong Fringe Biennial, Hong Kong <span class="year">2008</span></li>
+                <li><strong>Left Cheek</strong> - Salzburg China India Festival, Salzburg, Austria <span class="year">2007</span></li>
+                <li><strong>Tongue's Memory of Home</strong> - Berlin Umweg Uber China Festival / Salzburg China India Festival / Rome Europa Festival <span class="year">2007</span></li>
+                <li><strong>Touch</strong> - Shanghai Zendai Art Museum / Shanghai Zhijiang DreamWorks <span class="year">2007</span></li>
+                <li><strong>Ward 14</strong> - Shanghai DDM Art Center <span class="year">2007</span></li>
+                <li><strong>Tongue's Memory of Home</strong> - Amsterdam JuliDans Festival / Zurich Theater Spektakel / Beijing Crossing Art Festival / Shanghai Fringe Festival <span class="year">2007</span></li>
             </ul>
         </div>
     </div>
