@@ -46,7 +46,7 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 5%;
-            padding-top: 60px;
+            padding-top: 150px;        /* 与艺术家页面统一 */
         }
 
         .intro {
@@ -85,15 +85,16 @@
             display: block;
         }
 
+        /* 文字样式与艺术家页面统一 */
         .work-text {
             display: inline;
             font-size: 0;
         }
         .work-text span {
             display: inline;
-            font-size: 0.85rem;
             white-space: normal;
             word-break: break-word;
+            line-height: 1.4;
         }
         .work-text .work-title {
             font-size: 1.0rem;
@@ -103,17 +104,13 @@
             margin-right: 0.75em;
         }
         .work-text .work-year {
+            font-size: 0.85rem;
             color: #53585f;
             margin-right: 0.75em;
         }
         .work-text .work-description {
+            font-size: 0.85rem;
             color: #53585f;
-        }
-
-        .work-text .work-title,
-        .work-text .work-year,
-        .work-text .work-description {
-            line-height: 1.4;
         }
 
         .player-box {
@@ -238,7 +235,7 @@
             }
             .container {
                 padding: 0 8%;
-                padding-top: 0;
+                padding-top: 0;          /* 移动端重置顶部间距 */
             }
             .intro {
                 font-size: 0.8rem;
