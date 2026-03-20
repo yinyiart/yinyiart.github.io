@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yin Yi · Curator</title>
+    <title>Yin Yi · Texts</title>
     <style>
         * {
             margin: 0;
@@ -12,9 +12,9 @@
         }
 
         body {
-            background-color: #59585f;
+            background-color: #dae7eb;
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #f0f4f8;
+            color: #1f2c35;
             line-height: 1.6;
             padding: 40px 20px;
             position: relative;
@@ -25,87 +25,77 @@
             top: 40px;
             right: 20px;
             display: flex;
-            gap: 20px;                     /* 从30px缩小到20px */
-            font-size: 0.8rem;               /* 从0.9rem缩小到0.8rem */
+            gap: 20px;                     /* 缩小间距 */
+            font-size: 0.8rem;               /* 缩小字体 */
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #d0d8e0;
+            color: #2f3a44;
             z-index: 100;
         }
         .top-nav a {
-            color: #d0d8e0;
+            color: #2f3a44;
             text-decoration: none;
             transition: color 0.2s;
         }
         .top-nav a:hover,
         .top-nav a.active {
-            color: #ffffff;
+            color: #0f1a24;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 5%;
-            padding-top: 60px;
+            padding-top: 150px;
         }
 
-        .exhibition-item {
-            margin-bottom: 50px;
+        .cv-section {
+            margin-bottom: 100px;            /* 增大至一倍 */
         }
 
-        .exhibition-image {
-            width: 100%;
-            max-width: 700px;
-            margin: 0 auto 15px auto;
-            background-color: #7a8088;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #d0d8e0;
-            font-size: 0.85rem;
-            overflow: hidden;
-        }
-        .exhibition-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .exhibition-info {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .exhibition-title {
-            font-size: 1.0rem;
+        .cv-section h2 {
+            font-size: 1rem;
             font-weight: 400;
-            color: #ffffff;
-            margin-bottom: 2px;
-            letter-spacing: 0.5px;
+            color: #1f2c35;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
         }
-        .exhibition-year-location {
-            font-size: 0.85rem;
-            color: #d0d8e0;
-            margin-bottom: 8px;
-        }
-        .curator {
-            font-size: 0.85rem;
-            color: #d0d8e0;
-            margin-bottom: 4px;
-        }
-        .artist-list {
-            font-size: 0.85rem;
-            color: #d0d8e0;
-            margin-top: 6px;
+
+        .cv-list {
             list-style: none;
-            padding-left: 0;
+            margin-left: 0;
         }
-        .artist-list li {
-            margin-bottom: 2px;
+        .cv-list li {
+            margin-bottom: 20px;              /* 条目间距不变 */
+            font-size: 0.8rem;
+            color: #53585f;
         }
-        .artist-list strong {
-            font-weight: 400;
-            color: inherit;
+        .cv-list li:last-child {
+            margin-bottom: 0;
+        }
+        .cv-list strong {
+            font-weight: 600;
+            color: #1f2c35;
+        }
+        .cv-list .year {
+            margin-left: 8px;
+            color: #6f7c8a;
+        }
+        .links {
+            display: inline;
+            margin-left: 10px;
+        }
+        .links a {
+            color: #53585f;
+            text-decoration: none;
+            border-bottom: 1px dotted #a0b3c5;
+            margin-right: 8px;
+            white-space: nowrap;
+            font-size: 0.75rem;
+        }
+        .links a:hover {
+            color: #0f1a24;
+            border-bottom-color: #0f1a24;
         }
 
         @media (max-width: 600px) {
@@ -117,25 +107,32 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 15px;                  /* 手机端间距缩小 */
+                gap: 15px;                    /* 手机端间距缩小 */
                 margin-bottom: 30px;
                 width: 100%;
             }
             .top-nav a {
                 padding: 6px 0;
                 white-space: nowrap;
-                color: #d0d8e0;
-                font-size: 0.8rem;           /* 手机端字体保持缩小后一致 */
+                color: #2f3a44;
+                font-size: 0.8rem;
             }
             .container {
                 padding: 0 8%;
                 padding-top: 0;
             }
-            .exhibition-image {
-                max-width: 100%;
+            .cv-section {
+                margin-bottom: 80px;           /* 手机端一倍间距 */
             }
-            .exhibition-title {
+            .cv-section h2 {
                 font-size: 0.95rem;
+            }
+            .cv-list li {
+                font-size: 0.75rem;
+                margin-bottom: 16px;            /* 条目间距不变 */
+            }
+            .links a {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -145,146 +142,91 @@
         <a href="index_en.html">Yin Yi</a>
         <a href="musician_en.html">Musician</a>
         <a href="artist_en.html">Artist</a>
-        <a href="curator_en.html" class="active">Curator</a>
-        <a href="writing_en.html">Texts</a>
+        <a href="curator_en.html">Curator</a>
+        <a href="writing_en.html" class="active">Texts</a>
         <a href="about_en.html">CV</a>
-        <a href="curator.html">CN</a>
+        <a href="writing.html">CN</a>
     </div>
 
     <div class="container">
-        <!-- Listening Path 2024 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c01.jpg" alt="Listening Path exhibition poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Listening Path: Contemporary Sound Art Practice in China</div>
-                <div class="exhibition-year-location">2024 · Duolun Modern Art Museum, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <div class="curator">Archival Advisors: Ou Ning, Yao Dajun</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Chen Wei, Sun Wei, Wang Changcun, Yan Jun, Samson Young, Zhang Anding</li>
-                </ul>
-            </div>
+        <!-- Articles (写作) -->
+        <div class="cv-section">
+            <h2>Articles</h2>
+            <ul class="cv-list">
+                <li><strong>I Am Listening [J].</strong> Art Monthly, 2025(8)</li>
+                <li><strong>Unconscious Sounds</strong>, 2024 Ranran Art Season Exhibition Brochure <span class="year">2024</span></li>
+                <li><strong>Urban Rainforest: Physical Strategies of Sound, Walking, and Listening[J].</strong> Chinese Landscape Architecture, 2023, 39(5):27-32. <span class="year">2023</span></li>
+                <li><strong>On Listening Space and Its Design Research[J].</strong> Time Architecture, 2022(4): 44-51 / Zhuang Shen, Yin Yi, Hua Xiahong. <span class="year">2022</span></li>
+                <li><strong>Sound Fever.</strong> In "Not Established, Not Built: Shanghai Art Institution Practices 2008-2016", ed. Chao Jiaxing <span class="year">2017</span></li>
+                <li><strong>Rehearsing Sound: BM Space.</strong> In "Not Established, Not Built: Shanghai Art Institution Practices 2008-2016", ed. Chao Jiaxing <span class="year">2017</span></li>
+                <li><strong>Urban Space as Resource and Practice Field for Sound Art.[J]</strong> Communication and Public, 2017, Vol.2(4):365-370 <span class="year">2017</span></li>
+                <li><strong>Sound Art?</strong> - ARTFORUM, Opinion, 2017-07 <span class="year">2017</span>
+                    <span class="links"><a href="https://artforum.com.cn/slant/10694#" target="_blank">Read</a></span>
+                </li>
+            </ul>
         </div>
 
-        <!-- Compose For 2023 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c02.jpg" alt="Compose For exhibition poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Compose For - RAM Assembles</div>
-                <div class="exhibition-year-location">2023 · Rockbund Art Museum, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Liu Pi, Mai Mai, Xiao Laohu, Zhang Anding, Chen Wei, Lou Nanli, Ma Haiping, Sun Wei, Wang Changcun, Wang Wenjing</li>
-                </ul>
-            </div>
+        <!-- Publications (出版) -->
+        <div class="cv-section">
+            <h2>Publications</h2>
+            <ul class="cv-list">
+                <li><strong>Savaka: Asia Experimental Music Currents</strong> (Editor), Rockbund Art Museum, Shanghai <span class="year">2013</span></li>
+                <li><strong>Agora</strong> (Editor), OCAT Shanghai <span class="year">2015</span></li>
+            </ul>
         </div>
 
-        <!-- One Sound One City 2016 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c03.jpg" alt="One Sound One City online exhibition poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">One Sound One City</div>
-                <div class="exhibition-year-location">2016 · Art Newspaper Chinese Version (online)</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> A Shere, Chen Mulian, Luo Runtin, Lu Zheng, Sun Wei, Wang Furui, Zhang Jianfu, Yin Yi</li>
-                </ul>
-            </div>
+        <!-- Reviews (评论) -->
+        <div class="cv-section">
+            <h2>Reviews</h2>
+            <ul class="cv-list">
+                <li><strong>Spatializing Soundscapes</strong>, Julie Chun, Yishu September/October <span class="year">2018</span></li>
+                <li><strong>How Do Sound Artists Use Listening as a Method?</strong> | Wallpaper*
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/5eCzfc9PZC9Wpw_79QgIkA" target="_blank">Read</a></span>
+                </li>
+                <li><strong>Yin Yi: Music is a Cultural Ideology</strong> | Phoenix Art
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/dBlSS2Cv4x01LKcAmz7GnA" target="_blank">Read</a></span>
+                </li>
+            </ul>
         </div>
 
-        <!-- Agora 2015 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c04.jpg" alt="Agora poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Agora</div>
-                <div class="exhibition-year-location">2015 · OCT Contemporary Art Terminal, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <!-- no artist list -->
-            </div>
-        </div>
-
-        <!-- What Are They Doing? 2014 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c05.jpg" alt="What Are They Doing? poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">What Are They Doing?</div>
-                <div class="exhibition-year-location">2014 · Museum of Contemporary Art, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Mai Mai, Xu Cheng, Zhao Junyuan</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Savaka 2013 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c06.jpg" alt="Savaka exhibition poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Savaka: Asia Experimental Music Currents</div>
-                <div class="exhibition-year-location">2013 · Rockbund Art Museum, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <div class="curator">Academic Host: Wang Jing</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Walnut Room, Li Chin-sung, ISO, Toshihiro Koide, Li Jianhong, Wu Liguang, Hong Tieji, Lu Zheng, Wang Furui, Junky, Trinh, Yan Jun</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- CO-Sound Festival 2013 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c07.jpg" alt="CO-Sound Festival poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">CO-Sound Festival</div>
-                <div class="exhibition-year-location">2013 · Zhujiajiao, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Dora Video, Liu Hanji, Zhao Junyuan, Mai Mai, Samson Young, Sheng Jie, Lu Zheng, Yin Yi</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Sonic Transmission 2012 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c08.jpg" alt="Sonic Transmission poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Sonic Transmission: Shanghai-Hong Kong Experimental Music Exchange Project</div>
-                <div class="exhibition-year-location">2012 · Rockbund Art Museum, Shanghai / Hong Kong Arts Centre, Hong Kong</div>
-                <div class="curator">Curators: Samson Young, Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Da Xiao, Tian Peng, Xu Cheng, Yu Xiaolu, Wang Changcun, Luo Runtin, Cedric Maridet, Liu Zhensheng, Xu Aoshan, Samson Young, Yin Yi</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Formant 2012 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c09.jpg" alt="Formant exhibition poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Formant: From Listening to Forms of Listening</div>
-                <div class="exhibition-year-location">2012 · V Arts Centre, Shanghai</div>
-                <div class="curator">Curators: Luca Forcucci, Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Lawrence English, Luca Forcucci, Yan Jun, Yin Yi, Zhang Ding</li>
-                </ul>
-            </div>
+        <!-- Interviews (报道) -->
+        <div class="cv-section">
+            <h2>Interviews</h2>
+            <ul class="cv-list">
+                <li><strong>Another Narrative on "Fetus" #Cyberbirth Column 05</strong>, Ruixin Weekly
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/bgV1jAJ_m9IhjRbOcQ-e5Q" target="_blank">Read</a></span>
+                </li>
+                <li><strong>Yin Yi: Artists Sometimes Need to Hesitate | Interview on "True Body III"</strong>, Mihang MNG
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/Eb7Hz-rLeGadpDrw9YgBvA" target="_blank">Read</a></span>
+                </li>
+                <li><strong>Ranran Residency Review | Yin Yi: Expanding the Perceptual Boundaries of Listening in the City</strong>, Ranran RANRAN
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/FuqC68MjzrxqIdNho14kQA" target="_blank">Read</a></span>
+                </li>
+                <li><strong>Ranran Residency Artist Talk | Yin Yi: Discovering the Possibility of Listening Amid Visual Addiction</strong>, Ranran RANRAN
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/qtXi0GY9eaONIXUgg4UyvQ" target="_blank">Read</a></span>
+                </li>
+                <li><strong>APTalk | Yin Yi: Sound Intervention in Architecture</strong>, Architectural Practice
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/nYngkhr5ZzUAjzeiYv5JhA" target="_blank">Read</a></span>
+                </li>
+                <li><strong>"Project Terrace" Phase IV: Yin Yi "Music on the Terrace"</strong>, Positive Art Research Centre PARC
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/4vbstledxKbPhJwp23cgmg" target="_blank">Read</a></span>
+                </li>
+                <li><strong>Fukan Interview | Yin Yi: "Six Attitudes of Listening"</strong>, Fukan
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/SW2lg7UrijuKoxwAcC_J3g" target="_blank">Read</a></span>
+                </li>
+                <li><strong>The Slowest Performance I've Ever Seen</strong>, Shangguan News
+                    <span class="links"><a href="https://www.shobserver.com/news/detail?id=292027" target="_blank">Read</a></span>
+                </li>
+                <li><strong>BMW Urban Excellence | Yin Yi on Sound, Music and Urban Boundaries</strong>, The Paper
+                    <span class="links"><a href="https://www.thepaper.cn/newsDetail_forward_4083193" target="_blank">Read</a></span>
+                </li>
+                <li><strong>Hearing the Landscape of the World: Ear House / Atelier Deshaus + Yin Yi</strong>, Youfang Space
+                    <span class="links"><a href="https://mp.weixin.qq.com/s/gLE2eMroZHG8qC02Z3CmvA" target="_blank">Read</a></span>
+                </li>
+                <li><strong>What Sound Best Represents Shanghai?</strong>, Shangguan News
+                    <span class="links"><a href="https://www.shobserver.com/news/detail?id=24683" target="_blank">Read</a></span>
+                </li>
+            </ul>
         </div>
     </div>
 </body>
