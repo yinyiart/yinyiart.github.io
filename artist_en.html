@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yin Yi · Curator</title>
+    <title>Yin Yi · Artist</title>
     <style>
         * {
             margin: 0;
@@ -20,7 +20,26 @@
             position: relative;
         }
 
-        /* 导航栏 - 与艺术家英文页面一致 */
+        .site-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            padding-top: 150px;           /* 从100px增至150px，与文字英文页面一致 */
+        }
+
+        /* 响应式宽度扩展 */
+        @media (min-width: 1600px) {
+            .site-container {
+                max-width: 1600px;
+            }
+        }
+        @media (min-width: 1900px) {
+            .site-container {
+                max-width: 1800px;
+            }
+        }
+
+        /* 顶部导航 - 与文字英文页面完全一致 */
         .top-nav {
             position: absolute;
             top: 40px;
@@ -43,70 +62,123 @@
             color: #ffffff;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 5%;
-            padding-top: 100px;          /* 与艺术家英文页面一致 */
+        /* 主内容区：左侧标签 + 右侧网格 */
+        .main-content {
+            display: flex;
+            gap: 40px;
         }
 
-        .exhibition-item {
-            margin-bottom: 50px;
+        /* 左侧脉络面板 */
+        .tag-panel {
+            flex: 0 0 160px;
+            position: sticky;
+            top: 40px;
+            align-self: flex-start;
+        }
+        .tag-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .tag {
+            padding: 4px 0;
+            font-size: 0.85rem;
+            line-height: 1.2;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #d0d8e0;
+            background: transparent;
+            border: none;
+            text-align: left;
+        }
+        .tag:hover {
+            color: #ffffff;
+        }
+        .tag.active {
+            color: #ffffff;
+            font-weight: 500;
         }
 
-        .exhibition-image {
+        /* 右侧作品网格 */
+        .works-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        /* 作品卡片 */
+        .work-card {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-image {
             width: 100%;
-            max-width: 700px;
-            margin: 0 auto 15px auto;
+            aspect-ratio: 3 / 2;
             background-color: #7a8088;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #d0d8e0;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             overflow: hidden;
         }
-        .exhibition-image img {
+        .work-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
-        .exhibition-info {
-            max-width: 700px;
-            margin: 0 auto;
+        .work-info {
+            padding: 0;
         }
 
-        .exhibition-title {
+        .work-title {
             font-size: 1.0rem;
             font-weight: 400;
-            color: #ffffff;
-            margin-bottom: 2px;
+            color: #f0f4f8;
             letter-spacing: 0.5px;
+            margin-bottom: 2px;
         }
-        .exhibition-year-location {
+
+        .work-year {
             font-size: 0.85rem;
             color: #d0d8e0;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
-        .curator {
-            font-size: 0.7rem;              /* 与艺术家页面标签字体一致 */
+
+        .work-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .work-tag {
+            font-size: 0.7rem;
             color: #d0d8e0;
-            margin-bottom: 4px;
+            background: transparent;
+            padding: 0;
+            border: none;
         }
-        .artist-list {
-            font-size: 0.7rem;               /* 与艺术家页面标签字体一致 */
-            color: #d0d8e0;
-            margin-top: 6px;
-            list-style: none;
-            padding-left: 0;
+
+        /* 筛选隐藏 */
+        .work-card.hidden {
+            display: none;
         }
-        .artist-list li {
-            margin-bottom: 2px;
-        }
-        .artist-list strong {
-            font-weight: 400;                 /* 不加粗 */
-            color: inherit;
+
+        /* 响应式 */
+        @media (max-width: 800px) {
+            .main-content {
+                gap: 30px;
+            }
+            .tag-panel {
+                flex: 0 0 140px;
+            }
         }
 
         @media (max-width: 600px) {
@@ -128,21 +200,61 @@
                 color: #d0d8e0;
                 font-size: 0.8rem;
             }
-            .container {
+            .site-container {
                 padding: 0 8%;
                 padding-top: 0;
             }
-            .exhibition-image {
-                max-width: 100%;
+            .main-content {
+                flex-direction: column;
+                gap: 20px;
             }
-            .exhibition-title {
-                font-size: 0.95rem;
+            .tag-panel {
+                flex: auto;
+                position: static;
+                width: 100%;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
             }
-            .curator {
-                font-size: 0.7rem;            /* 手机端保持不变 */
+            .tag-list {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                gap: 15px;
             }
-            .artist-list {
+            .tag {
+                padding: 4px 0;
+                font-size: 0.8rem;
+                white-space: nowrap;
+            }
+            .works-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .work-image {
+                height: 200px;
+                width: 100%;
+                aspect-ratio: auto;
+            }
+            .work-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .work-title {
+                font-size: 1.0rem;
+            }
+            .work-year {
+                font-size: 0.8rem;
+            }
+            .work-tag {
                 font-size: 0.7rem;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .work-title {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -151,148 +263,126 @@
     <div class="top-nav">
         <a href="index_en.html">Yin Yi</a>
         <a href="musician_en.html">Musician</a>
-        <a href="artist_en.html">Artist</a>
-        <a href="curator_en.html" class="active">Curator</a>
+        <a href="artist_en.html" class="active">Artist</a>
+        <a href="curator_en.html">Curator</a>
         <a href="writing_en.html">Texts</a>
         <a href="about_en.html">CV</a>
-        <a href="curator.html">CN</a>
+        <a href="artist.html">CN</a>
     </div>
 
-    <div class="container">
-        <!-- Listening Path 2024 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c01.jpg" alt="Listening Path exhibition poster">
+    <div class="site-container">
+        <div class="main-content">
+            <!-- 左侧脉络面板（英文，哲思改为 Contemplative） -->
+            <div class="tag-panel">
+                <div class="tag-list" id="tag-panel">
+                    <div class="tag active" data-tag="all">All</div>
+                    <div class="tag" data-tag="zhesi">Contemplative</div>
+                    <div class="tag" data-tag="public-space">Public Space</div>
+                    <div class="tag" data-tag="public-memory">Public Memory</div>
+                    <div class="tag" data-tag="body">Body</div>
+                    <div class="tag" data-tag="media">Media</div>
+                    <div class="tag" data-tag="sound-image">Sound-Driven Image</div>
+                    <div class="tag" data-tag="performance">Performance</div>
+                    <div class="tag" data-tag="field-recording">Field Recording</div>
+                </div>
             </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Listening Path: Contemporary Sound Art Practice in China</div>
-                <div class="exhibition-year-location">2024 · Duolun Modern Art Museum, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <div class="curator">Archival Advisors: Ou Ning, Yao Dajun</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Chen Wei, Sun Wei, Wang Changcun, Yan Jun, Samson Young, Zhang Anding</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- Compose For 2023 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c02.jpg" alt="Compose For exhibition poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Compose For - RAM Assembles</div>
-                <div class="exhibition-year-location">2023 · Rockbund Art Museum, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Liu Pi, Mai Mai, Xiao Laohu, Zhang Anding, Chen Wei, Lou Nanli, Ma Haiping, Sun Wei, Wang Changcun, Wang Wenjing</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- One Sound One City 2016 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c03.jpg" alt="One Sound One City online exhibition poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">One Sound One City</div>
-                <div class="exhibition-year-location">2016 · Art Newspaper Chinese Version (online)</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> A Shere, Chen Mulian, Luo Runtin, Lu Zheng, Sun Wei, Wang Furui, Zhang Jianfu, Yin Yi</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Agora 2015 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c04.jpg" alt="Agora poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Agora</div>
-                <div class="exhibition-year-location">2015 · OCT Contemporary Art Terminal, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <!-- no artist list -->
-            </div>
-        </div>
-
-        <!-- What Are They Doing? 2014 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c05.jpg" alt="What Are They Doing? poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">What Are They Doing?</div>
-                <div class="exhibition-year-location">2014 · Museum of Contemporary Art, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Mai Mai, Xu Cheng, Zhao Junyuan</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Savaka 2013 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c06.jpg" alt="Savaka exhibition poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Savaka: Asia Experimental Music Currents</div>
-                <div class="exhibition-year-location">2013 · Rockbund Art Museum, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <div class="curator">Academic Host: Wang Jing</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Walnut Room, Li Chin-sung, ISO, Toshihiro Koide, Li Jianhong, Wu Liguang, Hong Tieji, Lu Zheng, Wang Furui, Junky, Trinh, Yan Jun</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- CO-Sound Festival 2013 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c07.jpg" alt="CO-Sound Festival poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">CO-Sound Festival</div>
-                <div class="exhibition-year-location">2013 · Zhujiajiao, Shanghai</div>
-                <div class="curator">Curator: Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Dora Video, Liu Hanji, Zhao Junyuan, Mai Mai, Samson Young, Sheng Jie, Lu Zheng, Yin Yi</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Sonic Transmission 2012 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c08.jpg" alt="Sonic Transmission poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Sonic Transmission: Shanghai-Hong Kong Experimental Music Exchange Project</div>
-                <div class="exhibition-year-location">2012 · Rockbund Art Museum, Shanghai / Hong Kong Arts Centre, Hong Kong</div>
-                <div class="curator">Curators: Samson Young, Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Da Xiao, Tian Peng, Xu Cheng, Yu Xiaolu, Wang Changcun, Luo Runtin, Cedric Maridet, Liu Zhensheng, Xu Aoshan, Samson Young, Yin Yi</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Formant 2012 -->
-        <div class="exhibition-item">
-            <div class="exhibition-image">
-                <img src="images/c09.jpg" alt="Formant exhibition poster">
-            </div>
-            <div class="exhibition-info">
-                <div class="exhibition-title">Formant: From Listening to Forms of Listening</div>
-                <div class="exhibition-year-location">2012 · V Arts Centre, Shanghai</div>
-                <div class="curator">Curators: Luca Forcucci, Yin Yi</div>
-                <ul class="artist-list">
-                    <li><strong>Artists:</strong> Lawrence English, Luca Forcucci, Yan Jun, Yin Yi, Zhang Ding</li>
-                </ul>
+            <!-- 右侧作品网格（由 JavaScript 动态生成） -->
+            <div class="works-grid" id="works-grid">
+                <!-- 动态生成内容 -->
             </div>
         </div>
     </div>
+
+    <script>
+        // 作品数据（英文标题，id、年份、图片路径与中文版一致）
+        const works = [
+            { id: 'gan', title: 'Sensory Flow', year: '2025', image: 'images/flux15.jpg', tags: ['public-space', 'public-memory', 'media', 'field-recording'] },
+            { id: 'ligeti', title: 'Ligeti\'s 100 Metronomes', year: '2025', image: 'images/ligeti01.jpg', tags: ['body', 'performance'] },
+            { id: 'wo', title: 'I Am Listening', year: '2023', image: 'images/listening08.jpg', tags: ['zhesi', 'public-space', 'body', 'public-memory', 'performance'] },
+            { id: 'guishi', title: 'Silence Begins When Returning', year: '2023', image: 'images/gui01.jpg', tags: ['zhesi', 'performance'] },
+            { id: 'bumian', title: 'Sleepless Radio', year: '2023', image: 'images/bu01.jpg', tags: ['public-memory', 'media'] },
+            { id: 'women', title: 'Us Among Them, Them Among Us', year: '2022', image: 'images/wo03.jpg', tags: ['public-space', 'media', 'performance'] },
+            { id: 'cong', title: 'From_____to Xintiandi', year: '2022', image: 'images/xin04.jpg', tags: ['public-space', 'public-memory', 'field-recording'] },
+            { id: 'linju', title: 'Neighbor', year: '2022', image: 'images/lin03.jpg', tags: ['public-memory'] },
+            { id: 'yinyue', title: 'What Does Music Really Mean to Us?', year: '2022', image: 'images/yin13.jpg', tags: ['zhesi', 'performance', 'field-recording'] },
+            { id: 'shanghai', title: 'Shanghai', year: '2021', image: 'images/shanghai04.jpg', tags: ['public-space', 'public-memory', 'body', 'performance', 'field-recording'] },
+            { id: 'ruch', title: 'As Before (Ruchu)', year: '2021', image: 'images/ru01.jpg', tags: ['public-space', 'public-memory', 'performance'] },
+            { id: 'shesheng', title: 'Nourishing Life (Shesheng)', year: '2020', image: 'images/she12.jpg', tags: ['zhesi', 'body', 'performance'] },
+            { id: 'zhenshen', title: 'True Body (Zhenshen)', year: '2019', image: 'images/05.jpg', tags: ['zhesi', 'body', 'media', 'performance'] },
+            { id: 'xiangxi', title: 'Heading West (Xiangxi)', year: '2019', image: 'images/xiang04.jpg', tags: ['public-space', 'public-memory', 'sound-image', 'performance', 'field-recording'] },
+            { id: 'liuge', title: 'Six Attitudes of Listening', year: '2019', image: 'images/liu01.jpg', tags: ['public-space', 'performance'] },
+            { id: 'shige', title: 'Ten Corners', year: '2018', image: 'images/shi01.jpg', tags: ['zhesi'] },
+            { id: 'meishuguan', title: 'Art Museum', year: '2018', image: 'images/mei01.jpg', tags: ['body', 'sound-image'] },
+            { id: 'ditu', title: 'Map', year: '2018', image: 'images/ditu01.jpg', tags: ['body', 'sound-image', 'field-recording'] },
+            { id: 'yici', title: 'A Journey in Shanghai', year: '2017', image: 'images/yi01.jpg', tags: ['public-space', 'public-memory', 'sound-image'] },
+            { id: 'hailang', title: 'Ocean Waves', year: '2016', image: 'images/hai03.jpg', tags: ['zhesi', 'performance'] },
+            { id: 'liwu', title: 'Gift', year: '2016-2021', image: 'images/li02.jpg', tags: ['public-space', 'media', 'performance'] },
+            { id: 'dinghai', title: '20140901-20140930', year: '2014', image: 'images/201402.jpg', tags: ['public-space', 'public-memory', 'field-recording'] },
+            { id: 'weiliao', title: 'A Farewell Party', year: '2013-2019', image: 'images/wei01.jpg', tags: ['public-space', 'public-memory', 'field-recording'] },
+            { id: 'moshnegren', title: 'Stranger', year: '2013', image: 'images/mo01.jpg', tags: ['body'] },
+            { id: 'heliu', title: 'You Could Listen to the Same River Infinitely', year: '2012-2016', image: 'images/ni01.jpg', tags: ['zhesi', 'field-recording'] },
+            { id: 'sanfenzhong', title: 'Three Minutes', year: '2008|2020', image: 'images/san03.jpg', tags: ['public-memory', 'performance'] }
+        ];
+
+        // 脉络英文名称映射（哲思改为 Contemplative）
+        const tagNames = {
+            'zhesi': 'Contemplative',
+            'public-space': 'Public Space',
+            'public-memory': 'Public Memory',
+            'body': 'Body',
+            'media': 'Media',
+            'sound-image': 'Sound-Driven Image',
+            'performance': 'Performance',
+            'field-recording': 'Field Recording'
+        };
+
+        // 渲染作品网格
+        const grid = document.getElementById('works-grid');
+        function renderWorks(filterTag = 'all') {
+            let html = '';
+            works.forEach(work => {
+                if (filterTag !== 'all' && !work.tags.includes(filterTag)) return;
+
+                const imgHtml = work.image ? `<img src="${work.image}" alt="${work.title}">` : '<span>Image pending</span>';
+                const tagSpans = work.tags.map(tag => {
+                    return `<span class="work-tag">${tagNames[tag] || tag}</span>`;
+                }).join(' · ');
+
+                html += `
+                    <div class="work-card" data-id="${work.id}" data-tags="${work.tags.join(',')}">
+                        <div class="work-image">${imgHtml}</div>
+                        <div class="work-info">
+                            <div class="work-title">${work.title}</div>
+                            <div class="work-year">${work.year || 'Year unknown'}</div>
+                            <div class="work-tags">${tagSpans}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            grid.innerHTML = html;
+
+            // 点击卡片跳转到英文版作品详情页
+            document.querySelectorAll('.work-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const id = this.dataset.id;
+                    window.location.href = `work_en.html?id=${id}`;
+                });
+            });
+        }
+
+        // 初始渲染
+        renderWorks();
+
+        // 脉络筛选
+        const tags = document.querySelectorAll('.tag');
+        tags.forEach(tagEl => {
+            tagEl.addEventListener('click', function() {
+                tags.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                renderWorks(this.dataset.tag);
+            });
+        });
+    </script>
 </body>
 </html>
