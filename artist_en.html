@@ -24,7 +24,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 5%;
-            padding-top: 100px;           /* 增大与导航栏的间距，与文字英文页面一致 */
+            padding-top: 100px;           /* 与文字英文页面一致 */
         }
 
         /* 响应式宽度扩展 */
@@ -39,14 +39,14 @@
             }
         }
 
-        /* 顶部导航 - 绝对定位，与文字英文页面一致 */
+        /* 顶部导航 - 与文字英文页面完全一致 */
         .top-nav {
             position: absolute;
             top: 40px;
             right: 20px;
             display: flex;
-            gap: 30px;
-            font-size: 0.9rem;
+            gap: 20px;                     /* 从30px缩小到20px */
+            font-size: 0.8rem;               /* 从0.9rem缩小到0.8rem */
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #d0d8e0;
@@ -190,9 +190,15 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 20px;
+                gap: 20px;                    /* 与文字英文页面一致 */
                 margin-bottom: 30px;
                 width: 100%;
+            }
+            .top-nav a {
+                padding: 6px 0;
+                white-space: nowrap;
+                color: #d0d8e0;
+                font-size: 0.8rem;             /* 统一为0.8rem */
             }
             .site-container {
                 padding: 0 8%;
