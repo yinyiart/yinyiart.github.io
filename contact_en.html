@@ -12,16 +12,19 @@
         }
 
         body {
-            background-color: #9c9ca5;          /* 与中文联系页面一致 */
+            background-color: #9c9ca5;
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #53585f;                     /* 深灰色文字 */
+            color: #53585f;
             line-height: 1.6;
             padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             position: relative;
-            overflow-y: scroll;                 /* 防止滚动条跳动 */
+            overflow-y: scroll;   /* 与中文页面一致，防止滚动条跳动 */
         }
 
-        /* 导航栏布局参数与文字英文页面一致 */
+        /* 导航栏布局与文字英文页面一致，但颜色适配浅色主题 */
         .top-nav {
             position: absolute;
             top: 40px;
@@ -31,7 +34,7 @@
             font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #53585f;                     /* 导航文字深灰色 */
+            color: #53585f;
             z-index: 100;
         }
         .top-nav a {
@@ -41,13 +44,17 @@
         }
         .top-nav a:hover,
         .top-nav a.active {
-            color: #1f2c35;                     /* 悬停/当前深灰黑色 */
+            color: #1f2c35;
         }
 
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 5%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             padding-top: 150px;
         }
 
