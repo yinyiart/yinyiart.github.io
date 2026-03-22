@@ -490,6 +490,16 @@ In sound, an emotional community is created.`, images: ['images/san01.jpg','imag
             `;
             container.innerHTML = html;
         }
+
+        // ================== 新增：语言切换携带 id 参数 ==================
+        const currentId = urlParams.get('id');
+        if (currentId) {
+            const cnLink = document.querySelector('a[href="work.html"]');
+            if (cnLink) {
+                cnLink.href = `work.html?id=${currentId}`;
+            }
+        }
+        // ============================================================
     </script>
 </body>
 </html>
