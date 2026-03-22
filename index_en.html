@@ -14,7 +14,7 @@
         body {
             background-color: #9c9ca5;
             font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
-            color: #1f2c35;
+            color: #53585f;               /* 文字颜色浅灰，与中文首页一致 */
             line-height: 1.6;
             padding: 40px 20px;
             min-height: 100vh;
@@ -23,7 +23,7 @@
             position: relative;
         }
 
-        /* 导航栏 - 深灰色文字 */
+        /* 导航栏 - 浅灰色，与正文一致 */
         .top-nav {
             position: absolute;
             top: 40px;
@@ -33,17 +33,17 @@
             font-size: 0.8rem;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #1f2c35;               /* 深灰色 */
+            color: #53585f;               /* 导航文字浅灰 */
             z-index: 100;
         }
         .top-nav a {
-            color: #1f2c35;
+            color: #53585f;
             text-decoration: none;
             transition: color 0.2s;
         }
         .top-nav a:hover,
         .top-nav a.active {
-            color: #0f1a24;               /* 更深的灰黑 */
+            color: #1f2c35;               /* 悬停/当前深灰 */
         }
 
         .container {
@@ -93,7 +93,7 @@
 
         .hero-text {
             font-size: 0.9rem;
-            color: #1f2c35;               /* 深灰色文字 */
+            color: #53585f;               /* 正文浅灰 */
             line-height: 1.8;
         }
 
@@ -123,7 +123,7 @@
                 padding: 6px 0;
                 white-space: nowrap;
                 font-size: 0.8rem;
-                color: #1f2c35;
+                color: #53585f;
             }
             .container {
                 padding: 0 8%;
@@ -134,6 +134,7 @@
             }
             .hero-text {
                 font-size: 0.85rem;
+                color: #53585f;
             }
         }
     </style>
