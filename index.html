@@ -21,6 +21,7 @@
             display: flex;
             flex-direction: column;
             position: relative;
+            overflow-y: scroll;   /* 强制显示垂直滚动条，防止页面宽度跳动 */
         }
 
         /* 导航栏 - 与简历页面统一 */
@@ -29,8 +30,8 @@
             top: 40px;
             right: 20px;
             display: flex;
-            gap: 30px;               /* 与简历一致 */
-            font-size: 0.9rem;       /* 与简历一致 */
+            gap: 30px;
+            font-size: 0.9rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #53585f;
@@ -105,7 +106,7 @@
             margin-bottom: 0;
         }
 
-        /* 手机端导航栏 */
+        /* 手机端导航栏：换行居中，与简历页面一致 */
         @media (max-width: 600px) {
             body {
                 padding: 20px 10px;
