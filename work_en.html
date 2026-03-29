@@ -104,13 +104,13 @@ body {
 }
 
 .video-container {
-    margin-top: 30px;
+   margin-top: 30px;
     width: 100%;
-    background: #4a4f58;
-    border: 1px solid #7a8088;
+    background: #000;          /* 可选，与深色背景融合 */
+    border: none;  
 }
 .video-container iframe {
-    display: block;
+   display: block;
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
@@ -480,10 +480,13 @@ In sound, an emotional community is created.`, images: ['images/san01.jpg','imag
 
             let videoHtml = '';
             if (work.video) {
-                videoHtml = `
-                    <div class="video-container">
-                        <iframe src="${work.video}?title=0&byline=0&portrait=0" allowfullscreen></iframe>
-                    </div>
+    videoHtml = `
+        <div class="video-container">
+            <iframe src="${work.video}?title=0&byline=0&portrait=0" 
+                    allow="fullscreen" 
+                    allowfullscreen>
+            </iframe>
+        </div>
                 `;
             }
 
